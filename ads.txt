@@ -1,8 +1,9 @@
+mgid.com, 950021, DIRECT, d4c29acad76ce94f
+
 improvedigital.com, 1602_128153, DIRECT
 improvedigital.com, 1033_128153, DIRECT
 
-OWNERDOMAIN=github.io
-MANAGERDOMAIN=themoneytizer.com
+
 themoneytizer.com,128153,DIRECT
 smartadserver.com, 1097, RESELLER
 pubmatic.com, 156439, RESELLER, 5d62403b186f2ace
