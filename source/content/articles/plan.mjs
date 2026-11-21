@@ -432,6 +432,48 @@ export const plan = [
     angle: "Explain how fixture density, rest days, travel, and minutes played affect performance, and why rotation is a trade-off.",
     related: ["travel-fatigue-football", "squad-depth-football-prediction", "substitutions-game-management"],
   },
+  {
+    slug: "crossing-cutbacks-analysis",
+    title: "Crossing and Cutbacks: Choosing the Better Ball",
+    category: "Tactics",
+    angle: "Explain delivery types, cutbacks, defensive and goalkeeper reads, and how to judge delivery quality without overreading goals.",
+    related: ["build-up-play-analysis", "expected-threats-xt", "low-block-defending"],
+  },
+  {
+    slug: "shot-quality-vs-quantity",
+    title: "Shot Quality vs Shot Quantity in Football",
+    category: "xG and Stats",
+    angle: "Explain volume and quality, how xG combines them, and how to compare teams with different shooting profiles.",
+    related: ["what-is-xg-football", "shot-maps-football", "xg-models-differences"],
+  },
+  {
+    slug: "derby-matches-analysis",
+    title: "Derby Matches: Form, Emotion, and Variance",
+    category: "Leagues",
+    angle: "Explain why derby results are volatile, how emotion and familiarity affect tactics, and why form tables are weak guides.",
+    related: ["tactical-matchups-vs-reputation", "home-advantage-modern-football", "cognitive-biases-football-prediction"],
+  },
+  {
+    slug: "defensive-actions-data",
+    title: "Tackles, Interceptions, and Blocks Explained",
+    category: "xG and Stats",
+    angle: "Explain what each defensive action measures, why high counts can signal trouble, and how to judge defensive work with context.",
+    related: ["defensive-metrics-football", "pressing-intensity-ppda", "low-block-defending"],
+  },
+  {
+    slug: "set-piece-delivery",
+    title: "Set-Piece Delivery: Corners and Free Kicks",
+    category: "Tactics",
+    angle: "Explain delivery types, near and far posts, short corners, and how to assess set-piece delivery without overreading a small sample.",
+    related: ["set-pieces-football-prediction", "expected-threats-xt", "goalkeeper-performance-prediction"],
+  },
+  {
+    slug: "weekly-analysis-routine",
+    title: "A Weekly Football Analysis Routine",
+    category: "Beginner Guides",
+    angle: "Give beginners a repeatable weekly process for collecting data, watching matches, recording predictions, and reviewing errors.",
+    related: ["pre-match-analysis-guide", "football-data-sources", "track-prediction-accuracy"],
+  },
 ];
 
 export const planBySlug = Object.fromEntries(plan.map((item) => [item.slug, item]));
