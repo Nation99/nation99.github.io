@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://nation99.github.io/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://nation99.github.io/predictor.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://nation99.github.io/articles/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://nation99.github.io/about.html</loc>
@@ -43,6 +43,10 @@
   <url>
     <loc>https://nation99.github.io/glossary.html</loc>
     <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://nation99.github.io/articles/expected-points-xp.html</loc>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://nation99.github.io/articles/international-tournament-analysis.html</loc>

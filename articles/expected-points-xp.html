@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expected Points (xP): A Better League Table</title>
+  <meta name="description" content="Expected points turns match probabilities into a league table of performance. Learn how xP works, how to calculate it, and what it cannot tell you.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/expected-points-xp.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Expected Points (xP): A Better League Table">
+  <meta property="og:description" content="Expected points turns match probabilities into a league table of performance. Learn how xP works, how to calculate it, and what it cannot tell you.">
+  <meta property="og:url" content="https://nation99.github.io/articles/expected-points-xp.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-11-21">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="expected points">
+  <meta property="article:tag" content="xP">
+  <meta property="article:tag" content="league table">
+  <meta property="article:tag" content="match probabilities">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Expected Points (xP): A Better League Table">
+  <meta name="twitter:description" content="Expected points turns match probabilities into a league table of performance. Learn how xP works, how to calculate it, and what it cannot tell you.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"usatonlinetools@gmail.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"usatonlinetools@gmail.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/expected-points-xp.html#webpage","url":"https://nation99.github.io/articles/expected-points-xp.html","name":"Expected Points (xP): A Better League Table","description":"Expected points turns match probabilities into a league table of performance. Learn how xP works, how to calculate it, and what it cannot tell you.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/expected-points-xp.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"Expected Points (xP): A Better League Table"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/expected-points-xp.html#article","headline":"Expected Points (xP): A Better League Table","description":"Expected points turns match probabilities into a league table of performance. Learn how xP works, how to calculate it, and what it cannot tell you.","datePublished":"2026-11-21","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/expected-points-xp.html#webpage"},"articleSection":"xG and Stats","keywords":"expected points, xP, league table, match probabilities","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is expected points the same as expected goals?","acceptedAnswer":{"@type":"Answer","text":"No. Expected goals measures the quality of chances. Expected points converts win, draw, and loss probabilities into a points estimate. A match model can use xG as an input, but the two numbers answer different questions."}},{"@type":"Question","name":"Can expected points predict the final league table?","acceptedAnswer":{"@type":"Answer","text":"It can describe which teams have performed well in probability terms, but it does not predict future results. A team with a high xP can still finish lower because finishing, injuries, and random variation matter."}},{"@type":"Question","name":"Why do expected points totals not match actual points?","acceptedAnswer":{"@type":"Answer","text":"xP is an average over probabilities, not a record of awarded points. Draws distribute two points rather than three, and different models can produce different totals. The two quantities are related but not the same."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">Expected Points (xP): A Better League Table</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>Expected Points (xP): A Better League Table</h1>
+        <p class="article-dek">A league table records what happened. Expected points estimates what the performances deserved, using the same probabilities that drive a match model.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Football's league table is a record of outcomes. It tells you which teams won, drew, and lost, and it rewards the teams that converted their chances. It does not tell you whether those results were built on repeatable performances or on a short run of finishing that may not last.</p>
+<p>Expected points, usually shortened to xP, describes the table in a different currency. Instead of counting the points a team actually won, it adds the points implied by its match probabilities. A team that created the better chances but lost still earns xP for the performance. A team that was outplayed but won does not.</p>
+<p>xP is not a moral score and it is not a prediction of the final table. It is a summary of a model's view of each match, expressed in the unit fans already understand.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Expected points converts win, draw, and loss probabilities into a points estimate.</li><li>The formula is 3 times the win probability plus the draw probability.</li><li>xP describes the chances a team created and conceded, not the points it will win.</li><li>A gap between xP and actual points is a question about finishing, goalkeeping, or model error, not proof of luck.</li><li>xP is only as good as the model and the sample behind it, so use it with clear limits.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-expected-points-means">
+        <h2 id="what-expected-points-means">What expected points means</h2>
+        <p>Expected points is the average number of points a team would collect if the same match probabilities were repeated many times. The calculation is simple:</p>
+<p><strong>xP = 3 x P(win) + 1 x P(draw) + 0 x P(loss)</strong></p>
+<p>A team with a 60 per cent chance of winning, a 25 per cent chance of drawing, and a 15 per cent chance of losing has an xP of 2.05. A team with the reverse probabilities has an xP of 0.70. The underdog can still win, but the model says that outcome is less likely.</p>
+<p>The probabilities can come from different sources. A Poisson model built from expected goals is one option, and our guide to the <a href="poisson-distribution-football.html">Poisson distribution</a> explains how scoreline probabilities are produced. A model based on shot quality, a market-implied model, or a blend of inputs can also supply them. The important rule is consistency. A table that mixes models is a table of different currencies.</p>
+<p>xP is sometimes called deserved points. That phrase is misleading. The number does not measure effort, justice, or entertainment. It measures the points implied by a particular set of probabilities. If the model is poor, the xP table will be poor in the same way.</p>
+      </section>
+      <section aria-labelledby="from-probabilities-to-points">
+        <h2 id="from-probabilities-to-points">From probabilities to points</h2>
+        <p>The range of xP is zero to three. A certain win is worth three points, a certain draw is worth one, and a certain loss is worth zero. Most matches sit somewhere in between.</p>
+<p>Consider a match with a 45 per cent home win chance, a 27 per cent draw chance, and a 28 per cent away win chance. The home xP is 1.35 plus 0.27, which equals 1.62. The away xP is 0.84 plus 0.27, which equals 1.11. The two values sum to 2.73, not three.</p>
+<p>That gap is not an error. A draw awards one point to each side, so the total number of points distributed in a match depends on the draw probability. The sum of the two xP values is three minus the draw probability. In this example, three minus 0.27 is 2.73, which matches the calculation. The lesson is that xP is not a conserved quantity like actual points.</p>
+<p>This matters when you build a table. You cannot assume that the xP totals across a league will match the number of points actually awarded. They describe probabilities, not a fixed pot of points.</p>
+      </section>
+      <section aria-labelledby="building-an-xp-table">
+        <h2 id="building-an-xp-table">Building an xP table</h2>
+        <p>A useful xP table needs a clear method. The first step is to choose one model and freeze it for the period you want to study. Switching models halfway through a season creates a break in the series that is hard to interpret.</p>
+<p>The second step is to record the pre-match probabilities for every match. Pre-match numbers are the honest choice for a performance table because they are available before the result. A post-match xG model can also be used, but it is retrospective and should be labelled as such. Our explanation of <a href="what-is-xg-football.html">expected goals</a> covers the difference between chance quality and outcome.</p>
+<p>The third step is to calculate xP for each team in each match. Multiply the win probability by three, add the draw probability, and ignore the loss probability because it contributes zero. Sum the match values across the season.</p>
+<p>The fourth step is to compare xP with actual points. Do not stop at the gap. Ask what is driving it. A team that beats xP may be finishing well, defending well, or benefiting from a small sample. A team that trails xP may be creating good chances but conceding at bad moments. The table is a starting point for questions, not the answer.</p>
+<p>Finally, decide how to handle penalties, red cards, and extra time. A league table normally excludes cup matches and extra time, so keep the xP table consistent with the competition you are studying. If a model includes penalty shootouts, say so. Mixtures of rules produce mixtures of stories.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. It shows one team's five matches, with pre-match probabilities and the resulting xP. The numbers are rounded, so the totals may differ by a hundredth.</p>
+<table>
+<caption>Expected points across five illustrative matches</caption>
+<thead><tr><th>Match</th><th>Win</th><th>Draw</th><th>Loss</th><th>xP</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>50%</td><td>25%</td><td>25%</td><td>1.75</td></tr>
+<tr><td>2</td><td>40%</td><td>30%</td><td>30%</td><td>1.50</td></tr>
+<tr><td>3</td><td>60%</td><td>20%</td><td>20%</td><td>2.00</td></tr>
+<tr><td>4</td><td>30%</td><td>30%</td><td>40%</td><td>1.20</td></tr>
+<tr><td>5</td><td>45%</td><td>25%</td><td>30%</td><td>1.60</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td></td><td></td><td><strong>8.05</strong></td></tr>
+</tbody>
+</table>
+<p>The team actually won three matches, drew one, and lost one, for ten points. The gap between ten actual points and 8.05 xP is 1.95. Over five matches, that gap is not proof of luck or skill. It is one realization of a probabilistic process.</p>
+<p>Now compare four illustrative teams over the same five matches:</p>
+<table>
+<caption>Illustrative xP and actual points</caption>
+<thead><tr><th>Team</th><th>xP</th><th>Actual points</th><th>Difference</th></tr></thead>
+<tbody>
+<tr><td>Club A</td><td>8.05</td><td>10</td><td>+1.95</td></tr>
+<tr><td>Club B</td><td>7.40</td><td>6</td><td>-1.40</td></tr>
+<tr><td>Club C</td><td>5.25</td><td>7</td><td>+1.75</td></tr>
+<tr><td>Club D</td><td>3.30</td><td>2</td><td>-1.30</td></tr>
+</tbody>
+</table>
+<p>The differences do not need to sum to zero, because xP is not a conserved quantity. The table is a set of descriptions, not a closed accounting system. If these were real teams, the next step would be to watch the matches and ask why the gaps exist.</p>
+      </section>
+      <section aria-labelledby="xp-vs-actual-points">
+        <h2 id="xp-vs-actual-points">xP versus actual points</h2>
+        <p>A team that finishes above its xP is often described as lucky. That is too quick. The gap can come from repeatable skills. A side with an excellent finisher may convert chances at a higher rate than the model expects. A goalkeeper may save more than an average keeper would. A team may be especially good at set pieces, or at protecting a lead late in matches.</p>
+<p>The gap can also come from model error. If the model underestimates a team's chance creation, the xP total will be too low. If it overrates long shots or ignores defensive pressure, the table will drift. A single number cannot separate skill from misspecification.</p>
+<p>The honest use of xP is to ask better questions. Is the gap driven by shooting, saving, or schedule? Does it persist across seasons? Does it survive a change of manager or personnel? A gap that lasts is more interesting than a gap that disappears. Our guide to <a href="league-table-beyond-points.html">reading a league table beyond points</a> covers related table habits.</p>
+<p>xP is not a betting signal. It does not know the price, the team news, or the motivation for the next match. It is a descriptive tool for understanding what a team's performances implied in points.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Using post-match numbers and calling them pre-match.</strong> A retrospective xP table can be useful, but it is not a forecast and should not be presented as one.</li>
+<li><strong>Mixing models.</strong> A table built from two different probability sources is not a consistent ranking.</li>
+<li><strong>Ignoring sample size.</strong> Five matches tell you very little. A full season is a better start, and even then the uncertainty is real.</li>
+<li><strong>Treating xP as a prediction.</strong> The number describes the probabilities in the model, not the points a team will win.</li>
+<li><strong>Forgetting how draws work.</strong> The sum of xP in a match is not always three, and league totals are not a fixed pot.</li>
+<li><strong>Assuming every gap is luck.</strong> Finishing, goalkeeping, set pieces, and model error can all explain a difference.</li>
+</ul>
+<p>The common thread is a search for certainty. xP is most useful when it is treated as one description among several, with a clear method and a clear set of limits.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">What xP cannot tell you</h2>
+        <p>Expected points inherits every assumption of the model behind it. If the model does not know about injuries, travel, weather, or motivation, the xP table does not either. It describes the inputs it was given, not the full context of a season.</p>
+<p>It also cannot tell you which team will win the next match. The probabilities may be well calibrated over a long run, but any single result is uncertain. A high xP total is not a promise, and a low one is not a sentence.</p>
+<p>Use xP as a bridge between match analysis and the league table. It can show that a team's results are running ahead of its performances, or that a slow start is not as bad as the table suggests. It cannot tell you why without watching the matches, checking the data, and asking what the model might have missed.</p>
+<p>For a wider view of how probabilities become a table, pair xP with a match model and a clear record of its accuracy. The value is not in the single number. It is in the habit of separating process from outcome.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is expected points the same as expected goals?</summary>
+      <div class="faq-answer"><p>No. Expected goals measures the quality of chances. Expected points converts win, draw, and loss probabilities into a points estimate. A match model can use xG as an input, but the two numbers answer different questions.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can expected points predict the final league table?</summary>
+      <div class="faq-answer"><p>It can describe which teams have performed well in probability terms, but it does not predict future results. A team with a high xP can still finish lower because finishing, injuries, and random variation matter.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why do expected points totals not match actual points?</summary>
+      <div class="faq-answer"><p>xP is an average over probabilities, not a record of awarded points. Draws distribute two points rather than three, and different models can produce different totals. The two quantities are related but not the same.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-expected-points-means">What expected points means</a></li><li><a href="#from-probabilities-to-points">From probabilities to points</a></li><li><a href="#building-an-xp-table">Building an xP table</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#xp-vs-actual-points">xP versus actual points</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">What xP cannot tell you</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="league-table-beyond-points.html">
+        <span class="cat">Leagues</span>
+        <strong>Reading a League Table Beyond Points</strong>
+      </a>
+      <a class="related-card" href="poisson-distribution-football.html">
+        <span class="cat">Betting Education</span>
+        <strong>Poisson Distribution for Football</strong>
+      </a>
+      <a class="related-card" href="track-prediction-accuracy.html">
+        <span class="cat">Betting Education</span>
+        <strong>How to Track Prediction Accuracy in Football</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
