@@ -404,6 +404,34 @@ export const plan = [
     angle: "Explain build-up phases, progression metrics, structural patterns, pressure, and why progression is not the same as chance creation.",
     related: ["possession-data-football", "pressing-intensity-ppda", "expected-threats-xt"],
   },
+  {
+    slug: "shot-maps-football",
+    title: "Shot Maps: How to Read Football Shot Charts",
+    category: "xG and Stats",
+    angle: "Explain how shot maps encode location and outcome, how to read angle and distance, and why a map is not a complete performance review.",
+    related: ["what-is-xg-football", "xg-models-differences", "expected-threats-xt"],
+  },
+  {
+    slug: "low-block-defending",
+    title: "The Low Block: Defending Deep in Football",
+    category: "Tactics",
+    angle: "Explain the structure, compactness, trade-offs, and transition threat of a low block, and how to assess it without relying on possession.",
+    related: ["tactical-matchups-vs-reputation", "game-state-analysis", "defensive-metrics-football"],
+  },
+  {
+    slug: "penalties-expected-goals",
+    title: "Penalties and xG: Valuing Spot Kicks Fairly",
+    category: "xG and Stats",
+    angle: "Explain how xG values penalties, why some models separate them, how rebounds are recorded, and how to compare teams fairly.",
+    related: ["penalty-analysis", "what-is-xg-football", "goalkeeper-performance-prediction"],
+  },
+  {
+    slug: "fixture-congestion-rotation",
+    title: "Fixture Congestion: Rotation and Recovery",
+    category: "Tactics",
+    angle: "Explain how fixture density, rest days, travel, and minutes played affect performance, and why rotation is a trade-off.",
+    related: ["travel-fatigue-football", "squad-depth-football-prediction", "substitutions-game-management"],
+  },
 ];
 
 export const planBySlug = Object.fromEntries(plan.map((item) => [item.slug, item]));

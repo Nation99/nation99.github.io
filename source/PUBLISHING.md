@@ -61,6 +61,10 @@ This prints the next six publication slots, two per day, starting tomorrow in CA
 ## Current status
 
 - Articles live: 54
-- Latest article: 21 November 2026
-- Queued for 22 November 2026: 2 articles (`elo-ratings-football`, `build-up-play-analysis`)
-- After that: the queue is empty until the next two modules are added
+- Latest live article: 21 November 2026
+- Queued articles: 6
+- 22 November 2026: `elo-ratings-football`, `build-up-play-analysis`
+- 23 November 2026: `shot-maps-football`, `low-block-defending`
+- 24 November 2026: `penalties-expected-goals`, `fixture-congestion-rotation`
+- The queue is empty after 24 November 2026 until the next six modules are added
+- The workflow was tested on 21 November 2026 with `publish_date=2026-11-21`; it built 54 due articles, excluded the 2 queued articles, and made no commit
