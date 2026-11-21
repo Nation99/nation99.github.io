@@ -25,6 +25,14 @@ Future articles stay in the repository and in `content/articles/plan.mjs`, but t
 
 The scheduler does not write articles. It publishes articles that are already in `source/content/articles/`. Two articles must be added for every scheduled day. If the queue runs dry, the daily workflow simply finds no new articles and the site stays unchanged.
 
+Run:
+
+```powershell
+npm run queue
+```
+
+This shows how many articles are due and how many are queued, with their dates. The standing instructions in `AGENTS.md` require every session to check the queue before finishing and to write any missing articles.
+
 ## Next slots
 
 Run:

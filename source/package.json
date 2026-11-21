@@ -10,6 +10,7 @@
     "assets": "powershell -ExecutionPolicy Bypass -File scripts/make-assets.ps1",
     "check": "node build.mjs",
     "status": "node scripts/status.mjs",
+    "queue": "node scripts/queue-status.mjs",
     "slots": "node scripts/publication-slots.mjs",
     "wordcount": "node scripts/wordcount.mjs"
   },

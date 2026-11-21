@@ -24,6 +24,7 @@ Open http://localhost:4173.
 | `npm run serve` | Serve `dist/` locally on port 4173. |
 | `npm run assets` | Regenerate the favicon, app icons, logo, and Open Graph image. Requires Windows PowerShell with System.Drawing. |
 | `npm run status` | Check that all planned article modules exist and pass the article contract. |
+| `npm run queue` | Show due and queued articles for the current CAT date. |
 | `npm run slots -- 6` | Print the next publication slots, two per day at 08:00 CAT. |
 | `npm run wordcount -- content/articles/slug.mjs` | Count words in one article and check its required sections. |
 
