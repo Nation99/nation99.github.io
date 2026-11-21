@@ -1,0 +1,19 @@
+{
+  "name": "elite-football-predictor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Football analytics education and a transparent Poisson match outcome model.",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "assets": "powershell -ExecutionPolicy Bypass -File scripts/make-assets.ps1",
+    "check": "node build.mjs",
+    "status": "node scripts/status.mjs",
+    "slots": "node scripts/publication-slots.mjs",
+    "wordcount": "node scripts/wordcount.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

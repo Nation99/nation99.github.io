@@ -1,0 +1,7 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Elite Football Predictor</title>
+  <rect width="64" height="64" rx="14" fill="#0b1b33"/>
+  <circle cx="49" cy="14" r="3.2" fill="#f5a623"/>
+  <path d="M10 44h44v10H10z" fill="#0b8f6a"/>
+  <text x="32" y="38" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#eef5ff">EFP</text>
+</svg>
