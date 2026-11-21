@@ -1,1708 +1,635 @@
 <!DOCTYPE html>
-<html lang="en">
-
-</header>
-
-<script async='async' src='https://cdn.ampproject.org/v0.js'/>
-
-
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Football Analytics and Education | Elite Football Predictor</title>
+  <meta name="description" content="Learn football analytics with clear guides to xG, xGA, Poisson models, odds, and match analysis. Try a transparent match outcome estimate tool.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Football Analytics and Education | Elite Football Predictor">
+  <meta property="og:description" content="Learn football analytics with clear guides to xG, xGA, Poisson models, odds, and match analysis. Try a transparent match outcome estimate tool.">
+  <meta property="og:url" content="https://nation99.github.io/">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Football Analytics and Education | Elite Football Predictor">
+  <meta name="twitter:description" content="Learn football analytics with clear guides to xG, xGA, Poisson models, odds, and match analysis. Try a transparent match outcome estimate tool.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/#webpage","url":"https://nation99.github.io/","name":"Football Analytics and Education | Elite Football Predictor","description":"Learn football analytics with clear guides to xG, xGA, Poisson models, odds, and match analysis. Try a transparent match outcome estimate tool.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Elite Football Predictor a betting site?","acceptedAnswer":{"@type":"Answer","text":"No. We do not accept bets, process payments, link to bookmakers, or sell tips. The site is an independent football analytics education project with a transparent statistical model."}},{"@type":"Question","name":"Does the model guarantee a result?","acceptedAnswer":{"@type":"Answer","text":"No. The model produces a probability distribution from the inputs you provide. Football is uncertain, and the model does not know lineups, injuries, weather, or tactical surprises."}},{"@type":"Question","name":"Where does the data come from?","acceptedAnswer":{"@type":"Answer","text":"The interactive tool uses numbers you enter. Articles use clearly labelled illustrative examples. We do not scrape live match data or present invented records as fact."}},{"@type":"Question","name":"Is the site free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes. The guides and model are free. If advertising is added later, every slot will be labelled and kept separate from editorial content."}},{"@type":"Question","name":"Can I use the estimates for betting?","acceptedAnswer":{"@type":"Answer","text":"The site is for education and entertainment, not advice. If you choose to gamble, only risk money you can afford to lose, and seek support if it stops being fun. See our responsible gambling page."}}]}]}</script>
   
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DHC4SNTD6B');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Elite Football Predictor uses football analytics, xG, tactical analysis, squad news, and market intelligence to estimate high-probability match outcomes." />
-  <meta name="keywords" content="football predictor, xg analysis, football tips, match prediction, betting analysis, tactical analysis" />
-  <meta name="author" content="Nyasha" />
-  <meta property="og:title" content="Elite Football Predictor" />
-  <meta property="og:description" content="Advanced football prediction engine built with statistical weighting, tactical analysis, and market intelligence." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#173b8c" />
-  <title>Elite Football Predictor | AI Football Prediction Engine</title>
-  <style>
-    :root {
-      --bg: #f4f7fb;
-      --panel: rgba(255, 255, 255, 0.94);
-      --panel-strong: #ffffff;
-      --text: #152033;
-      --muted: #5e6b82;
-      --border: #dce3ee;
-      --accent: #173b8c;
-      --accent-2: #0f9d7a;
-      --warn: #b84b22;
-      --good: #18794e;
-      --shadow: 0 18px 50px rgba(19, 39, 73, 0.12);
-      --radius: 20px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(23, 59, 140, 0.12), transparent 30%),
-        radial-gradient(circle at top right, rgba(15, 157, 122, 0.12), transparent 28%),
-        linear-gradient(180deg, #eef3fb 0%, #f8fbff 100%);
-      min-height: 100vh;
-      line-height: 1.55;
-    }
-
-    a { color: var(--accent); }
-
-    .wrap {
-      width: min(1200px, calc(100% - 24px));
-      margin: 0 auto;
-      padding: 18px 0 36px;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #132a55 0%, #173b8c 45%, #0f9d7a 100%);
-      color: white;
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at right top, rgba(255,255,255,0.18), transparent 28%);
-      pointer-events: none;
-    }
-
-    .hero h1 {
-      margin: 0 0 8px;
-      font-size: clamp(1.7rem, 3vw, 2.8rem);
-      letter-spacing: 0.2px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero .motto {
-      margin: 12px 0 0;
-      font-weight: 800;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.95);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero p {
-      margin: 10px 0 0;
-      color: rgba(255,255,255,0.9);
-      max-width: 850px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .badge-row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .badge {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 0.9rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .top-links {
-      margin-top: 18px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--border);
-      padding: 12px 16px;
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .top-links a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 0.95rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-      backdrop-filter: blur(8px);
-    }
-
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-    }
-
-    .card h3 {
-      margin: 18px 0 8px;
-      font-size: 1rem;
-    }
-
-    .subtle {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    label {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid var(--border);
-      background: var(--panel-strong);
-      border-radius: 14px;
-      padding: 12px 13px;
-      font: inherit;
-      color: var(--text);
-      outline: none;
-      transition: 0.2s ease;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: rgba(23, 59, 140, 0.5);
-      box-shadow: 0 0 0 4px rgba(23, 59, 140, 0.08);
-    }
-
-    textarea {
-      min-height: 92px;
-      resize: vertical;
-    }
-
-    .full { grid-column: 1 / -1; }
-
-    .controls {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
-
-    button {
-      border: none;
-      border-radius: 14px;
-      padding: 12px 16px;
-      cursor: pointer;
-      font: inherit;
-      font-weight: 800;
-      transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    button:hover { transform: translateY(-1px); }
-    button:active { transform: translateY(0); }
-
-    .primary {
-      background: linear-gradient(135deg, var(--accent) 0%, #285fe2 100%);
-      color: white;
-      box-shadow: 0 14px 25px rgba(23, 59, 140, 0.22);
-    }
-
-    .secondary {
-      background: #eef3fb;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .result-top {
-      display: grid;
-      gap: 12px;
-    }
-
-    .result-box {
-      background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 0.9rem;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: currentColor;
-    }
-
-    .status.low { color: var(--good); background: rgba(24, 121, 78, 0.10); }
-    .status.medium { color: #9a5b00; background: rgba(154, 91, 0, 0.10); }
-    .status.high { color: var(--warn); background: rgba(184, 75, 34, 0.10); }
-
-    .match-title {
-      font-size: 1.25rem;
-      margin: 8px 0 4px;
-      font-weight: 900;
-    }
-
-    .small-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .stat {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 12px;
-    }
-
-    .stat span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.8rem;
-      margin-bottom: 4px;
-      font-weight: 700;
-    }
-
-    .stat strong { font-size: 1rem; }
-
-    .safe-banner {
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: #f0f7ff;
-      border: 1px solid #d6e6ff;
-      font-weight: 800;
-    }
-
-    .section-title {
-      margin: 18px 0 10px;
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    ul.reason-list {
-      margin: 8px 0 0;
-      padding-left: 18px;
-      color: var(--text);
-      line-height: 1.55;
-    }
-
-    .muted-list { color: var(--muted); }
-
-    .pill-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .pill {
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: white;
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .range-row {
-      display: grid;
-      grid-template-columns: 1fr 70px;
-      align-items: center;
-      gap: 10px;
-    }
-
-    input[type="range"] {
-      padding: 0;
-      height: 10px;
-    }
-
-    .article-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    details.article {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: #fff;
-      padding: 12px 14px;
-    }
-
-    details.article summary {
-      cursor: pointer;
-      font-weight: 900;
-      color: var(--text);
-    }
-
-    details.article p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .faq-item {
-      margin-top: 10px;
-    }
-
-    .footer-note {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 0.88rem;
-      line-height: 1.5;
-    }
-
-    .footer {
-      margin-top: 18px;
-      padding: 16px 0 4px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    body.dark {
-      background:
-        radial-gradient(circle at top left, rgba(64, 120, 255, 0.14), transparent 30%),
-        radial-gradient(circle at top right, rgba(22, 190, 149, 0.12), transparent 28%),
-        linear-gradient(180deg, #07111f 0%, #0b1425 100%);
-      color: #e7eefc;
-    }
-
-    body.dark .card,
-    body.dark .top-links {
-      background: rgba(13, 21, 39, 0.92);
-      color: #e7eefc;
-      border-color: #26324a;
-    }
-
-    body.dark .card h2,
-    body.dark .card h3,
-    body.dark .match-title,
-    body.dark .stat strong,
-    body.dark summary,
-    body.dark .subtle,
-    body.dark .reason-list,
-    body.dark .pill,
-    body.dark label {
-      color: #e7eefc;
-    }
-
-    body.dark .stat,
-    body.dark details.article,
-    body.dark input,
-    body.dark select,
-    body.dark textarea,
-    body.dark .result-box {
-      background: #0f1b31;
-      color: #e7eefc;
-      border-color: #2a3751;
-    }
-
-    body.dark .secondary {
-      background: #18253f;
-      color: #e7eefc;
-      border-color: #2a3751;
-    }
-
-    body.dark .safe-banner {
-      background: #102241;
-      border-color: #27406f;
-    }
-
-    body.dark .pill {
-      background: #132038;
-      border-color: #2a3751;
-    }
-
-    body.dark .top-links a { color: #9dc0ff; }
-
-    body.dark .footer { color: #9ab0cf; }
-
-    @media (max-width: 980px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 760px) {
-      .form-grid, .small-grid, .article-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      .wrap { width: min(100% - 14px, 1200px); }
-      .hero, .card { border-radius: 18px; }
-      .controls { flex-direction: column; }
-      button { width: 100%; }
-      .top-links { padding: 10px 12px; }
-    }
-  </style>
 </head>
-<body id="top">
-
-
-<amp-embed width="600" height="600" layout="responsive" type="mgid" data-website="1098684" data-widget="2028890" data-block-on-consent="_till_responded"></amp-embed>
-
-
-
-
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   
-  <div class="wrap">
-    <section class="hero">
-      <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;position:relative;z-index:1;">
-        <div style="width:56px;height:56px;border-radius:18px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.2rem;letter-spacing:1px;box-shadow:0 10px 24px rgba(0,0,0,0.12);">EP</div>
-        <div>
-          <div style="font-size:0.86rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,0.82);">Elite Football Predictor</div>
-          <div style="font-size:0.92rem;color:rgba(255,255,255,0.78);">AI-powered football analytics</div>
-        </div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="./" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./" aria-current="page">Home</a><a href="predictor.html">Predictor</a><a href="articles/">Articles</a><a href="glossary.html">Glossary</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="editorial-policy.html">Editorial policy</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="disclaimer.html">Disclaimer</a><a href="responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
       </div>
-      <h1>Elite Football Predictor</h1>
-      <p class="motto">Data over hype. Discipline over emotion. Precision over guesswork.</p>
-      <p>
-        Institutional-style football analysis engine for high-probability selections. It weighs form, xG, squad news,
-        tactics, market movement, and risk filters to return only disciplined edges.
-      </p>
-      <div class="badge-row">
-        <div class="badge">Safe Prediction</div>
-        <div class="badge">Medium-Risk Prediction</div>
-        <div class="badge">High-Value Prediction</div>
-        <div class="badge">NO SAFE EDGE FOUND</div>
-      </div>
-    </section>
-
-    <nav class="top-links">
-      <button id="themeToggle" class="secondary" type="button" style="padding:10px 14px;border-radius:999px;font-weight:800;">Dark Mode</button>
-      <a href="#top">Home</a>
-      <a href="#predictor">Predictor</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#football-articles">Football Articles</a>
-      <a href="#faq">FAQ</a>
-      <a href="#about">About</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#terms">Terms</a>
-      <a href="#disclaimer">Disclaimer</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="grid" id="predictor">
-      <section class="card">
-        <h2>Match Inputs</h2>
-        <p class="subtle">Enter match data. The engine will score probability, expected goals, safest market, and warning signs.</p>
-
-        <div class="form-grid">
-          <div class="field full">
-            <label>Match</label>
-            <input id="matchName" type="text" value="Team A vs Team B" />
-          </div>
-
-          <div class="field">
-            <label>Home Team</label>
-            <input id="homeTeam" type="text" value="Team A" />
-          </div>
-          <div class="field">
-            <label>Away Team</label>
-            <input id="awayTeam" type="text" value="Team B" />
-          </div>
-
-          <div class="field">
-            <label>Home Form Strength (0-10)</label>
-            <div class="range-row">
-              <input id="homeForm" type="range" min="0" max="10" value="7" />
-              <strong id="homeFormVal">7</strong>
-            </div>
-          </div>
-          <div class="field">
-            <label>Away Form Strength (0-10)</label>
-            <div class="range-row">
-              <input id="awayForm" type="range" min="0" max="10" value="5" />
-              <strong id="awayFormVal">5</strong>
-            </div>
-          </div>
-
-          <div class="field">
-            <label>Home xG</label>
-            <input id="homeXG" type="number" step="0.1" value="1.8" />
-          </div>
-          <div class="field">
-            <label>Away xG</label>
-            <input id="awayXG" type="number" step="0.1" value="1.1" />
-          </div>
-
-          <div class="field">
-            <label>Home xGA</label>
-            <input id="homeXGA" type="number" step="0.1" value="0.9" />
-          </div>
-          <div class="field">
-            <label>Away xGA</label>
-            <input id="awayXGA" type="number" step="0.1" value="1.4" />
-          </div>
-
-          <div class="field">
-            <label>Injuries / Suspensions (Home)</label>
-            <input id="homeAbsences" type="number" min="0" step="1" value="1" />
-          </div>
-          <div class="field">
-            <label>Injuries / Suspensions (Away)</label>
-            <input id="awayAbsences" type="number" min="0" step="1" value="3" />
-          </div>
-
-          <div class="field">
-            <label>Market Movement (Home Edge / Trap)</label>
-            <select id="marketMove">
-              <option value="home">Home side shortening</option>
-              <option value="away">Away side shortening</option>
-              <option value="neutral" selected>Neutral / stable</option>
-              <option value="trap">Public hype / suspicious trap</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Public Betting Pressure</label>
-            <select id="publicBias">
-              <option value="low">Low</option>
-              <option value="medium" selected>Medium</option>
-              <option value="high">High</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label>Tactical Stability (Home / Away)</label>
-            <input id="tactical" type="text" value="Home stable, away inconsistent" />
-          </div>
-          <div class="field">
-            <label>Environmental Notes</label>
-            <input id="environment" type="text" value="Normal weather, no major travel issue" />
-          </div>
-
-          <div class="field full">
-            <label>Extra Notes</label>
-            <textarea id="notes">Use this for derby pressure, fixture congestion, keeper form, referee tendencies, or anything else that matters.</textarea>
-          </div>
-        </div>
-
-        <div class="controls">
-          <button class="primary" id="analyzeBtn">Analyze Match</button>
-          <button class="secondary" id="resetBtn">Reset Sample</button>
-        </div>
-
-        <p class="footer-note">
-          This tool is designed to filter for strong edges only. When the combined score is weak or market signals are messy,
-          it will reject the match instead of forcing a bet.
-        </p>
-      </section>
-
-      <section class="card">
-        <h2>Prediction Output</h2>
-        <div id="result" class="result-top">
-          <div class="result-box">
-            <div class="status low"><span class="dot"></span>Ready</div>
-            <div class="match-title">Team A vs Team B</div>
-            <div class="subtle">Run analysis to generate the prediction report.</div>
-          </div>
-        </div>
-      </section>
     </div>
-
-    <section class="card" id="how-it-works" style="margin-top:18px;">
-      <h2>How The Predictor Works</h2>
-      <p class="subtle">The engine blends statistical, tactical, and market inputs instead of relying on a single signal.</p>
-      <div class="pill-grid">
-        <div class="pill">Historical form</div>
-        <div class="pill">xG and xGA</div>
-        <div class="pill">Squad absences</div>
-        <div class="pill">Market movement</div>
-        <div class="pill">Tactical matchup</div>
-        <div class="pill">Risk filtering</div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="./" aria-current="page">Home</a></li><li><a href="predictor.html">Predictor</a></li><li><a href="articles/">Articles</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="editorial-policy.html">Editorial policy</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="responsible-gambling.html">Support and responsible gambling</a>.</p>
       </div>
-      <h3>Decision steps</h3>
-      <ul class="reason-list">
-        <li>Estimate home, draw, and away probabilities using form, xG, and defensive strength.</li>
-        <li>Estimate expected goals for both teams.</li>
-        <li>Reject matches that do not show enough edge.</li>
-        <li>Prefer safer markets such as double chance, draw no bet, or under goals when appropriate.</li>
-        <li>Flag suspicious odds movement and public hype as warning signs.</li>
-      </ul>
-    </section>
-
-    <section class="card" id="football-articles" style="margin-top:18px;">
-      <h2>Football Knowledge Articles</h2>
-      <p class="subtle">Long-form football analysis articles focused on probability, tactics, and disciplined decision-making.</p>
-
-      <details class="article" open>
-        <summary>What xG Really Means in Football Prediction</summary>
-        <p>
-          Expected Goals, commonly called xG, is one of the most useful metrics in modern football analysis because it measures the quality of chances created rather than simply counting goals. Many casual football fans focus only on final scorelines, but professional analysts often care more about the process behind those results. A team can score three goals from three low-quality shots and appear dominant, yet underlying numbers may show that performance was unsustainable. Over time, xG helps identify whether a team is genuinely strong or simply benefiting from temporary overperformance.
-          <br><br>
-          Each shot in football has a probability attached to it based on factors such as shooting angle, distance from goal, defensive pressure, type of assist, body position, and whether the chance came from open play or a set piece. A penalty usually carries a very high xG value because penalties are converted frequently, while speculative long-range efforts have very low xG values. By adding these probabilities together, analysts estimate how many goals a team should have scored based on chance quality.
-          <br><br>
-          This becomes powerful in football prediction because it helps identify hidden trends before bookmakers and casual bettors fully adjust. For example, a team that keeps winning despite poor xG numbers may eventually regress because the underlying process is weak. Conversely, a team creating strong xG numbers while losing matches may soon improve because their attacking structure remains effective.
-          <br><br>
-          xG also improves match-specific analysis. When comparing two teams, analysts look at attacking xG and defensive xGA together. If Team A creates high-quality chances while Team B allows many dangerous opportunities, the matchup may favor Team A heavily. However, strong football prediction models never rely on xG alone. Tactical style, injuries, fatigue, goalkeeper form, and market movement still matter.
-          <br><br>
-          Another advantage of xG is that it helps reduce emotional decision-making. Fans often overreact to dramatic scorelines, but xG provides a more stable framework for evaluating performance. A narrow defeat with strong xG numbers may actually indicate future value, while a lucky win with poor underlying metrics can warn of upcoming decline.
-          <br><br>
-          In modern football analytics, xG has become essential because it reveals deeper performance patterns that traditional statistics cannot fully capture. While no metric guarantees perfect predictions, xG remains one of the strongest tools for understanding sustainable attacking and defensive quality.
-        </p>
-      </details>
-
-      <details class="article">
-        <summary>How Bookmaker Traps and Public Betting Bias Influence Football Odds</summary>
-        <p>
-          Football betting markets are heavily influenced by public perception, emotional reactions, and media narratives. Many casual bettors believe bookmakers simply predict outcomes, but in reality bookmakers are also risk managers. Their goal is to balance exposure while maintaining profit margins. This creates situations where odds may not always reflect true football probability.
-          <br><br>
-          Public betting bias is especially visible with famous clubs, undefeated streaks, star players, and emotionally driven storylines. Teams with massive fan bases often receive inflated support even when underlying data is weak. Casual bettors may continue backing a popular team despite poor defensive numbers, injury concerns, or fixture congestion. When this happens, bookmakers may shorten odds because public money keeps flowing toward one side.
-          <br><br>
-          Professional analysts look for these distortions carefully. If a heavily backed favorite has weak xG numbers, unstable tactical structure, or major absences, short odds may represent poor value. In some cases bookmakers intentionally position markets to attract emotional betting activity. This is why disciplined prediction models avoid hype-driven selections.
-          <br><br>
-          Reverse line movement is another important concept. Sometimes odds move against the majority of public bets. For example, if most bettors support the home team but the odds drift toward the away side, this may suggest sharp money or respected professional action influencing the market. Analysts study these movements because professional syndicates often shape prices before the wider public notices.
-          <br><br>
-          Timing also matters. Odds can move rapidly after lineup announcements, injury updates, weather changes, or tactical news. Teams involved in European competitions may rotate heavily, reducing squad quality even if public perception remains strong. Smart football prediction systems constantly monitor whether market movement aligns with actual football data.
-          <br><br>
-          Bookmaker traps are not magical conspiracies. They are usually situations where public emotion overwhelms objective analysis. Markets influenced by hype, revenge narratives, derby emotion, or media excitement often become dangerous for undisciplined bettors.
-          <br><br>
-          Long-term football prediction success depends on understanding probability rather than chasing excitement. Professional analysts focus on identifying edges where the market price does not fully reflect the underlying football reality. That discipline is often more important than simply predicting the winner correctly.
-        </p>
-      </details>
-
-      <details class="article">
-        <summary>Why Tactical Matchups Matter More Than Team Reputation</summary>
-        <p>
-          Football matches are often decided by tactical interaction rather than reputation alone. Casual fans may assume stronger squads automatically dominate weaker teams, but tactical structure frequently changes how games unfold. A well-organized underdog can neutralize superior talent through shape, pressing, transitions, and defensive compactness.
-          <br><br>
-          Modern football prediction models therefore study tactical matchups carefully before estimating probabilities. High pressing systems, low defensive blocks, possession-heavy structures, and counterattacking styles all interact differently depending on the opponent. Some teams struggle badly against aggressive pressing, while others are comfortable absorbing pressure and attacking space behind the defense.
-          <br><br>
-          Defensive line height is one of the most important tactical variables. Teams playing with a high line can dominate territory but may become vulnerable to pace in transition. Opponents with fast forwards and direct passing may exploit these spaces repeatedly. Similarly, teams relying heavily on crosses may struggle against opponents with aerial dominance and physical center-backs.
-          <br><br>
-          Tactical flexibility also matters. Some managers adapt game plans based on the opponent, while others stick rigidly to one structure regardless of matchup. Predictable systems can become easier to exploit over time, especially when injuries reduce squad quality.
-          <br><br>
-          Midfield control is another major factor. Teams with strong ball progression and positional discipline often dictate tempo and territory. However, possession itself does not guarantee superiority. A possession-heavy side may still struggle to create dangerous chances if the opponent blocks central areas effectively.
-          <br><br>
-          Substitution impact should not be ignored either. Managers with strong benches and tactical adaptability often gain advantages late in matches. Fatigue changes games significantly, especially during fixture congestion periods where pressing intensity naturally drops.
-          <br><br>
-          Tactical analysis becomes even more valuable when combined with advanced metrics. A team may appear strong statistically, but certain tactical weaknesses can still create dangerous matchups. This is why elite football prediction models combine xG, squad analysis, and tactical structure instead of relying on raw numbers alone.
-          <br><br>
-          Ultimately, football prediction is strongest when it recognizes that styles make fights. Understanding how tactical systems interact often explains surprising results more accurately than team reputation or league position.
-        </p>
-      </details>
-
-      <details class="article">
-        <summary>Why Risk Management Is Essential in Football Prediction</summary>
-        <p>
-          One of the biggest differences between professional football analysts and casual bettors is risk management. Casual betting behavior often focuses on excitement, large accumulators, emotional loyalty, or chasing losses. Professional analysis, however, is built around probability, discipline, and long-term survival.
-          <br><br>
-          Football is naturally unpredictable because low-scoring sports contain high variance. A single red card, deflection, injury, or refereeing decision can completely change a match outcome. Because of this uncertainty, even excellent predictions lose sometimes. Risk management exists to protect against these inevitable swings.
-          <br><br>
-          One of the most important concepts in disciplined football analysis is rejecting weak matches. Many bettors feel pressured to predict every game, but elite models are selective. If confidence is low or data signals conflict with each other, the safest decision may be no bet. This prevents emotional overexposure and improves long-term consistency.
-          <br><br>
-          Market selection is also part of risk management. Straight match winners are not always the safest option. In balanced games, draw no bet or double chance may preserve value while reducing downside risk. Low-scoring leagues may favor under-goal markets instead of aggressive winner bets.
-          <br><br>
-          Probability weighting is another critical factor. A prediction with a 58 percent chance is very different from one with an 82 percent chance. Professional analysts therefore separate strong edges from speculative plays instead of treating every prediction equally.
-          <br><br>
-          Emotional control is equally important. Chasing losses after a bad result usually increases decision-making errors. Similarly, overconfidence after a winning streak can encourage reckless behavior. Structured bankroll management helps maintain discipline through both winning and losing periods.
-          <br><br>
-          Another overlooked aspect of football prediction is variance between leagues. Some leagues produce more stable patterns than others. Highly tactical leagues with disciplined defensive structures may generate more predictable goal trends, while chaotic leagues can become harder to model consistently.
-          <br><br>
-          Risk management ultimately transforms football prediction from entertainment into structured probability analysis. The objective is not to win every match prediction. The objective is to make decisions where the estimated probability consistently exceeds market expectations over time.
-          <br><br>
-          In professional football analytics, long-term discipline matters far more than short-term excitement. Sustainable decision-making is what separates institutional-grade analysis from emotional gambling behavior.
-        </p>
-      </details>
-
-      <details class="article">
-        <summary>Understanding Home Advantage in Modern Football Analysis</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">What Is Home Advantage and Why Does It Exist?</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Home advantage is one of the most consistently documented phenomena in football research. Across decades of data from top leagues worldwide, home teams win more often than away teams even when squad quality is equal. Understanding why this happens is essential for accurate football prediction because blindly overweighting or underweighting home advantage can lead to poor probability estimates.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Crowd Influence and Referee Behavior</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Research in sports psychology consistently shows that crowd noise influences referee decision-making in subtle but measurable ways. Tackles in front of large home crowds receive harsher punishment from officials more often when away players commit them. Stoppage time added at the end of matches tends to be longer when the home side is trailing. These effects are not deliberate bias but rather unconscious responses to crowd pressure that accumulate over ninety minutes.
-            <br><br>
-            Stadium atmosphere also directly affects player performance. Home players benefit from familiar surroundings, supportive noise, and the absence of travel fatigue. Away teams often experience disrupted sleep schedules, unfamiliar dressing rooms, and hostile crowd environments that subtly increase decision-making errors under pressure.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">How COVID Changed Our Understanding</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The period when matches were played without fans due to health restrictions provided a natural experiment for analysts. Data from those seasons showed that home advantage shrank significantly when crowds were absent. Home teams still won slightly more often, suggesting that familiarity and travel factors still contribute, but the crowd component was clearly a major driver of the traditional home edge. This research fundamentally changed how sophisticated football prediction models now weight home advantage in their calculations.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Applying Home Advantage to Match Prediction</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Modern football prediction systems treat home advantage as a contextual variable rather than a fixed bonus. Derby matches, playoff pressure, derby rivalry, and cup competitions all modify how home advantage operates in practice. A home team in a relegation battle playing against a dominant title contender may not benefit from the same home edge as a mid-table side hosting a poor away traveler. Combining crowd size, travel distance, stadium atmosphere, and recent home form produces a more accurate contextual estimate than any single number.
-          </p>
+    </div>
+  </header>
+  
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Independent football analytics</p>
+          <h1>Football analytics and match estimates, without the hype</h1>
+          <p class="lede">Learn how xG, xGA, Poisson models, and tactical context fit together. Use a transparent model to explore match outcome estimates, not to chase certainties.</p>
+          <div class="hero-actions">
+            <a class="btn btn-amber" href="#home-model">Try the model</a>
+            <a class="btn btn-ghost" href="articles/">Read the guides</a>
+          </div>
+          <p class="hero-note">No bookmaker links. No tipster claims. No invented track record. Estimates are for education and entertainment, and every model has limits.</p>
+          <div class="trust-row">
+            <span class="trust-chip">Transparent Poisson model</span>
+            <span class="trust-chip">Original, human-written guides</span>
+            <span class="trust-chip">18+ and responsible use</span>
+          </div>
         </div>
-      </details>
-
-      <details class="article">
-        <summary>How Squad Depth Shapes Football Prediction Over a Season</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Squad Depth Matters Beyond the Starting Eleven</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Most casual football analysis focuses on starting eleven quality, but professional prediction models pay close attention to the depth of entire squads. Over a long season, fixture congestion, injuries, suspensions, and international callups mean that backup players take on significant roles. Teams with genuinely competitive backup options maintain performance levels, while squads with sharp quality drops from first choice to reserves tend to deteriorate in difficult periods.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Impact of Fixture Congestion</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Fixture congestion creates some of the most valuable prediction opportunities in football analysis. When teams play three matches in eight days, rotation becomes inevitable. Elite managers are skilled at managing minutes and identifying which players can sustain repeated high-intensity output, but even the best squads show performance dips during heavy schedules. Analysts who track accumulated minutes, age profiles, and squad conditioning can often identify matches where a normally strong team is vulnerable.
-            <br><br>
-            European competition adds another layer of complexity. Teams competing in Champions League or Europa League midweek often rotate domestic league lineups to preserve energy for continental matches. These rotations sometimes result in significantly weaker teams taking the field for league games, creating valuable opportunities for well-researched predictions.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Measuring Squad Quality Drops</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Professional analysts measure squad depth by examining the performance difference between typical starting lineups and rotated squads. A team that loses two or three regular starters may still be competitive if their reserves have comparable quality, but a side heavily dependent on three or four key individuals can collapse when those players are unavailable. Tracking individual player contributions through xG involvement, defensive actions, and pass completion under pressure provides a more accurate picture than raw squad size alone.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Timing Predictions Around Absences</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The best time to identify squad-related value in football prediction is immediately after major injury or suspension news breaks. Markets often react slowly when confirmations arrive late, creating brief windows where probability estimates have not yet adjusted. Combining squad news tracking with form data and opponent strength analysis helps analysts identify matches where official odds remain higher than the updated football reality justifies.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>The Role of Defensive Metrics in Football Prediction</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Defenses Are Undervalued in Football Analysis</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Football prediction discussions often center on attacking quality, goal-scoring records, and xG creation. However, defensive metrics are equally important and sometimes more predictive of sustained success. Teams with organized, disciplined defensive structures tend to produce more consistent results because they prevent the high-variance outcomes that chaotic attacking teams often generate on both sides of the scoreline.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Key Defensive Metrics Analysts Use</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Expected Goals Against, commonly called xGA, is the defensive equivalent of xG and measures the quality of chances a team allows rather than simply counting goals conceded. A goalkeeper having an exceptional season may make a defense appear stronger than underlying data suggests, while a team conceding unlucky goals may look defensively poor despite actually allowing few high-quality chances. xGA cuts through these goalkeeper-dependent distortions to reveal true defensive quality.
-            <br><br>
-            Press resistance and ball recovery metrics show how effectively a team limits opponent buildup play. Teams that win back possession quickly in dangerous areas restrict the number of quality chances opponents can build toward. Defensive line discipline, pressing triggers, and compactness when defending deep all contribute to limiting xGA over time.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Set Piece Defense</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Set pieces have grown into one of the most analyzed areas of modern football. Research consistently shows that corners, free kicks, and throw-ins near the penalty area create a significant portion of total goals scored at elite levels. Teams with organized set piece defending reduce their vulnerability to this high-probability scoring route. Analysts therefore track set piece goals conceded separately from open play goals because they can indicate structural defensive problems beyond normal xGA metrics.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">How Defensive Strength Shapes Match Predictions</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            When one team in a matchup has significantly stronger defensive metrics, prediction models can often identify value in under-goal markets even when both teams have reasonable attacking numbers. Two teams with high xG but also high xGA may suggest a high-scoring match, while a clash between two defensively organized sides may favor under outcomes regardless of attacking reputation. Recognizing these defensive patterns often reveals value that casual analysis misses entirely.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Form Streaks Can Mislead Football Predictions</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The Trap of Recent Form in Football Analysis</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Recent form is one of the most commonly referenced factors in football prediction. Analysts and casual bettors alike give significant weight to whether a team has won or lost their last five matches. While form does carry genuine predictive value, relying too heavily on visible streaks without examining underlying data can produce dangerously misleading probability estimates.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">When Form Reflects Strength and When It Does Not</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            A team on a five-match winning streak may genuinely be playing excellent football with strong xG numbers and organized defensive structure. Alternatively, those same five wins may have come against weak opposition, with narrow scorelines, poor opponent xG ratings, and multiple lucky goalkeeper interventions. Surface form is identical but underlying quality is completely different. Professional football prediction always examines what the wins or losses were built on rather than simply counting results.
-            <br><br>
-            Similarly, a team on a losing run may have faced elite opposition, performed well in all five matches according to underlying metrics, and simply suffered from variance. These teams can represent significant value if the market has overreacted to the poor results by moving odds without examining match context.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Schedule Difficulty and Form Distortion</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Schedule difficulty is a major factor that distorts form analysis. A team that has recently played five matches against relegation candidates may show a flawless record without genuinely improving. When those same teams then face top-half opposition, their true level becomes apparent. Professional analysts always adjust form assessments based on opponent quality, comparing results and underlying metrics against similar strength teams rather than treating all results equally.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Using Form Correctly in Prediction Models</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The most effective approach to form analysis uses a rolling window of recent matches weighted by opponent strength, then cross-references results against xG performance to identify whether outcomes reflect genuine quality or variance. A team with strong process metrics running below expected results is often a stronger prediction target than one benefiting from surface form built on unsustainable performances. This discipline separates statistical football analysis from narrative-driven casual prediction.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Football Prediction in Cup Competitions Versus League Football</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Cup Football Demands a Different Analytical Framework</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Cup competitions introduce unique variables that standard league prediction models are not always designed to handle. Knockout football changes the incentive structure dramatically because a single defeat ends a team's participation. This changes how managers approach tactics, rotation, risk tolerance, and lineup selection compared to league matches where recovery is possible across multiple games.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Rotation and Priority Signals</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            One of the most important factors in cup prediction is identifying how much priority each manager assigns to that particular competition. Elite clubs competing for league titles often rotate heavily in early cup rounds, fielding young players, returning injury absentees, or resting key figures. This can drastically change match probability compared to what the squad's normal quality would suggest. Monitoring team news, manager press conference quotes, and historical rotation patterns from previous seasons helps analysts anticipate these lineup changes before official announcements arrive.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Underdog Dynamics in Knockout Football</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Lower-division teams often perform above their usual level in cup competitions against elite opponents. Factors including motivation, low-pressure expectations, compact defensive organization, and the chaotic unpredictability of individual knockout moments all create environments where smaller clubs can genuinely compete. Analysts recognize that the variance in cup football is inherently higher than in league football, meaning confident favorites can still lose far more often than league metrics alone would predict.
-            <br><br>
-            Cup football also removes aggregate logic since every match is decisive, which creates stronger emotional intensity for players at all levels. Home advantage in cup knockout matches often carries more weight than in league football because the stakes of elimination change crowd energy significantly.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Adjusting Probability for Cup Contexts</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Professional football prediction adapts probability models for cup contexts by adjusting for rotation probability, historical cup performance patterns, motivation differentials, and opponent tier quality. Markets sometimes fail to fully account for heavy rotation from favorites, creating value opportunities when a strong team's confirmed lineup contains significant changes from their usual first choice selection.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Using Possession Data Correctly in Football Analysis</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The Misunderstood Role of Possession in Football Prediction</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Possession percentage is one of the most frequently cited statistics in football commentary, yet it is also one of the most misapplied in football prediction. Many casual analysts assume that high possession automatically indicates dominance, but professional analysis reveals that the relationship between possession and match outcomes is far more complex than simple percentages suggest.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Possession With and Without Purpose</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Teams can accumulate high possession figures by recycling the ball in safe areas without ever creating genuine threats. Some defensively-oriented tactical systems deliberately concede possession to allow opponents to hold the ball in their own half, then compress defensive shape and look to exploit space on counterattacks. This intentional possession sacrifice means high possession statistics for the opponent but does not necessarily translate into chance quality or xG dominance.
-            <br><br>
-            Analysts therefore pair possession data with progressive passing metrics, final-third entries, and box entry frequency to determine whether possession is genuinely threatening or simply safe circulation. A team completing passes at high rates but rarely entering dangerous areas may look impressive statistically without actually threatening the opponent's goal.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Possession Against the Press</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            High-pressing systems challenge possession-heavy teams by attempting to win the ball high up the pitch during moments of poor build-up. Teams with technically skilled ball players and good positional discipline tend to maintain possession well under pressure, while teams relying on longer passing or physical dominance may lose the ball frequently in dangerous areas when pressed aggressively. Identifying how each team handles sustained defensive pressure helps predict whether a possession-heavy side can actually convert territorial advantage into goal-scoring opportunities.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Counterattacking Alternative</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Some of the most dangerous attacking systems in modern football are built around deliberately accepting low possession while maintaining extraordinary efficiency on transitions. These counterattacking structures often generate very high xG per shot because they create space against disorganized defenses during transitions. Possession-based metrics can make these teams look dominated, while underlying xG numbers tell a completely different story about actual match control and threat generation.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Why Set Pieces Have Become a Key Area of Football Prediction</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The Growing Importance of Set Piece Analysis</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Set pieces have transformed from afterthoughts in football analysis into a central pillar of modern tactical preparation and prediction modeling. Research from professional clubs and independent analytics organizations consistently shows that a substantial portion of goals in elite football originate from corners, free kicks, and throw-ins. Teams that maximize set piece delivery and movement routines gain a significant structural advantage that pure open-play metrics can underestimate.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">How Teams Exploit Set Pieces Strategically</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Elite clubs now employ dedicated set piece coaches who design complex movement patterns to create separation and generate high-probability chances from dead ball situations. Blockers, diagonal runners, near-post flickers, and delayed back-post arrivals are all choreographed to exploit specific defensive vulnerabilities. Some clubs have built entire tactical philosophies around winning set pieces frequently enough to use them as a reliable secondary attacking weapon alongside open-play creation.
-            <br><br>
-            Aerial dominance and delivery accuracy both matter significantly for set piece effectiveness. Teams with physically dominant center-backs and midfielders who can win contested headers inside the box gain disproportionate value from corner kicks and wide free kicks. Delivery quality, including the ability to swing balls into dangerous zones at the right pace and flight, determines how many of those aerial advantages translate into genuine scoring chances.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Set Piece Prediction Value</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            For football prediction purposes, teams with strong set piece records often outperform their open-play xG because many models historically weighted set piece xG at lower rates than actual conversion outcomes justified. Analysts who track set piece goals separately from open-play production can identify teams whose true attacking threat is higher than standard metrics suggest. Conversely, teams conceding heavily from set pieces while performing well in open play may be more vulnerable than their overall xGA figures indicate.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Matching Set Piece Profiles in Predictions</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            When a team with strong aerial set piece delivery faces a short, technically-oriented opponent that defends poorly in aerial situations, set piece dominance can heavily influence the expected goals distribution. These matchup-specific set piece advantages are among the most consistently underpriced edges in football prediction markets and reward analysts who track this dimension carefully throughout a season.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Goalkeeper Performance and Its Impact on Football Predictions</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Goalkeepers Are Uniquely Difficult to Predict</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Goalkeepers occupy a unique position in football analytics because their contributions directly affect scorelines while being difficult to separate from the defensive structure in front of them. A goalkeeper making exceptional saves can mask a weak defense for extended periods, while a poor goalkeeper can undermine an otherwise well-organized backline. For football prediction, this creates specific challenges around separating goalkeeper quality from team defensive quality.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Post-Shot xG and Goalkeeper Metrics</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The most useful metric for evaluating goalkeeper quality in football prediction is called post-shot expected goals, which measures the quality of shots on target that a goalkeeper actually faces rather than all shots. By comparing goals allowed against post-shot xG, analysts can estimate whether a goalkeeper is performing above or below expectation. A goalkeeper consistently saving more than post-shot xG predicts is either genuinely elite or benefiting from positive variance that may not continue. This distinction matters enormously for prediction accuracy over a full season.
-            <br><br>
-            Sweeper keeper ability has become increasingly valued in possession-based systems. Goalkeepers who can confidently distribute with their feet, claim crosses under pressure, and organize defensive shape contribute to overall team performance beyond shot-stopping. Teams with technically limited goalkeepers can sometimes be targeted by high-pressing opponents who force distribution errors and create dangerous turnover situations.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Goalkeeper Injuries and Prediction Adjustments</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            When a first-choice goalkeeper is injured and replaced by a significantly weaker backup, the impact on prediction probabilities can be substantial. Markets sometimes adjust slowly when backup keeper quality is unclear, especially in smaller leagues or when confirmation arrives close to match time. Analysts who consistently track squad goalkeeper depth and have accurate quality assessments for backups gain an edge during these adjustment windows.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Psychological Dimension of Goalkeeping</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Goalkeepers are also uniquely exposed to psychological pressure during periods of poor form. Unlike outfield players who can hide somewhat within team structure, a goalkeeper's errors are immediately visible and often decisive. Teams with goalkeepers navigating confidence crises following high-profile mistakes can perform below their technical capability for extended periods. Tracking keeper form trends, not just statistical metrics, helps analysts identify when psychological factors may be suppressing performance.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Weather and Pitch Conditions Affect Football Outcomes</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Environmental Factors in Football Prediction</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Weather and pitch conditions represent a genuinely underutilized edge in football prediction. Most casual analysis ignores environmental factors completely, focusing exclusively on squad quality and form. However, extreme conditions including heavy rain, strong wind, intense heat, frozen pitches, or deeply waterlogged surfaces can fundamentally change match dynamics in ways that significantly affect probability estimates.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">How Rain and Wind Change Football Prediction</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Heavy rain affects ball movement, surface traction, and passing accuracy in ways that tend to disadvantage technically sophisticated teams while helping direct, physical sides. Wet pitches make precise passing combinations harder to execute and increase the randomness of ball bounces, which can level the playing field between technically superior and inferior opponents. Analysts therefore adjust their probability estimates downward slightly for teams heavily dependent on technical passing when weather conditions compromise surface quality.
-            <br><br>
-            Wind is arguably even more disruptive than rain for match dynamics. Strong crosswinds and headwinds affect long passing, crossing accuracy, and goalkeeper kicking. Teams that prefer short build-up play and avoid direct football may adapt more successfully to windy conditions than teams relying on long balls and aerial play. Midfield battles also change when clearances become unpredictable in gusty conditions.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Altitude and Temperature Considerations</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            In international and continental football, altitude and temperature differences create additional prediction variables. Teams traveling from sea level to play at significant altitude commonly show reduced stamina and aerobic output, particularly in the first half before acclimatization begins. High temperature environments similarly affect teams arriving from cooler climates. Domestic teams playing regularly in these conditions gain a consistent structural advantage that prediction models should incorporate for international matches.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Pitch Quality and Playing Style</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Pitch quality varies enormously between grounds, especially in lower leagues during winter months. Heavy, churned surfaces favor direct and physical styles while neutralizing technical teams. Cup ties and away matches at lower-division grounds with poor pitch quality have consistently produced upsets throughout football history for exactly this reason. Analysts who incorporate ground quality into their predictions reduce the risk of overestimating technically superior teams in adverse surface conditions.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Travel and Fatigue Affect Football Team Performance</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The Underestimated Cost of Travel in Football</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Travel demands place real physiological and psychological costs on professional football players, yet this factor is often overlooked in standard football prediction analysis. Both domestic long-distance travel and international journeys affect player recovery, sleep quality, and performance output in ways that influence match probabilities more than many models account for.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Time Zone Disruption and Recovery Windows</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            International travel across multiple time zones creates circadian disruption that affects cognitive function, reaction speed, and muscular recovery. Research in sports science shows that performance tends to drop during the first day or two after significant time zone changes. Teams competing in continental fixtures that require long-haul flights, then returning to domestic league action within four or five days, often show performance dips that are not explained by squad quality alone.
-            <br><br>
-            Even domestic travel fatigue is measurable at the margins. Teams making long midweek road trips by bus or multiple connecting flights to play midweek fixtures before a Saturday league match carry slightly higher fatigue loads than sides with shorter travel requirements. These differences are small individually but accumulate across a full season and can affect performance in specific high-pressure windows.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Congested Fixture Periods and Fatigue Risk</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The January window, the Christmas and New Year period in English football, and the final weeks of European qualifying rounds all create fixture congestion that places extraordinary demands on squad depth. Teams playing their third match in eight days while managing travel between countries are operating under significant fatigue pressure. Analysts who identify these specific fixture cluster periods can sometimes find matches where normally reliable teams carry meaningful fatigue disadvantages.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">How Managers Respond to Travel Demands</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Manager behavior during high-travel periods provides valuable prediction signals. Coaches who communicate rotation intentions publicly before confirming lineups, or who have historical patterns of resting key players after long trips, can be identified in advance. Monitoring rotation tendencies during similar fixture clusters in previous seasons helps analysts anticipate the likely performance context even before official team news arrives.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Reading Odds Movement to Find Value in Football Prediction</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">What Odds Movement Reveals About Football Markets</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Odds movement between opening lines and kick-off is one of the most informative signals available to serious football prediction analysts. Prices in betting markets represent aggregated opinions from bookmakers, syndicates, and the general betting public. When odds change significantly from their opening position, something in the information environment has shifted and identifying what drove that movement can reveal important prediction value.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Sharp Money Versus Public Money</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Two distinct forces move football betting markets. Sharp money refers to wagers from respected professional bettors and syndicates who typically have better information, more sophisticated models, or access to early team news. Public money refers to the large volume of casual bets placed by recreational bettors reacting to media narratives, team reputations, and emotional loyalty. These two forces often push odds in opposite directions, and identifying which force is dominant helps analysts assess whether a price movement reflects genuine information or crowd sentiment.
-            <br><br>
-            Reverse line movement occurs when odds move against the direction that public betting volume would predict. If the majority of bets are placed on a home team but the odds drift toward the away side, sharp money or bookmaker risk management is likely influencing the price. These reverse movements are among the most reliable signals of genuine information entering the market.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Timing of Odds Movement</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            When odds move matters as much as how much they move. Significant price changes immediately after lineup announcements typically reflect professional money responding to team news. Late movement in the final hours before kick-off can indicate fresh injury news, tactical intelligence, or weather updates entering the market. Early opening price movements often reflect modeling adjustments from bookmakers themselves as they set initial lines. Tracking the sequence of when movements occur helps analysts distinguish team news reactions from structural information signals.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Avoiding Trap Lines</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Not all odds movement signals genuine value. Some price movements reflect bookmaker positioning to attract balanced action across outcomes rather than true probability changes. Lines that shorten rapidly on popular teams during high-profile match weeks can reflect public excitement rather than genuine edges. Combining odds movement analysis with underlying football data, including xG, form, and squad news, helps analysts distinguish genuine value signals from trap lines designed to attract emotional betting activity.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Referee Tendencies Influence Football Match Outcomes</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The Overlooked Variable of Referee Style in Football Prediction</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Referee assignment is one of the most consistently overlooked variables in football prediction analysis. Different referees have measurably different tendencies when it comes to card frequency, foul tolerance, penalty decisions, stoppage time additions, and how strictly they interpret physical contact. These tendencies are not random — they are persistent patterns that can meaningfully influence match dynamics.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Foul Rates and Card Frequency</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Referees who allow more physical contact tend to produce matches with different tactical dynamics than those who intervene frequently. Physically combative teams may perform better under lenient referees, while technically skilled sides may benefit more from officials who protect ball players from persistent fouling. Card frequency also affects prediction probability when key players are close to suspension thresholds, because some officials are significantly more likely to issue yellow cards for the same level of foul than others.
-            <br><br>
-            Penalty award rates vary substantially between referees as well. Some officials are statistically much more likely to award penalties for contact in the area, which benefits teams that attack the box frequently and draw fouls from defenders. Tracking penalty statistics against specific referees and cross-referencing with opponent tendencies to concede aerial contact helps predict whether penalty probability is elevated for a particular fixture.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">VAR and Referee Decision Interaction</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The introduction of Video Assistant Referee technology has modified how some referee tendencies operate but has not eliminated them. Some officials still show individual patterns in how aggressively they apply technology, how willing they are to reverse on-field decisions, and how consistently they define clear and obvious error thresholds. Analysts in VAR-active competitions track both on-field referee and VAR official assignments where available because their combined tendencies affect penalty and red card probability.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Using Referee Data in Match Predictions</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Professional analysts maintain databases of referee statistics including average fouls per game, cards per match, penalties per match, and home-away decision splits. When these patterns align with specific team matchup tendencies, they can provide a measurable edge in markets including total cards, total fouls, and penalty likelihood. While referee analysis alone rarely drives major predictions, it adds a useful contextual layer when combined with tactical and statistical match assessment.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How to Read a Football Tactics Board: A Beginner's Guide to Formation Analysis</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">What Football Formations Actually Tell You</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            If you have ever watched a football match and heard a commentator reference a 4-3-3 or a 5-4-1 without fully understanding what those numbers mean, you are not alone. Formation notation is one of the foundational concepts in football analysis, and understanding it properly opens up a much deeper level of understanding about how matches are won and lost. The three numbers represent defensive lines, midfield lines, and attacking lines from back to front, with the goalkeeper always excluded from the count.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Most Common Formations and Their Strengths</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The 4-3-3 is one of the most widely used formations in modern football. It provides width through three forwards, midfield control through three central players, and a solid defensive base through a flat back four. Teams like Barcelona and Liverpool have used variations of this shape to dominate possession and press aggressively from the front. The 4-2-3-1 sacrifices one forward for an extra defensive midfielder, providing more protection against counterattacks while still maintaining attacking options through the three players behind the lone striker.
-            <br><br>
-            The 3-5-2 and its close relative the 5-3-2 are formations that prioritize defensive solidity while relying on wing-backs to provide width in attack. These structures can be extremely effective against teams with wide attacking threats because the extra center-back provides aerial cover, while the wing-backs can stretch play offensively when possession is won.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Why Formations Are Only the Starting Point</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Experienced analysts are careful not to place too much weight on the nominal formation because teams move fluidly between shapes depending on whether they have the ball. A team listed as 4-3-3 may defend in a 4-5-1 shape when out of possession and transition into a 3-2-5 structure when building from the back. Understanding these dynamic positional changes is far more useful for prediction than knowing the starting shape alone. Watching where players position themselves in different phases of play reveals far more about a team's actual tactical identity than any formation number can.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Applying Formation Knowledge to Football Prediction</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            When two formations clash, certain structural mismatches become visible. A team playing three central midfielders may overwhelm an opponent using only two, creating numerical advantages in the zone where possession is most fiercely contested. A team with two strikers against three center-backs may struggle to create overloads in the final third. Recognizing these structural interactions before a match helps analysts assess which team is likely to control the key areas of the pitch, adding useful context to statistical data and market signals.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>What Is xGA and Why Defensive Expected Goals Matter in Football Analysis</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Understanding Expected Goals Against: The Defensive Side of xG</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Most football fans who encounter expected goals statistics first encounter them in an attacking context, measuring how many goals a team should have scored based on the quality of chances they created. Expected Goals Against, commonly abbreviated as xGA, applies the same framework to the defensive side of the game. It answers the question of how many goals a team should have conceded based on the quality of chances their opponents generated, regardless of what the goalkeeper did with those chances.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Why xGA Is More Reliable Than Goals Conceded</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Goals conceded is a widely used defensive metric but it contains a significant problem: it conflates defensive quality with goalkeeper quality. A team can concede very few goals because their defenders are excellent at preventing dangerous situations, or because their goalkeeper is making extraordinary saves to compensate for a leaky defense. These two scenarios have completely different long-term implications. The first team is genuinely defensively strong. The second team has a hidden defensive problem that goalkeeper regression will eventually expose.
-            <br><br>
-            xGA separates these two contributions by measuring danger allowed before the goalkeeper acts. A team with low xGA has a genuinely well-organized defense that prevents quality chances from being created in the first place. A team with high xGA but low actual goals conceded is being saved by exceptional goalkeeping, which is a much less sustainable position.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">How Analysts Use xGA in Practice</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Professional football analysts compare xGA against actual goals conceded over rolling periods to identify teams that are over or underperforming their defensive metrics. A team conceding significantly fewer goals than their xGA suggests is likely to regress toward higher conceding rates as goalkeeper variance normalizes. A team allowing far more goals than their xGA suggests may be suffering from poor goalkeeping that could improve with a keeper change or natural form recovery.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Combining xG and xGA for Match Prediction</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The most powerful application of xGA in football prediction comes from combining it with attacking xG data for both teams in a specific matchup. When a team with high attacking xG faces an opponent with high defensive xGA, the structural conditions favor a high-scoring and attacking-dominated match. When two teams with low attacking xG face each other and both have strong defensive xGA numbers, the structural case for under goals markets becomes significantly stronger. These metric combinations provide a data-driven framework for market selection that goes beyond gut feel or reputation-based analysis.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How to Analyse a Football Match Before It Happens: A Step-by-Step Guide</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Building a Pre-Match Analysis Process That Actually Works</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Many people approach football prediction by reading a few opinions, checking a team's last result, and making a decision based on instinct. Professional football analysts follow a structured process that systematically gathers relevant information before drawing any conclusions. The goal of structured pre-match analysis is to separate signal from noise and avoid letting recent dramatic events disproportionately influence probability estimates.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Step One: Gather Statistical Context</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Begin any pre-match analysis by reviewing the underlying statistical profile of both teams over a meaningful sample of recent matches. Look at attacking xG, defensive xGA, shots on target rates, pressing intensity metrics, and possession patterns in comparable fixtures against similar quality opponents. A five-match sample is useful for identifying recent trends, while a fifteen to twenty match sample provides more reliable information about structural quality. Both windows matter and they can tell different stories.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Step Two: Assess Squad Status</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Squad availability is one of the most impactful variables in pre-match analysis and one of the most commonly neglected by casual analysts. Identify which players are injured, suspended, or doubtful before forming any probability estimate. Consider not just whether key players are absent but what impact their absence has on tactical structure. Losing a center-forward is different from losing the player responsible for pressing triggers and midfield connectivity. Both matter but in different ways depending on how the team plays.
-            <br><br>
-            Also assess whether either team has rotation incentives. Upcoming major fixtures, European commitments, or cup obligations can motivate managers to rest key players for what appears to be a significant league match. Monitoring team news press conferences and historical rotation patterns provides valuable signals before official lineup announcements.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Step Three: Study the Tactical Matchup</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            With statistical context and squad information established, assess how the tactical styles of both teams interact. Identify any structural mismatches in pressing, defensive line height, wide coverage, and set piece profiles. Consider head-to-head historical patterns as a secondary reference point, particularly when the same managers have faced each other previously and shown consistent tactical tendencies.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Step Four: Evaluate Market Signals</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Once your independent probability estimate is complete, compare it against the market price. If your estimated probability is significantly higher than what the odds imply, you have identified potential value. If the market has moved sharply away from your estimate, investigate what information may have entered the market since it opened. Combining independent analysis with market signal evaluation is how professional analysts identify sustainable edges rather than simply following public opinion.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>The Difference Between Winning Predictions and Profitable Football Analysis</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Winning Predictions and Long-Term Profitability Are Not the Same Thing</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            One of the most important conceptual shifts in football analysis is understanding that a high prediction win rate does not automatically produce positive long-term outcomes. A casual observer might assume that being correct more often than wrong is the primary goal of football prediction. Professional analysts understand that the relationship between accuracy and outcomes depends entirely on the odds attached to each prediction. Winning sixty percent of predictions at poor odds can produce worse results than winning forty percent at strong odds.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Understanding Expected Value in Football Analysis</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Expected value is the central concept that separates disciplined football analysis from casual prediction. Every prediction can be assessed by comparing your estimated probability of a specific outcome against the implied probability in the offered odds. If you estimate a home win probability at sixty percent and the odds imply a fifty percent probability, you have identified positive expected value because you believe the outcome is more likely than the price suggests. Making decisions consistently in positive expected value situations produces sustainable long-term results regardless of short-term variance.
-            <br><br>
-            Negative expected value situations are those where the offered odds imply higher probability than your analysis suggests. These bets lose money over time even when individual predictions are correct, because you are being underpaid for risk relative to actual probability. Many casual bettors routinely accept negative expected value by following popular teams and short-priced favorites without examining whether those prices reflect accurate probability.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Danger of Accumulator Thinking</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Accumulator bets appeal to casual bettors because they transform small stakes into large potential returns. However, combining multiple selections multiplies the expected value of each individual pick, meaning that even a small average negative expected value per selection compounds into a very unfavorable overall position. Professional analysts almost universally avoid accumulators for this mathematical reason, preferring to identify individual high-confidence selections and size positions according to confidence level rather than chasing dramatic multiplied returns.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Building a Sustainable Football Analysis Approach</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Sustainable football analysis focuses on process quality rather than outcome chasing. A correct prediction made for the wrong reasons is not a success — it is a coincidence that provides no learning value. An incorrect prediction made with sound reasoning and proper process is a loss that variance produced, not an error in methodology. Evaluating the quality of your reasoning process independently of individual outcomes is how professional analysts improve over time and avoid the emotional distortions that sabotage casual prediction approaches.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Pressing Intensity Changed Modern Football and What It Means for Prediction</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The Rise of High-Intensity Pressing in Elite Football</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The last fifteen years of elite football have been heavily shaped by the development and spread of high-intensity pressing systems. Pioneered at the highest level by coaches including Jürgen Klopp, Pep Guardiola, and Marcelo Bielsa, aggressive pressing football has transformed how teams defend without the ball and how attacking structures are organized. Understanding how pressing works and how to measure it has become essential for any serious football analyst trying to accurately model team performance.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">What Pressing Metrics Actually Measure</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Analysts use several specific metrics to quantify pressing intensity and effectiveness. PPDA, which stands for Passes Allowed Per Defensive Action, measures how many passes an opponent completes before a pressing team makes a defensive intervention such as a tackle, interception, or foul. Lower PPDA values indicate more aggressive pressing. High PPDA values suggest a team pressing less frequently and allowing opponents more comfortable possession.
-            <br><br>
-            Pressing success rate measures what percentage of pressing actions successfully recover the ball or force an error. A team that presses frequently but ineffectively may actually create dangerous situations for themselves by leaving gaps behind their press. Effective pressing requires coordinated triggers, covering shadows, and well-organized backup pressing patterns when initial presses are beaten.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Physical Cost of Pressing Football</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            High-intensity pressing places exceptional physical demands on players. Teams that press aggressively typically cover more ground per match than teams using passive defensive structures, which means pressing intensity is directly connected to squad fitness, recovery time, and fixture congestion vulnerability. This creates specific prediction opportunities during periods of heavy scheduling when pressing teams may show measurable drops in defensive intensity and running output compared to their baseline performance levels.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Press Resistance as a Tactical Counter</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Not every team responds to aggressive pressing with the same vulnerability. Teams with technically skilled ball players, strong positional discipline, and well-rehearsed build-up patterns can navigate pressing effectively by playing through it with quick combinations, using goalkeeper distribution to bypass press lines, or playing direct balls over the press into space. Identifying whether an opponent has the technical profile to beat a pressing system provides important context for predicting whether pressing advantage will translate into actual performance superiority in a specific matchup.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Football Prediction Across Different Leagues: Why Context Changes Everything</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why the Same Analytical Approach Does Not Work Equally in Every League</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Many football prediction resources discuss analytical frameworks without acknowledging that the same methods can produce very different results depending on which league you are analyzing. Different football competitions have distinct tactical cultures, refereeing standards, physical intensities, squad depth profiles, and competitive balance characteristics that all affect how reliably statistical models predict outcomes. Applying a model built on Premier League data to lower-division Eastern European football without adjustment will produce systematically inaccurate results.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">High-Predictability Leagues and Their Characteristics</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Some leagues tend to produce more predictable outcomes because of extreme competitive imbalance between dominant clubs and weaker opponents. Leagues where one or two clubs hold enormous squad quality advantages over most of the division generate more reliable favorite-wins-at-home patterns. Expected goals models calibrated to these competitions show higher prediction accuracy because the structural conditions that cause upsets — close quality gaps, high motivation differentials, tactical disruption — occur less frequently.
-            <br><br>
-            Tactically conservative leagues with strong defensive cultures and low average goal rates also tend to generate more predictable under-goal patterns in specific fixture types. When two disciplined defensive teams meet, underlying metrics can forecast low-scoring outcomes with greater reliability than in open attacking leagues where defensive organization is less emphasized.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">High-Variance Leagues and Their Analytical Challenges</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Smaller leagues with lower squad depth, less reliable injury reporting, inconsistent referee standards, and pitch quality variations are genuinely harder to model accurately. Information asymmetry is higher because less data is publicly available and fewer journalists cover team news thoroughly. Markets in these competitions can also be thinner, meaning sharp money moves prices more dramatically, which can create both greater inefficiencies and greater unpredictability in how odds behave around team news.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Adjusting Analytical Confidence by League Context</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Professional analysts explicitly adjust their confidence thresholds based on league context. Predictions in data-rich, thoroughly covered top leagues may require a sixty-five percent probability estimate before meeting confidence thresholds, while the same analyst might require seventy-five percent or higher in a smaller league with less reliable information. This calibration reflects honest acknowledgment that model accuracy varies by data quality and that responsible prediction practice must account for information reliability, not just statistical outputs.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>The Psychology of Football Prediction: How Cognitive Biases Affect Analysis</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Human Thinking Patterns Create Systematic Errors in Football Analysis</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Football prediction is not just a data science challenge. It is also a psychology challenge. Human thinking is shaped by cognitive biases — systematic patterns of reasoning that were useful for our ancestors but regularly produce errors in probability-based analysis. Understanding these biases and actively working to counteract them is a genuine competitive advantage in football prediction, where most participants rely heavily on intuition and narrative rather than structured analytical process.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Recency Bias and Availability Bias</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Recency bias causes people to weight recent events far more heavily than their actual statistical significance justifies. A team that won their last match in dramatic fashion feels like a strong prediction target even if underlying data from the previous twelve matches suggests they are a mid-table quality side. A team that suffered an embarrassing defeat last weekend feels dangerous to predict positively despite a genuinely strong underlying performance record.
-            <br><br>
-            Availability bias is related and causes people to overweight information that is vivid, recent, and emotionally memorable. A spectacular goal-of-the-season contender or a penalty miss in the final minute gets remembered and influences future predictions far more than a consistent record of controlled defensive performances that never produces memorable highlights. Analysts train themselves to weight data according to statistical significance rather than emotional salience.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Confirmation Bias in Pre-Match Research</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Confirmation bias is particularly dangerous in pre-match analysis because it causes people to seek out information that supports a conclusion they have already formed rather than genuinely evaluating all available evidence. Once an analyst has decided they think a team will win, they instinctively focus on statistics and recent results that support that view while minimizing or ignoring contradictory information. Professional analysis requires deliberately seeking disconfirming evidence and stress-testing predictions against the strongest case for the opposite outcome before finalizing any assessment.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Overconfidence and Its Costs</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Research in behavioral economics consistently shows that people overestimate the accuracy of their predictions significantly more often than they underestimate it. Football analysts are not immune to this pattern. The discipline of assigning explicit probability estimates to outcomes, tracking those estimates over time, and honestly evaluating calibration — whether your sixty percent confidence predictions win roughly sixty percent of the time — is one of the most effective tools for combating overconfidence and improving long-term prediction quality.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Age and Squad Demographics Affect Football Team Performance Predictions</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Squad Age Profiles Matter in Long-Term Football Analysis</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The age profile of a football squad is a dimension of analysis that receives relatively little attention in match-by-match prediction but carries genuine long-term predictive value. Sports science research on professional football players shows consistent patterns in how physical performance qualities change across career stages, and these patterns affect team performance in measurable ways that analytical models can incorporate.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Peak Performance Windows in Professional Football</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Physical performance qualities including sprint speed, acceleration, pressing intensity, and recovery capacity tend to peak in the early to mid twenties for most professional players. Technical and tactical qualities — positional intelligence, decision-making under pressure, set piece execution, and communication — tend to peak somewhat later, typically in the mid to late twenties. This means that squads with high proportions of players in their mid-to-late twenties often represent the best combination of physical capability and technical maturity.
-            <br><br>
-            Very young squads may show raw physical intensity but struggle with consistency, tactical discipline, and performance under high-pressure moments. Older squads may retain excellent technical quality but show measurable drops in high-intensity running output, pressing sustainability, and recovery between matches. These age-related factors become especially visible during physically demanding periods of a season.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Injury Risk and Age in Squad Planning</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Injury rates in professional football increase with age, particularly for soft tissue injuries including hamstrings, adductors, and calf muscles. Teams with high proportions of players aged thirty or above face greater squad availability risk during high-intensity periods. Analysts who track squad age alongside injury history can build reasonable estimates of injury vulnerability going into demanding fixture sequences, which helps calibrate predictions during periods when squad depth becomes critically important.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Transitional Squads and Prediction Uncertainty</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Teams undergoing significant squad transitions — whether rebuilding toward youth or replacing an aging core — often show higher performance variance because young players are less consistent and established combinations need time to develop chemistry. Prediction models should explicitly account for this elevated variance during transition periods rather than treating transitional squads with the same confidence weighting as settled, experienced groups.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Head-to-Head Records in Football: How Much Do They Really Matter?</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">The True Predictive Value of Head-to-Head Records</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Head-to-head records are among the most frequently cited statistics in pre-match football discussion. Media coverage of upcoming fixtures almost always references historical results between the two teams, and casual analysts often give significant weight to historical patterns such as one team never losing to another in a particular stadium or a manager having a strong record against a specific opponent. Serious analysts, however, treat head-to-head records with considerable caution and use them only in specific, carefully defined ways.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">When Head-to-Head Records Are Statistically Meaningful</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            For head-to-head records to carry genuine predictive value, several conditions need to be met. The sample should be large enough to be statistically significant, which typically requires at least ten to fifteen meetings in comparable contexts. The squad and management should have remained reasonably stable across the period covered, because a historical record under a completely different manager with entirely different players says very little about current dynamics. The results should be recent enough to reflect current competitive context rather than outcomes from five or ten years ago when club circumstances were fundamentally different.
-            <br><br>
-            When these conditions are met and one team genuinely has a persistent structural advantage in the specific tactical matchup these clubs produce, historical records can provide a small but legitimate supplementary signal alongside current form and statistical data.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">When Head-to-Head Records Are Misleading</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Most commonly cited head-to-head records fail to meet the conditions for genuine predictive value. Records stretching back fifteen years through multiple manager changes and complete squad turnovers carry almost no useful information about the current matchup. Records with small samples of four or five matches can easily reflect pure variance rather than structural patterns. And records that appear impressive for one team are often simply a reflection of that team being significantly stronger over the period covered, which current form and xG metrics will already capture more accurately.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Using Historical Context Appropriately</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The most appropriate use of head-to-head data in modern football prediction is as a secondary contextual layer that might slightly adjust probability estimates when genuinely large and recent samples reveal persistent patterns. It should never override current form, squad quality differentials, or statistical underlying data. The temptation to give disproportionate weight to historical records is a form of narrative bias that professional analysts actively resist in favor of information with stronger current predictive power.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How to Evaluate a Football Manager's Impact on Team Performance</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why the Manager Is One of the Most Important Variables in Football Prediction</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The role of the football manager in determining match outcomes is sometimes underestimated in purely statistical analysis and sometimes wildly overestimated in popular football media. The truth is that managerial influence is genuine, significant, and measurable in several specific dimensions, but it operates through player development, tactical implementation, squad management, and cultural building rather than any single match decision in isolation.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Tactical Implementation and System Quality</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The clearest expression of managerial quality in analytical data is whether a team consistently performs in alignment with their tactical system. Managers who implement well-drilled defensive shapes produce teams with low defensive chaos under pressure. Managers with sophisticated pressing systems show this in PPDA metrics. Managers who develop positional play create teams with high progressive pass rates and efficient chance creation. These tactical signatures are measurable and persist across matches, providing reliable data points for analysts assessing team quality.
-            <br><br>
-            In-game management also contributes to outcomes in ways that aggregate statistics can partially capture. Substitution timing, tactical adjustments when losing, and the ability to set up teams specifically to exploit identified opponent weaknesses are all genuine skills that differentiate elite managers from average ones.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">The Managerial Change Signal</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Managerial changes are among the most significant events for short-term football prediction. Research across major European leagues consistently shows a new manager effect where results improve immediately following a change, partially because of genuine tactical and motivational renewal and partially because of regression to the mean following the poor results that triggered the dismissal. Analysts should be cautious about both blindly following the new manager bounce and assuming it will persist beyond the initial period.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Evaluating Managers Beyond Win Rates</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Win rate alone is a poor measure of managerial quality because it confounds squad quality with coaching contribution. A manager winning seventy percent of matches with an elite squad may be less impressive than one achieving fifty-five percent with a mid-table budget. Analysts who evaluate managers against expected results based on squad quality and fixture difficulty, rather than raw results, develop a much more accurate picture of managerial contribution that improves prediction quality when those managers move clubs or face unusual circumstances.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>Understanding Football Odds Formats: Decimal, Fractional, and American Explained</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">A Clear Guide to Reading Football Odds in Every Format</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Football odds are presented in different formats depending on where in the world you encounter them, and understanding how to read and convert between these formats is a foundational skill for any analyst who wants to compare prices across different markets or calculate implied probabilities accurately. Each format conveys the same underlying information about probability and potential return but expresses it differently.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Decimal Odds: The Clearest Format for Probability</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Decimal odds are the most intuitive format for analytical purposes because they directly show the total return per unit staked including the original stake. An odds price of 2.50 means that a one-unit stake returns 2.50 units including the original stake, representing a 1.50 unit profit. Converting decimal odds to implied probability is straightforward: divide one by the decimal odds. An odds price of 2.50 implies a forty percent probability (1 divided by 2.50 equals 0.40). This direct link to probability makes decimal odds the preferred format for most serious analytical work.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Fractional Odds: The Traditional British Format</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Fractional odds are the traditional format in British football coverage and express profit relative to stake. Odds of 3/2 mean that a two-unit stake returns three units of profit, plus the original stake. To convert fractional odds to implied probability, divide the denominator by the sum of both numbers. Odds of 3/2 imply a forty percent probability (2 divided by 5 equals 0.40). While fractional odds feel intuitive to British audiences familiar with them, the calculation to reach implied probability is slightly more complex than with decimal odds.
-            <br><br>
-            Even fractional odds such as 6/4 or 11/8 are easy to work with, but some prices like 11/4 or 13/8 can feel harder to process quickly. Analysts often convert fractional odds to decimal equivalents as a first step when building probability comparisons across multiple markets.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">American Odds: Moneyline Format Explained</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            American odds, also called moneyline odds, use positive and negative numbers to represent underdog and favorite pricing. A negative number such as minus one-fifty shows how much you must stake to win one hundred units of profit. A positive number such as plus one-thirty shows how much profit a one-hundred-unit stake produces. Converting American odds to implied probability differs based on the sign: for negative odds, divide the absolute value by that value plus one hundred. For positive odds, divide one hundred by the positive value plus one hundred.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Why Understanding Implied Probability Matters</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The core reason for converting odds into implied probability is to compare what the market believes against what your analysis suggests. If you estimate a team's win probability at fifty-five percent and the market implies forty-five percent through its pricing, you have identified a meaningful gap that may represent analytical value. This comparison is the foundation of evidence-based football prediction and is impossible to perform accurately without a clear understanding of how odds formats relate to probability.
-          </p>
-        </div>
-      </details>
-
-      <details class="article">
-        <summary>How Data Visualization Is Transforming Football Analysis for Fans and Professionals</summary>
-        <div style="padding-top:10px;">
-          <h2 style="font-size:1.1rem;margin:0 0 8px;">Why Visual Data Representation Has Become Central to Modern Football Analysis</h2>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Football analytics has become far more accessible to fans, journalists, and independent analysts over the last decade, largely because of advances in data visualization. Complex statistical relationships that once required deep mathematical literacy to understand can now be communicated immediately through well-designed charts, maps, and diagrams. This shift has democratized football analysis and created a community of engaged fans who engage with data at a level that was impossible for non-professionals just fifteen years ago.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Shot Maps and xG Visualization</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Shot maps are among the most widely used visual tools in modern football analysis. They plot every shot taken in a match or across a season onto a graphic representation of the pitch, with each shot sized or colored according to its xG value. At a glance, a shot map reveals whether a team is creating high-quality central chances or relying on speculative efforts from poor positions. Defensive shot maps show whether a team is allowing opponents to shoot from dangerous central areas or forcing them to attempt difficult wide-angle or long-range shots.
-            <br><br>
-            xG timeline charts extend this visualization into a match-by-match view, showing how attacking and defensive xG accumulates over a season for both the team and their opponents. These charts reveal whether a team's actual results track closely with their underlying performance or show significant divergence that suggests either unusual goalkeeper influence or meaningful variance.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Passing Networks and Progressive Action Maps</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            Passing network diagrams show the connections between players based on passing frequency and direction. These visualizations reveal which players are central hubs in a team's build-up play, which combinations are used most frequently under pressure, and where the team tends to circulate possession before progressing forward. Disrupting central passing hub players through pressing or man-marking is a tactical approach that passing network analysis helps identify and justify.
-          </p>
-          <h3 style="font-size:1rem;margin:14px 0 8px;">Making Data Visualization Work for Match Prediction</h3>
-          <p style="color:var(--muted);font-size:0.94rem;">
-            The practical value of data visualization for football prediction lies in its ability to reveal patterns that raw numbers obscure. A team with an average xG figure might show very different shot location patterns when visualized — perhaps creating most chances from central areas indicating high structural quality, or creating many shots from poor positions indicating inflated volume without genuine threat. Combining visual pattern recognition with statistical analysis creates a richer, more accurate picture of team quality than either approach produces alone.
-          </p>
-        </div>
-      </details>
-
-    </section>
-
-    <section class="card" id="faq" style="margin-top:18px;">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <h3>Does this guarantee winnings?</h3>
-        <p class="subtle">No. Football always has uncertainty. The model only estimates probability and filters for stronger edges.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Why does it sometimes say NO SAFE EDGE FOUND?</h3>
-        <p class="subtle">Because disciplined analysis sometimes finds no clear advantage. That is better than forcing a weak pick.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Can I use this on mobile?</h3>
-        <p class="subtle">Yes. The layout is responsive and built to work on phones, tablets, and desktop screens.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Can this help with football research?</h3>
-        <p class="subtle">Yes. It is useful as a structured analysis tool for comparing form, xG, squad news, and betting market behavior.</p>
+        <aside class="hero-panel" aria-label="Illustrative model output">
+          <h2>Illustrative output</h2>
+          <p class="small" style="color: rgba(238, 245, 255, 0.72); margin-bottom: 8px;">Club A vs Club B. Static example, not a live prediction.</p>
+          <div class="mini-row"><span>Home win</span><strong>46%</strong></div>
+          <div class="bar"><i style="width: 46%"></i></div>
+          <div class="mini-row"><span>Draw</span><strong>26%</strong></div>
+          <div class="bar"><i style="width: 26%"></i></div>
+          <div class="mini-row"><span>Away win</span><strong>28%</strong></div>
+          <div class="bar"><i style="width: 28%"></i></div>
+          <div class="mini-row"><span>Expected goals</span><strong>1.6 - 1.1</strong></div>
+          <div class="mini-row"><span>Both teams score</span><strong>51%</strong></div>
+          <p class="disclaimer">These numbers come from a simple teaching model. They are not a forecast, a recommendation, or a promise.</p>
+        </aside>
       </div>
     </section>
 
-    <section class="card" id="about" style="margin-top:18px;">
-      <h2>About Elite Football Predictor</h2>
-      <p class="subtle">
-        Elite Football Predictor is a football analytics platform designed to identify high-probability football outcomes using structured statistical weighting, tactical analysis, and disciplined market filtering.
-      </p>
-      <p class="subtle">
-        Instead of emotional predictions or fan-based opinions, the system evaluates multiple factors including expected goals (xG), recent form, squad stability, market movement, tactical matchups, defensive consistency, and bookmaker behavior.
-      </p>
-      <p class="subtle">
-        The goal is long-term decision quality through risk-controlled football analysis.
-      </p>
-    </section>
+    
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
 
-    <section class="card" id="privacy" style="margin-top:18px;">
-      <h2>Privacy Policy</h2>
-      <p class="subtle">
-        Elite Football Predictor respects user privacy. This website does not collect sensitive personal information unless voluntarily submitted through contact communication.
-      </p>
-      <p class="subtle">
-        Cookies or analytics tools may be used to improve user experience, measure traffic, and optimize platform performance. Third-party services such as advertising providers may also use cookies in accordance with their own policies.
-      </p>
-      <p class="subtle">
-        By using this website, users agree to the collection of limited non-personal analytical data for service improvement.
-      </p>
-    </section>
-
-    <section class="card" id="terms" style="margin-top:18px;">
-      <h2>Terms & Conditions</h2>
-      <p class="subtle">
-        The information provided by Elite Football Predictor is for informational and educational purposes only.
-      </p>
-      <p class="subtle">
-        Predictions generated by this platform are statistical estimates and do not guarantee match outcomes or betting success. Users are responsible for their own decisions and financial actions.
-      </p>
-      <p class="subtle">
-        The platform may update prediction models, methodologies, or features at any time without prior notice.
-      </p>
-    </section>
-
-    <section class="card" id="disclaimer" style="margin-top:18px;">
-      <h2>Disclaimer</h2>
-      <p class="subtle">
-        Elite Football Predictor provides analytical football insights based on statistical models, historical patterns, market analysis, and tactical evaluation.
-      </p>
-      <p class="subtle">
-        All predictions, probabilities, and betting-related information are estimates only and should not be interpreted as guaranteed outcomes or financial advice.
-      </p>
-      <p class="subtle">
-        Users are fully responsible for their own betting decisions, financial activities, and risk management. Football outcomes can be influenced by unpredictable events including injuries, refereeing decisions, weather conditions, and match-day circumstances.
-      </p>
-      <p class="subtle">
-        By using this website, you acknowledge that Elite Football Predictor and its owners are not liable for losses, damages, or decisions made based on the information presented on the platform.
-      </p>
-    </section>
-
-    <section class="card" id="responsible-gambling" style="margin-top:18px;">
-      <h2>Responsible Gambling</h2>
-      <p class="subtle">
-        Football prediction tools should be used for analysis, not emotional chasing. Never bet money you cannot afford to lose.
-      </p>
-      <p class="subtle">
-        Set a clear budget, avoid chasing losses, and take breaks when betting stops being controlled. If gambling is causing harm, seek help from a qualified support service in your region.
-      </p>
-    </section>
-
-    <section class="card" id="contact" style="margin-top:18px;margin-bottom:20px;">
-      <h2>Contact</h2>
-      <p class="subtle">For business inquiries, feedback, partnerships, or technical support, contact:</p>
-      <div class="pill-grid" style="margin-bottom:12px;">
-        <div class="pill">Name: Nyasha</div>
-        <div class="pill">Email: usatonlinetools@gmail.com</div>
-        <div class="pill">Phone: +263719124681</div>
+    <section class="section" id="home-model" aria-labelledby="home-model-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Interactive</p>
+            <h2 id="home-model-heading">A match estimate you can inspect</h2>
+            <p>Change the inputs and watch the distribution move. The model is intentionally small enough to understand, including its flaws.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="predictor.html">Full explainer</a>
+        </div>
+        
+  <div class="predictor-app" data-predictor-app>
+    <div class="tool-grid">
+      <div class="card card-lg">
+        <div class="tool-head">
+          <p class="eyebrow">Transparent model</p>
+          <h2 id="home-model-title">Try a match estimate</h2>
+          <p class="muted">Enter recent per-match averages. The model turns them into expected goals, then a Poisson scoreline distribution. It does not know team identities, lineups, injuries, or live prices.</p>
+        </div>
+        <form class="predictor-form" data-predictor-form novalidate>
+          <div class="field-grid">
+            <div class="field">
+              <label for="home-model-home-team">Home team</label>
+              <input id="home-model-home-team" name="homeTeam" type="text" value="Club A" maxlength="40" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="home-model-away-team">Away team</label>
+              <input id="home-model-away-team" name="awayTeam" type="text" value="Club B" maxlength="40" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="home-model-home-xg">Home xG created per match</label>
+              <input id="home-model-home-xg" name="homeXgFor" type="number" min="0" max="5" step="0.1" value="1.7" inputmode="decimal">
+              <span class="hint">Average expected goals created.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-away-xg">Away xG created per match</label>
+              <input id="home-model-away-xg" name="awayXgFor" type="number" min="0" max="5" step="0.1" value="1.2" inputmode="decimal">
+              <span class="hint">Average expected goals created.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-home-xga">Home xGA per match</label>
+              <input id="home-model-home-xga" name="homeXgAgainst" type="number" min="0" max="5" step="0.1" value="1.0" inputmode="decimal">
+              <span class="hint">Expected goals conceded.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-away-xga">Away xGA per match</label>
+              <input id="home-model-away-xga" name="awayXgAgainst" type="number" min="0" max="5" step="0.1" value="1.4" inputmode="decimal">
+              <span class="hint">Expected goals conceded.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-home-form">Home form score <span class="hint">0 is poor, 10 is strong</span></label>
+              <div class="range-row">
+                <input id="home-model-home-form" name="homeForm" type="range" min="0" max="10" step="1" value="6" aria-describedby="home-model-home-form-hint">
+                <output class="range-val" for="home-model-home-form" id="home-model-home-form-value">6</output>
+              </div>
+              <span class="hint" id="home-model-home-form-hint">A subjective recent-performance score, not a league position.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-away-form">Away form score <span class="hint">0 is poor, 10 is strong</span></label>
+              <div class="range-row">
+                <input id="home-model-away-form" name="awayForm" type="range" min="0" max="10" step="1" value="5" aria-describedby="home-model-away-form-hint">
+                <output class="range-val" for="home-model-away-form" id="home-model-away-form-value">5</output>
+              </div>
+              <span class="hint" id="home-model-away-form-hint">A subjective recent-performance score, not a league position.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-home-absences">Home key absences</label>
+              <input id="home-model-home-absences" name="homeAbsences" type="number" min="0" max="5" step="1" value="1" inputmode="numeric">
+              <span class="hint">Count only players who normally start.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-away-absences">Away key absences</label>
+              <input id="home-model-away-absences" name="awayAbsences" type="number" min="0" max="5" step="1" value="2" inputmode="numeric">
+              <span class="hint">Count only players who normally start.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-home-rest">Home rest days</label>
+              <input id="home-model-home-rest" name="homeRest" type="number" min="2" max="10" step="1" value="5" inputmode="numeric">
+              <span class="hint">Days since the previous match.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-away-rest">Away rest days</label>
+              <input id="home-model-away-rest" name="awayRest" type="number" min="2" max="10" step="1" value="4" inputmode="numeric">
+              <span class="hint">Days since the previous match.</span>
+            </div>
+            <div class="field">
+              <label for="home-model-venue">Venue context</label>
+              <select id="home-model-venue" name="venue">
+                <option value="normal" selected>Normal home advantage</option>
+                <option value="neutral">Neutral venue</option>
+                <option value="closed">Behind closed doors</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="home-model-sample">Sample behind the averages</label>
+              <select id="home-model-sample" name="sample">
+                <option value="5">5 matches</option>
+                <option value="10" selected>10 matches</option>
+                <option value="20">20 matches</option>
+              </select>
+              <span class="hint">A larger sample increases model confidence slightly.</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" type="submit">Run model</button>
+            <button class="btn btn-ghost" type="reset">Reset example</button>
+          </div>
+        </form>
+        <p class="footer-note">The model is deliberately simple. It is a teaching tool, not a scouting system, a tipster, or a substitute for watching football.</p>
       </div>
-      <p class="subtle">.</p>
-    </section>
 
-    <div class="footer">
-      © 2026 Elite Football Predictor. All rights reserved.
+      <div class="card card-lg result-panel" id="home-model-results" data-predictor-results aria-live="polite" aria-atomic="false">
+        <div class="result-head">
+          <div>
+            <p class="eyebrow">Estimated outcome</p>
+            <h2 id="home-model-results-title" data-output="matchTitle">Club A vs Club B</h2>
+            <p class="muted" data-output="summary">Run the model to see the probability distribution.</p>
+          </div>
+          <span class="badge badge-muted" data-output="confidenceBadge">Waiting</span>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat"><span>Estimated outcome</span><strong data-output="outcome">-</strong></div>
+          <div class="stat"><span>Model confidence</span><strong data-output="confidence">-</strong></div>
+          <div class="stat"><span>Expected goals</span><strong data-output="expectedGoals">-</strong></div>
+        </div>
+
+        <div class="prob-list" data-output="probabilities"></div>
+
+        <div class="xg-bars" data-output="xgBars"></div>
+
+        <div class="stat-grid">
+          <div class="stat"><span>Over 2.5 goals</span><strong data-output="over25">-</strong></div>
+          <div class="stat"><span>Under 2.5 goals</span><strong data-output="under25">-</strong></div>
+          <div class="stat"><span>Both teams score</span><strong data-output="btts">-</strong></div>
+        </div>
+
+        <div class="lower-variance" data-output="lowerVariance"></div>
+
+        <div class="table-wrap" data-output="scorelineTable"></div>
+
+        <div class="result-actions">
+          <button class="btn btn-ghost btn-sm" type="button" data-action="copy-result">Copy result</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-action="share-result">Share result</button>
+          <span class="copy-status" data-output="copyStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="limits">
+          <strong>Model limitations.</strong> The model assumes goals follow independent Poisson distributions. It ignores lineups, injuries, weather, referee, tactical matchups, and game state. It uses the numbers you enter, so bad inputs produce confident nonsense. This is an educational estimate, not advice.
+        </div>
+        <noscript><p class="small muted">The interactive model needs JavaScript. You can still read the <a href="predictor.html">full explainer</a>.</p></noscript>
+      </div>
     </div>
   </div>
+      </div>
+    </section>
 
-  <script>
-    const el = (id) => document.getElementById(id);
+    <section class="section" aria-labelledby="featured-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Start here</p>
+            <h2 id="featured-title">Three ideas that make football data readable</h2>
+            <p>Begin with chance quality, then learn how prices express probability, then see how a scoreline model is built.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="articles/">All articles</a>
+        </div>
+        <div class="grid-3">
+          
+  <article class="article-card" data-category="xG and Stats" data-title="what is xg in football? expected goals explained" data-slug="what-is-xg-football">
+    <span class="cat">xG and Stats</span>
+    <h3><a href="articles/what-is-xg-football.html">What Is xG in Football? Expected Goals Explained</a></h3>
+    <p>Expected goals measures the quality of chances a team creates. Learn how xG is calculated, what it ignores, and how to read it without overclaiming.</p>
+    <div class="meta">
+      <span>8 min read</span>
+      <span>5 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="Beginner Guides" data-title="how to read football odds" data-slug="reading-football-odds">
+    <span class="cat">Beginner Guides</span>
+    <h3><a href="articles/reading-football-odds.html">How to Read Football Odds</a></h3>
+    <p>Decimal, fractional and American odds explained with clear conversions, implied probability and the margin built into every market price.</p>
+    <div class="meta">
+      <span>8 min read</span>
+      <span>16 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="Betting Education" data-title="poisson distribution for football" data-slug="poisson-distribution-football">
+    <span class="cat">Betting Education</span>
+    <h3><a href="articles/poisson-distribution-football.html">Poisson Distribution for Football</a></h3>
+    <p>How the Poisson model turns expected goals into scoreline probabilities, with a worked example and a clear account of its limits.</p>
+    <div class="meta">
+      <span>9 min read</span>
+      <span>19 November 2026</span>
+    </div>
+  </article>
+        </div>
+      </div>
+    </section>
 
-    const inputs = ["homeForm", "awayForm", "homeXG", "awayXG", "homeXGA", "awayXGA", "homeAbsences", "awayAbsences"];
-    inputs.forEach((id) => {
-      el(id).addEventListener("input", () => {
-        const label = id + "Val";
-        if (el(label)) el(label).textContent = el(id).value;
-      });
-    });
+    
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
 
-    function clamp(n, min, max) {
-      return Math.max(min, Math.min(max, n));
-    }
+    <section class="section" aria-labelledby="latest-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Latest analysis</p>
+            <h2 id="latest-title">New guides and league notes</h2>
+            <p>Every article includes a worked example, common mistakes, and a short list of limits.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="articles/">Browse by category</a>
+        </div>
+        <div class="grid-3">
+          
+  <article class="article-card" data-category="Beginner Guides" data-title="asian handicap explained" data-slug="asian-handicap-explained">
+    <span class="cat">Beginner Guides</span>
+    <h3><a href="articles/asian-handicap-explained.html">Asian Handicap Explained</a></h3>
+    <p>Learn how Asian handicap lines work, including level, split and quarter handicaps, with worked examples of wins, pushes and half results.</p>
+    <div class="meta">
+      <span>8 min read</span>
+      <span>21 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="Betting Education" data-title="closing line value explained" data-slug="closing-line-value">
+    <span class="cat">Betting Education</span>
+    <h3><a href="articles/closing-line-value.html">Closing Line Value Explained</a></h3>
+    <p>Closing line value compares a price with the final market price. Learn how CLV is measured, what it can show, and where the logic breaks down.</p>
+    <div class="meta">
+      <span>8 min read</span>
+      <span>21 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="xG and Stats" data-title="expected assists (xa) explained" data-slug="expected-assists-explained">
+    <span class="cat">xG and Stats</span>
+    <h3><a href="articles/expected-assists-explained.html">Expected Assists (xA) Explained</a></h3>
+    <p>Expected assists estimates the shot value a pass created. Learn how xA works, how it differs from key passes, and where it misleads.</p>
+    <div class="meta">
+      <span>8 min read</span>
+      <span>21 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="Tactics" data-title="game state and tactical change" data-slug="game-state-analysis">
+    <span class="cat">Tactics</span>
+    <h3><a href="articles/game-state-analysis.html">Game State and Tactical Change</a></h3>
+    <p>Score effects change how teams play. Learn how game state alters possession, pressing and chance creation, and why raw match totals can mislead.</p>
+    <div class="meta">
+      <span>8 min read</span>
+      <span>21 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="Leagues" data-title="international tournament analysis" data-slug="international-tournament-analysis">
+    <span class="cat">Leagues</span>
+    <h3><a href="articles/international-tournament-analysis.html">International Tournament Analysis</a></h3>
+    <p>Why international tournaments are hard to model: short samples, limited preparation, travel, motivation and the gap between club and country form.</p>
+    <div class="meta">
+      <span>7 min read</span>
+      <span>21 November 2026</span>
+    </div>
+  </article>
+  <article class="article-card" data-category="Beginner Guides" data-title="over/under goals analysis for beginners" data-slug="over-under-goals-guide">
+    <span class="cat">Beginner Guides</span>
+    <h3><a href="articles/over-under-goals-guide.html">Over/Under Goals Analysis for Beginners</a></h3>
+    <p>A beginner&#39;s guide to over/under goals markets: totals lines, expected goal rates, Poisson arithmetic, and the limits of a simple model.</p>
+    <div class="meta">
+      <span>7 min read</span>
+      <span>21 November 2026</span>
+    </div>
+  </article>
+        </div>
+      </div>
+    </section>
 
-    function round1(n) {
-      return Math.round(n * 10) / 10;
-    }
-
-    function normalize(home, draw, away) {
-      const total = home + draw + away;
-      return {
-        home: (home / total) * 100,
-        draw: (draw / total) * 100,
-        away: (away / total) * 100,
-      };
-    }
-
-    function safeText(value, fallback = "NO SAFE EDGE FOUND") {
-      return value || fallback;
-    }
-
-    function analyze() {
-      const homeTeam = el("homeTeam").value.trim() || "Team A";
-      const awayTeam = el("awayTeam").value.trim() || "Team B";
-      const match = `${homeTeam} vs ${awayTeam}`;
-
-      const homeForm = +el("homeForm").value;
-      const awayForm = +el("awayForm").value;
-      const homeXG = parseFloat(el("homeXG").value) || 0;
-      const awayXG = parseFloat(el("awayXG").value) || 0;
-      const homeXGA = parseFloat(el("homeXGA").value) || 0;
-      const awayXGA = parseFloat(el("awayXGA").value) || 0;
-      const homeAbs = +el("homeAbsences").value;
-      const awayAbs = +el("awayAbsences").value;
-      const marketMove = el("marketMove").value;
-      const publicBias = el("publicBias").value;
-      const tactical = el("tactical").value.trim();
-      const environment = el("environment").value.trim();
-      const notes = el("notes").value.trim();
-
-      const formEdge = (homeForm - awayForm) * 4.2;
-      const xgEdge = (homeXG - awayXG) * 9.5;
-      const defenseEdge = (awayXGA - homeXGA) * 7.5;
-      const absEdge = (awayAbs - homeAbs) * 2.0;
-
-      let marketEdge = 0;
-      let trapPenalty = 0;
-      if (marketMove === "home") marketEdge = 5.5;
-      if (marketMove === "away") marketEdge = -5.5;
-      if (marketMove === "trap") trapPenalty = 8;
-      if (publicBias === "high") trapPenalty += 2.5;
-      if (publicBias === "medium") trapPenalty += 1;
-
-      const base = 50;
-      let homeScore = base + formEdge + xgEdge + defenseEdge + absEdge + marketEdge - trapPenalty;
-      let awayScore = 100 - homeScore;
-
-      const drawFactor = 18 - Math.abs(homeXG - awayXG) * 5 + Math.max(0, 6 - Math.abs(homeForm - awayForm)) * 1.1;
-      const drawScore = clamp(drawFactor, 6, 24);
-
-      let probs = normalize(clamp(homeScore, 10, 80), drawScore, clamp(awayScore, 10, 80));
-
-      const goalBase = (homeXG + awayXG) / 2;
-      let totalGoals = clamp(goalBase + (homeForm + awayForm - 10) * 0.07 - (homeAbs + awayAbs) * 0.03, 1.2, 4.2);
-      const homeExpectedGoals = clamp(homeXG + (homeForm - awayForm) * 0.05 + (awayXGA - homeXGA) * 0.08, 0.2, 3.6);
-      const awayExpectedGoals = clamp(awayXG + (awayForm - homeForm) * 0.05 + (homeXGA - awayXGA) * 0.08, 0.2, 3.6);
-
-      const maxProb = Math.max(probs.home, probs.draw, probs.away);
-      const secondProb = [probs.home, probs.draw, probs.away].sort((a, b) => b - a)[1];
-      const edge = maxProb - secondProb;
-      const confidence = clamp(maxProb + edge * 0.7 - trapPenalty * 0.6, 0, 96);
-
-      let outcome = "Draw";
-      let risk = "High";
-      let safestBet = "NO SAFE EDGE FOUND";
-      let valueBet = "NO SAFE EDGE FOUND";
-      let keyReasons = [];
-      let warningSigns = [];
-
-      const strongHome = probs.home >= probs.away && probs.home >= probs.draw;
-      const strongAway = probs.away > probs.home && probs.away >= probs.draw;
-      const strongDraw = probs.draw > 32 && Math.abs(homeXG - awayXG) < 0.35;
-
-      if (confidence < 60 || edge < 6 || marketMove === "trap") {
-        outcome = "NO SAFE EDGE FOUND";
-        risk = "High";
-        safestBet = "NO SAFE EDGE FOUND";
-        valueBet = "NO SAFE EDGE FOUND";
-      } else {
-        if (strongHome) outcome = "Home Win";
-        else if (strongAway) outcome = "Away Win";
-        else if (strongDraw) outcome = "Draw";
-
-        if (confidence >= 80) risk = "Low";
-        else if (confidence >= 70) risk = "Medium";
-        else risk = "High";
-
-        if (confidence >= 80 && outcome === "Home Win") safestBet = `Home Win / Draw No Bet on ${homeTeam}`;
-        else if (confidence >= 80 && outcome === "Away Win") safestBet = `Away Win / Draw No Bet on ${awayTeam}`;
-        else if (confidence >= 72 && Math.max(probs.home, probs.away) > 45) safestBet = "Double Chance";
-        else if (totalGoals <= 2.8) safestBet = "Under 3.5 Goals";
-        else safestBet = "Under 4.5 Goals";
-
-        if (probs.home > probs.away && homeXG > awayXG && marketMove !== "trap") valueBet = `Home Win or Home DNB`;
-        else if (probs.away > probs.home && awayXG > homeXG && marketMove !== "trap") valueBet = `Away Win or Away DNB`;
-        else if (totalGoals <= 2.8) valueBet = "Under 3.5 Goals";
-        else valueBet = "BTTS Yes";
-      }
-
-      if (homeForm >= awayForm) keyReasons.push(`${homeTeam} has stronger recent form.`);
-      if (homeXG >= awayXG) keyReasons.push(`${homeTeam} projects the better attacking output.`);
-      if (awayAbs > homeAbs) keyReasons.push(`${awayTeam} carries the heavier squad disruption.`);
-      if (marketMove === "home") keyReasons.push("Market movement supports the home side.");
-      if (Math.abs(homeXG - awayXG) < 0.3) keyReasons.push("Projected goal difference is narrow, so draw protection matters.");
-      if (notes.length > 0) keyReasons.push("Additional context was included in the filter.");
-
-      if (marketMove === "trap") warningSigns.push("Suspicious odds movement / possible bookmaker trap.");
-      if (publicBias === "high") warningSigns.push("Heavy public bias may be inflating the favorite.");
-      if (homeAbs + awayAbs >= 5) warningSigns.push("Significant squad absences may distort the edge.");
-      if (confidence < 70) warningSigns.push("Confidence is not high enough for an aggressive play.");
-      if (Math.abs(homeXG - awayXG) < 0.2) warningSigns.push("xG gap is too thin for a clean winner bet.");
-      if (!warningSigns.length) warningSigns.push("No major red flags detected from the supplied data.");
-
-      const resultHTML = `
-        <div class="result-box">
-          <div class="status ${risk.toLowerCase()}"><span class="dot"></span>${risk} Risk</div>
-          <div class="match-title">${match}</div>
-          <div class="subtle">Predicted Outcome</div>
-          <div style="font-size:1.25rem;font-weight:900;margin-top:4px;">${outcome}</div>
-          <div class="small-grid">
-            <div class="stat"><span>Confidence Level</span><strong>${round1(confidence)}%</strong></div>
-            <div class="stat"><span>Safest Bet</span><strong>${safeText(safestBet)}</strong></div>
-            <div class="stat"><span>Value Bet</span><strong>${safeText(valueBet)}</strong></div>
+    <section class="section-sm" aria-labelledby="method-title">
+      <div class="wrap">
+        <div class="grid-3">
+          <div class="card">
+            <p class="eyebrow">01</p>
+            <h2 id="method-title" style="font-size: 1.15rem;">Turn inputs into expected goals</h2>
+            <p class="muted">The model blends each side's attacking and defensive averages, then adjusts for venue, form, availability, and rest. Every adjustment is visible in the explainer.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">02</p>
+            <h2 style="font-size: 1.15rem;">Build a scoreline distribution</h2>
+            <p class="muted">Two Poisson distributions produce a grid of scorelines. The grid gives home, draw, away, over/under, both-teams-to-score, and a most likely score.</p>
+          </div>
+          <div class="card">
+            <p class="eyebrow">03</p>
+            <h2 style="font-size: 1.15rem;">Read the output with caution</h2>
+            <p class="muted">A probability is not a prediction of what will happen. It is a summary of what the model believes, given simplified assumptions and the numbers you supplied.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="result-box">
-          <div class="section-title">Probability Breakdown</div>
-          <div class="pill-grid">
-            <div class="pill">Home Win: ${round1(probs.home)}%</div>
-            <div class="pill">Draw: ${round1(probs.draw)}%</div>
-            <div class="pill">Away Win: ${round1(probs.away)}%</div>
+    <section class="section" aria-labelledby="categories-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Browse</p>
+            <h2 id="categories-title">Five ways into the library</h2>
+            <p>Pick the question you want to answer, not the conclusion you want to hear.</p>
           </div>
-
-          <div class="section-title">Expected Goals</div>
-          <div class="pill-grid">
-            <div class="pill">${homeTeam} xG: ${round1(homeExpectedGoals)}</div>
-            <div class="pill">${awayTeam} xG: ${round1(awayExpectedGoals)}</div>
-            <div class="pill">Projected Total: ${round1(totalGoals)}</div>
-          </div>
-
-          <div class="section-title">Key Reasons</div>
-          <ul class="reason-list">${keyReasons.slice(0, 3).map(r => `<li>${r}</li>`).join("") || "<li>NO SAFE EDGE FOUND</li>"}</ul>
-
-          <div class="section-title">Warning Signs</div>
-          <ul class="reason-list muted-list">${warningSigns.slice(0, 4).map(r => `<li>${r}</li>`).join("")}</ul>
         </div>
-
-        <div class="result-box">
-          <div class="section-title">Decision Filter Summary</div>
-          <div class="pill-grid">
-            <div class="pill">Market: ${marketMove}</div>
-            <div class="pill">Public Bias: ${publicBias}</div>
-            <div class="pill">Tactical: ${tactical || "—"}</div>
-            <div class="pill">Environment: ${environment || "—"}</div>
-          </div>
-          <div class="safe-banner">${outcome === "NO SAFE EDGE FOUND" ? "NO SAFE EDGE FOUND" : `Filtered outcome: ${outcome} with disciplined risk control.`}</div>
+        <div class="grid-3">
+          
+          <a class="article-card" href="articles/?category=xG%20and%20Stats" style="text-decoration: none;">
+            <span class="cat">Category</span>
+            <h3>xG and Stats</h3>
+            <p>Chance quality, expected goals, and the numbers behind performance.</p>
+            <div class="meta"><span>Open category</span><span>Articles</span></div>
+          </a>
+          <a class="article-card" href="articles/?category=Tactics" style="text-decoration: none;">
+            <span class="cat">Category</span>
+            <h3>Tactics</h3>
+            <p>Shape, pressing, set pieces, and the matchups that reputation hides.</p>
+            <div class="meta"><span>Open category</span><span>Articles</span></div>
+          </a>
+          <a class="article-card" href="articles/?category=Betting%20Education" style="text-decoration: none;">
+            <span class="cat">Category</span>
+            <h3>Betting Education</h3>
+            <p>Probability, market prices, bias, and uncertainty. No tips.</p>
+            <div class="meta"><span>Open category</span><span>Articles</span></div>
+          </a>
+          <a class="article-card" href="articles/?category=Leagues" style="text-decoration: none;">
+            <span class="cat">Category</span>
+            <h3>Leagues</h3>
+            <p>How competition context changes the way a match should be read.</p>
+            <div class="meta"><span>Open category</span><span>Articles</span></div>
+          </a>
+          <a class="article-card" href="articles/?category=Beginner%20Guides" style="text-decoration: none;">
+            <span class="cat">Category</span>
+            <h3>Beginner Guides</h3>
+            <p>Plain-language starting points for football data and analysis.</p>
+            <div class="meta"><span>Open category</span><span>Articles</span></div>
+          </a>
         </div>
-      `;
+      </div>
+    </section>
 
-      el("result").innerHTML = resultHTML;
-    }
+    <section class="section" aria-labelledby="home-faq-heading">
+      <div class="narrow">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Questions</p>
+            <h2 id="home-faq-heading">What this site is, and what it is not</h2>
+          </div>
+        </div>
+        
+  <section class="article-faq" aria-labelledby="home-faq-title">
+    <h2 id="home-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is Elite Football Predictor a betting site?</summary>
+      <div class="faq-answer"><p>No. We do not accept bets, process payments, link to bookmakers, or sell tips. The site is an independent football analytics education project with a transparent statistical model.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does the model guarantee a result?</summary>
+      <div class="faq-answer"><p>No. The model produces a probability distribution from the inputs you provide. Football is uncertain, and the model does not know lineups, injuries, weather, or tactical surprises.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Where does the data come from?</summary>
+      <div class="faq-answer"><p>The interactive tool uses numbers you enter. Articles use clearly labelled illustrative examples. We do not scrape live match data or present invented records as fact.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Is the site free to use?</summary>
+      <div class="faq-answer"><p>Yes. The guides and model are free. If advertising is added later, every slot will be labelled and kept separate from editorial content.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I use the estimates for betting?</summary>
+      <div class="faq-answer"><p>The site is for education and entertainment, not advice. If you choose to gamble, only risk money you can afford to lose, and seek support if it stops being fun. See our responsible gambling page.</p></div>
+    </details>
+  </section>
+      </div>
+    </section>
 
-    function resetSample() {
-      el("matchName").value = "Team A vs Team B";
-      el("homeTeam").value = "Team A";
-      el("awayTeam").value = "Team B";
-      el("homeForm").value = 7;
-      el("awayForm").value = 5;
-      el("homeXG").value = 1.8;
-      el("awayXG").value = 1.1;
-      el("homeXGA").value = 0.9;
-      el("awayXGA").value = 1.4;
-      el("homeAbsences").value = 1;
-      el("awayAbsences").value = 3;
-      el("marketMove").value = "neutral";
-      el("publicBias").value = "medium";
-      el("tactical").value = "Home stable, away inconsistent";
-      el("environment").value = "Normal weather, no major travel issue";
-      el("notes").value = "Use this for derby pressure, fixture congestion, keeper form, referee tendencies, or anything else that matters.";
-      inputs.forEach((id) => {
-        const label = id + "Val";
-        if (el(label)) el(label).textContent = el(id).value;
-      });
-      analyze();
-    }
+    <section class="section-sm">
+      <div class="narrow">
+        
+  <aside class="callout danger " aria-labelledby="responsible-notice-title">
+    <h2 id="responsible-notice-title">18+ and responsible use</h2>
+    <p>This site is for football analytics education and entertainment. Every output is an estimate, not advice, and no model can remove uncertainty from football. We do not accept bets, process payments, or link to bookmakers.</p>
+    <p>If gambling is affecting your money, relationships, work, or health, stop and seek independent support. Help is available at <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>, <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>, and <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>.</p>
+    <p><a href="responsible-gambling.html">Read our responsible gambling page</a>.</p>
+  </aside>
+      </div>
+    </section>
 
-    el("analyzeBtn").addEventListener("click", analyze);
-    el("resetBtn").addEventListener("click", resetSample);
-    el("themeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      el("themeToggle").textContent = document.body.classList.contains("dark") ? "Light Mode" : "Dark Mode";
-    });
-    analyze();
-  </script>
+    
+  <aside class="ad-slot ad-slot--footer" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="predictor.html">Predictor tool</a></li>
+            <li><a href="articles/">Articles</a></li>
+            <li><a href="articles/?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="articles/?category=Tactics">Tactics</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="editorial-policy.html">Editorial policy</a></li>
+            <li><a href="articles/?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="articles/?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="assets/js/predictor.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
-
-
-  
-
-
-
-
-
-
-
-
-  
-  <div id="cookie-consent-banner" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 450px; background-color: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 16px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); z-index: 9999; font-family: sans-serif; box-sizing: border-box;">
-    <div style="font-size: 14px; color: #9ca3af; line-height: 1.5; margin-bottom: 12px;">
-        We use cookies to analyze site traffic and optimize your experience. By clicking "Accept", you agree to our use of cookies. Read our <a href="#privacy" style="color: #3b82f6; text-decoration: underline;">Privacy Policy</a>.
-    </div>
-    <div style="display: flex; justify-content: flex-end; gap: 8px;">
-        <button id="decline-cookies" style="background: transparent; border: 1px solid #4b5563; color: #9ca3af; padding: 6px 12px; font-size: 13px; border-radius: 4px; cursor: pointer; transition: 0.2s;">Decline</button>
-        <button id="accept-cookies" style="background: #2563eb; border: none; color: #ffffff; padding: 6px 16px; font-size: 13px; font-weight: 600; border-radius: 4px; cursor: pointer; transition: 0.2s;">Accept</button>
-    </div>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const banner = document.getElementById("cookie-consent-banner");
-        const acceptBtn = document.getElementById("accept-cookies");
-        const declineBtn = document.getElementById("decline-cookies");
-
-        if (!localStorage.getItem("cookie_consent_choice")) {
-            banner.style.display = "block";
-        }
-
-        acceptBtn.addEventListener("click", function () {
-            localStorage.setItem("cookie_consent_choice", "accepted");
-            banner.style.display = "none";
-        });
-
-        declineBtn.addEventListener("click", function () {
-            localStorage.setItem("cookie_consent_choice", "declined");
-            banner.style.display = "none";
-        });
-    });
-</script>
-
 </html>

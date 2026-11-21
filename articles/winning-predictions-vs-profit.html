@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Winning Predictions vs Sound Analysis</title>
+  <meta name="description" content="Why a good hit rate can hide poor calibration, how expected value works in plain arithmetic, and what analysis can and cannot deliver.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/winning-predictions-vs-profit.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Winning Predictions vs Sound Analysis">
+  <meta property="og:description" content="Why a good hit rate can hide poor calibration, how expected value works in plain arithmetic, and what analysis can and cannot deliver.">
+  <meta property="og:url" content="https://nation99.github.io/articles/winning-predictions-vs-profit.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-07-21">
+  <meta property="article:modified_time" content="2026-11-16">
+  <meta property="article:section" content="Betting Education">
+  <meta property="article:tag" content="calibration">
+  <meta property="article:tag" content="expected value">
+  <meta property="article:tag" content="accuracy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Winning Predictions vs Sound Analysis">
+  <meta name="twitter:description" content="Why a good hit rate can hide poor calibration, how expected value works in plain arithmetic, and what analysis can and cannot deliver.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/winning-predictions-vs-profit.html#webpage","url":"https://nation99.github.io/articles/winning-predictions-vs-profit.html","name":"Winning Predictions vs Sound Analysis","description":"Why a good hit rate can hide poor calibration, how expected value works in plain arithmetic, and what analysis can and cannot deliver.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/winning-predictions-vs-profit.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Betting Education","item":"https://nation99.github.io/articles/?category=Betting%20Education"},{"@type":"ListItem","position":4,"name":"Winning Predictions vs Sound Analysis"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/winning-predictions-vs-profit.html#article","headline":"Winning Predictions vs Sound Analysis","description":"Why a good hit rate can hide poor calibration, how expected value works in plain arithmetic, and what analysis can and cannot deliver.","datePublished":"2026-07-21","dateModified":"2026-11-16","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/winning-predictions-vs-profit.html#webpage"},"articleSection":"Betting Education","keywords":"calibration, expected value, accuracy","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can a prediction be accurate but poorly calibrated?","acceptedAnswer":{"@type":"Answer","text":"Yes. A forecaster can be right often while attaching probabilities that are too extreme. The hit rate looks good, but the confidence attached to each call does not match the outcomes."}},{"@type":"Question","name":"Is expected value a prediction for a single match?","acceptedAnswer":{"@type":"Answer","text":"No. Expected value is an average over many repetitions. A single match can go either way, and a favourable calculation can still produce a losing run."}},{"@type":"Question","name":"Why do most bettors lose money over time?","acceptedAnswer":{"@type":"Answer","text":"Because prices include a margin and variance creates long losing stretches. A good forecast can still lose over a season, and the margin is paid whether the forecast is good or bad."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Betting%20Education">Betting Education</a></li><li><span aria-current="page">Winning Predictions vs Sound Analysis</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Betting Education</p>
+        <h1>Winning Predictions vs Sound Analysis</h1>
+        <p class="article-dek">Being right often is not the same as being well calibrated. A prediction record can look impressive and still tell you almost nothing about the quality of the reasoning behind it.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-07-21">21 July 2026</time></span>
+          <span>Last updated <time datetime="2026-11-16">16 November 2026</time></span>
+          <span>7 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>A forecast can be right and still be badly made. A 90 per cent claim that lands is not evidence of good calibration, and a 55 per cent claim that fails is not evidence of a broken method. The only way to tell the difference is to look at the probabilities across a batch of forecasts, not at the result of one match.</p>
+<p>Accuracy is a count of outcomes. Calibration is a check on the probabilities attached to them. The two are related, but they answer different questions, and a record that reports only the first can make a weak process look strong. This article explains the gap, works through the arithmetic of expected value, and sets out what a sound process can and cannot deliver.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Accuracy counts outcomes; calibration checks the probabilities attached to them.</li><li>A forecast can be right and still be overconfident.</li><li>Expected value is an average over many repetitions, not a promise for one match.</li><li>A small error in the probability estimate can turn a positive calculation negative.</li><li>Sound analysis is judged by process and record, not by a highlight reel of correct calls.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="accuracy-count">
+        <h2 id="accuracy-count">Accuracy is a count, not a quality</h2>
+        <p>Accuracy is the proportion of forecasts that were correct. It is easy to calculate, easy to report, and easy to mislead with. A forecaster who predicts the favourite in every match can achieve a respectable accuracy in a league where favourites usually win. That does not mean the forecast is well calibrated or that the reasoning adds anything.</p>
+<p>Accuracy also throws away the difference between a cautious call and a reckless one. Saying a team has a 55 per cent chance and saying it has a 95 per cent chance are both counted as a win if the team wins. The first is a modest claim. The second is a strong claim that happened to be right. A count cannot tell them apart, which is why a record of wins and losses is not enough.</p>
+      </section>
+      <section aria-labelledby="calibration-shape">
+        <h2 id="calibration-shape">Calibration and the shape of confidence</h2>
+        <p>Calibration asks whether the probabilities match the outcomes. Among forecasts made at 70 per cent, about 70 per cent should come true. Among forecasts made at 30 per cent, about 30 per cent should come true. Calibration is a property of a group of forecasts, not of an individual call.</p>
+<p>Overconfidence is the most common failure. Forecasts cluster near 0 and near 1, but the outcomes are more mixed than the probabilities suggest. Underconfidence is also a calibration error, though it is less discussed: a model that says 60 per cent when the true rate is 80 per cent is leaving information on the table. Both errors are invisible in a simple hit rate. Our guide to <a href="track-prediction-accuracy.html">tracking prediction accuracy</a> shows how to measure them.</p>
+      </section>
+      <section aria-labelledby="expected-value-plain">
+        <h2 id="expected-value-plain">Expected value in plain language</h2>
+        <p>Expected value is the long-run average of a calculation repeated under the same conditions. It is not a prediction for a single match. In a betting context, it compares the probability of an outcome with the price on offer, scaled to a common unit such as 100 units of turnover.</p>
+<p>Suppose a hypothetical price of 2.20 implies a 45.5 per cent chance, because 1 divided by 2.20 is 0.4545. If your estimate is 50 per cent, the expected return per 100 units of turnover is 0.50 multiplied by 220, which equals 110. That is 10 units above the 100 units turned over. If your estimate is 42 per cent, the expected return is 0.42 multiplied by 220, which equals 92.4, or 7.6 units below. The arithmetic is neutral. It does not tell anyone to take the price, and it is only as good as the estimate.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The sensitivity is the important part. A small change in the probability estimate can change the sign of the calculation. The table uses the same hypothetical price of 2.20 and four estimates. The break-even probability is 100 divided by 220, or 45.45 per cent.</p>
+<table>
+<thead><tr><th>Estimated probability</th><th>Expected return per 100 units</th><th>Difference from 100</th></tr></thead>
+<tbody>
+<tr><td>55%</td><td>121.0</td><td>+21.0</td></tr>
+<tr><td>50%</td><td>110.0</td><td>+10.0</td></tr>
+<tr><td>45%</td><td>99.0</td><td>-1.0</td></tr>
+<tr><td>40%</td><td>88.0</td><td>-12.0</td></tr>
+</tbody>
+</table>
+<p>At 50 per cent, the calculation looks favourable. At 45 per cent, it is almost exactly break-even. At 40 per cent, it is clearly negative. The gap between 50 and 40 is ten percentage points, which is well within the error of many football models. A forecast that looks strong at one estimate can look weak at another, and the person doing the calculation may not know which estimate is closer to the truth.</p>
+<p>The break-even probability is a useful reference because it shows how much confidence the price requires. It does not show whether the estimate is right. A model can clear the break-even line in its own arithmetic and still be wrong about the match, because the arithmetic inherits every assumption in the model.</p>
+      </section>
+      <section aria-labelledby="positive-estimate-lose">
+        <h2 id="positive-estimate-lose">Why a positive estimate can still lose</h2>
+        <p>Even if the estimate is right on average, a single season can produce a loss. Variance is not a flaw in the calculation; it is the reason the calculation is an average. A 55 per cent event that pays 2.20 will lose 45 per cent of the time. Over 20 repetitions, losing 12 is entirely possible, and the order of those losses can make the run feel like evidence of a broken method.</p>
+<p>The calculation describes a long-run average under repeated conditions. Football matches are not repeated under identical conditions, and the model may be stale by the time the sample is large enough to judge. That is why a positive estimate is not a promise, and why a negative run is not proof that the process is wrong. Both statements cut in the same direction: single outcomes are weak evidence.</p>
+      </section>
+      <section aria-labelledby="sound-analysis">
+        <h2 id="sound-analysis">What sound analysis looks like</h2>
+        <p>A sound process starts with a defined question and a written forecast. It compares the forecast with a baseline, records the result, and reviews a batch of decisions rather than a single match. It states its uncertainty and separates the model from the outcome. It also distinguishes between a forecast that was wrong and a forecast that was unreasonable given the information available.</p>
+<p>None of that makes a better result certain. It does make the analysis easier to learn from, and it makes it harder to claim credit for luck. The aim is a process that would look sensible to another analyst who saw the record, not a highlight reel that looks impressive to a casual reader. Our article on <a href="risk-management-football-analysis.html">risk management for football analysis</a> explains how sample size and selectivity affect that judgement.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Judging a forecast only by whether it won.</strong> The probability is part of the forecast, not decoration.</li>
+<li><strong>Changing the probability after the result.</strong> A forecast that is edited after the event cannot be scored.</li>
+<li><strong>Comparing hit rates across different event types.</strong> A 60 per cent rate on one question is not the same as 60 per cent on another.</li>
+<li><strong>Ignoring the price when judging a forecast.</strong> Accuracy without a price says nothing about the terms on offer.</li>
+<li><strong>Treating a short run as proof of a method.</strong> Variance can make a weak process look strong for a while.</li>
+<li><strong>Confusing a confident manner with a calibrated one.</strong> Certainty is not evidence.</li>
+</ul>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and caveats</h2>
+        <p>This is not a staking guide, and expected value arithmetic is not a promise. The estimate can be wrong, the market can be right, and the margin is always there. A calculation that looks favourable on paper can still produce a losing sequence, and a calculation that looks unfavourable can produce a winning one by chance.</p>
+<p>The wider point is simple. Most people who gamble over time end up with less money than they started, because prices embed a margin and variance ensures that even good estimates have bad runs. Analysis can improve understanding. It cannot make the underlying uncertainty disappear, and it cannot repeal the arithmetic of the margin. Our guide to <a href="implied-probability-expected-value.html">implied probability and expected value</a> goes deeper into the price side of the calculation.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Can a prediction be accurate but poorly calibrated?</summary>
+      <div class="faq-answer"><p>Yes. A forecaster can be right often while attaching probabilities that are too extreme. The hit rate looks good, but the confidence attached to each call does not match the outcomes.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Is expected value a prediction for a single match?</summary>
+      <div class="faq-answer"><p>No. Expected value is an average over many repetitions. A single match can go either way, and a favourable calculation can still produce a losing run.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why do most bettors lose money over time?</summary>
+      <div class="faq-answer"><p>Because prices include a margin and variance creates long losing stretches. A good forecast can still lose over a season, and the margin is paid whether the forecast is good or bad.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#accuracy-count">Accuracy is a count, not a quality</a></li><li><a href="#calibration-shape">Calibration and the shape of confidence</a></li><li><a href="#expected-value-plain">Expected value in plain language</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#positive-estimate-lose">Why a positive estimate can still lose</a></li><li><a href="#sound-analysis">What sound analysis looks like</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and caveats</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="implied-probability-expected-value.html">
+        <span class="cat">Betting Education</span>
+        <strong>Implied Probability and Expected Value</strong>
+      </a>
+      <a class="related-card" href="track-prediction-accuracy.html">
+        <span class="cat">Betting Education</span>
+        <strong>How to Track Prediction Accuracy in Football</strong>
+      </a>
+      <a class="related-card" href="risk-management-football-analysis.html">
+        <span class="cat">Betting Education</span>
+        <strong>Risk Management for Football Analysis</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

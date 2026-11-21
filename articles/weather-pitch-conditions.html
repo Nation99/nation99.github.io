@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather and Pitch Conditions: What Analysts Can Adjust</title>
+  <meta name="description" content="How rain, wind, heat, altitude and pitch quality change football matches, with sensible limits on how much to adjust.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/weather-pitch-conditions.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Weather and Pitch Conditions: What Analysts Can Adjust">
+  <meta property="og:description" content="How rain, wind, heat, altitude and pitch quality change football matches, with sensible limits on how much to adjust.">
+  <meta property="og:url" content="https://nation99.github.io/articles/weather-pitch-conditions.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-05-26">
+  <meta property="article:modified_time" content="2026-11-15">
+  <meta property="article:section" content="Tactics">
+  <meta property="article:tag" content="weather">
+  <meta property="article:tag" content="pitch conditions">
+  <meta property="article:tag" content="match context">
+  <meta property="article:tag" content="analysis">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Weather and Pitch Conditions: What Analysts Can Adjust">
+  <meta name="twitter:description" content="How rain, wind, heat, altitude and pitch quality change football matches, with sensible limits on how much to adjust.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/weather-pitch-conditions.html#webpage","url":"https://nation99.github.io/articles/weather-pitch-conditions.html","name":"Weather and Pitch Conditions: What Analysts Can Adjust","description":"How rain, wind, heat, altitude and pitch quality change football matches, with sensible limits on how much to adjust.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/weather-pitch-conditions.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Tactics","item":"https://nation99.github.io/articles/?category=Tactics"},{"@type":"ListItem","position":4,"name":"How Weather and Pitch Conditions Change Matches"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/weather-pitch-conditions.html#article","headline":"How Weather and Pitch Conditions Change Matches","description":"How rain, wind, heat, altitude and pitch quality change football matches, with sensible limits on how much to adjust.","datePublished":"2026-05-26","dateModified":"2026-11-15","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/weather-pitch-conditions.html#webpage"},"articleSection":"Tactics","keywords":"weather, pitch conditions, match context, analysis","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does rain reduce goals in football?","acceptedAnswer":{"@type":"Answer","text":"Not reliably. Light rain can make a good surface faster, while heavy rain can slow the ball and increase scrappy chances. The effect depends on drainage, the amount of water and the styles of the two teams."}},{"@type":"Question","name":"How much should weather change a match forecast?","acceptedAnswer":{"@type":"Answer","text":"Usually only a little. A sensible adjustment is often less than 0.2 goals for the match total, and it should come with a wider uncertainty range. If the condition is not clearly relevant to either team's style, no adjustment may be better than a guess."}},{"@type":"Question","name":"Do artificial pitches create a home advantage?","acceptedAnswer":{"@type":"Answer","text":"Possibly, through familiarity with the bounce and the surface, but the evidence is mixed and the effect is not fixed. Team quality, venue and travel usually matter more than the surface alone."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Tactics">Tactics</a></li><li><span aria-current="page">How Weather and Pitch Conditions Change Matches</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Tactics</p>
+        <h1>How Weather and Pitch Conditions Change Matches</h1>
+        <p class="article-dek">Conditions rarely transform a match on their own. They nudge the style, the error rate and the value of set pieces, and the nudge is usually smaller than the commentary suggests.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-05-26">26 May 2026</time></span>
+          <span>Last updated <time datetime="2026-11-15">15 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Weather is the easiest excuse in football and one of the hardest variables to measure. A commentator sees a slippery surface and predicts fewer goals; a coach sees the same surface and expects more mistakes. Both stories can be true in different matches. The conditions set a range of possible effects, and the teams decide which ones appear.</p>
+<p>For analysis, the useful question is not whether it will rain. It is which parts of each team's game depend on a dry, calm, firm surface, and how much of that dependence survives the forecast. That keeps the adjustment honest and avoids turning a weather report into a prediction.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Weather affects both teams, but not always in the same way.</li><li>Rain can reduce open-play fluency while increasing the value of set pieces.</li><li>Wind direction matters more than wind speed alone.</li><li>Pitch and surface quality are part of venue context, not a separate penalty.</li><li>Most condition adjustments should be small and expressed as ranges.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-conditions-change">
+        <h2 id="what-conditions-change">What conditions can and cannot change</h2>
+        <p>Weather changes the physical environment: how the ball rolls, how high it bounces, how much grip a player has, how quickly a pitch drains and how hard the body works to regulate temperature. Those changes can affect passing accuracy, dribbling, pressing duration and the flight of a cross or a long shot.</p>
+<p>What weather cannot do is erase the difference in quality between two teams. A poor surface may add randomness, but it does not make a weaker side equal. Conditions also tend to affect both teams, though not symmetrically: a team built on short passing may suffer more from standing water than a team built on direct play and set pieces.</p>
+      </section>
+      <section aria-labelledby="rain-and-surface-water">
+        <h2 id="rain-and-surface-water">Rain and surface water</h2>
+        <p>Light rain can make a pitch faster and more predictable, especially on a well-maintained surface. The ball skids through, passes arrive sooner and defenders have less time to adjust. Heavy rain is different. Standing water slows the ball, kills bounce and makes turning and stopping harder. The match can become a sequence of loose balls and set pieces.</p>
+<p>The common assumption that rain means fewer goals is too simple. Rain can reduce clean passing moves, but it can also increase defensive errors, corners and penalty-area scrambles. The direction of the effect depends on drainage, the amount of water and the styles involved. A team that defends deep and attacks set pieces may be relatively comfortable in conditions that frustrate a possession side.</p>
+      </section>
+      <section aria-labelledby="wind">
+        <h2 id="wind">Wind</h2>
+        <p>Wind is directional, which makes it more interesting than a simple speed reading. A strong crosswind affects crosses and long diagonal passes; a wind blowing towards one goal can make clearances travel further and turn a routine long ball into a chance. A team playing into the wind may shorten its passing and keep the ball lower.</p>
+<p>Stadium geometry matters. An open ground exposes the pitch; a compact stadium with tall stands may shield it. Gusts matter more than averages because a single gust can change the flight of a ball at the decisive moment. Weather reports rarely capture that level of detail, which is one reason wind adjustments should be modest and uncertain.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="heat-and-humidity">
+        <h2 id="heat-and-humidity">Heat and humidity</h2>
+        <p>Heat affects the pace of the game and the way players manage their energy. In hot, humid conditions, high pressing becomes more expensive, and teams may sit deeper to avoid repeated sprinting. Cooling breaks, if the competition allows them, can change the rhythm. Substitutions become more valuable because fresh legs can exploit tired opponents.</p>
+<p>Acclimatisation matters. A team used to playing in heat may cope better than a visiting side that has arrived from a cooler climate. That overlaps with travel and recovery, so avoid treating heat as an independent penalty. The <a href="travel-fatigue-football.html">guide to travel and fatigue</a> explains why the combination of climate, journey and congestion is more informative than any one factor.</p>
+      </section>
+      <section aria-labelledby="altitude">
+        <h2 id="altitude">Altitude</h2>
+        <p>At altitude, air density falls. The ball travels slightly further and faster, and aerobic effort feels harder for players who are not adapted. The effect is real at venues substantially above sea level, but it is easy to overstate for a single match. Visiting teams often arrive early to adapt, and the physiological response varies between individuals.</p>
+<p>Altitude is a venue-specific factor, not a universal weather adjustment. If a match is played at sea level, altitude should not appear in the model at all. If it is played high, the effect belongs with the venue and the away team's preparation, not in a generic "difficult conditions" bonus.</p>
+      </section>
+      <section aria-labelledby="pitch-quality-and-surface">
+        <h2 id="pitch-quality-and-surface">Pitch quality and surface type</h2>
+        <p>Pitch quality is broader than the weather on the day. Grass length, moisture, wear, drainage and the presence of other events in the stadium all change how the surface plays. A dry, firm pitch rewards speed of pass; a soft, heavy pitch rewards strength and direct play. A heavily worn area can become a target for both teams.</p>
+<p>Artificial surfaces add another layer. The ball bounces differently, the surface is more consistent and some players are less comfortable on it. Home teams that train on the same surface may gain a small familiarity edge, which is part of the wider <a href="home-advantage-modern-football.html">home advantage</a> picture. The effect is usually smaller than the difference in team quality, and it is not a fixed bonus.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The expected-goals figures below are illustrative and describe a hypothetical Club A and Club B. They are split into open-play and set-piece contributions so the arithmetic can be followed.</p>
+<table>
+<thead><tr><th>Condition</th><th>Club A open play</th><th>Club A set piece</th><th>Club A total</th><th>Club B total</th><th>Match total</th></tr></thead>
+<tbody>
+<tr><td>Baseline</td><td>1.25</td><td>0.30</td><td>1.55</td><td>1.15</td><td>2.70</td></tr>
+<tr><td>Heavy rain</td><td>1.18</td><td>0.31</td><td>1.49</td><td>1.10</td><td>2.59</td></tr>
+<tr><td>Strong wind</td><td>1.13</td><td>0.29</td><td>1.42</td><td>1.06</td><td>2.48</td></tr>
+</tbody>
+</table>
+<p>For heavy rain, apply a 6% reduction to open-play expected goals and a 4% increase to set pieces. Club A's open play becomes 1.25 x 0.94 = 1.175, which rounds to 1.18. Its set pieces become 0.30 x 1.04 = 0.312, which rounds to 0.31. The total is 1.49. Club B's open play is 0.95 x 0.94 = 0.893, or 0.89, and its set pieces are 0.20 x 1.04 = 0.208, or 0.21, for a total of 1.10. The match total falls from 2.70 to 2.59, a reduction of 0.11 goals, or about 4%.</p>
+<p>For strong wind, apply a 10% reduction to open play and a 2% reduction to set pieces. Club A's total becomes 1.42 and Club B's becomes 1.06, for a match total of 2.48. That is 0.22 lower than the baseline, or about 8%. Even a fairly aggressive wind adjustment moves the total by less than a quarter of a goal.</p>
+<p>The exact percentages are assumptions, not measurements. The purpose of the table is to show the scale: conditions usually shift a match total by a few tenths of a goal, and the direction can differ by team. A side that depends heavily on set pieces might see almost no change in a rain-soaked match, while a short-passing side could lose more of its open-play edge than the average suggests.</p>
+      </section>
+      <section aria-labelledby="using-conditions-in-analysis">
+        <h2 id="using-conditions-in-analysis">Using conditions in analysis</h2>
+        <p>Check the forecast at the stadium, not the city, and check the timing. A forecast for heavy rain at dawn may be irrelevant if the pitch drains well and the rain stops by kick-off. Wind direction is more useful than wind speed. Pitch inspections and local reports can add detail that a generic weather app misses.</p>
+<p>Then connect the conditions to style. Does the home team cross a lot? Does the away team play short goal kicks? Is either side dependent on a high press that heat or a heavy pitch would make more expensive? Adjust the parts of the model that the condition actually touches, rather than applying a blanket change to the total. Our <a href="pre-match-analysis-guide.html">pre-match analysis guide</a> shows where this check fits in a wider routine.</p>
+<p>Finally, keep the adjustment small and the uncertainty wide. If the condition is not clearly relevant to either team's style, the best adjustment may be none at all.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Assuming rain means fewer goals.</strong> Rain can reduce open-play fluency and increase set-piece and error-driven chances.</li>
+<li><strong>Treating conditions as symmetric.</strong> A direct team and a short-passing team do not suffer equally on the same surface.</li>
+<li><strong>Ignoring wind direction.</strong> A strong wind blowing across the pitch is a different problem from one blowing towards a goal.</li>
+<li><strong>Using the forecast too early.</strong> Conditions at kick-off can differ from the morning report.</li>
+<li><strong>Overfitting to one famous match.</strong> A memorable mudbath is an anecdote, not a base rate.</li>
+</ul>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">What weather analysis cannot tell you</h2>
+        <p>Forecasts are uncertain, stadium microclimates are local and pitch drainage data is rarely public. The effects of weather are also nonlinear: light rain may help a fast surface, while heavy rain harms it. Players adapt, grounds staff prepare and teams change their approach, so the same forecast can produce different matches.</p>
+<p>Weather is a context variable, not a hidden edge. It can help explain why a match looked unusual, and it can justify a small adjustment to a match estimate. It cannot tell you which team will cope better with a single gust or a single bad bounce.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Does rain reduce goals in football?</summary>
+      <div class="faq-answer"><p>Not reliably. Light rain can make a good surface faster, while heavy rain can slow the ball and increase scrappy chances. The effect depends on drainage, the amount of water and the styles of the two teams.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How much should weather change a match forecast?</summary>
+      <div class="faq-answer"><p>Usually only a little. A sensible adjustment is often less than 0.2 goals for the match total, and it should come with a wider uncertainty range. If the condition is not clearly relevant to either team&#39;s style, no adjustment may be better than a guess.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Do artificial pitches create a home advantage?</summary>
+      <div class="faq-answer"><p>Possibly, through familiarity with the bounce and the surface, but the evidence is mixed and the effect is not fixed. Team quality, venue and travel usually matter more than the surface alone.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-conditions-change">What conditions can and cannot change</a></li><li><a href="#rain-and-surface-water">Rain and surface water</a></li><li><a href="#wind">Wind</a></li><li><a href="#heat-and-humidity">Heat and humidity</a></li><li><a href="#altitude">Altitude</a></li><li><a href="#pitch-quality-and-surface">Pitch quality and surface type</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#using-conditions-in-analysis">Using conditions in analysis</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">What weather analysis cannot tell you</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="home-advantage-modern-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Home Advantage in Modern Football</strong>
+      </a>
+      <a class="related-card" href="travel-fatigue-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Travel, Fatigue, and Football Performance</strong>
+      </a>
+      <a class="related-card" href="pre-match-analysis-guide.html">
+        <span class="cat">Beginner Guides</span>
+        <strong>How to Analyse a Football Match</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

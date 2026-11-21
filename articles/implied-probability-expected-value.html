@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Implied Probability and Expected Value</title>
+  <meta name="description" content="Turn odds into implied probability, remove the margin to estimate fair odds, and calculate expected value without mistaking an average for a promise.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/implied-probability-expected-value.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Implied Probability and Expected Value">
+  <meta property="og:description" content="Turn odds into implied probability, remove the margin to estimate fair odds, and calculate expected value without mistaking an average for a promise.">
+  <meta property="og:url" content="https://nation99.github.io/articles/implied-probability-expected-value.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-04-08">
+  <meta property="article:modified_time" content="2026-11-18">
+  <meta property="article:section" content="Betting Education">
+  <meta property="article:tag" content="implied probability">
+  <meta property="article:tag" content="expected value">
+  <meta property="article:tag" content="overround">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Implied Probability and Expected Value">
+  <meta name="twitter:description" content="Turn odds into implied probability, remove the margin to estimate fair odds, and calculate expected value without mistaking an average for a promise.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/implied-probability-expected-value.html#webpage","url":"https://nation99.github.io/articles/implied-probability-expected-value.html","name":"Implied Probability and Expected Value","description":"Turn odds into implied probability, remove the margin to estimate fair odds, and calculate expected value without mistaking an average for a promise.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/implied-probability-expected-value.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Betting Education","item":"https://nation99.github.io/articles/?category=Betting%20Education"},{"@type":"ListItem","position":4,"name":"Implied Probability and Expected Value"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/implied-probability-expected-value.html#article","headline":"Implied Probability and Expected Value","description":"Turn odds into implied probability, remove the margin to estimate fair odds, and calculate expected value without mistaking an average for a promise.","datePublished":"2026-04-08","dateModified":"2026-11-18","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/implied-probability-expected-value.html#webpage"},"articleSection":"Betting Education","keywords":"implied probability, expected value, overround","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between implied probability and expected value?","acceptedAnswer":{"@type":"Answer","text":"Implied probability comes from the price: it is 1 divided by decimal odds. Expected value compares that price with an independent probability estimate. The first describes the market; the second compares the market with a model."}},{"@type":"Question","name":"Should I remove the margin before calculating expected value?","acceptedAnswer":{"@type":"Answer","text":"No. Expected value uses the actual decimal price, margin included. Normalisation helps compare the market's relative view, but it is not the price you would be paid."}},{"@type":"Question","name":"Can a positive expected value still lose?","acceptedAnswer":{"@type":"Answer","text":"Yes. Expected value is an average over many repetitions. A single outcome, or a short run, can lose even when the calculation is sound. A small edge also sits within the error of most models."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Betting%20Education">Betting Education</a></li><li><span aria-current="page">Implied Probability and Expected Value</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Betting Education</p>
+        <h1>Implied Probability and Expected Value</h1>
+        <p class="article-dek">Two calculations separate a price from a claim. Both are simple, and both are easy to misuse.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-04-08">8 April 2026</time></span>
+          <span>Last updated <time datetime="2026-11-18">18 November 2026</time></span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Expected value is often presented as a single number that settles an argument. The number is useful, but only if you know what went into it. A positive result can come from a sound model, a careless model, or a price that has moved since the calculation. The arithmetic does not distinguish between those cases.</p>
+<p>This guide builds the calculation from the beginning. Implied probability asks what a price says; expected value asks what a model says about that price. Keeping the two separate is the first defence against false confidence. The emphasis throughout is on uncertainty, because the uncertain part is usually the largest part.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Implied probability is one divided by decimal odds.</li><li>Normalising implied probabilities removes the market margin for comparison.</li><li>Expected value compares a model probability with the price, not with the outcome.</li><li>A positive expected value can still produce long losing runs.</li><li>Model error is usually larger than the edge being measured.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="implied-probability">
+        <h2 id="implied-probability">Implied probability from a market price</h2>
+        <p>For decimal odds, implied probability is 1 divided by the price. A price of 2.50 implies 40 per cent, a price of 3.40 implies 29.41 per cent, and a price of 4.00 implies 25 per cent. The calculation is exact, and it is the same for every market.</p>
+<p>The result is called implied because it is contained in the price, not because it is true. A price of 4.00 implies a 25 per cent chance under the market's arithmetic, not in reality.</p>
+<p>For a three-way football market, the three implied probabilities usually add to more than 100 per cent. The excess is the margin. A market with prices of 2.10, 3.40 and 4.00 has implied probabilities of 47.62, 29.41 and 25.00 per cent, which add to 102.03 per cent.</p>
+<p>That total is the starting point for the next step, and a reminder that the raw numbers cannot be treated as a clean probability distribution.</p>
+      </section>
+      <section aria-labelledby="fair-odds">
+        <h2 id="fair-odds">Removing the margin to estimate fair odds</h2>
+        <p>To remove the margin, divide each implied probability by the total. In the example above, Club A's 47.62 is divided by 1.0203, which gives 46.67 per cent. The draw's 29.41 becomes 28.83 per cent, and Club B's 25.00 becomes 24.50 per cent. The three now add to 100 per cent.</p>
+<p>Fair decimal odds can be reconstructed by dividing 1 by each normalised probability. Club A's fair price is about 2.14, the draw about 3.47 and Club B about 4.08. These are fair relative to the market's prices, not in any absolute sense.</p>
+<p>The word fair needs care. Here it means a price with no margin, given the market's implied probabilities. It does not mean a price that will produce a positive expected value against a better model.</p>
+<p>Normalisation is most useful for comparing markets with different margins, or for reading a market's relative ordering. It is less useful for calculating expected value, where the actual price, margin included, is the number that determines the return.</p>
+      </section>
+      <section aria-labelledby="expected-value">
+        <h2 id="expected-value">Expected value in plain arithmetic</h2>
+        <p>Expected value, usually shortened to EV, is the average return per unit staked if the same situation were repeated many times. For a single outcome with decimal odds d and model probability p, the formula for one unit is:</p>
+<p><strong>EV = (p multiplied by (d minus 1)) minus (1 minus p)</strong></p>
+<p>The first term is the return above the stake when the outcome happens, weighted by its probability. The second is the stake lost when it does not. Zero means the price is fair against the model; positive means the model thinks the price is generous on average; negative means it looks short.</p>
+<p>The formula assumes a binary outcome and a fixed stake. Football markets with three outcomes need the calculation repeated for each outcome, with the probabilities summing to 100 per cent across the market.</p>
+<p>A positive EV is not a prediction that the outcome will happen. A 27 per cent chance at 4.00 can have a positive EV if the model is right, but the outcome is still unlikely in that single match.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="positive-edge-losing-runs">
+        <h2 id="positive-edge-losing-runs">Why a positive edge still loses often</h2>
+        <p>Take an illustrative outcome with a 27 per cent model probability and decimal odds of 4.00. The break-even probability is 25 per cent, so the model sees a two percentage point edge. The EV per unit is 0.27 multiplied by 3.00, minus 0.73, which is 0.08.</p>
+<p>That positive number does not make the outcome likely. A 27 per cent event fails 73 per cent of the time. Over five independent repetitions, the chance of no success is 0.73 to the fifth power, about 21 per cent. Losing runs are not evidence that the calculation was wrong; they are part of the distribution.</p>
+<p>Over many repetitions, the average return may approach the expected value if the probability is accurate and the trials are independent. Football matches are not independent in every respect: form, injuries and tactical changes create correlation over time, which makes the real distribution wider than a coin-toss analogy suggests.</p>
+<p>The practical point is that a small edge is difficult to detect. A model that claims a two percentage point advantage is claiming a difference that could easily come from estimation error. The edge and the error are the same order of magnitude.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table is illustrative. Club A and Club B are hypothetical, and the prices and model probabilities are invented for the calculation.</p>
+<table>
+<caption>Comparing a hypothetical model with a hypothetical market</caption>
+<thead>
+<tr><th>Outcome</th><th>Decimal odds</th><th>Break-even probability</th><th>Model probability</th><th>Difference</th><th>EV per unit</th></tr>
+</thead>
+<tbody>
+<tr><td>Club A win</td><td>2.10</td><td>47.62%</td><td>46.00%</td><td>-1.62 points</td><td>-0.034</td></tr>
+<tr><td>Draw</td><td>3.40</td><td>29.41%</td><td>27.00%</td><td>-2.41 points</td><td>-0.082</td></tr>
+<tr><td>Club B win</td><td>4.00</td><td>25.00%</td><td>27.00%</td><td>+2.00 points</td><td>+0.080</td></tr>
+</tbody>
+</table>
+<p>The break-even probability is 1 divided by the decimal odds. For Club A, 1 divided by 2.10 is 0.4762, or 47.62 per cent. The model gives Club A 46 per cent, which is below the break-even point, so the EV is negative.</p>
+<p>The EV arithmetic for Club A is 0.46 multiplied by 1.10, which is 0.506, minus 0.54, which is -0.034. For the draw, 0.27 multiplied by 2.40 is 0.648, minus 0.73, which is -0.082. For Club B, 0.27 multiplied by 3.00 is 0.81, minus 0.73, which is +0.08.</p>
+<p>Club B shows a positive EV of 0.08 units per unit staked. That sounds impressive until the sensitivity is examined. At a model probability of 24 per cent, the EV becomes 0.24 multiplied by 3.00, minus 0.76, which is -0.04. A three point error flips the sign.</p>
+<p>The market's raw probabilities add to 102.03 per cent. Normalising them gives roughly 46.67, 28.83 and 24.50 per cent. The market's view of Club B is close to the 24 per cent that would make the EV negative, so the apparent edge is small relative to the uncertainty.</p>
+      </section>
+      <section aria-labelledby="model-probabilities">
+        <h2 id="model-probabilities">Where the model probability comes from</h2>
+        <p>The calculation is only as good as the probability behind it. That probability can come from a ratings system, a Poisson model, a machine learning pipeline or structured judgement, and each source has its own failure modes.</p>
+<p>A Poisson model, for example, turns estimated goal rates into a scoreline distribution. Our guide to the <a href="poisson-distribution-football.html">Poisson distribution in football</a> explains the mechanics and the assumptions. A rating system may be simpler but harder to audit. A judgement call may capture context that a model misses, but it is difficult to calibrate.</p>
+<p>Whatever the source, the probability should be tested over a large sample. Calibration asks whether events assigned a 30 per cent chance happen about 30 per cent of the time. A model can be accurate on average and badly calibrated in the tails, where football markets often live.</p>
+<p>Comparing the model with the market's normalised probabilities also helps. A large disagreement is not automatically an opportunity; it may mean the model is missing team news, or that the market knows something the model does not.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <p><strong>Comparing a model with the wrong baseline.</strong> Use raw implied probability for EV, because that is the price actually available. Use normalised probability when comparing the market's relative view. Mixing the two produces false edges.</p>
+<p><strong>Forgetting the stake in the formula.</strong> The return above the stake is d minus 1, not d. Using d in the first term overstates the EV by the stake on every calculation.</p>
+<p><strong>Treating EV as a property of one match.</strong> Expected value is an average over repetitions. A single result can contradict it without disproving it.</p>
+<p><strong>Ignoring uncertainty in the probability.</strong> A point estimate without an error range encourages false precision. If the edge is two points and the error is five, the edge is not established.</p>
+<p><strong>Leaving out the draw.</strong> In a three-way market, the draw is an outcome with its own price. A model that only compares two teams is incomplete.</p>
+<p><strong>Overfitting a small sample.</strong> A model tuned to twenty matches may describe those matches well and predict the next twenty poorly. Keep a holdout sample and update slowly.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and caveats</h2>
+        <p>Expected value is a simplification. It assumes that the probability estimate is meaningful, that the price is available in the size you need, and that the situation can be repeated under similar conditions. None of those assumptions is perfectly true in football.</p>
+<p>The largest source of error is usually the model, not the arithmetic. A perfect calculation built on a poorly calibrated probability is still a poor guide. The market's margin also varies between competitions and between early and late prices.</p>
+<p>The calculation also says nothing about whether an outcome is likely. It compares a price with a probability. A positive result can sit on a 10 per cent event, and a negative result can sit on an 80 per cent event.</p>
+<p>For the price formats that feed these calculations, see <a href="reading-football-odds.html">how to read football odds</a>. For the wider question of what a good prediction record looks like, see <a href="winning-predictions-vs-profit.html">winning predictions versus sound analysis</a>. Both are useful companions to the arithmetic, and neither turns it into a promise.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is the difference between implied probability and expected value?</summary>
+      <div class="faq-answer"><p>Implied probability comes from the price: it is 1 divided by decimal odds. Expected value compares that price with an independent probability estimate. The first describes the market; the second compares the market with a model.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I remove the margin before calculating expected value?</summary>
+      <div class="faq-answer"><p>No. Expected value uses the actual decimal price, margin included. Normalisation helps compare the market&#39;s relative view, but it is not the price you would be paid.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can a positive expected value still lose?</summary>
+      <div class="faq-answer"><p>Yes. Expected value is an average over many repetitions. A single outcome, or a short run, can lose even when the calculation is sound. A small edge also sits within the error of most models.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#implied-probability">Implied probability from a market price</a></li><li><a href="#fair-odds">Removing the margin to estimate fair odds</a></li><li><a href="#expected-value">Expected value in plain arithmetic</a></li><li><a href="#positive-edge-losing-runs">Why a positive edge still loses often</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#model-probabilities">Where the model probability comes from</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and caveats</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="reading-football-odds.html">
+        <span class="cat">Beginner Guides</span>
+        <strong>How to Read Football Odds</strong>
+      </a>
+      <a class="related-card" href="winning-predictions-vs-profit.html">
+        <span class="cat">Betting Education</span>
+        <strong>Winning Predictions vs Sound Analysis</strong>
+      </a>
+      <a class="related-card" href="poisson-distribution-football.html">
+        <span class="cat">Betting Education</span>
+        <strong>Poisson Distribution for Football</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

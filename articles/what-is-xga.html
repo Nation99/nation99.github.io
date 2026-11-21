@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Is xGA? Defensive Expected Goals</title>
+  <meta name="description" content="Expected goals against measures the quality of chances a team concedes. Learn how xGA separates defence from goalkeeping and where it misleads.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/what-is-xga.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What Is xGA? Defensive Expected Goals">
+  <meta property="og:description" content="Expected goals against measures the quality of chances a team concedes. Learn how xGA separates defence from goalkeeping and where it misleads.">
+  <meta property="og:url" content="https://nation99.github.io/articles/what-is-xga.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-02-03">
+  <meta property="article:modified_time" content="2026-11-06">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="xGA">
+  <meta property="article:tag" content="defence">
+  <meta property="article:tag" content="goalkeeping">
+  <meta property="article:tag" content="analytics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What Is xGA? Defensive Expected Goals">
+  <meta name="twitter:description" content="Expected goals against measures the quality of chances a team concedes. Learn how xGA separates defence from goalkeeping and where it misleads.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/what-is-xga.html#webpage","url":"https://nation99.github.io/articles/what-is-xga.html","name":"What Is xGA? Defensive Expected Goals","description":"Expected goals against measures the quality of chances a team concedes. Learn how xGA separates defence from goalkeeping and where it misleads.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/what-is-xga.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"What Is xGA? Defensive Expected Goals"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/what-is-xga.html#article","headline":"What Is xGA? Defensive Expected Goals","description":"Expected goals against measures the quality of chances a team concedes. Learn how xGA separates defence from goalkeeping and where it misleads.","datePublished":"2026-02-03","dateModified":"2026-11-06","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/what-is-xga.html#webpage"},"articleSection":"xG and Stats","keywords":"xGA, defence, goalkeeping, analytics","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is lower xGA always better?","acceptedAnswer":{"@type":"Answer","text":"Usually, because it means the team allowed chances of lower estimated quality. But a low xGA can also come from a slow game, a cautious opponent, or a match state that discouraged risk, so the number needs context."}},{"@type":"Question","name":"How does xGA differ from goals conceded?","acceptedAnswer":{"@type":"Answer","text":"xGA values the chances faced; goals conceded records how many went in. The gap between them reflects finishing, goalkeeping, deflections, and random variation over the sample."}},{"@type":"Question","name":"Should I use xGA for a single match?","acceptedAnswer":{"@type":"Answer","text":"It can describe the chances a team allowed in that match, but one game is a small and noisy sample. Use it for match description rather than as a durable judgement about the defence."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">What Is xGA? Defensive Expected Goals</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>What Is xGA? Defensive Expected Goals</h1>
+        <p class="article-dek">Expected goals against turns the chances a team allows into a single scale. Used carefully, it separates the structure of a defence from the shots that beat it.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-02-03">3 February 2026</time></span>
+          <span>Last updated <time datetime="2026-11-06">6 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>A team can concede twice and defend reasonably well. It can also concede once and defend badly. The scoreline records the outcome of a handful of moments, not the quality of the defending that produced them.</p>
+<p>Expected goals against, or xGA, is the defensive side of the expected goals family. It asks a narrow question: how good were the chances the team allowed? The answer is not a verdict on the defence, but it is a much better starting point than the goals conceded column.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>xGA sums the estimated quality of every shot a team faces, so lower is generally better.</li><li>It describes the chances allowed, not the goals conceded, and the two can diverge sharply.</li><li>Post-shot xG adds shot placement, which helps separate defending from goalkeeping.</li><li>Five matches is a small window; opponent strength and game state need to sit beside the number.</li><li>A low xGA can reflect good defending, a slow game, or a team protecting a lead, so context is essential.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="mirror-image">
+        <h2 id="mirror-image">The mirror image of xG</h2>
+        <p>If xG measures the quality of a team's shots, xGA measures the quality of the shots it faces. The mechanics are the same. Each attempt is assigned a probability of becoming a goal, and those probabilities are summed. A team that allows a clear chance from six yards and a harmless effort from 30 yards will carry both values into its xGA total.</p>
+<p>The direction of judgement is reversed. For xG, a higher figure is usually encouraging. For xGA, a lower figure is usually encouraging. That sounds trivial, but it catches people out when they compare columns quickly or read a table without checking the heading.</p>
+<p>xGA is also a team-level description. It does not say which defender was responsible for a chance, whether the midfield failed to track a runner, or whether the goalkeeper was badly positioned. It says that a shot of a certain quality was taken. Assigning blame requires watching the move.</p>
+      </section>
+      <section aria-labelledby="what-xga-counts">
+        <h2 id="what-xga-counts">What xGA counts</h2>
+        <p>An xGA total normally includes every shot faced, including headers, volleys, penalties, and attempts that are deflected wide. Some providers separate set-piece xGA from open-play xGA, and some exclude penalties because their value is fixed. Those choices matter when comparing teams or providers.</p>
+<p>The count of shots faced is a useful companion. A side allowing 20 shots worth 1.0 xGA has a different profile from a side allowing five shots worth 1.0 xGA. The first defence is conceding a lot of low-quality attempts; the second is limiting volume but allowing better looks. Neither pattern is automatically better without more context.</p>
+<p>It also helps to know how much of the total arrived in which game state. A team that spends the last 20 minutes protecting a one-goal lead may allow shots it would not allow at 0-0. Those attempts still count, but the reason is tactical choice rather than defensive weakness.</p>
+      </section>
+      <section aria-labelledby="defence-and-goalkeeping">
+        <h2 id="defence-and-goalkeeping">Defence and goalkeeping are different problems</h2>
+        <p>Goals conceded is a joint product of the chances allowed and the saves made. xGA isolates the first part. Post-shot xG goes a step further by estimating the chance of a goal after the shot has been struck, taking account of placement and, in some models, goalkeeper position. It is usually calculated only for shots on target.</p>
+<p>Comparing goals conceded with post-shot xG faced gives a rough view of shot-stopping. If a team concedes seven goals from shots worth 5.0 post-shot xG, the goalkeeper has probably saved more than an average keeper would. If it concedes seven from shots worth 9.0, the opposite may be true. "Probably" is doing important work in both sentences, because the sample is small and the metric is a model.</p>
+<p>The distinction matters because a defence can be blamed for goals that were mainly a keeping problem, and a keeper can be credited for results built on chances the defence should have prevented.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The following five-match sequence is illustrative. Club A's opponents and all values are hypothetical, rounded for clarity.</p>
+<table>
+<thead><tr><th>Match</th><th>Shots faced</th><th>xGA</th><th>Shots on target</th><th>Post-shot xG faced</th><th>Goals conceded</th></tr></thead>
+<tbody>
+<tr><td>vs Club B</td><td>9</td><td>0.8</td><td>3</td><td>0.9</td><td>1</td></tr>
+<tr><td>vs Club C</td><td>14</td><td>1.4</td><td>5</td><td>1.6</td><td>1</td></tr>
+<tr><td>vs Club D</td><td>7</td><td>0.6</td><td>4</td><td>1.2</td><td>2</td></tr>
+<tr><td>vs Club E</td><td>11</td><td>1.1</td><td>3</td><td>0.8</td><td>0</td></tr>
+<tr><td>vs Club F</td><td>16</td><td>2.0</td><td>7</td><td>2.5</td><td>3</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>57</strong></td><td><strong>5.9</strong></td><td><strong>22</strong></td><td><strong>7.0</strong></td><td><strong>7</strong></td></tr>
+<tr><td><strong>Per match</strong></td><td><strong>11.4</strong></td><td><strong>1.18</strong></td><td><strong>4.4</strong></td><td><strong>1.40</strong></td><td><strong>1.40</strong></td></tr>
+</tbody>
+</table>
+<p>Club A allowed 5.9 xG across five matches, or 1.18 per match, but conceded seven goals. The gap of 1.1 goals is not proof of bad goalkeeping. The post-shot figure is the better clue. Shots on target were worth 7.0 after placement, and the keeper conceded exactly seven, which suggests roughly neutral shot-stopping across this small sample.</p>
+<p>The comparison between 5.9 xGA and 7.0 post-shot xG needs care because post-shot xG covers only shots on target, while xGA covers all shots. The two totals answer different questions. The useful reading is that the chances faced were modest, the shots that hit the target were well placed, and the scoreline followed the placement more than the raw chance count.</p>
+      </section>
+      <section aria-labelledby="rolling-window">
+        <h2 id="rolling-window">Why a rolling window helps</h2>
+        <p>Five matches is about 450 minutes of football. That is enough to notice a pattern, not enough to establish one. A single deflected shot, a red card, or an early injury can distort the average. A ten-match or twenty-match rolling xGA is less responsive to one strange afternoon and more likely to reflect the team's underlying defensive behaviour.</p>
+<p>The trade-off is obvious. A long window is stable but slow to notice genuine change, such as a new manager altering the back line or a key defender returning from injury. A short window is current but noisy. The sensible approach is to use both: the long window for the baseline, the short window for evidence that something has changed.</p>
+      </section>
+      <section aria-labelledby="opponent-adjustment">
+        <h2 id="opponent-adjustment">Adjusting for the opponent</h2>
+        <p>Allowing 2.0 xGA to a strong attacking side is not the same as allowing 2.0 to a cautious one. A simple adjustment compares each opponent's typical xG creation with what Club A allowed. Suppose the five opponents above averaged 1.1, 1.5, 0.9, 1.2 and 1.8 xG in their other matches. That sums to 6.5 expected xGA across the five games. Club A allowed 5.9, which is 0.6 fewer than the crude baseline, or 0.12 per match.</p>
+<p>This is a blunt adjustment. It ignores venue, the strength of the opponents' opponents, and the fact that the five matches are not a random sample. It is still more informative than treating every xGA total as if it were produced against the same opponent. The arithmetic is simple enough to do in a notebook, and the result should be presented as an estimate rather than a correction set in stone.</p>
+      </section>
+      <section aria-labelledby="reading-with-context">
+        <h2 id="reading-with-context">Reading xGA with context</h2>
+        <p>Start with the per-match figure and the number of shots faced. Then ask who the opponents were, where the matches were played, and what the game states looked like. A team that leads often will spend more time defending a lead, which can raise its xGA without saying much about its defending from a neutral scoreline.</p>
+<p>Split the total by set pieces and open play if the provider supports it. A defence that is solid in open play but vulnerable from corners has a specific problem, and the overall xGA hides it. The same applies to shots from outside the area: a low-quality long-range attempt counts for little, but a cluster of them may indicate that opponents are being allowed to shoot unchallenged.</p>
+<p>Finally, compare xGA with the quality of the goalkeeper and the team's own attacking style. A side that commits many players forward may accept more transition chances by design. That is a tactical trade-off, not necessarily a defensive failure.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li>Reading goals conceded as a direct measure of defence. It mixes chance prevention with finishing and goalkeeping.</li>
+<li>Comparing xGA totals without checking minutes played or the number of matches.</li>
+<li>Ignoring post-shot xG and then blaming the defence for goals that were mainly about placement or keeping.</li>
+<li>Treating a five-match xGA as a settled team trait.</li>
+<li>Mixing xGA numbers from different providers, whose models and inclusion rules may differ.</li>
+<li>Forgetting that game state changes how many chances a team allows.</li>
+</ul>
+<p>Most of these errors come from reading a single column in isolation. xGA is at its best when it sits next to shots faced, post-shot xG, and a note about the opponent.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Where xGA stops being useful</h2>
+        <p>xGA cannot see the chances a defence prevented from ever becoming shots. A perfectly timed interception, a cutback cleared at the near post, or a runner tracked across the box leaves no shot value behind. That means a well-drilled defence can look ordinary in xGA if opponents simply stop attacking down its side.</p>
+<p>It also cannot assign individual responsibility or capture the difference between a chaotic defensive structure and a deliberate one. It is a team-level summary of shot quality faced, and it should be used as one. For a broader view, our guide to <a href="defensive-metrics-football.html">defensive metrics</a> puts xGA alongside post-shot xG, set-piece data, and pressing. If the goalkeeping side interests you, the piece on <a href="goalkeeper-performance-prediction.html">goalkeeper performance</a> explains why save percentages are so noisy. And for the attacking mirror, see <a href="what-is-xg-football.html">what xG measures</a>.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is lower xGA always better?</summary>
+      <div class="faq-answer"><p>Usually, because it means the team allowed chances of lower estimated quality. But a low xGA can also come from a slow game, a cautious opponent, or a match state that discouraged risk, so the number needs context.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How does xGA differ from goals conceded?</summary>
+      <div class="faq-answer"><p>xGA values the chances faced; goals conceded records how many went in. The gap between them reflects finishing, goalkeeping, deflections, and random variation over the sample.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I use xGA for a single match?</summary>
+      <div class="faq-answer"><p>It can describe the chances a team allowed in that match, but one game is a small and noisy sample. Use it for match description rather than as a durable judgement about the defence.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#mirror-image">The mirror image of xG</a></li><li><a href="#what-xga-counts">What xGA counts</a></li><li><a href="#defence-and-goalkeeping">Defence and goalkeeping are different problems</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#rolling-window">Why a rolling window helps</a></li><li><a href="#opponent-adjustment">Adjusting for the opponent</a></li><li><a href="#reading-with-context">Reading xGA with context</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Where xGA stops being useful</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="defensive-metrics-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>Defensive Metrics That Actually Matter</strong>
+      </a>
+      <a class="related-card" href="goalkeeper-performance-prediction.html">
+        <span class="cat">Tactics</span>
+        <strong>Goalkeeper Performance and Prediction</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

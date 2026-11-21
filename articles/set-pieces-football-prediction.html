@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Set Pieces in Football Analysis</title>
+  <meta name="description" content="Corners and free kicks are small systems, not lottery tickets. Separate repeatable set-piece quality from conversion noise with clear arithmetic.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/set-pieces-football-prediction.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Set Pieces in Football Analysis">
+  <meta property="og:description" content="Corners and free kicks are small systems, not lottery tickets. Separate repeatable set-piece quality from conversion noise with clear arithmetic.">
+  <meta property="og:url" content="https://nation99.github.io/articles/set-pieces-football-prediction.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-04-16">
+  <meta property="article:modified_time" content="2026-11-12">
+  <meta property="article:section" content="Tactics">
+  <meta property="article:tag" content="set pieces">
+  <meta property="article:tag" content="corners">
+  <meta property="article:tag" content="aerial duels">
+  <meta property="article:tag" content="chance creation">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Set Pieces in Football Analysis">
+  <meta name="twitter:description" content="Corners and free kicks are small systems, not lottery tickets. Separate repeatable set-piece quality from conversion noise with clear arithmetic.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/set-pieces-football-prediction.html#webpage","url":"https://nation99.github.io/articles/set-pieces-football-prediction.html","name":"Set Pieces in Football Analysis","description":"Corners and free kicks are small systems, not lottery tickets. Separate repeatable set-piece quality from conversion noise with clear arithmetic.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/set-pieces-football-prediction.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Tactics","item":"https://nation99.github.io/articles/?category=Tactics"},{"@type":"ListItem","position":4,"name":"Set Pieces in Football Analysis"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/set-pieces-football-prediction.html#article","headline":"Set Pieces in Football Analysis","description":"Corners and free kicks are small systems, not lottery tickets. Separate repeatable set-piece quality from conversion noise with clear arithmetic.","datePublished":"2026-04-16","dateModified":"2026-11-12","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/set-pieces-football-prediction.html#webpage"},"articleSection":"Tactics","keywords":"set pieces, corners, aerial duels, chance creation","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many corners does a team need before set-piece data is useful?","acceptedAnswer":{"@type":"Answer","text":"More than a handful. A few hundred corners give a steadier picture of routine quality, though even then conversion will vary. Early in a season, treat the numbers as a description rather than a ranking."}},{"@type":"Question","name":"Are short corners less effective than crosses?","acceptedAnswer":{"@type":"Answer","text":"Not inherently. Short corners can create better crossing angles and unsettle a defence that has prepared for an aerial ball. Effectiveness depends on the personnel and the execution, not the label."}},{"@type":"Question","name":"Should set-piece goals be included in expected goals?","acceptedAnswer":{"@type":"Answer","text":"Most expected goals models include them, but it is useful to separate open-play and set-piece chance quality. The two phases have different repeatability and different defensive structures."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Tactics">Tactics</a></li><li><span aria-current="page">Set Pieces in Football Analysis</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Tactics</p>
+        <h1>Set Pieces in Football Analysis</h1>
+        <p class="article-dek">Set pieces are coached routines with repeatable inputs and noisy outputs. The analytical task is to judge the routine without being fooled by the conversion.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-04-16">16 April 2026</time></span>
+          <span>Last updated <time datetime="2026-11-12">12 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>A corner looks like a pause in the game. Analytically, it is a small, repeatable system with its own delivery, movement and second-ball logic. That combination is why set pieces reward a different lens from open-play analysis: the inputs are designed, but the output is still football, with deflections, fouls and goalkeepers involved.</p>
+<p>The temptation is to count goals and call it expertise. A team that scores from four corners in a month is described as a set-piece threat; a team that scores from none is described as weak. Both labels may be wrong. The underlying routines can be identical while the conversion differs.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Set-piece goals are a small sample, so conversion records swing widely.</li><li>Delivery quality, screening movement and aerial profiles repeat more reliably than goals.</li><li>Expected goals per corner is a better guide to routine quality than a season&#39;s goal tally.</li><li>Defending the second ball is part of the routine, not a separate phase.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="why-set-pieces-reward-a-different-lens">
+        <h2 id="why-set-pieces-reward-a-different-lens">Why set pieces reward a different lens</h2>
+        <p>Open-play attacks are shaped by the opponent's structure and the flow of the game. Set pieces are closer to rehearsed plays. The attacking team controls the delivery, the starting positions and, to a large extent, the timing of the movement. The defending team knows this and prepares its own responses.</p>
+<p>That does not make set pieces deterministic. A corner can be headed clear, a free kick can hit the wall, and a goalkeeper can claim a cross that seemed certain to reach a striker. But the repeatability of the setup means we can evaluate the process separately from the result.</p>
+<p>The first step is to decide what counts as a set piece. Corners, wide free kicks, direct free kicks, throw-ins in the final third and penalties are different problems. Grouping them together hides more than it reveals.</p>
+      </section>
+      <section aria-labelledby="the-inputs-that-repeat">
+        <h2 id="the-inputs-that-repeat">The inputs that repeat</h2>
+        <p>Four inputs tend to persist from match to match. Delivery sets the tone: the height, speed and curl of the ball, and whether it is aimed at the near post, the far post or the penalty spot. Screening comes next: the picks and decoy runs that free a runner from his marker. Then there is the aerial profile of the attackers: who can win a header against a defender of similar size, and who needs a run-up to compete.</p>
+<p>The fourth is the second-ball structure. A routine is not finished when the first header is cleared. The team that wins the loose ball at the edge of the box can recycle it, shoot or deliver again. A team that is poorly placed for the second ball can turn a promising corner into an immediate counter-attack for the opponent.</p>
+<p>These inputs are visible without a spreadsheet. Watch three corners in a row and note the same details: who took it, where it landed, who made the first run, and how many defenders were left outside the box. The pattern is usually stable.</p>
+      </section>
+      <section aria-labelledby="measuring-chance-creation-not-goals">
+        <h2 id="measuring-chance-creation-not-goals">Measuring chance creation, not goals</h2>
+        <p>A set-piece goal is a rare event. A team might take two hundred corners in a season and score from a dozen of them. That sample is small enough for randomness to dominate the goal count. A deflection here or a missed header there can change the story completely.</p>
+<p>The expected goals figure gives a better handle on the process. Each corner produces a set of shots, and each shot has a probability of becoming a goal. Adding those probabilities gives the total chance quality created by the corner, regardless of whether the ball went in.</p>
+<p>The same logic applies to defending. A team that concedes few set-piece goals may be well organised, lucky, or protected by a goalkeeper having an excellent season. Looking at the chance quality conceded separates those explanations, at least partly. Our guide to <a href="defensive-metrics-football.html">defensive metrics</a> sets out the wider logic.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="attacking-routines-and-delivery">
+        <h2 id="attacking-routines-and-delivery">Attacking routines and delivery</h2>
+        <p>Delivery is the part of a set piece that most affects the first shot. A flat, fast ball into the near post asks a different question from a high, hanging ball to the far post. The first rewards a glancing header and careful timing; the second rewards height and a contested aerial duel.</p>
+<p>The routine should match the personnel. A team with one dominant centre-back might overload the near post and use decoy runners to create a free run. A team with several strong headers might spread across the six-yard box and attack from deeper starting positions. A team without height might use short corners to create a better crossing angle or drag a defender out of the box.</p>
+<p>Watch the first movement rather than the delivery. If two attackers cross before the ball is struck, the defence has to decide who picks up whom. That decision is where routines create confusion. A well-drilled defence will pass markers on, but a poorly drilled one will leave a runner free.</p>
+      </section>
+      <section aria-labelledby="defending-the-second-ball">
+        <h2 id="defending-the-second-ball">Defending the second ball</h2>
+        <p>Defending a set piece is not only about the first header. The clearance often falls to a player at the edge of the box, and the next action decides whether the attack continues. A defence that clears the first ball but leaves the second-ball zone open has only solved half the problem.</p>
+<p>There are two common approaches. One is to leave a player high up the pitch as an outlet, forcing the opponent to keep a defender back. The other is to commit everyone to the box and rely on a strong first clearance. Both involve trade-offs: the first reduces the attacking numbers, the second increases the risk of a recycled chance.</p>
+<p>Goalkeeper positioning is part of this structure. A keeper who claims crosses confidently can reduce the number of second balls that need defending. A keeper who stays on his line shifts more responsibility onto the defenders. The <a href="goalkeeper-performance-prediction.html">goalkeeper performance guide</a> explains why that choice is not always captured by save numbers.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The figures below are illustrative and describe two hypothetical teams over one match.</p>
+<table>
+<thead><tr><th>Team</th><th>Corners</th><th>Expected goals per corner</th><th>Total corner expected goals</th><th>Goals scored</th></tr></thead>
+<tbody>
+<tr><td>Club A</td><td>6</td><td>0.07</td><td>0.42</td><td>1</td></tr>
+<tr><td>Club B</td><td>3</td><td>0.14</td><td>0.42</td><td>0</td></tr>
+</tbody>
+</table>
+<p>Both teams created the same total chance quality from corners: 6 multiplied by 0.07 equals 0.42, and 3 multiplied by 0.14 equals 0.42. Club A did it through volume, with six deliveries that each produced a modest chance. Club B did it through quality, with three deliveries that each produced a better chance.</p>
+<p>Club A scored once and Club B did not. If the analysis stopped there, it would conclude that Club A had the better set pieces. That conclusion is not supported by the chance quality. One goal from 0.42 expected goals is a good outcome, but it is not evidence that the routine was superior. Conversely, Club B's zero goals from the same total is not evidence that its routine failed.</p>
+<p>Now extend the example over ten matches. Suppose Club A takes 62 corners at 0.07 per corner, for 4.34 total expected goals. Club B takes 31 corners at 0.14 per corner, for the same 4.34. The two teams have created identical chance quality by different routes. If Club A has scored four goals and Club B has scored two, the difference is more likely to be conversion noise than a fundamental gap in set-piece coaching.</p>
+<p>As a rough teaching device, if the 0.42 total were treated as independent, the chance of at least one goal would be 1 minus e to the power of negative 0.42, which is about 34 per cent. Set-piece events are not independent, so use that calculation to understand the scale of the number, not as a forecast.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Judging a routine by its goals.</strong> Conversion is noisy. Look at the chance quality and the repeatability of the movement first.</li>
+<li><strong>Ignoring the second ball.</strong> A clearance is not the end of the phase. The team that wins the loose ball often decides whether the set piece was a success.</li>
+<li><strong>Treating all corners as equal.</strong> A short corner and a deep inswinger create different chances. Split the routines before comparing teams.</li>
+<li><strong>Assuming height is the only route.</strong> Movement, screening and delivery can create chances for smaller attackers. Aerial ability helps, but it is not the whole system.</li>
+</ul>
+      </section>
+      <section aria-labelledby="limits-and-sample-size">
+        <h2 id="limits-and-sample-size">Limits and sample size</h2>
+        <p>Set-piece analysis is limited by sample size and by the quality of the data. A team may take only a few corners in a match, and the routines may change depending on the opponent, the weather or the score. A single season is often too short to separate a genuinely strong set-piece team from a lucky one.</p>
+<p>There is also a selection effect. Teams that are good in open play may not need to invest as much in set pieces, while teams that struggle to create might rely on them more. The routine quality is real, but its importance depends on the rest of the team's game. Use set-piece numbers as one part of the match profile, not as a standalone verdict.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>How many corners does a team need before set-piece data is useful?</summary>
+      <div class="faq-answer"><p>More than a handful. A few hundred corners give a steadier picture of routine quality, though even then conversion will vary. Early in a season, treat the numbers as a description rather than a ranking.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Are short corners less effective than crosses?</summary>
+      <div class="faq-answer"><p>Not inherently. Short corners can create better crossing angles and unsettle a defence that has prepared for an aerial ball. Effectiveness depends on the personnel and the execution, not the label.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Should set-piece goals be included in expected goals?</summary>
+      <div class="faq-answer"><p>Most expected goals models include them, but it is useful to separate open-play and set-piece chance quality. The two phases have different repeatability and different defensive structures.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#why-set-pieces-reward-a-different-lens">Why set pieces reward a different lens</a></li><li><a href="#the-inputs-that-repeat">The inputs that repeat</a></li><li><a href="#measuring-chance-creation-not-goals">Measuring chance creation, not goals</a></li><li><a href="#attacking-routines-and-delivery">Attacking routines and delivery</a></li><li><a href="#defending-the-second-ball">Defending the second ball</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits-and-sample-size">Limits and sample size</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="defensive-metrics-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>Defensive Metrics That Actually Matter</strong>
+      </a>
+      <a class="related-card" href="goalkeeper-performance-prediction.html">
+        <span class="cat">Tactics</span>
+        <strong>Goalkeeper Performance and Prediction</strong>
+      </a>
+      <a class="related-card" href="tactical-matchups-vs-reputation.html">
+        <span class="cat">Tactics</span>
+        <strong>Tactical Matchups Matter More Than Reputation</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

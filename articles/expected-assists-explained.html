@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expected Assists (xA) Explained</title>
+  <meta name="description" content="Expected assists estimates the shot value a pass created. Learn how xA works, how it differs from key passes, and where it misleads.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/expected-assists-explained.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Expected Assists (xA) Explained">
+  <meta property="og:description" content="Expected assists estimates the shot value a pass created. Learn how xA works, how it differs from key passes, and where it misleads.">
+  <meta property="og:url" content="https://nation99.github.io/articles/expected-assists-explained.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-10-05">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="xA">
+  <meta property="article:tag" content="expected assists">
+  <meta property="article:tag" content="chance creation">
+  <meta property="article:tag" content="analytics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Expected Assists (xA) Explained">
+  <meta name="twitter:description" content="Expected assists estimates the shot value a pass created. Learn how xA works, how it differs from key passes, and where it misleads.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/expected-assists-explained.html#webpage","url":"https://nation99.github.io/articles/expected-assists-explained.html","name":"Expected Assists (xA) Explained","description":"Expected assists estimates the shot value a pass created. Learn how xA works, how it differs from key passes, and where it misleads.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/expected-assists-explained.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"Expected Assists (xA) Explained"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/expected-assists-explained.html#article","headline":"Expected Assists (xA) Explained","description":"Expected assists estimates the shot value a pass created. Learn how xA works, how it differs from key passes, and where it misleads.","datePublished":"2026-10-05","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/expected-assists-explained.html#webpage"},"articleSection":"xG and Stats","keywords":"xA, expected assists, chance creation, analytics","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good xA per 90?","acceptedAnswer":{"@type":"Answer","text":"It depends on position, role and team style. A creative attacking midfielder will usually post a higher figure than a defensive midfielder. Compare players in similar roles rather than using a single universal threshold."}},{"@type":"Question","name":"Why does xA not match a player's assists?","acceptedAnswer":{"@type":"Answer","text":"Assists depend on whether the shot was scored, while xA depends on the quality of the chance. A player can create excellent chances that are missed, or record assists from low-value shots that happen to go in."}},{"@type":"Question","name":"Does xA include passes that lead to penalties?","acceptedAnswer":{"@type":"Answer","text":"It depends on the provider. Some include the penalty's xG value, some exclude it, and some treat it separately. Check the definition before comparing totals."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">Expected Assists (xA) Explained</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>Expected Assists (xA) Explained</h1>
+        <p class="article-dek">Expected assists credits a passer with the quality of the chance that followed. It is a useful description of creation, not a verdict on vision.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-10-05">5 October 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>An assist is a simple event with a noisy reputation. The passer receives credit when the shot goes in, even if the pass was ordinary and the finish was extraordinary. Expected assists, usually written as xA, tries to describe the pass itself by valuing the chance it created.</p>
+<p>The idea follows the same logic as expected goals. Instead of asking whether a pass produced an assist, xA asks how valuable the resulting shot was. A pass that sets up a close-range finish earns more than a pass that leads to a hopeful effort from 25 yards.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>xA adds the expected goals value of the shots that directly follow a player&#39;s pass.</li><li>It measures the quality of the chance created, not the number of passes played.</li><li>A single assist total mixes finishing and creation; xA separates them more clearly.</li><li>Provider differences and small samples make xA a descriptive tool rather than a scout&#39;s answer.</li><li>Read xA alongside xG, progression data, and the player&#39;s role.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-xa-measures">
+        <h2 id="what-xa-measures">What expected assists measures</h2>
+        <p>xA is the sum of the expected goals values of the shots that directly follow a player's passes. If a player plays three passes that lead to shots worth 0.08, 0.14 and 0.03 xG, the xA for those passes is 0.25. The number is a measure of chance creation, expressed on the same scale as goals.</p>
+<p>Only the pass immediately before the shot is usually counted. A long passing sequence that ends in a goal gives no credit to the earlier progressive pass, even if that pass did most of the work. This is a limitation of the event definition rather than a judgement about the player.</p>
+<p>xA does not measure the difficulty of the pass. A simple square ball to an unmarked striker can earn more xA than a brilliant through ball that a defender clears at the last moment. The model values the shot, not the skill of the pass. That distinction is easy to forget when the number is presented next to a player's name.</p>
+      </section>
+      <section aria-labelledby="difference-from-key-passes">
+        <h2 id="difference-from-key-passes">How xA differs from key passes and assists</h2>
+        <p>Three related numbers are often confused. An assist is an actual goal that followed a pass. A key pass is any pass that leads directly to a shot, whether or not the shot is scored. xA is the expected goal value of those shots.</p>
+<p>Key passes treat a two-yard pass to a teammate who shoots from 30 yards in the same way as a cut-back that creates a clear chance. xA weights the second pass far more heavily. That makes xA a better description of chance quality, though key passes still tell you something about volume and involvement.</p>
+<p>Assists are the noisiest of the three. A player can record ten assists from passes that created modest chances, while another records four from passes that created excellent ones. Over a long career the totals may converge, but over a season the gap between assists and xA can be large. That gap is a signal to investigate, not proof that one player is lucky and the other is better.</p>
+      </section>
+      <section aria-labelledby="how-xa-is-calculated">
+        <h2 id="how-xa-is-calculated">How xA is calculated</h2>
+        <p>The calculation starts with a shot-level xG model. Every shot has a value based on location, angle, body part, pressure and any other inputs the provider uses. The provider then identifies the pass that directly preceded the shot and assigns the shot's xG to the passer.</p>
+<p>Some providers make small adjustments. They may exclude passes from set pieces, or separate open-play xA from dead-ball xA. They may count a shot that follows a deflection differently. The core idea remains the same, but the details vary, which is why xA totals from two providers should not be mixed without care.</p>
+<p>The arithmetic is simple once the assignments are made. The hard part is the event data: detecting the pass, deciding which pass was the decisive one, and matching the shot to the correct player. Data quality matters more than the formula.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The example below is illustrative. Player A and Player B each play four passes that lead directly to a shot. The xG value of each resulting shot is shown in the table.</p>
+<table>
+<caption>Illustrative xA calculation</caption>
+<thead><tr><th>Pass</th><th>Player A shot xG</th><th>Player B shot xG</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>0.06</td><td>0.02</td></tr>
+<tr><td>2</td><td>0.09</td><td>0.05</td></tr>
+<tr><td>3</td><td>0.12</td><td>0.04</td></tr>
+<tr><td>4</td><td>0.18</td><td>0.03</td></tr>
+<tr><td><strong>Total xA</strong></td><td><strong>0.45</strong></td><td><strong>0.14</strong></td></tr>
+</tbody>
+</table>
+<p>Player A's passes created 0.45 xA. Player B's created 0.14. Both played four key passes, so a key-pass count would describe them as equally involved. The xA figures show that A's passes led to better chances.</p>
+<p>Now suppose Player A also recorded one actual assist and Player B recorded two. The assist column would make B look more productive. The xA column suggests that A's passing created the better chances and that B's two assists came from lower-value situations. Neither column is the whole story. Together they show why assists and xA should be read side by side.</p>
+<p>The example also shows the effect of one large chance. If A's 0.18 shot had been a 0.05 effort, A's total would fall to 0.32. A single high-value chance can move a small sample considerably, which is why per-match averages over a full season are more stable than one-match totals.</p>
+      </section>
+      <section aria-labelledby="reading-xa-with-xg">
+        <h2 id="reading-xa-with-xg">Reading xA alongside xG</h2>
+        <p>xA describes creation; xG describes the shooter's chances. A player who posts high xA and low xG is creating more than shooting. A player with high xG and low xA is finishing moves rather than starting them. A player with both is heavily involved in the final action.</p>
+<p>The combination is more informative than either number alone. A midfielder with 0.25 xA per 90 and 0.08 xG per 90 is a creator. A forward with 0.10 xA and 0.45 xG is a finisher. Those roles are different, and judging both players by assist totals alone would obscure the difference.</p>
+<p>It also helps to look at the shot distribution behind the xA. A player may accumulate xA from many low-value crosses or from a few high-value cut-backs. The totals can be similar while the underlying styles are completely different. Our guide to <a href="what-is-xg-football.html">expected goals</a> explains how to read that distribution.</p>
+      </section>
+      <section aria-labelledby="role-and-position">
+        <h2 id="role-and-position">Role and position change the number</h2>
+        <p>xA is sensitive to role. A creative midfielder who takes corners will accumulate xA from set pieces, while a wide forward who rarely takes dead balls may create less xA but more open-play danger. Comparing their totals without separating the sources is misleading.</p>
+<p>Team style matters too. A side that crosses constantly may generate many low-value shots and modest xA per pass. A side that plays cut-backs and through balls may generate fewer shots but higher xA per chance. The same player in a different system could post a very different total without changing ability.</p>
+<p>Minutes matter as much as they do for goals. Per-90 rates are more comparable than season totals, but even per-90 rates need a sample large enough to smooth out one or two unusual matches. A player with 300 minutes and a hot streak can look like an elite creator before regression pulls the number back.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating xA as a prediction of next season's assists.</strong> It describes the chances created, not how many will be scored.</li>
+<li><strong>Comparing key passes and xA as if they measure the same thing.</strong> One counts events; the other weights their quality.</li>
+<li><strong>Ignoring set pieces.</strong> Corners and free kicks can inflate xA and distort open-play comparisons.</li>
+<li><strong>Using a handful of matches.</strong> xA is noisy in small samples, especially when one or two high-value chances dominate the total.</li>
+<li><strong>Mixing providers.</strong> Different xG models assign different values to the same shot, so the xA totals inherit those differences.</li>
+</ul>
+<p>Most of these mistakes come from asking a descriptive metric to settle a question about future performance. xA is at its best when it is used to describe what kind of chances a player helped create.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and caveats</h2>
+        <p>xA cannot capture the pass before the pass, the run that created space, or the defender who was dragged out of position. It credits the final ball and ignores the build-up. That makes it a narrow measure of creation, useful but incomplete.</p>
+<p>It also cannot separate the quality of the pass from the quality of the shot selection. A passer might put a teammate through with a superb ball, only for the teammate to take a poor touch and shoot from a worse angle. The xG model values the shot that happened, not the chance that was available.</p>
+<p>Used carefully, xA adds a useful dimension to attacking analysis. Pair it with xG, progression data and minutes, and treat differences of a few hundredths as noise. For a broader view of how possession value is measured before the shot, see our guide to <a href="expected-threats-xt.html">expected threats</a>. Our note on <a href="data-visualization-football.html">data visualisation</a> explains how to present these numbers without implying more certainty than the data supports.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is a good xA per 90?</summary>
+      <div class="faq-answer"><p>It depends on position, role and team style. A creative attacking midfielder will usually post a higher figure than a defensive midfielder. Compare players in similar roles rather than using a single universal threshold.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why does xA not match a player&#39;s assists?</summary>
+      <div class="faq-answer"><p>Assists depend on whether the shot was scored, while xA depends on the quality of the chance. A player can create excellent chances that are missed, or record assists from low-value shots that happen to go in.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does xA include passes that lead to penalties?</summary>
+      <div class="faq-answer"><p>It depends on the provider. Some include the penalty&#39;s xG value, some exclude it, and some treat it separately. Check the definition before comparing totals.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-xa-measures">What expected assists measures</a></li><li><a href="#difference-from-key-passes">How xA differs from key passes and assists</a></li><li><a href="#how-xa-is-calculated">How xA is calculated</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#reading-xa-with-xg">Reading xA alongside xG</a></li><li><a href="#role-and-position">Role and position change the number</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and caveats</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="expected-threats-xt.html">
+        <span class="cat">xG and Stats</span>
+        <strong>Expected Threats (xT) Explained</strong>
+      </a>
+      <a class="related-card" href="data-visualization-football.html">
+        <span class="cat">Beginner Guides</span>
+        <strong>Football Data Visualisation for Beginners</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

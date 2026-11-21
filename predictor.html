@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Football Match Outcome Model | Elite Football Predictor</title>
+  <meta name="description" content="Try a transparent Poisson model for football match estimates, with scoreline probabilities, over/under 2.5, and both-teams-to-score outputs.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/predictor.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Football Match Outcome Model | Elite Football Predictor">
+  <meta property="og:description" content="Try a transparent Poisson model for football match estimates, with scoreline probabilities, over/under 2.5, and both-teams-to-score outputs.">
+  <meta property="og:url" content="https://nation99.github.io/predictor.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Football Match Outcome Model | Elite Football Predictor">
+  <meta name="twitter:description" content="Try a transparent Poisson model for football match estimates, with scoreline probabilities, over/under 2.5, and both-teams-to-score outputs.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/predictor.html#webpage","url":"https://nation99.github.io/predictor.html","name":"Football Match Outcome Model | Elite Football Predictor","description":"Try a transparent Poisson model for football match estimates, with scoreline probabilities, over/under 2.5, and both-teams-to-score outputs.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/predictor.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Predictor tool"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate is the model?","acceptedAnswer":{"@type":"Answer","text":"There is no single accuracy figure, and we do not publish an invented win rate. Accuracy depends on the quality of your inputs, the match, and the assumptions. The model is a teaching tool, not a forecasting product."}},{"@type":"Question","name":"Why use a Poisson distribution?","acceptedAnswer":{"@type":"Answer","text":"Poisson is a simple way to model counts such as goals. It assumes each side scores at a steady average rate and that the two totals are independent. Those assumptions are imperfect, which is why the output is an estimate rather than a prediction."}},{"@type":"Question","name":"What does model confidence mean?","acceptedAnswer":{"@type":"Answer","text":"It summarises how concentrated the home, draw, and away distribution is after a small adjustment for sample size. It is not the probability that the estimate is correct, and it cannot account for missing team news."}},{"@type":"Question","name":"Can I enter real team data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use per-match xG and xGA averages from a source you trust, then enter the sample size behind those averages. The tool does not fetch live data and does not verify your numbers."}},{"@type":"Question","name":"Why show a lower-variance option?","acceptedAnswer":{"@type":"Answer","text":"It is an educational comparison, not a recommendation. The tool identifies the highest-probability option among a small set of combined or total-goals outcomes, then leaves the decision and the risk with you."}}]},{"@type":"WebApplication","name":"Elite Football Predictor match outcome model","applicationCategory":"SportsApplication","operatingSystem":"Any","url":"https://nation99.github.io/predictor.html","description":"A transparent Poisson model for educational football match estimates.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"featureList":["Poisson scoreline distribution","Home, draw, and away estimates","Over and under 2.5 goals","Both teams to score","Lower-variance comparison"]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="./" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./">Home</a><a href="predictor.html" aria-current="page">Predictor</a><a href="articles/">Articles</a><a href="glossary.html">Glossary</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="editorial-policy.html">Editorial policy</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of use</a><a href="disclaimer.html">Disclaimer</a><a href="responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="./">Home</a></li><li><a href="predictor.html" aria-current="page">Predictor</a></li><li><a href="articles/">Articles</a></li><li><a href="glossary.html">Glossary</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="editorial-policy.html">Editorial policy</a></li><li><a href="privacy.html">Privacy policy</a></li><li><a href="terms.html">Terms of use</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="./">Home</a></li><li><span aria-current="page">Predictor tool</span></li>
+    </ol>
+  </nav>
+      
+  <header class="page-header">
+    <p class="eyebrow">Model and method</p>
+    <h1>Football match outcome model</h1>
+    <p>A transparent Poisson model for exploring match estimates. Enter recent averages, inspect the scoreline distribution, and read the limits before you read the result.</p>
+    <p class="small muted">Educational tool. No live data. No bookmaker links. 18+.</p>
+  </header>
+    </div>
+
+    
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+
+    <section class="section-sm" aria-labelledby="tool-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Interactive model</p>
+            <h2 id="tool-heading">Run the estimate</h2>
+            <p>The form uses per-match averages, not season totals. A ten-match sample is the default because five matches is noisy and twenty is not always available.</p>
+          </div>
+        </div>
+        
+  <div class="predictor-app" data-predictor-app>
+    <div class="tool-grid">
+      <div class="card card-lg">
+        <div class="tool-head">
+          <p class="eyebrow">Transparent model</p>
+          <h2 id="tool-title">Build a match estimate</h2>
+          <p class="muted">Enter recent per-match averages. The model turns them into expected goals, then a Poisson scoreline distribution. It does not know team identities, lineups, injuries, or live prices.</p>
+        </div>
+        <form class="predictor-form" data-predictor-form novalidate>
+          <div class="field-grid">
+            <div class="field">
+              <label for="tool-home-team">Home team</label>
+              <input id="tool-home-team" name="homeTeam" type="text" value="Club A" maxlength="40" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="tool-away-team">Away team</label>
+              <input id="tool-away-team" name="awayTeam" type="text" value="Club B" maxlength="40" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="tool-home-xg">Home xG created per match</label>
+              <input id="tool-home-xg" name="homeXgFor" type="number" min="0" max="5" step="0.1" value="1.7" inputmode="decimal">
+              <span class="hint">Average expected goals created.</span>
+            </div>
+            <div class="field">
+              <label for="tool-away-xg">Away xG created per match</label>
+              <input id="tool-away-xg" name="awayXgFor" type="number" min="0" max="5" step="0.1" value="1.2" inputmode="decimal">
+              <span class="hint">Average expected goals created.</span>
+            </div>
+            <div class="field">
+              <label for="tool-home-xga">Home xGA per match</label>
+              <input id="tool-home-xga" name="homeXgAgainst" type="number" min="0" max="5" step="0.1" value="1.0" inputmode="decimal">
+              <span class="hint">Expected goals conceded.</span>
+            </div>
+            <div class="field">
+              <label for="tool-away-xga">Away xGA per match</label>
+              <input id="tool-away-xga" name="awayXgAgainst" type="number" min="0" max="5" step="0.1" value="1.4" inputmode="decimal">
+              <span class="hint">Expected goals conceded.</span>
+            </div>
+            <div class="field">
+              <label for="tool-home-form">Home form score <span class="hint">0 is poor, 10 is strong</span></label>
+              <div class="range-row">
+                <input id="tool-home-form" name="homeForm" type="range" min="0" max="10" step="1" value="6" aria-describedby="tool-home-form-hint">
+                <output class="range-val" for="tool-home-form" id="tool-home-form-value">6</output>
+              </div>
+              <span class="hint" id="tool-home-form-hint">A subjective recent-performance score, not a league position.</span>
+            </div>
+            <div class="field">
+              <label for="tool-away-form">Away form score <span class="hint">0 is poor, 10 is strong</span></label>
+              <div class="range-row">
+                <input id="tool-away-form" name="awayForm" type="range" min="0" max="10" step="1" value="5" aria-describedby="tool-away-form-hint">
+                <output class="range-val" for="tool-away-form" id="tool-away-form-value">5</output>
+              </div>
+              <span class="hint" id="tool-away-form-hint">A subjective recent-performance score, not a league position.</span>
+            </div>
+            <div class="field">
+              <label for="tool-home-absences">Home key absences</label>
+              <input id="tool-home-absences" name="homeAbsences" type="number" min="0" max="5" step="1" value="1" inputmode="numeric">
+              <span class="hint">Count only players who normally start.</span>
+            </div>
+            <div class="field">
+              <label for="tool-away-absences">Away key absences</label>
+              <input id="tool-away-absences" name="awayAbsences" type="number" min="0" max="5" step="1" value="2" inputmode="numeric">
+              <span class="hint">Count only players who normally start.</span>
+            </div>
+            <div class="field">
+              <label for="tool-home-rest">Home rest days</label>
+              <input id="tool-home-rest" name="homeRest" type="number" min="2" max="10" step="1" value="5" inputmode="numeric">
+              <span class="hint">Days since the previous match.</span>
+            </div>
+            <div class="field">
+              <label for="tool-away-rest">Away rest days</label>
+              <input id="tool-away-rest" name="awayRest" type="number" min="2" max="10" step="1" value="4" inputmode="numeric">
+              <span class="hint">Days since the previous match.</span>
+            </div>
+            <div class="field">
+              <label for="tool-venue">Venue context</label>
+              <select id="tool-venue" name="venue">
+                <option value="normal" selected>Normal home advantage</option>
+                <option value="neutral">Neutral venue</option>
+                <option value="closed">Behind closed doors</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="tool-sample">Sample behind the averages</label>
+              <select id="tool-sample" name="sample">
+                <option value="5">5 matches</option>
+                <option value="10" selected>10 matches</option>
+                <option value="20">20 matches</option>
+              </select>
+              <span class="hint">A larger sample increases model confidence slightly.</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="btn btn-primary" type="submit">Run model</button>
+            <button class="btn btn-ghost" type="reset">Reset example</button>
+          </div>
+        </form>
+        <p class="footer-note">The model is deliberately simple. It is a teaching tool, not a scouting system, a tipster, or a substitute for watching football.</p>
+      </div>
+
+      <div class="card card-lg result-panel" id="tool-results" data-predictor-results aria-live="polite" aria-atomic="false">
+        <div class="result-head">
+          <div>
+            <p class="eyebrow">Estimated outcome</p>
+            <h2 id="tool-results-title" data-output="matchTitle">Club A vs Club B</h2>
+            <p class="muted" data-output="summary">Run the model to see the probability distribution.</p>
+          </div>
+          <span class="badge badge-muted" data-output="confidenceBadge">Waiting</span>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat"><span>Estimated outcome</span><strong data-output="outcome">-</strong></div>
+          <div class="stat"><span>Model confidence</span><strong data-output="confidence">-</strong></div>
+          <div class="stat"><span>Expected goals</span><strong data-output="expectedGoals">-</strong></div>
+        </div>
+
+        <div class="prob-list" data-output="probabilities"></div>
+
+        <div class="xg-bars" data-output="xgBars"></div>
+
+        <div class="stat-grid">
+          <div class="stat"><span>Over 2.5 goals</span><strong data-output="over25">-</strong></div>
+          <div class="stat"><span>Under 2.5 goals</span><strong data-output="under25">-</strong></div>
+          <div class="stat"><span>Both teams score</span><strong data-output="btts">-</strong></div>
+        </div>
+
+        <div class="lower-variance" data-output="lowerVariance"></div>
+
+        <div class="table-wrap" data-output="scorelineTable"></div>
+
+        <div class="result-actions">
+          <button class="btn btn-ghost btn-sm" type="button" data-action="copy-result">Copy result</button>
+          <button class="btn btn-ghost btn-sm" type="button" data-action="share-result">Share result</button>
+          <span class="copy-status" data-output="copyStatus" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="limits">
+          <strong>Model limitations.</strong> The model assumes goals follow independent Poisson distributions. It ignores lineups, injuries, weather, referee, tactical matchups, and game state. It uses the numbers you enter, so bad inputs produce confident nonsense. This is an educational estimate, not advice.
+        </div>
+        <noscript><p class="small muted">The interactive model needs JavaScript. You can still read the <a href="predictor.html">full explainer</a>.</p></noscript>
+      </div>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+
+    <section class="section" aria-labelledby="explainer-title">
+      <div class="narrow">
+        <p class="eyebrow">How it works</p>
+        <h2 id="explainer-title">The model in plain language</h2>
+        <div class="prose">
+          <p>The model is a small, transparent calculation. It does not use a neural network, a secret formula, or a database of tips. It takes the numbers you enter, converts them into an expected-goals pair, and then uses the Poisson distribution to spread probability across possible scorelines.</p>
+
+          <h3>Step 1: estimate each side's attacking strength</h3>
+          <p>For the home side, the model averages the home team's xG created with the away team's xGA conceded. For the away side, it averages the away team's xG created with the home team's xGA conceded. This is a simple way to combine attack and defence without pretending that a single number captures a team's style.</p>
+
+          <h3>Step 2: adjust for context</h3>
+          <p>The home estimate receives a venue adjustment. A normal home match uses a modest home advantage, a neutral venue removes it, and a behind-closed-doors match reduces it. Form adds or subtracts a small amount. Each key absence reduces the estimate slightly. Rest days add or subtract a small amount, capped so that a long break cannot create an unrealistic swing.</p>
+
+          <h3>Step 3: build a scoreline grid</h3>
+          <p>The model calculates the probability of 0, 1, 2, 3, and further goals for each team using the Poisson formula. It multiplies the two sets of probabilities to produce a grid. The chance of a home win is the sum of every grid cell where the home score is higher. The draw is the diagonal. The away win is the remaining cells.</p>
+
+          <h3>Step 4: derive the secondary outputs</h3>
+          <p>Over 2.5 goals is the sum of cells with three or more total goals. Under 2.5 is the complement. Both teams to score is the sum of cells where each side scores at least once. The most likely scoreline is the single cell with the largest probability, which is usually a low-scoring result even when both sides are expected to score.</p>
+
+          <h3>Step 5: describe confidence carefully</h3>
+          <p>Model confidence is a summary of how clearly the distribution separates the leading outcome from the second. A larger sample behind the averages nudges confidence up. A smaller sample nudges it down. Confidence is not a win probability, and it does not mean the estimate is correct. It only describes the shape of the model output.</p>
+
+          <h3>Step 6: show the lower-variance comparison</h3>
+          <p>The tool compares a small set of combined outcomes: double chance in each direction and the two total-goals sides of 2.5, plus both teams to score. It labels the highest-probability option as a lower-variance market estimate. That label describes the shape of the probability, not the safety of a bet. Every option can lose.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="inputs-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Reference</p>
+            <h2 id="inputs-title">Inputs and outputs</h2>
+            <p>Use the table to check that you understand what each field does before trusting a result.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Model inputs, what they do, and what to watch for</caption>
+            <thead>
+              <tr><th scope="col">Input</th><th scope="col">What it does</th><th scope="col">Watch for</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>xG created</td><td>Sets the attacking baseline.</td><td>Use per-match averages from a consistent competition and sample.</td></tr>
+              <tr><td>xGA conceded</td><td>Adjusts the opponent's baseline.</td><td>Goalkeeper overperformance can hide a leaky defence.</td></tr>
+              <tr><td>Form score</td><td>Adds a small recent-performance adjustment.</td><td>It is subjective. Do not use it to double-count the xG numbers.</td></tr>
+              <tr><td>Key absences</td><td>Reduces the estimate for each missing regular starter.</td><td>Not every absence matters equally. A backup striker is not a backup goalkeeper.</td></tr>
+              <tr><td>Rest days</td><td>Adds or subtracts a small fatigue adjustment.</td><td>Rest is a proxy. Travel, congestion, and minutes played matter too.</td></tr>
+              <tr><td>Venue</td><td>Changes the home advantage assumption.</td><td>Home advantage varies by club, crowd, and competition.</td></tr>
+              <tr><td>Sample size</td><td>Adjusts model confidence only.</td><td>A large sample of the wrong data is still wrong.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm">
+      <div class="narrow">
+        <div class="callout warn">
+          <h2>Model limitations</h2>
+          <ul>
+            <li>Goals are treated as independent Poisson counts. Real matches have score effects, red cards, and tactical changes.</li>
+            <li>The model ignores lineups, injuries beyond your absence count, weather, referee, travel, and set-piece profiles.</li>
+            <li>It uses your inputs without verification. A precise output from rough inputs is false precision.</li>
+            <li>It does not know the market price, and it does not tell you whether a price is good or bad.</li>
+            <li>It cannot guarantee an outcome, and it should not be used as the sole basis for a financial decision.</li>
+          </ul>
+        </div>
+        
+  <aside class="callout danger callout-compact" aria-labelledby="responsible-notice-title">
+    <h2 id="responsible-notice-title">18+ and responsible use</h2>
+    <p>This site is for football analytics education and entertainment. Every output is an estimate, not advice, and no model can remove uncertainty from football. We do not accept bets, process payments, or link to bookmakers.</p>
+    <p>If gambling is affecting your money, relationships, work, or health, stop and seek independent support. Help is available at <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>, <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>, and <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>.</p>
+    <p><a href="responsible-gambling.html">Read our responsible gambling page</a>.</p>
+  </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tool-faq-title">
+      <div class="narrow">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Questions</p>
+            <h2 id="tool-faq-title">Predictor questions</h2>
+          </div>
+        </div>
+        
+  <section class="article-faq" aria-labelledby="predictor-faq-body-title">
+    <h2 id="predictor-faq-body-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>How accurate is the model?</summary>
+      <div class="faq-answer"><p>There is no single accuracy figure, and we do not publish an invented win rate. Accuracy depends on the quality of your inputs, the match, and the assumptions. The model is a teaching tool, not a forecasting product.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why use a Poisson distribution?</summary>
+      <div class="faq-answer"><p>Poisson is a simple way to model counts such as goals. It assumes each side scores at a steady average rate and that the two totals are independent. Those assumptions are imperfect, which is why the output is an estimate rather than a prediction.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What does model confidence mean?</summary>
+      <div class="faq-answer"><p>It summarises how concentrated the home, draw, and away distribution is after a small adjustment for sample size. It is not the probability that the estimate is correct, and it cannot account for missing team news.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I enter real team data?</summary>
+      <div class="faq-answer"><p>Yes. Use per-match xG and xGA averages from a source you trust, then enter the sample size behind those averages. The tool does not fetch live data and does not verify your numbers.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why show a lower-variance option?</summary>
+      <div class="faq-answer"><p>It is an educational comparison, not a recommendation. The tool identifies the highest-probability option among a small set of combined or total-goals outcomes, then leaves the decision and the risk with you.</p></div>
+    </details>
+  </section>
+      </div>
+    </section>
+
+    
+  <aside class="ad-slot ad-slot--footer" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="predictor.html">Predictor tool</a></li>
+            <li><a href="articles/">Articles</a></li>
+            <li><a href="articles/?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="articles/?category=Tactics">Tactics</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="editorial-policy.html">Editorial policy</a></li>
+            <li><a href="articles/?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="articles/?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="privacy.html">Privacy policy</a></li>
+            <li><a href="terms.html">Terms of use</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="assets/js/predictor.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

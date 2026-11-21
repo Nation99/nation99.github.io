@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Draws Are Hard to Predict</title>
+  <meta name="description" content="Draws are common, costly to ignore, and difficult to model. Learn how base rates, Poisson assumptions, and game state affect draw estimates.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/draw-prediction-football.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why Draws Are Hard to Predict">
+  <meta property="og:description" content="Draws are common, costly to ignore, and difficult to model. Learn how base rates, Poisson assumptions, and game state affect draw estimates.">
+  <meta property="og:url" content="https://nation99.github.io/articles/draw-prediction-football.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-10-14">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="Betting Education">
+  <meta property="article:tag" content="draws">
+  <meta property="article:tag" content="Poisson">
+  <meta property="article:tag" content="match probabilities">
+  <meta property="article:tag" content="analysis">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why Draws Are Hard to Predict">
+  <meta name="twitter:description" content="Draws are common, costly to ignore, and difficult to model. Learn how base rates, Poisson assumptions, and game state affect draw estimates.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/draw-prediction-football.html#webpage","url":"https://nation99.github.io/articles/draw-prediction-football.html","name":"Why Draws Are Hard to Predict","description":"Draws are common, costly to ignore, and difficult to model. Learn how base rates, Poisson assumptions, and game state affect draw estimates.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/draw-prediction-football.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Betting Education","item":"https://nation99.github.io/articles/?category=Betting%20Education"},{"@type":"ListItem","position":4,"name":"Why Draws Are Hard to Predict"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/draw-prediction-football.html#article","headline":"Why Draws Are Hard to Predict","description":"Draws are common, costly to ignore, and difficult to model. Learn how base rates, Poisson assumptions, and game state affect draw estimates.","datePublished":"2026-10-14","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/draw-prediction-football.html#webpage"},"articleSection":"Betting Education","keywords":"draws, Poisson, match probabilities, analysis","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage of football matches end in a draw?","acceptedAnswer":{"@type":"Answer","text":"It varies by competition and season, but many league competitions produce draws in roughly 22 to 28 per cent of matches. The base rate is a useful starting point, not a fixed law."}},{"@type":"Question","name":"Why does a Poisson model underestimate some draws?","acceptedAnswer":{"@type":"Answer","text":"The basic model assumes independent goal rates and a constant rate through the match. Real football has score effects and dependence between the teams, which can change the low-score probabilities."}},{"@type":"Question","name":"Is a draw more likely when two teams are evenly matched?","acceptedAnswer":{"@type":"Answer","text":"Often, but not automatically. The expected goal rates, the styles and the game state matter. Two evenly matched attacking teams can produce fewer draws than two defensive teams with a similar quality gap."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Betting%20Education">Betting Education</a></li><li><span aria-current="page">Why Draws Are Hard to Predict</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Betting Education</p>
+        <h1>Why Draws Are Hard to Predict</h1>
+        <p class="article-dek">The draw is the outcome that models often treat as a leftover. It deserves its own attention because it is neither rare nor easy.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-10-14">14 October 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Most pre-match discussion focuses on who will win. The draw is treated as the absence of a result, a dull outcome somewhere between the two teams. Yet draws are common enough that ignoring them is a serious analytical mistake.</p>
+<p>In many league seasons, roughly one match in four ends level. The exact rate varies by competition, era and team style, but the draw is never a rounding error. It is a distinct outcome with its own probability, and modelling it well requires more care than subtracting the home and away chances from 100 per cent.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Draws occur in roughly a quarter of league matches, with variation by competition and season.</li><li>Independent Poisson models often misprice low-score draws and can be adjusted.</li><li>Game state changes the probability of a draw as the match progresses.</li><li>Draw estimates are sensitive to the expected goal rates and the dependence assumptions.</li><li>A draw probability is a description of uncertainty, not a prediction of a specific result.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="base-rates">
+        <h2 id="base-rates">Start with the base rate</h2>
+        <p>The first useful number is the league's draw rate. A competition that produces draws in 26 per cent of matches gives you a baseline. A competition with a 22 per cent rate gives you a different one. The baseline is not a prediction for a specific match, but it is a sensible starting point.</p>
+<p>Draw rates vary for structural reasons. Leagues with greater parity may produce more draws because teams are more evenly matched. Leagues with a wider gap between strong and weak teams may produce fewer, as the stronger side is more likely to win. Styles matter too: two cautious teams can cancel each other out, while two open teams may trade goals.</p>
+<p>The base rate also varies over time. Rule changes, scheduling, and tactical trends can shift the balance. A model that uses a decade-old draw rate without checking recent seasons may be starting from the wrong place.</p>
+      </section>
+      <section aria-labelledby="poisson-assumptions">
+        <h2 id="poisson-assumptions">Why Poisson models struggle with draws</h2>
+        <p>A basic Poisson model treats each team's goals as independent. The probability of a 0-0 draw is the probability that the home team scores zero multiplied by the probability that the away team scores zero. The same logic applies to 1-1, 2-2 and so on.</p>
+<p>Independence is a convenient assumption, but it is not fully true. The score affects behaviour. A team that falls behind may attack more, which raises the chance of both scoring and conceding. A team that leads may defend deeper, which lowers the chance of an equaliser but also lowers its own scoring rate. These effects can change the shape of the scoreline distribution, especially around low scores.</p>
+<p>Real football often produces more 0-0 and 1-0 results than independent Poisson predicts, and fewer high-scoring draws. The Dixon-Coles adjustment is one way to correct the low-score cells. It adds a dependence parameter that nudges the probabilities towards observed patterns. The adjustment is not a magic fix, but it is a recognition that the simple model is incomplete.</p>
+      </section>
+      <section aria-labelledby="game-state">
+        <h2 id="game-state">Game state and the chance of a draw</h2>
+        <p>The probability of a draw is not constant during a match. Before kick-off, it is a pre-match estimate. After ten minutes, it depends on the score, the sendings off, the tactical approach and the time remaining.</p>
+<p>A 0-0 score at half-time raises the conditional probability of a draw compared with the pre-match estimate, because there are fewer minutes left for a goal. A 2-2 score at half-time may also raise it, but for a different reason: the teams have shown they can score, and another goal is plausible. A 3-0 score makes the draw very unlikely.</p>
+<p>This is why in-play probabilities require a different model from pre-match probabilities. The pre-match model describes the distribution before the match begins. Once the score changes, the relevant question changes. Using the pre-match draw probability after a goal is a common error.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The example below is illustrative. Club A has an expected goal rate of 1.55 and Club B has 1.05. We compare a simple independent Poisson estimate with a Dixon-Coles style adjustment that raises the 0-0 and 1-1 cells and lowers the 2-2 cell.</p>
+<table>
+<caption>Illustrative draw probabilities</caption>
+<thead><tr><th>Score</th><th>Independent Poisson</th><th>Adjusted model</th></tr></thead>
+<tbody>
+<tr><td>0-0</td><td>6.78%</td><td>7.60%</td></tr>
+<tr><td>1-1</td><td>11.05%</td><td>11.70%</td></tr>
+<tr><td>2-2</td><td>4.50%</td><td>4.10%</td></tr>
+<tr><td>3-3</td><td>1.22%</td><td>1.10%</td></tr>
+<tr><td><strong>Total draw</strong></td><td><strong>24.15%</strong></td><td><strong>24.90%</strong></td></tr>
+</tbody>
+</table>
+<p>The independent model gives a draw probability of about 24.2 per cent. The adjusted model gives about 24.9 per cent. The totals are close, but the composition differs. The adjustment moves probability towards the low-score draws and away from the high-score ones.</p>
+<p>Now change the expected goal rates. If Club A's rate rises from 1.55 to 1.85 and Club B's stays at 1.05, the draw probability falls. The stronger team is more likely to win, and the chance of a level score drops. The exact figure depends on the model, but the direction is consistent: higher expected goal differences tend to reduce draw probability.</p>
+<p>The example also shows why a draw estimate should not be treated as a single fixed number. A small change in the inputs can move the probability by a percentage point or two. The model is a structured way to think about the outcome, not an oracle.</p>
+      </section>
+      <section aria-labelledby="why-draws-are-misread">
+        <h2 id="why-draws-are-misread">Why draws are often misread</h2>
+        <p>The draw is easy to overlook because it lacks a hero. A win has a scorer and a story; a draw has a moment of frustration or a defensive stand. That narrative bias can affect analysis. Teams may be described as "settling for a point" when the draw was the most likely outcome all along.</p>
+<p>There is also a market angle. Draws are often priced at longer odds than the two win outcomes, which can make them look either attractive or irrelevant depending on the observer. The price is not a prediction. It reflects the market's estimate of the probability, the margin, and the flow of money. Our guide to <a href="implied-probability-expected-value.html">implied probability</a> explains how to convert prices into probabilities before comparing them with a model.</p>
+<p>Another error is to assume that a draw is more likely when two teams are evenly matched. That is often true, but not always. Two evenly matched attacking teams may produce more goals and fewer draws than two evenly matched defensive teams. The expected goal rates matter as much as the gap between them.</p>
+      </section>
+      <section aria-labelledby="league-and-style">
+        <h2 id="league-and-style">League and style effects</h2>
+        <p>Draw rates differ across competitions. A league with a compact table and many similar teams may produce more level results. A league with a dominant top group may produce fewer. Cup competitions add another layer because extra time and penalties change the definition of a draw.</p>
+<p>Team style also matters. A low-block team that concedes possession may draw more often than its shot numbers suggest, because it keeps matches close. A high-pressing team may create more variance: it can win comfortably or lose by a large margin. The draw probability is a product of the whole distribution, not just the average quality of the two sides.</p>
+<p>Our guide to <a href="poisson-distribution-football.html">the Poisson model</a> shows how to build the scoreline grid that produces these probabilities. For the totals market, the same grid can be summed above and below a line, as explained in our <a href="over-under-goals-guide.html">over/under guide</a>.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Subtracting win probabilities from 100 per cent and assigning the remainder to the draw.</strong> The draw has its own probability and should be modelled directly.</li>
+<li><strong>Using independent Poisson without checking the low-score cells.</strong> The simple model can misstate 0-0 and 1-1.</li>
+<li><strong>Assuming evenly matched teams always draw more.</strong> The goal rates and styles matter as much as the quality gap.</li>
+<li><strong>Applying a pre-match draw probability after a goal.</strong> The conditional probability changes with the score and the time remaining.</li>
+<li><strong>Treating a draw estimate as a certainty.</strong> A 25 per cent chance means the draw is more likely to not happen than to happen.</li>
+</ul>
+<p>These mistakes usually come from treating the draw as a residual category. Once it is modelled as an outcome in its own right, the analysis becomes clearer.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and caveats</h2>
+        <p>No pre-match model knows the lineup, the referee, the weather or the mood of the players. The draw probability is an estimate conditional on the inputs, and the inputs are uncertain. A model that reports 25 per cent is not claiming that the match will be level one time in four. It is claiming that, across many similar matches, about a quarter would end level if the model were well calibrated.</p>
+<p>Calibration is the test. A model that assigns 25 per cent to draws should see draws in roughly 25 per cent of those cases over a large sample. That is a different question from whether the model picked the right result in a single match. For more on evaluating probabilities rather than just winners, see our guide to tracking prediction accuracy.</p>
+<p>The draw is hard to predict because football is hard to predict. The honest approach is to estimate it explicitly, state the uncertainty, and avoid the temptation to treat a level score as either a failure or a moral victory.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What percentage of football matches end in a draw?</summary>
+      <div class="faq-answer"><p>It varies by competition and season, but many league competitions produce draws in roughly 22 to 28 per cent of matches. The base rate is a useful starting point, not a fixed law.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why does a Poisson model underestimate some draws?</summary>
+      <div class="faq-answer"><p>The basic model assumes independent goal rates and a constant rate through the match. Real football has score effects and dependence between the teams, which can change the low-score probabilities.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Is a draw more likely when two teams are evenly matched?</summary>
+      <div class="faq-answer"><p>Often, but not automatically. The expected goal rates, the styles and the game state matter. Two evenly matched attacking teams can produce fewer draws than two defensive teams with a similar quality gap.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#base-rates">Start with the base rate</a></li><li><a href="#poisson-assumptions">Why Poisson models struggle with draws</a></li><li><a href="#game-state">Game state and the chance of a draw</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#why-draws-are-misread">Why draws are often misread</a></li><li><a href="#league-and-style">League and style effects</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and caveats</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="poisson-distribution-football.html">
+        <span class="cat">Betting Education</span>
+        <strong>Poisson Distribution for Football</strong>
+      </a>
+      <a class="related-card" href="implied-probability-expected-value.html">
+        <span class="cat">Betting Education</span>
+        <strong>Implied Probability and Expected Value</strong>
+      </a>
+      <a class="related-card" href="over-under-goals-guide.html">
+        <span class="cat">Beginner Guides</span>
+        <strong>Over/Under Goals Analysis for Beginners</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

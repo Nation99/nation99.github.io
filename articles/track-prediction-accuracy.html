@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Track Prediction Accuracy in Football</title>
+  <meta name="description" content="A practical method for recording forecasts, reading calibration, and using Brier score without pretending that a small sample proves anything.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/track-prediction-accuracy.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Track Prediction Accuracy in Football">
+  <meta property="og:description" content="A practical method for recording forecasts, reading calibration, and using Brier score without pretending that a small sample proves anything.">
+  <meta property="og:url" content="https://nation99.github.io/articles/track-prediction-accuracy.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-04-28">
+  <meta property="article:modified_time" content="2026-11-10">
+  <meta property="article:section" content="Betting Education">
+  <meta property="article:tag" content="calibration">
+  <meta property="article:tag" content="Brier score">
+  <meta property="article:tag" content="record keeping">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Track Prediction Accuracy in Football">
+  <meta name="twitter:description" content="A practical method for recording forecasts, reading calibration, and using Brier score without pretending that a small sample proves anything.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/track-prediction-accuracy.html#webpage","url":"https://nation99.github.io/articles/track-prediction-accuracy.html","name":"How to Track Prediction Accuracy in Football","description":"A practical method for recording forecasts, reading calibration, and using Brier score without pretending that a small sample proves anything.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/track-prediction-accuracy.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Betting Education","item":"https://nation99.github.io/articles/?category=Betting%20Education"},{"@type":"ListItem","position":4,"name":"How to Track Prediction Accuracy in Football"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/track-prediction-accuracy.html#article","headline":"How to Track Prediction Accuracy in Football","description":"A practical method for recording forecasts, reading calibration, and using Brier score without pretending that a small sample proves anything.","datePublished":"2026-04-28","dateModified":"2026-11-10","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/track-prediction-accuracy.html#webpage"},"articleSection":"Betting Education","keywords":"calibration, Brier score, record keeping","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good Brier score?","acceptedAnswer":{"@type":"Answer","text":"There is no universal threshold. It depends on the base rate and the difficulty of the events. Compare the score with a naive baseline, such as always predicting the base rate, and with earlier versions of the same model."}},{"@type":"Question","name":"How many forecasts should I track?","acceptedAnswer":{"@type":"Answer","text":"Enough to see stable patterns across confidence bands, with independence in mind. There is no fixed number, and a large set of correlated forecasts can be less informative than a smaller set of varied ones."}},{"@type":"Question","name":"Should I track only correct predictions?","acceptedAnswer":{"@type":"Answer","text":"No. A record of correct predictions is a highlight reel, not a sample. Track every forecast, including the misses, because the misses are where the assumptions are tested."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Betting%20Education">Betting Education</a></li><li><span aria-current="page">How to Track Prediction Accuracy in Football</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Betting Education</p>
+        <h1>How to Track Prediction Accuracy in Football</h1>
+        <p class="article-dek">A notebook full of ticks and crosses feels like evidence. It is not, until the forecasts behind the ticks are written down in a form that can be checked.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-04-28">28 April 2026</time></span>
+          <span>Last updated <time datetime="2026-11-10">10 November 2026</time></span>
+          <span>7 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Most prediction records are diaries of outcomes. They say who was right, rarely how confident they were or what question they were answering. That makes them almost impossible to audit. A record that cannot be audited cannot teach you much, beyond the fact that you remember the good days.</p>
+<p>This guide describes a simple process for recording forecasts, checking calibration, and scoring results with the Brier score. The emphasis is on measurement rather than self-congratulation. A tracking sheet will not make a forecast better. It can stop an analyst from fooling themselves about how good the forecast was.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Record a probability before the match, not a verdict after it.</li><li>Calibration asks whether forecasts at 30 per cent happen about 30 per cent of the time.</li><li>Brier score combines calibration and confidence into one number, but it needs a reasonable sample.</li><li>A tracking sheet is a tool for honest reflection, not a certificate of skill.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="forecast-not-verdict">
+        <h2 id="forecast-not-verdict">Start with a forecast, not a verdict</h2>
+        <p>A forecast is a probability attached to a defined event, recorded before the event. "Club A will win" is a verdict. "Club A has a 62 per cent chance of winning" is a forecast. The second version can be scored, compared with a baseline, and combined with other forecasts. The first can only be counted.</p>
+<p>The event needs a clear boundary. A forecast about the winner of a match is not the same as a forecast about the winner after 90 minutes, or the winner including extra time. A forecast about a team scoring is not the same as a forecast about a team winning. Write the question down exactly as it will be judged, before kick-off. If the question changes later, the record should show the change. Our article on <a href="risk-management-football-analysis.html">risk management for football analysis</a> explains why the sample matters more than a hit rate.</p>
+      </section>
+      <section aria-labelledby="calibration">
+        <h2 id="calibration">Calibration: the question accuracy hides</h2>
+        <p>Accuracy collapses a probability into a yes or no. Calibration keeps the probability. A model is calibrated if events forecast at 30 per cent happen about 30 per cent of the time, events forecast at 60 per cent happen about 60 per cent of the time, and so on. Calibration is a property of the whole set of forecasts, not of a single result.</p>
+<p>A model that says 90 per cent and is right 70 per cent of the time is overconfident, even if it wins most of those matches. A model that says 55 per cent and is right 55 per cent of the time is better calibrated, even if it looks less impressive in a highlights package. Accuracy rewards bold calls that happen to land. Calibration rewards a truthful relationship between confidence and outcomes.</p>
+      </section>
+      <section aria-labelledby="brier-score">
+        <h2 id="brier-score">Brier score in plain arithmetic</h2>
+        <p>The Brier score turns calibration and confidence into one number. For each forecast, take the difference between the forecast probability and the outcome, where the outcome is 1 if the event happened and 0 if it did not. Square the difference. Average the squared differences across forecasts. Lower is better.</p>
+<p>A forecast of 0.70 that comes true contributes 0.09, because 0.70 minus 1 is negative 0.30, and the square is 0.09. The same forecast that fails contributes 0.49. A forecast of 0.50 contributes 0.25 either way. The score is not a percentage, and it has no universal pass mark. It is most useful when compared with a simple baseline, such as always predicting the base rate or always predicting 0.50.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="log-loss">
+        <h2 id="log-loss">Log loss and why it punishes confidence</h2>
+        <p>Log loss is another scoring rule, and it punishes confident mistakes more sharply. For the outcome that happened, take the negative natural logarithm of the forecast probability. A forecast of 0.90 that fails receives a penalty of about 2.30, while a forecast of 0.60 that fails receives about 0.92. A forecast of 0.99 that fails receives about 4.61.</p>
+<p>The choice between Brier score and log loss depends on what you want to emphasise. Brier score is easier to explain and bounded between 0 and 1. Log loss is harsher on overconfidence and is common in forecasting research. Neither rule can tell you whether your model will be useful in the future. They only describe how well it described the past.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>Four hypothetical forecasts are enough to show the arithmetic, though not enough to judge an analyst. The table records the event, the forecast, the outcome, and the Brier contribution.</p>
+<table>
+<thead><tr><th>Match</th><th>Event</th><th>Forecast</th><th>Outcome</th><th>Calculation</th><th>Contribution</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Club A win</td><td>0.70</td><td>1</td><td>(0.70 - 1) squared</td><td>0.0900</td></tr>
+<tr><td>2</td><td>Club A win</td><td>0.55</td><td>0</td><td>(0.55 - 0) squared</td><td>0.3025</td></tr>
+<tr><td>3</td><td>Draw</td><td>0.30</td><td>0</td><td>(0.30 - 0) squared</td><td>0.0900</td></tr>
+<tr><td>4</td><td>Club B win</td><td>0.20</td><td>1</td><td>(0.20 - 1) squared</td><td>0.6400</td></tr>
+</tbody>
+</table>
+<p>The mean is (0.0900 + 0.3025 + 0.0900 + 0.6400) divided by 4, which equals 1.1225 divided by 4, or 0.2806. On this tiny sample, the forecasts score worse than a flat 50 per cent baseline, which would score 0.25. That does not prove the analyst is bad. Four forecasts is far too few, and the events are different. It does show why a handful of remembered wins is not a score.</p>
+<p>Now group a larger set by confidence band. If 100 forecasts in the 60 to 70 per cent band produce 65 correct outcomes, the band is roughly calibrated. If they produce 85, the band is overconfident. If they produce 45, it is underconfident. The same check can be done for every band, and the pattern is more informative than a single overall hit rate.</p>
+      </section>
+      <section aria-labelledby="sample-size-temptation">
+        <h2 id="sample-size-temptation">Sample size and the temptation to conclude</h2>
+        <p>Four forecasts, forty, four hundred. The score becomes more stable as the sample grows, but independence also matters. A hundred forecasts about the same club are not a hundred independent tests. They share a team, a manager, a tactical style, and a market. The effective sample is smaller than the raw count, sometimes much smaller.</p>
+<p>There is also a selection problem. Forecasts are easier to remember when they are interesting, and interesting forecasts are often the ones that went wrong or spectacularly right. A record that includes every forecast, including the boring ones, is more trustworthy than a record built from memory. The aim is not a perfect sample. It is a sample that was not chosen by the outcome.</p>
+      </section>
+      <section aria-labelledby="simple-record">
+        <h2 id="simple-record">A simple record that survives scrutiny</h2>
+        <p>A simple spreadsheet is enough. One row per forecast, with columns for the date, competition, event, probability, model version, closing price, outcome, and a short note. Keep the original forecast; do not edit it after the result. If the model changes, start a new version rather than rewriting history.</p>
+<p>The closing price is useful because it gives a second opinion on the probability, not because it is always right. The note is useful because it records what the analyst believed at the time. Together, they make it possible to review a batch of decisions rather than arguing about a single memorable match. Our article on <a href="implied-probability-expected-value.html">implied probability and expected value</a> explains how to convert prices into a comparable form, and our guide to the <a href="poisson-distribution-football.html">Poisson distribution</a> shows where some of those probabilities come from.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Recording only the forecasts you remember.</strong> Memory is a biased sampling method.</li>
+<li><strong>Changing the event after the match.</strong> A forecast that is redefined after the result cannot be scored.</li>
+<li><strong>Reporting accuracy without a baseline.</strong> A hit rate means little without a comparison point.</li>
+<li><strong>Treating a lucky run as calibration.</strong> A short run of correct calls is not a stable pattern.</li>
+<li><strong>Mixing forecasts from different model versions.</strong> A changed model is a changed question.</li>
+<li><strong>Scoring with hindsight.</strong> The forecast must be judged as it was written, not as it could have been.</li>
+</ul>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits of accuracy tracking</h2>
+        <p>Tracking tells you about your past forecasts, not your future ones. It cannot remove variance or the bookmaker margin. A well-calibrated forecast can still lose over a season, and a poorly calibrated one can still win. The score is a description, not a promise.</p>
+<p>The broader arithmetic is worth stating plainly. Most people who gamble over time end up behind, because the prices they accept already include a margin, and variance ensures that even a good process has bad runs. A tracking sheet can make an analyst more honest. It cannot change that arithmetic, and this article does not claim it can.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is a good Brier score?</summary>
+      <div class="faq-answer"><p>There is no universal threshold. It depends on the base rate and the difficulty of the events. Compare the score with a naive baseline, such as always predicting the base rate, and with earlier versions of the same model.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How many forecasts should I track?</summary>
+      <div class="faq-answer"><p>Enough to see stable patterns across confidence bands, with independence in mind. There is no fixed number, and a large set of correlated forecasts can be less informative than a smaller set of varied ones.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I track only correct predictions?</summary>
+      <div class="faq-answer"><p>No. A record of correct predictions is a highlight reel, not a sample. Track every forecast, including the misses, because the misses are where the assumptions are tested.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#forecast-not-verdict">Start with a forecast, not a verdict</a></li><li><a href="#calibration">Calibration: the question accuracy hides</a></li><li><a href="#brier-score">Brier score in plain arithmetic</a></li><li><a href="#log-loss">Log loss and why it punishes confidence</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#sample-size-temptation">Sample size and the temptation to conclude</a></li><li><a href="#simple-record">A simple record that survives scrutiny</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits of accuracy tracking</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="winning-predictions-vs-profit.html">
+        <span class="cat">Betting Education</span>
+        <strong>Winning Predictions vs Sound Analysis</strong>
+      </a>
+      <a class="related-card" href="cognitive-biases-football-prediction.html">
+        <span class="cat">Betting Education</span>
+        <strong>Cognitive Biases in Football Prediction</strong>
+      </a>
+      <a class="related-card" href="poisson-distribution-football.html">
+        <span class="cat">Betting Education</span>
+        <strong>Poisson Distribution for Football</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

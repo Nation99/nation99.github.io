@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game State and Tactical Change</title>
+  <meta name="description" content="Score effects change how teams play. Learn how game state alters possession, pressing and chance creation, and why raw match totals can mislead.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/game-state-analysis.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Game State and Tactical Change">
+  <meta property="og:description" content="Score effects change how teams play. Learn how game state alters possession, pressing and chance creation, and why raw match totals can mislead.">
+  <meta property="og:url" content="https://nation99.github.io/articles/game-state-analysis.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-10-26">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="Tactics">
+  <meta property="article:tag" content="game state">
+  <meta property="article:tag" content="tactics">
+  <meta property="article:tag" content="possession">
+  <meta property="article:tag" content="analysis">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game State and Tactical Change">
+  <meta name="twitter:description" content="Score effects change how teams play. Learn how game state alters possession, pressing and chance creation, and why raw match totals can mislead.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/game-state-analysis.html#webpage","url":"https://nation99.github.io/articles/game-state-analysis.html","name":"Game State and Tactical Change","description":"Score effects change how teams play. Learn how game state alters possession, pressing and chance creation, and why raw match totals can mislead.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/game-state-analysis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Tactics","item":"https://nation99.github.io/articles/?category=Tactics"},{"@type":"ListItem","position":4,"name":"Game State and Tactical Change"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/game-state-analysis.html#article","headline":"Game State and Tactical Change","description":"Score effects change how teams play. Learn how game state alters possession, pressing and chance creation, and why raw match totals can mislead.","datePublished":"2026-10-26","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/game-state-analysis.html#webpage"},"articleSection":"Tactics","keywords":"game state, tactics, possession, analysis","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is game state in football analysis?","acceptedAnswer":{"@type":"Answer","text":"Game state refers to the score difference, time remaining and context that shape a team's decisions. It helps explain why the same team can behave differently at 0-0 and at 1-0."}},{"@type":"Question","name":"Does a trailing team always create more chances?","acceptedAnswer":{"@type":"Answer","text":"No. A trailing team often takes more risks, but the opponent may defend deeply and limit clear chances. The effect depends on the teams, the tactics and the time remaining."}},{"@type":"Question","name":"Can game state explain a team's possession stats?","acceptedAnswer":{"@type":"Answer","text":"Partly. A leading team may concede possession deliberately, while a trailing team may dominate the ball because the opponent is protecting space. Possession should be read alongside the score and the type of chances created."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Tactics">Tactics</a></li><li><span aria-current="page">Game State and Tactical Change</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Tactics</p>
+        <h1>Game State and Tactical Change</h1>
+        <p class="article-dek">A match is not one game. It is a series of games defined by the score, and the same team can look completely different in each one.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-10-26">26 October 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Two teams can play the same formation and still produce completely different matches depending on the score. A side that leads after 20 minutes may sit deeper, concede possession and look to counter. The same side that trails after 20 minutes may push its full-backs forward, press higher and take more risks.</p>
+<p>Game state is the idea that the score and the clock change behaviour. It is one of the most important context variables in football analysis, and one of the easiest to ignore when looking at a full-match total.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Game state refers to the score, time and context that shape a team&#39;s decisions.</li><li>Teams that lead often concede possession and territory while protecting a result.</li><li>Raw possession and shot totals can therefore misdescribe the balance of a match.</li><li>Splitting performance by game state gives a clearer view of intent and execution.</li><li>Game state effects are real but difficult to isolate without detailed data.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-game-state-means">
+        <h2 id="what-game-state-means">What game state means</h2>
+        <p>Game state is usually defined by the score difference and the time remaining. A team that is level at 0-0 in the first half is in a different state from the same team leading 1-0 in the second half. The players know the score, the bench knows the score, and the opponent adjusts.</p>
+<p>The state is not just a label. It changes the incentives. A leading team may value safety over additional goals. A trailing team may accept more defensive risk to create chances. Those choices affect possession, pressing, fouls, substitutions and the pace of the game.</p>
+<p>Analysts often split matches into states such as level, leading by one, trailing by one, and so on. The splits are a simplification, because the score can change several times, but they are more informative than treating the whole match as a single block.</p>
+      </section>
+      <section aria-labelledby="score-effects">
+        <h2 id="score-effects">How the score changes behaviour</h2>
+        <p>The most familiar effect is the leading team dropping deeper. It may defend with a lower block, clear the ball more often and commit fewer players to attacks. That can reduce its own shot volume while also reducing the opponent's space in behind.</p>
+<p>The trailing team often does the opposite. It may push its defensive line higher, ask the full-backs to advance and accept more risk in possession. That can increase its shot volume but also increase the chance of conceding on the counter. The net effect on expected goals is not always obvious.</p>
+<p>The equalising goal changes the state again. A team that has just drawn level may push for a winner, or it may settle for the point. The behaviour depends on the team, the opponent, the competition and the time remaining. There is no universal script.</p>
+      </section>
+      <section aria-labelledby="time-and-urgency">
+        <h2 id="time-and-urgency">Time and urgency</h2>
+        <p>The clock changes the value of a goal. A goal in the first minute leaves a long time for the opponent to respond. A goal in the 89th minute leaves very little. That changes the risk calculus for both teams.</p>
+<p>As time runs out, a trailing team may take more extreme risks. It may send the goalkeeper forward for a corner or leave only one defender back. Those choices can produce a late goal, but they can also produce a counter-attacking goal for the opponent. The variance of the final minutes is higher than the variance of the opening period.</p>
+<p>Added time adds another layer. A team that needs a goal may benefit from a longer stoppage period; a team that is protecting a lead may not. Referee and VAR decisions can extend the match, which changes the number of opportunities available.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. Club A and Club B are level at 0-0 for 30 minutes, then Club A scores. The remaining 60 minutes are split between Club A leading and Club B chasing. The xG figures are illustrative and do not come from a real match.</p>
+<table>
+<caption>Illustrative xG by game state</caption>
+<thead><tr><th>State</th><th>Minutes</th><th>Club A xG</th><th>Club B xG</th></tr></thead>
+<tbody>
+<tr><td>Level at 0-0</td><td>30</td><td>0.45</td><td>0.38</td></tr>
+<tr><td>Club A leads 1-0</td><td>45</td><td>0.40</td><td>0.55</td></tr>
+<tr><td>Club A leads 1-0, final 15</td><td>15</td><td>0.12</td><td>0.30</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>90</strong></td><td><strong>0.97</strong></td><td><strong>1.23</strong></td></tr>
+</tbody>
+</table>
+<p>The full-match total gives Club B 1.23 xG and Club A 0.97. That looks like a strong performance from the team that trailed. The state split tells a different story. While the match was level, Club A created slightly more. After taking the lead, it ceded territory and chances, especially in the final 15 minutes.</p>
+<p>The example does not prove that Club A was the better team. It shows that the raw total mixes different phases with different incentives. A trailing team's xG is partly a product of the opponent's willingness to defend the lead. That does not make the chances worthless, but it changes their meaning.</p>
+<p>Now imagine the match ended 1-1 after a late equaliser. The narrative might describe Club B as deserving the point. The state split supports that reading for the final period, while also showing that Club A had the better of the level phase. Both statements can be true at once.</p>
+      </section>
+      <section aria-labelledby="pressing-and-possession">
+        <h2 id="pressing-and-possession">Pressing, possession and the state</h2>
+        <p>Possession is one of the most state-sensitive statistics. A team that leads may happily concede the ball because it wants to protect space rather than win it back quickly. A team that trails may dominate possession because the opponent is content to defend.</p>
+<p>That is why a 65 per cent possession figure does not automatically mean control. It may mean the team with the ball is being allowed to have it in less dangerous areas. The same applies to passes and touches: volume can rise while threat stays flat.</p>
+<p>Pressing data is also state-dependent. A team may press intensely while level and then drop off after taking the lead. A full-match pressing average blends the two behaviours. Our guide to <a href="possession-data-football.html">possession data</a> explains how to read these numbers without treating them as a direct measure of dominance.</p>
+      </section>
+      <section aria-labelledby="substitutions">
+        <h2 id="substitutions">Game state and substitutions</h2>
+        <p>Substitutions are a response to game state. A trailing team may bring on an extra attacker, while a leading team may bring on a defensive midfielder or a fresh centre-back. The timing and the role of the substitution can change the match as much as the score itself.</p>
+<p>That makes substitution impact difficult to evaluate. A player who enters at 2-0 down may accumulate attacking numbers against a team that is already managing the game. A defender who enters to protect a lead may face a wave of late pressure. The raw numbers reflect the situation as well as the player.</p>
+<p>Our guide to <a href="substitutions-game-management.html">substitutions and game management</a> sets out how to assess these decisions without overreading a small number of appearances. The key is to compare like with like, or at least to state the state in which the numbers were produced.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating a full-match total as a neutral description of performance.</strong> The score changes behaviour, so the total blends different phases.</li>
+<li><strong>Assuming possession equals control.</strong> A team can have more of the ball because the opponent is protecting a lead.</li>
+<li><strong>Ignoring the timing of chances.</strong> A late goal against a team chasing the game is different from an early goal in a level match.</li>
+<li><strong>Comparing players across different states.</strong> A substitute entering at 0-3 is not in the same situation as a starter at 0-0.</li>
+<li><strong>Overinterpreting a single state split.</strong> The samples within each state are small, especially in one match.</li>
+</ul>
+<p>The common mistake is to treat the match as a single unit. It is more useful to ask which state produced the numbers and what incentives were present.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and caveats</h2>
+        <p>Game state is not a magic variable. It explains some of the variation in behaviour, but it does not explain everything. Team quality, tactics, injuries, weather and referee decisions all matter. A state split can also suffer from selection effects: the teams that lead are not a random sample of teams.</p>
+<p>The data needed for a careful state analysis is often limited. Event data can show when shots and goals occurred, but it may not capture the tactical instructions or the precise positioning of every player. Tracking data helps, but it is not universally available.</p>
+<p>Used well, game state turns a confusing total into a set of more specific questions. It is a reminder that football is a sequence of decisions, not a single performance score. For a related view of how matchups change with the score, see our guide to <a href="tactical-matchups-vs-reputation.html">tactical matchups</a>.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is game state in football analysis?</summary>
+      <div class="faq-answer"><p>Game state refers to the score difference, time remaining and context that shape a team&#39;s decisions. It helps explain why the same team can behave differently at 0-0 and at 1-0.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does a trailing team always create more chances?</summary>
+      <div class="faq-answer"><p>No. A trailing team often takes more risks, but the opponent may defend deeply and limit clear chances. The effect depends on the teams, the tactics and the time remaining.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can game state explain a team&#39;s possession stats?</summary>
+      <div class="faq-answer"><p>Partly. A leading team may concede possession deliberately, while a trailing team may dominate the ball because the opponent is protecting space. Possession should be read alongside the score and the type of chances created.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-game-state-means">What game state means</a></li><li><a href="#score-effects">How the score changes behaviour</a></li><li><a href="#time-and-urgency">Time and urgency</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#pressing-and-possession">Pressing, possession and the state</a></li><li><a href="#substitutions">Game state and substitutions</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and caveats</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="possession-data-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Using Possession Data Correctly</strong>
+      </a>
+      <a class="related-card" href="tactical-matchups-vs-reputation.html">
+        <span class="cat">Tactics</span>
+        <strong>Tactical Matchups Matter More Than Reputation</strong>
+      </a>
+      <a class="related-card" href="substitutions-game-management.html">
+        <span class="cat">Tactics</span>
+        <strong>Substitutions and Game Management</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

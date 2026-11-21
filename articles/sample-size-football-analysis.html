@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Size in Football Analysis</title>
+  <meta name="description" content="How many matches are enough? Learn how variance, shrinkage, and confidence intervals affect football analysis and prediction records.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/sample-size-football-analysis.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Sample Size in Football Analysis">
+  <meta property="og:description" content="How many matches are enough? Learn how variance, shrinkage, and confidence intervals affect football analysis and prediction records.">
+  <meta property="og:url" content="https://nation99.github.io/articles/sample-size-football-analysis.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-10-11">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="Betting Education">
+  <meta property="article:tag" content="sample size">
+  <meta property="article:tag" content="variance">
+  <meta property="article:tag" content="regression">
+  <meta property="article:tag" content="analysis">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sample Size in Football Analysis">
+  <meta name="twitter:description" content="How many matches are enough? Learn how variance, shrinkage, and confidence intervals affect football analysis and prediction records.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/sample-size-football-analysis.html#webpage","url":"https://nation99.github.io/articles/sample-size-football-analysis.html","name":"Sample Size in Football Analysis","description":"How many matches are enough? Learn how variance, shrinkage, and confidence intervals affect football analysis and prediction records.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/sample-size-football-analysis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Betting Education","item":"https://nation99.github.io/articles/?category=Betting%20Education"},{"@type":"ListItem","position":4,"name":"Sample Size in Football Analysis"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/sample-size-football-analysis.html#article","headline":"Sample Size in Football Analysis","description":"How many matches are enough? Learn how variance, shrinkage, and confidence intervals affect football analysis and prediction records.","datePublished":"2026-10-11","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/sample-size-football-analysis.html#webpage"},"articleSection":"Betting Education","keywords":"sample size, variance, regression, analysis","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is one season a large enough sample for football analysis?","acceptedAnswer":{"@type":"Answer","text":"It is a reasonable starting point for team-level metrics, but it still contains substantial randomness. For noisier measures such as finishing or cup results, even a season may not be enough to separate skill from variance."}},{"@type":"Question","name":"What is shrinkage in simple terms?","acceptedAnswer":{"@type":"Answer","text":"Shrinkage means pulling an extreme small-sample estimate towards a more typical baseline. The less data you have, the stronger the pull. It is a way of avoiding overconfidence in early results."}},{"@type":"Question","name":"Does a large sample ensure a reliable conclusion?","acceptedAnswer":{"@type":"Answer","text":"No. A large sample can still be biased, outdated or poorly measured. Sample size improves precision, but it does not fix a flawed question or bad data."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Betting%20Education">Betting Education</a></li><li><span aria-current="page">Sample Size in Football Analysis</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Betting Education</p>
+        <h1>Sample Size in Football Analysis</h1>
+        <p class="article-dek">A pattern built on four matches is a rumour. Sample size is the discipline that separates a useful signal from an interesting coincidence.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-10-11">11 October 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Football analysis is full of small numbers presented with great confidence. A team has won four in a row, a striker has scored in five straight games, a manager has a perfect record against a rival. Each statement may be true, and each may be almost meaningless as evidence of what happens next.</p>
+<p>Sample size is the study of how much evidence is enough. It is not a technicality for statisticians. It is the difference between describing a pattern and trusting it.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Football produces noisy results, so short runs are weak evidence of a lasting trend.</li><li>The amount of data needed depends on the question and the variability of the measure.</li><li>Shrinking small samples towards a baseline reduces extreme and unstable estimates.</li><li>Confidence intervals describe uncertainty better than a single average.</li><li>Split samples and out-of-sample tests are stronger than fitting a story to one dataset.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="why-sample-size-matters">
+        <h2 id="why-sample-size-matters">Why sample size changes the conclusion</h2>
+        <p>A fair coin can land heads five times in a row. The run does not make the coin biased, and it does not make the next toss more likely to land tails. Short sequences produce clusters that look meaningful because the human mind is good at finding patterns.</p>
+<p>Football has the same property. Goals, wins and even expected goals are generated by processes with a lot of randomness. A team can play well and lose, or play poorly and win. Over a short run, the result column can diverge from the underlying performance. Over a longer run, the underlying performance tends to assert itself, though never perfectly.</p>
+<p>The practical question is not whether a pattern exists. It is whether the pattern is strong enough, and the sample large enough, to justify acting on it. Those are separate questions.</p>
+      </section>
+      <section aria-labelledby="variance-and-noise">
+        <h2 id="variance-and-noise">Variance, noise, and signal</h2>
+        <p>Variance is the spread of outcomes around an average. A measure with high variance needs more data before its average becomes stable. Goals per match are high variance because a single deflection can change the count. Pass completion percentage is lower variance because it is built from hundreds of events.</p>
+<p>Noise is the part of the variation that carries no useful information about future performance. Signal is the part that does. The difficulty is that both are mixed together in every dataset. A team's five-match scoring run contains some signal about its attacking quality and a lot of noise from finishing, opposition and luck.</p>
+<p>Different metrics have different signal-to-noise ratios. Shot volume tends to stabilise faster than conversion. Expected goals tends to stabilise faster than actual goals. That is one reason xG is useful, though it is not a cure for small samples. A model output can be noisy too, especially when it is built from a handful of matches.</p>
+      </section>
+      <section aria-labelledby="shrinking-estimates">
+        <h2 id="shrinking-estimates">Why small samples should be shrunk</h2>
+        <p>Suppose a team has scored 2.5 goals per match over its first four games. The raw average is striking. But four matches contain very little information about the team's true scoring rate. A better estimate pulls the raw average towards a league baseline, with the amount of shrinkage depending on how much data is available.</p>
+<p>This is sometimes called regression to the mean, though the phrase is often misunderstood. It does not mean a team is doomed to become average. It means that extreme observations tend to be followed by less extreme ones when part of the extremity was noise. A team can be genuinely excellent and still see its average fall from an unsustainable peak.</p>
+<p>Shrinkage is not cheating. It is a formal way of saying that a small sample is less trustworthy than a large one. The same logic applies to player ratings, defensive records and prediction models. The fewer the observations, the more the estimate should lean on a sensible prior.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The numbers below are illustrative. Club A has played four matches and scored 10 goals. Club B has played 20 matches and scored 28. The league average is 1.40 goals per team per match. We apply a simple shrinkage rule: weight the observed average by the number of matches, and the league average by a prior of six matches.</p>
+<table>
+<caption>Illustrative shrinkage of scoring rates</caption>
+<thead><tr><th>Club</th><th>Matches</th><th>Goals</th><th>Raw average</th><th>Shrunk estimate</th></tr></thead>
+<tbody>
+<tr><td>Club A</td><td>4</td><td>10</td><td>2.50</td><td>1.84</td></tr>
+<tr><td>Club B</td><td>20</td><td>28</td><td>1.40</td><td>1.40</td></tr>
+</tbody>
+</table>
+<p>For Club A, the shrunk estimate is (4 multiplied by 2.50 plus 6 multiplied by 1.40) divided by 10. That is (10 plus 8.4) divided by 10, which equals 1.84. For Club B, the observed average already matches the league average, so the shrunk estimate is also 1.40. The formula is deliberately simple; a real model would use opponent strength and other adjustments.</p>
+<p>The example shows the central point. Club A's raw average of 2.50 is not ignored, but it is discounted because it rests on four matches. The estimate of 1.84 is still above average, which reflects the evidence, but it is far less extreme than the raw number. A prediction based on 2.50 would be overconfident.</p>
+<p>Now suppose Club A plays ten more matches and scores 14 goals. Its raw average over 14 matches is 24 divided by 14, which is about 1.71. The shrunk estimate becomes (14 multiplied by 1.71 plus 6 multiplied by 1.40) divided by 20, which is about 1.62. The estimate has moved towards the observed performance as the sample grew, while still acknowledging uncertainty.</p>
+      </section>
+      <section aria-labelledby="how-many-matches">
+        <h2 id="how-many-matches">How many matches are enough?</h2>
+        <p>There is no universal number. The answer depends on the metric, the question and the level of precision required. A rough guide is better than a false rule.</p>
+<p>For team results, a full season is often treated as a reasonable sample, but even a season contains luck. For expected goals, research on stability suggests that attacking and defensive rates become moderately stable over roughly ten to twenty matches, depending on the league and the model. For player finishing, even a full season may not be enough to separate skill from noise.</p>
+<p>The right approach is to report uncertainty alongside the estimate. A range is more honest than a point. If a team's xG per match is 1.6 with a plausible range of 1.2 to 2.0, the range tells you how much the number could move. A single figure hides that information.</p>
+      </section>
+      <section aria-labelledby="split-samples">
+        <h2 id="split-samples">Split samples and out-of-sample tests</h2>
+        <p>One of the simplest ways to test a pattern is to split the data. Fit the pattern to the first half of the season and see whether it holds in the second half. If a team's defensive improvement is real, it should show up in both periods. If it appears only in the first, it may be noise or a schedule effect.</p>
+<p>Out-of-sample testing is the same idea applied to models. A model that fits the training data perfectly may fail on new data. The test is not how well the model explains the past, but how well it predicts the future. That is why a prediction record should be recorded before the matches are played, not reconstructed afterwards.</p>
+<p>Our guide to <a href="track-prediction-accuracy.html">tracking prediction accuracy</a> explains how to keep that record clean. The key discipline is to define the prediction, the sample and the evaluation rule in advance. Changing the rule after seeing the results turns analysis into storytelling.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating a hot streak as a new baseline.</strong> Four good matches do not erase the previous season's evidence.</li>
+<li><strong>Ignoring the variance of the metric.</strong> Goals and assists are noisier than shot volume or pass completion.</li>
+<li><strong>Changing the question after seeing the data.</strong> This makes it likely that a pattern will appear somewhere.</li>
+<li><strong>Reporting a point estimate without a range.</strong> Uncertainty is part of the result, not an optional extra.</li>
+<li><strong>Confusing statistical significance with practical importance.</strong> A small effect can be real and still too small to matter.</li>
+</ul>
+<p>Each mistake shares a common cause: the desire for a clean answer from messy data. Accepting uncertainty is not a weakness. It is the condition for making a claim that can survive contact with new matches.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and practical advice</h2>
+        <p>Sample size is not the only issue. A large sample can still be biased if it covers the wrong competitions, the wrong seasons or the wrong types of matches. Data quality matters as much as quantity. Ten seasons of unreliable event data are not better than two seasons of good data.</p>
+<p>There is also a trade-off between sample size and relevance. Older matches may be less relevant to a team's current squad and tactics. A balance is needed: enough data for stability, but not so much that the sample describes a different team.</p>
+<p>The practical habit is to ask three questions before trusting a pattern. How many observations are there? How noisy is the measure? Does the pattern hold in a separate sample? If the answer to any of these is weak, the claim should be weaker too. For related reading, see our notes on <a href="form-streaks-misleading.html">form streaks</a> and <a href="cognitive-biases-football-prediction.html">cognitive biases</a>.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is one season a large enough sample for football analysis?</summary>
+      <div class="faq-answer"><p>It is a reasonable starting point for team-level metrics, but it still contains substantial randomness. For noisier measures such as finishing or cup results, even a season may not be enough to separate skill from variance.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What is shrinkage in simple terms?</summary>
+      <div class="faq-answer"><p>Shrinkage means pulling an extreme small-sample estimate towards a more typical baseline. The less data you have, the stronger the pull. It is a way of avoiding overconfidence in early results.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does a large sample ensure a reliable conclusion?</summary>
+      <div class="faq-answer"><p>No. A large sample can still be biased, outdated or poorly measured. Sample size improves precision, but it does not fix a flawed question or bad data.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#why-sample-size-matters">Why sample size changes the conclusion</a></li><li><a href="#variance-and-noise">Variance, noise, and signal</a></li><li><a href="#shrinking-estimates">Why small samples should be shrunk</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#how-many-matches">How many matches are enough?</a></li><li><a href="#split-samples">Split samples and out-of-sample tests</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and practical advice</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="form-streaks-misleading.html">
+        <span class="cat">xG and Stats</span>
+        <strong>Why Form Streaks Can Mislead Analysis</strong>
+      </a>
+      <a class="related-card" href="track-prediction-accuracy.html">
+        <span class="cat">Betting Education</span>
+        <strong>How to Track Prediction Accuracy in Football</strong>
+      </a>
+      <a class="related-card" href="cognitive-biases-football-prediction.html">
+        <span class="cat">Betting Education</span>
+        <strong>Cognitive Biases in Football Prediction</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Defensive Metrics That Actually Matter</title>
+  <meta name="description" content="Goals conceded is a noisy summary. Learn how xGA, post-shot xG, set-piece data, and pressing metrics describe different parts of defending.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/defensive-metrics-football.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Defensive Metrics That Actually Matter">
+  <meta property="og:description" content="Goals conceded is a noisy summary. Learn how xGA, post-shot xG, set-piece data, and pressing metrics describe different parts of defending.">
+  <meta property="og:url" content="https://nation99.github.io/articles/defensive-metrics-football.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-07-14">
+  <meta property="article:modified_time" content="2026-11-10">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="defence">
+  <meta property="article:tag" content="xGA">
+  <meta property="article:tag" content="post-shot xG">
+  <meta property="article:tag" content="set pieces">
+  <meta property="article:tag" content="pressing">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Defensive Metrics That Actually Matter">
+  <meta name="twitter:description" content="Goals conceded is a noisy summary. Learn how xGA, post-shot xG, set-piece data, and pressing metrics describe different parts of defending.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/defensive-metrics-football.html#webpage","url":"https://nation99.github.io/articles/defensive-metrics-football.html","name":"Defensive Metrics That Actually Matter","description":"Goals conceded is a noisy summary. Learn how xGA, post-shot xG, set-piece data, and pressing metrics describe different parts of defending.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/defensive-metrics-football.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"Defensive Metrics That Actually Matter"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/defensive-metrics-football.html#article","headline":"Defensive Metrics That Actually Matter","description":"Goals conceded is a noisy summary. Learn how xGA, post-shot xG, set-piece data, and pressing metrics describe different parts of defending.","datePublished":"2026-07-14","dateModified":"2026-11-10","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/defensive-metrics-football.html#webpage"},"articleSection":"xG and Stats","keywords":"defence, xGA, post-shot xG, set pieces, pressing","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is xGA the best defensive metric?","acceptedAnswer":{"@type":"Answer","text":"It is the best starting point for chance prevention, but it does not measure goalkeeping or the chances a defence prevented from becoming shots. It works best alongside post-shot xG, set-piece data, and pressing context."}},{"@type":"Question","name":"What is a good xGA per match?","acceptedAnswer":{"@type":"Answer","text":"There is no universal threshold because leagues, eras, and providers differ. Compare a team with its own baseline and its opponents rather than applying a fixed number."}},{"@type":"Question","name":"Does a low goals conceded total mean the defence is good?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. It may reflect strong goalkeeping, poor finishing from opponents, or a small sample. Check xGA and post-shot xG before drawing a conclusion about the defence."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">Defensive Metrics That Actually Matter</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>Defensive Metrics That Actually Matter</h1>
+        <p class="article-dek">A defence is not one number. Chance quality, shot placement, set pieces, and pressing each describe a different part of the job, and useful analysis keeps them apart.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-07-14">14 July 2026</time></span>
+          <span>Last updated <time datetime="2026-11-10">10 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Ask a supporter how a team defended and the answer usually starts with goals conceded. It is the most visible number and the least patient one. A deflection, a penalty, or a brilliant save can move it without saying much about the structure in front of the goalkeeper.</p>
+<p>Defensive analysis gets better when the single number is replaced by a small set of questions. How good were the chances allowed? Where did the shots go? How much of the threat came from set pieces? Did the team suppress chances through pressing, or did it simply face fewer attacks? Each question has a metric, and each metric has a limit.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Goals conceded mixes chance prevention, finishing, and goalkeeping, so it is a poor stand-alone measure of defence.</li><li>xGA describes the quality of chances allowed and is the natural starting point.</li><li>Post-shot xG adds placement and helps separate defending from shot-stopping.</li><li>Set-piece defence deserves its own view because the mechanisms and sample sizes differ from open play.</li><li>Pressing and territory data explain how chances are suppressed, but they need context and should not be read as direct outcomes.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="goals-conceded">
+        <h2 id="goals-conceded">Why goals conceded is a poor first question</h2>
+        <p>Goals conceded is the product of several things: the number of chances allowed, the quality of those chances, the quality of the shots taken, and the goalkeeper's performance. It is also subject to deflections, own goals, and penalties. A team can defend well and concede twice; another can defend poorly and concede once.</p>
+<p>The number is not useless. Over a long season it is the outcome that matters, and it should be respected. The problem is using it as a first-order explanation. If a defence is judged only by goals conceded, the analysis cannot distinguish a structural weakness from a cold spell of finishing or a hot goalkeeper.</p>
+<p>The first split should be between chance prevention and shot-stopping. xGA handles the first. Post-shot xG helps with the second.</p>
+      </section>
+      <section aria-labelledby="chance-quality">
+        <h2 id="chance-quality">Chance quality: xGA</h2>
+        <p>Expected goals against sums the estimated quality of every shot a team faces. A lower total means the opponent's shots were, on average, less likely to score. It is the clearest team-level measure of chance prevention available from event data.</p>
+<p>Read it per match and alongside the number of shots faced. A side allowing 1.2 xGA from 16 shots is conceding many low-quality attempts. A side allowing 1.2 xGA from seven shots is conceding fewer but better chances. The first profile may reflect a defence that forces opponents wide; the second may reflect a defence that protects the box but gives up clear looks when it breaks.</p>
+<p>It also helps to separate open play from set pieces. The mechanisms are different, and blending them can hide a specific weakness.</p>
+      </section>
+      <section aria-labelledby="post-shot">
+        <h2 id="post-shot">Shot placement: post-shot xG</h2>
+        <p>Post-shot xG estimates the chance of a goal after the shot has been struck, using the placement of the ball and, in some models, the goalkeeper's position. It is usually calculated for shots on target. The difference between post-shot xG faced and goals conceded is a rough signal of shot-stopping.</p>
+<p>A goalkeeper who concedes fewer goals than the post-shot model expects has likely saved more than an average keeper would, or benefited from shots hitting the frame. A keeper who concedes more may have underperformed, or faced unusually well-placed shots that the model still rates highly. The signal is noisy over 10 or 12 matches and becomes more meaningful over a full season.</p>
+<p>Post-shot xG is not a replacement for xGA. It describes what happened once a shot was taken, not whether the chance should have been allowed.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="set-pieces">
+        <h2 id="set-pieces">Set-piece defence</h2>
+        <p>Set pieces deserve a separate column because they are a distinct defensive problem. Delivery quality, aerial contests, marking schemes, and second balls all matter, and the sample of set-piece shots is smaller than the sample of open-play shots. A team can look solid in open play and vulnerable from corners without the overall xGA revealing it.</p>
+<p>Useful questions include: how many set-piece shots does the team allow, what is their average quality, and how many second-phase chances follow? A corner that is cleared but returned with a cross is part of the same defensive sequence, even if the first header was harmless.</p>
+<p>Set-piece xGA is noisy. A single well-delivered corner can produce two good chances, and a single match can dominate a monthly total. Treat the numbers as a prompt to watch the routine, not as a complete diagnosis.</p>
+      </section>
+      <section aria-labelledby="pressing-territory">
+        <h2 id="pressing-territory">Pressing and territory</h2>
+        <p>Chance prevention starts before the shot. Pressing data, such as passes allowed per defensive action, can describe how aggressively a team contests the ball. Territory data, such as the share of play in each third, can describe how far opponents are allowed to progress. High turnovers and counter-pressing recoveries add another layer.</p>
+<p>These metrics explain mechanisms, but they are not outcomes. A team can press aggressively and still allow good chances if the press is bypassed. Another can sit deep, allow territory, and concede very little because it protects the box well. Neither style is automatically better; the question is whether the approach reduces the quality of chances faced.</p>
+<p>Pressing numbers are also shaped by game state. A team chasing a match presses more; a team protecting a lead may press less. Without that context, a raw pressing figure can be misleading.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table compares two hypothetical teams over 12 matches. All values are illustrative and rounded.</p>
+<table>
+<thead><tr><th>Metric</th><th>Club A</th><th>Club B</th></tr></thead>
+<tbody>
+<tr><td>Matches</td><td>12</td><td>12</td></tr>
+<tr><td>Shots faced</td><td>132</td><td>108</td></tr>
+<tr><td>xGA</td><td>15.6</td><td>14.4</td></tr>
+<tr><td>xGA per match</td><td>1.30</td><td>1.20</td></tr>
+<tr><td>xGA per shot</td><td>0.118</td><td>0.133</td></tr>
+<tr><td>Post-shot xG faced</td><td>16.8</td><td>12.0</td></tr>
+<tr><td>Post-shot xG faced per match</td><td>1.40</td><td>1.00</td></tr>
+<tr><td>Goals conceded</td><td>19</td><td>11</td></tr>
+<tr><td>Goals conceded per match</td><td>1.58</td><td>0.92</td></tr>
+<tr><td>Set-piece xGA</td><td>4.8</td><td>3.6</td></tr>
+<tr><td>Set-piece share of xGA</td><td>30.8%</td><td>25.0%</td></tr>
+</tbody>
+</table>
+<p>Club B looks better on almost every outcome, and its chance prevention is slightly stronger: 1.20 xGA per match against 1.30. But the more revealing difference is shot placement. Club B's post-shot xG faced is 1.00 per match, well below its xGA of 1.20, while Club A's post-shot figure is 1.40, above its xGA of 1.30. That pattern suggests Club B's goalkeeper has been the stronger shot-stopper over this sample, or that opponents have directed shots more kindly towards him.</p>
+<p>Club A faces more shots but of slightly lower average quality: 15.6 xGA from 132 shots is 0.118 per shot, compared with 0.133 for Club B. The overall xGA totals are close, but the profiles differ. Club A's defence concedes volume; Club B's concedes fewer, better shots and has paired that with stronger shot-stopping.</p>
+<p>Set pieces account for 4.8 of Club A's 15.6 xGA, or 30.8 per cent, and 3.6 of Club B's 14.4, or 25.0 per cent. That is a meaningful share for both, and a reason to look at the routines rather than treating the overall xGA as a complete verdict.</p>
+      </section>
+      <section aria-labelledby="putting-together">
+        <h2 id="putting-together">Putting the metrics together</h2>
+        <p>A useful defensive profile has four layers. First, chance quantity: how many shots does the team allow? Second, chance quality: what is the xGA per shot and per match? Third, shot placement and goalkeeping: how do goals conceded compare with post-shot xG faced? Fourth, mechanism: how much comes from set pieces, transitions, or sustained possession, and how does the team's pressing or depth shape those chances?</p>
+<p>No single layer is decisive. A low xGA with a high post-shot gap may indicate excellent keeping rather than excellent defending. A high xGA with a low post-shot figure may indicate a keeper who is facing well-placed shots, or a model that rates the chances differently from the eye. The profile is more informative than any one column.</p>
+<p>For the chance-quality layer, see <a href="what-is-xga.html">our guide to xGA</a>. The goalkeeping question is covered in <a href="goalkeeper-performance-prediction.html">goalkeeper performance and prediction</a>. Set-piece specifics sit in <a href="set-pieces-football-prediction.html">set pieces in football analysis</a>.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li>Judging a defence by goals conceded alone, without separating chance prevention from shot-stopping.</li>
+<li>Reading xGA without the number of shots faced, which hides the difference between volume and quality.</li>
+<li>Treating a 10-match post-shot gap as proof of goalkeeping ability.</li>
+<li>Ignoring set-piece xGA because the overall total looks acceptable.</li>
+<li>Using pressing volume as a proxy for defensive quality without checking the chances it concedes.</li>
+</ul>
+<p>Each mistake collapses a multi-part question into a single number. The fix is not more decimal places; it is a clearer question.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Where defensive metrics stop</h2>
+        <p>Defensive metrics cannot see the chances that never became shots. A defender who cuts out a cross, a midfielder who tracks a runner, or a goalkeeper who claims a corner before the header all prevent xGA without recording any. They also cannot fully separate individual quality from team structure, or account for the opponent's intentions.</p>
+<p>Use the numbers to describe the chances allowed, then watch the defending. The metrics tell you where to look; they do not replace the look.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is xGA the best defensive metric?</summary>
+      <div class="faq-answer"><p>It is the best starting point for chance prevention, but it does not measure goalkeeping or the chances a defence prevented from becoming shots. It works best alongside post-shot xG, set-piece data, and pressing context.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What is a good xGA per match?</summary>
+      <div class="faq-answer"><p>There is no universal threshold because leagues, eras, and providers differ. Compare a team with its own baseline and its opponents rather than applying a fixed number.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does a low goals conceded total mean the defence is good?</summary>
+      <div class="faq-answer"><p>Not necessarily. It may reflect strong goalkeeping, poor finishing from opponents, or a small sample. Check xGA and post-shot xG before drawing a conclusion about the defence.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#goals-conceded">Why goals conceded is a poor first question</a></li><li><a href="#chance-quality">Chance quality: xGA</a></li><li><a href="#post-shot">Shot placement: post-shot xG</a></li><li><a href="#set-pieces">Set-piece defence</a></li><li><a href="#pressing-territory">Pressing and territory</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#putting-together">Putting the metrics together</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Where defensive metrics stop</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="what-is-xga.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xGA? Defensive Expected Goals</strong>
+      </a>
+      <a class="related-card" href="goalkeeper-performance-prediction.html">
+        <span class="cat">Tactics</span>
+        <strong>Goalkeeper Performance and Prediction</strong>
+      </a>
+      <a class="related-card" href="set-pieces-football-prediction.html">
+        <span class="cat">Tactics</span>
+        <strong>Set Pieces in Football Analysis</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

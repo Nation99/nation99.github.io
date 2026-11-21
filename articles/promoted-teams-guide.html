@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promoted Teams: A Season Analysis Guide</title>
+  <meta name="description" content="How to analyse newly promoted football teams: squad turnover, early variance, second-season effects, and the limits of a small sample.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/promoted-teams-guide.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Promoted Teams: A Season Analysis Guide">
+  <meta property="og:description" content="How to analyse newly promoted football teams: squad turnover, early variance, second-season effects, and the limits of a small sample.">
+  <meta property="og:url" content="https://nation99.github.io/articles/promoted-teams-guide.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-11-04">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="Leagues">
+  <meta property="article:tag" content="promoted teams">
+  <meta property="article:tag" content="league analysis">
+  <meta property="article:tag" content="squad turnover">
+  <meta property="article:tag" content="variance">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Promoted Teams: A Season Analysis Guide">
+  <meta name="twitter:description" content="How to analyse newly promoted football teams: squad turnover, early variance, second-season effects, and the limits of a small sample.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/promoted-teams-guide.html#webpage","url":"https://nation99.github.io/articles/promoted-teams-guide.html","name":"Promoted Teams: A Season Analysis Guide","description":"How to analyse newly promoted football teams: squad turnover, early variance, second-season effects, and the limits of a small sample.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/promoted-teams-guide.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Leagues","item":"https://nation99.github.io/articles/?category=Leagues"},{"@type":"ListItem","position":4,"name":"Promoted Teams: A Season Analysis Guide"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/promoted-teams-guide.html#article","headline":"Promoted Teams: A Season Analysis Guide","description":"How to analyse newly promoted football teams: squad turnover, early variance, second-season effects, and the limits of a small sample.","datePublished":"2026-11-04","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/promoted-teams-guide.html#webpage"},"articleSection":"Leagues","keywords":"promoted teams, league analysis, squad turnover, variance","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do promoted teams usually struggle in their first season?","acceptedAnswer":{"@type":"Answer","text":"Many do, because the step up in opponent quality and squad demands is significant. The variation is large, though, and some promoted teams adapt quickly. The first ten matches are a weak guide on their own."}},{"@type":"Question","name":"Is the second-season syndrome real?","acceptedAnswer":{"@type":"Answer","text":"It is a tendency in some cases, not a universal rule. Squad turnover, managerial changes and the strength of the league can all affect a promoted team's second season."}},{"@type":"Question","name":"What data should I use to analyse a promoted team?","acceptedAnswer":{"@type":"Answer","text":"Use the same data as for any other team, but pay extra attention to sample size, fixture difficulty, squad turnover and the difference between lower-division and top-division data."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Leagues">Leagues</a></li><li><span aria-current="page">Promoted Teams: A Season Analysis Guide</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Leagues</p>
+        <h1>Promoted Teams: A Season Analysis Guide</h1>
+        <p class="article-dek">A promoted team is not a smaller version of an established one. It is a squad in transition, playing a different level of opponent with a short track record.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-11-04">4 November 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>7 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Every promoted team arrives with a story. One is the well-drilled side that dominated the second tier. Another is the surprise package that found form at the right time. A third is the club with money to spend and a squad that looks ready for the step up.</p>
+<p>The stories are useful for context, but they can crowd out the analysis. A promoted team is defined less by its old table position than by the gap it must close: a new level of opponent, a new squad, a new schedule and a much smaller margin for error.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Promoted teams face a step up in opponent quality, squad turnover and schedule demands.</li><li>Early-season results are a weak guide because the sample is small and the fixture list is uneven.</li><li>Underlying performance and squad adaptation are more informative than the first table.</li><li>Second-season effects are real but often overstated as a universal rule.</li><li>Promotion and relegation probabilities should be treated as uncertain estimates.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="why-different">
+        <h2 id="why-different">Why promoted teams are different</h2>
+        <p>The standard of the league above is higher in almost every dimension. The opponents are faster, the pressing is more organised, and the chances that were available in the second tier are often closed. A team that created 1.6 xG per match in the lower division may find that the same approach produces 1.0 in the higher one.</p>
+<p>The step up is not uniform. Some promoted teams are financially strong and can improve the squad quickly. Others rely on the group that earned promotion. Some play a style that translates well; others depend on physical dominance that is less effective against better athletes.</p>
+<p>The key analytical question is not whether the team was good last season. It is how much of that performance will survive the change in level. That requires an assessment of the squad, the style and the club's resources, not just the final table.</p>
+      </section>
+      <section aria-labelledby="squad-turnover">
+        <h2 id="squad-turnover">Squad turnover and adaptation</h2>
+        <p>Promoted squads often turn over heavily. Players who were adequate in the lower division may be replaced by new signings, while some of the promotion heroes stay as squad players. The result is a team that has less shared history than its rivals.</p>
+<p>Turnover is not automatically bad. A club may need new quality to compete. But it takes time for new players to learn the system, the league and each other. Early performances can reflect that learning curve rather than the team's eventual level.</p>
+<p>Our guide to <a href="squad-depth-football-prediction.html">squad depth</a> explains why the drop-off beyond the starting eleven matters. Promoted teams often have a smaller margin between their best and worst available lineups, which becomes important when injuries and congestion arrive.</p>
+      </section>
+      <section aria-labelledby="early-variance">
+        <h2 id="early-variance">Early-season variance</h2>
+        <p>The first ten matches of a promoted team's season are a noisy sample. The fixture list may be unusually difficult or unusually kind. A team that plays three of the top six in its first five matches may look worse than it is; a team that plays three of the bottom six may look better.</p>
+<p>Results also carry a large amount of randomness. A promoted side can win a match with a low xG total or lose one with a higher total. The table after ten matches is a description of outcomes, not a stable estimate of quality.</p>
+<p>The same caution applies to the promoted team's opponents. Early-season tables are compressed, and a single win can move a team several places. The <a href="league-table-beyond-points.html">league table</a> becomes more informative as the sample grows, but it is never a pure measure of performance.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. It follows three promoted clubs across their first ten matches. The xG difference is the team's expected goals minus its expected goals against, per match. The points total is the actual return.</p>
+<table>
+<caption>Illustrative first-ten-match profiles for three promoted clubs</caption>
+<thead><tr><th>Club</th><th>Points</th><th>xG per match</th><th>xGA per match</th><th>xG difference</th></tr></thead>
+<tbody>
+<tr><td>Club A</td><td>16</td><td>1.45</td><td>1.20</td><td>+0.25</td></tr>
+<tr><td>Club B</td><td>11</td><td>1.10</td><td>1.55</td><td>-0.45</td></tr>
+<tr><td>Club C</td><td>8</td><td>1.25</td><td>1.30</td><td>-0.05</td></tr>
+</tbody>
+</table>
+<p>Club A has the best points total and the best xG difference. The two measures agree, which makes the start look convincing. Club B has fewer points and a negative xG difference, so the results and the underlying performance both point to a struggle. Club C is the interesting case: eight points, but an xG difference close to zero. The results have been poor, while the chance data suggests the performances are closer to average.</p>
+<p>None of these profiles is conclusive after ten matches. Club C's xG difference could be a sign of better results to come, or it could be noise. Club A's strong start could reflect an easy fixture list. The table is a set of questions, not a set of answers.</p>
+<p>A useful next step is to compare each club's first ten matches with its next ten. If Club C's xG difference stays near zero while its points improve, the early results look like variance. If the xG difference falls, the performances were weaker than the table suggested. The split sample is more informative than either period alone.</p>
+      </section>
+      <section aria-labelledby="second-season">
+        <h2 id="second-season">The second-season question</h2>
+        <p>There is a common belief that promoted teams perform better in their second season, once they have adapted to the league. The evidence is mixed. Some clubs improve, some decline, and some are relegated after a strong first season.</p>
+<p>The second-season effect is not a law. It depends on squad turnover, managerial stability, recruitment and the quality of the teams around them. A club that survives narrowly in year one may be weaker in year two if key players leave or if the promoted class is stronger.</p>
+<p>The right approach is to treat the second season as a new sample with new context. The previous season is useful evidence, but it is not a forecast. The squad may have changed, the tactics may have changed, and the league may have changed around them.</p>
+      </section>
+      <section aria-labelledby="schedule-and-depth">
+        <h2 id="schedule-and-depth">Schedule, depth and the long run</h2>
+        <p>Promoted teams often face a congested schedule in the cups and league. A smaller squad may struggle to maintain intensity across three competitions. Rotation becomes a necessity, and the drop-off in quality can be decisive.</p>
+<p>Travel and recovery also matter. A promoted club may have a less established performance department, fewer recovery resources or a smaller medical staff. Those disadvantages are difficult to measure from match data, but they can affect the second half of the season.</p>
+<p>Our guide to <a href="premier-league-guide.html">the Premier League</a> discusses the specific demands of one of the most competitive leagues. The general principle applies elsewhere: the step up is not just about the starting eleven, but about the whole club's capacity to compete over a season.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Projecting the lower-division table directly onto the higher league.</strong> The opponent quality and the available space are different.</li>
+<li><strong>Overreacting to the first ten matches.</strong> The sample is small and the fixture list is uneven.</li>
+<li><strong>Assuming a strong start ensures survival.</strong> Early points are valuable, but the season is long and the squad will be tested.</li>
+<li><strong>Treating the second-season effect as a rule.</strong> It is a tendency in some cases, not a universal pattern.</li>
+<li><strong>Ignoring squad turnover.</strong> A promoted team's performance depends on how quickly new players adapt.</li>
+</ul>
+<p>The common thread is the temptation to treat a short, unusual sample as a stable truth. Promoted teams are especially vulnerable to that error because their context changes so quickly.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and caveats</h2>
+        <p>Promoted-team analysis is limited by the small number of comparable seasons. Every promotion is a unique combination of squad, finances, manager and league context. A model trained on past promotions can offer a baseline, but it cannot capture every case.</p>
+<p>The data is also uneven. Lower-division xG models may use different inputs from top-division models, which makes direct comparison difficult. The step up in data quality does not ensure a step up in predictive power.</p>
+<p>The honest approach is to combine the numbers with a structured assessment of the squad and the club. The table and the xG difference are starting points. The questions about adaptation, depth and resources are what turn them into an analysis.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Do promoted teams usually struggle in their first season?</summary>
+      <div class="faq-answer"><p>Many do, because the step up in opponent quality and squad demands is significant. The variation is large, though, and some promoted teams adapt quickly. The first ten matches are a weak guide on their own.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Is the second-season syndrome real?</summary>
+      <div class="faq-answer"><p>It is a tendency in some cases, not a universal rule. Squad turnover, managerial changes and the strength of the league can all affect a promoted team&#39;s second season.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What data should I use to analyse a promoted team?</summary>
+      <div class="faq-answer"><p>Use the same data as for any other team, but pay extra attention to sample size, fixture difficulty, squad turnover and the difference between lower-division and top-division data.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#why-different">Why promoted teams are different</a></li><li><a href="#squad-turnover">Squad turnover and adaptation</a></li><li><a href="#early-variance">Early-season variance</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#second-season">The second-season question</a></li><li><a href="#schedule-and-depth">Schedule, depth and the long run</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and caveats</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="league-table-beyond-points.html">
+        <span class="cat">Leagues</span>
+        <strong>Reading a League Table Beyond Points</strong>
+      </a>
+      <a class="related-card" href="squad-depth-football-prediction.html">
+        <span class="cat">Tactics</span>
+        <strong>How Squad Depth Shapes Football Seasons</strong>
+      </a>
+      <a class="related-card" href="premier-league-guide.html">
+        <span class="cat">Leagues</span>
+        <strong>Premier League Analysis Guide</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

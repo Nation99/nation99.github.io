@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Risk Management for Football Analysis</title>
+  <meta name="description" content="How sample size, variance, selectivity and record keeping shape analytical risk, and why a careful process still cannot remove uncertainty.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/risk-management-football-analysis.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Risk Management for Football Analysis">
+  <meta property="og:description" content="How sample size, variance, selectivity and record keeping shape analytical risk, and why a careful process still cannot remove uncertainty.">
+  <meta property="og:url" content="https://nation99.github.io/articles/risk-management-football-analysis.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-02-24">
+  <meta property="article:modified_time" content="2026-11-06">
+  <meta property="article:section" content="Betting Education">
+  <meta property="article:tag" content="risk">
+  <meta property="article:tag" content="sample size">
+  <meta property="article:tag" content="record keeping">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Risk Management for Football Analysis">
+  <meta name="twitter:description" content="How sample size, variance, selectivity and record keeping shape analytical risk, and why a careful process still cannot remove uncertainty.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/risk-management-football-analysis.html#webpage","url":"https://nation99.github.io/articles/risk-management-football-analysis.html","name":"Risk Management for Football Analysis","description":"How sample size, variance, selectivity and record keeping shape analytical risk, and why a careful process still cannot remove uncertainty.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/risk-management-football-analysis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Betting Education","item":"https://nation99.github.io/articles/?category=Betting%20Education"},{"@type":"ListItem","position":4,"name":"Risk Management for Football Analysis"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/risk-management-football-analysis.html#article","headline":"Risk Management for Football Analysis","description":"How sample size, variance, selectivity and record keeping shape analytical risk, and why a careful process still cannot remove uncertainty.","datePublished":"2026-02-24","dateModified":"2026-11-06","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/risk-management-football-analysis.html#webpage"},"articleSection":"Betting Education","keywords":"risk, sample size, record keeping","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is a 55 per cent hit rate good?","acceptedAnswer":{"@type":"Answer","text":"It depends on the baseline, the calibration, and the sample. A 55 per cent rate on forecasts that should be 70 per cent is poor. On events with a 40 per cent base rate, the same number may be informative. There is no universal threshold."}},{"@type":"Question","name":"How many forecasts are enough?","acceptedAnswer":{"@type":"Answer","text":"There is no universal number. It depends on the size of the effect, the independence of the forecasts, and the question being asked. More evidence is generally better, but correlated forecasts add less than independent ones."}},{"@type":"Question","name":"Does risk management improve returns?","acceptedAnswer":{"@type":"Answer","text":"It can improve the quality of decisions and reduce the chance of being misled by noise. It cannot create an edge or promise a particular financial result, because the margin and variance remain."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Betting%20Education">Betting Education</a></li><li><span aria-current="page">Risk Management for Football Analysis</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Betting Education</p>
+        <h1>Risk Management for Football Analysis</h1>
+        <p class="article-dek">Risk management in analysis is not a staking plan. It is the discipline of asking how much of a result could have been luck, and how much evidence a conclusion really has.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-02-24">24 February 2026</time></span>
+          <span>Last updated <time datetime="2026-11-06">6 November 2026</time></span>
+          <span>7 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Two analysts review a season. Both report a hit rate of 55 per cent. The first made 40 forecasts. The second made 400. The numbers look identical, but the conclusions they support are not. The first record is compatible with a wide range of true ability, including no ability at all. The second is narrower, though still not proof.</p>
+<p>Risk management in football analysis begins with that difference. It is not about predicting the future more confidently. It is about knowing how much confidence the evidence can carry.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>A short run of results says little about the quality of a process.</li><li>Standard error gives a rough scale for how much a hit rate could wobble.</li><li>Selectivity changes the question: fewer forecasts are easier to audit but slower to learn from.</li><li>Record keeping is a risk control because it makes hindsight harder to rewrite.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="risk-is-not-loss">
+        <h2 id="risk-is-not-loss">Risk is not the same as loss</h2>
+        <p>Risk is often used as a synonym for losing, but the two are not the same. A forecast can lose and still be well made. A forecast can win and still be poorly made. Analytical risk is the chance that a conclusion is wrong, fragile, or dependent on a sample that will not repeat.</p>
+<p>Three kinds of risk sit behind most football predictions. Model risk is the chance that the structure of the analysis is wrong. Sample risk is the chance that the observed results are a product of noise. Process risk is the chance that the analyst changes the question after seeing the answer. Only the second is easy to quantify, and even that requires assumptions. The others are matters of discipline and honest documentation.</p>
+      </section>
+      <section aria-labelledby="sample-size-story">
+        <h2 id="sample-size-story">Sample size changes the story</h2>
+        <p>A hit rate is a summary of a sample. The same percentage can come from a handful of forecasts or from hundreds, and the uncertainty around it shrinks as the sample grows. For a simple proportion, the standard error is the square root of p multiplied by one minus p, divided by n. With p at 0.55, the standard error is about 7.9 percentage points at 40 forecasts and about 2.5 points at 400.</p>
+<p>That calculation assumes independent forecasts with a constant true rate. Football forecasts rarely satisfy both assumptions. Matches share teams, managers, and market conditions, and the analyst's method may improve during the season. The standard error is therefore a rough scale, not a precise certificate. It is still useful because it shows how quickly a small sample can produce a dramatic-looking result.</p>
+      </section>
+      <section aria-labelledby="variance-illusion">
+        <h2 id="variance-illusion">Variance and the illusion of skill</h2>
+        <p>Variance is the spread of outcomes around an expectation. It is not a malfunction. A well-calibrated model can produce a cluster of correct calls followed by a cluster of misses, and the order tells you nothing about the model's quality. The mind reads streaks as skill or collapse; the arithmetic reads them as sampling.</p>
+<p>Suppose a model assigns a 55 per cent chance to an event. Over 20 independent repetitions, the expected number of successes is 11, but the observed count will often be 8, 9, 13, or 14. None of those outcomes is surprising. An analyst who changes the model after a run of 8 may be responding to noise. An analyst who celebrates a run of 14 may be doing the same thing with a happier expression.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="selectivity-risk">
+        <h2 id="selectivity-risk">Selectivity is a risk decision</h2>
+        <p>Selectivity is often presented as a virtue: focus on the matches you know best, ignore the rest, and wait for clarity. There is something to that. A narrow focus can improve depth, and it reduces the number of low-information forecasts. But selectivity is also a risk decision, because it changes the sample and creates room for hindsight.</p>
+<p>If the analyst decides which matches count only after the results are known, the record becomes a highlight reel. The same danger applies to changing the definition of a successful forecast, or to dropping a competition when the model performs badly there. A declared rule, written before the season, is easier to audit than an instinct that feels sensible in the moment. The rule may still be wrong, but at least it can be tested. Our guide to <a href="cognitive-biases-football-prediction.html">cognitive biases in football prediction</a> explains why the instinct is so persuasive.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>Two hypothetical analysts both report a 55 per cent hit rate. The table shows why the same headline can support different levels of confidence. The intervals are approximate and assume independent forecasts with a constant true rate.</p>
+<table>
+<thead><tr><th>Analyst</th><th>Forecasts</th><th>Correct</th><th>Hit rate</th><th>Standard error</th><th>Rough 95% range</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>40</td><td>22</td><td>55%</td><td>7.9 points</td><td>39.6% to 70.4%</td></tr>
+<tr><td>B</td><td>400</td><td>220</td><td>55%</td><td>2.5 points</td><td>50.1% to 59.9%</td></tr>
+</tbody>
+</table>
+<p>Analyst A's interval runs from well below a coin flip to a very strong record. Analyst B's interval is much tighter, but it still does not prove that the process is sound. A hit rate is only one dimension; calibration, the difficulty of the forecasts, and the baseline all matter. The arithmetic narrows the uncertainty. It does not remove it.</p>
+      </section>
+      <section aria-labelledby="record-keeping-control">
+        <h2 id="record-keeping-control">Record keeping as a control</h2>
+        <p>Record keeping is a risk control because memory is not an archive. A forecast written after the result is not a record; it is a story. The useful record includes the date, the match, the event being forecast, the probability assigned, the reasoning in one or two lines, the source of the data, and the outcome. If the model changes, the version should change with it.</p>
+<p>The point is not to create paperwork for its own sake. It is to make later review possible without relying on the analyst's preferred version of events. A record that includes misses is more valuable than one that includes only hits, because the misses are where the assumptions are exposed. Our guide to <a href="track-prediction-accuracy.html">tracking prediction accuracy</a> sets out a simple structure for this.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating a short hot run as validation.</strong> A run of correct calls is not evidence of a repeatable process.</li>
+<li><strong>Changing the model after every loss.</strong> This turns the analysis into a chase for the most recent result.</li>
+<li><strong>Counting only the forecasts you remember.</strong> Memory selects for vivid outcomes, not representative ones.</li>
+<li><strong>Confusing confidence with evidence.</strong> A strongly held view is not a larger sample.</li>
+<li><strong>Ignoring the cost of a small sample.</strong> A narrow focus can be useful, but it makes every conclusion more fragile.</li>
+</ul>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits of risk management</h2>
+        <p>Risk management cannot make an uncertain forecast certain. It cannot tell you whether the model is right, only how much noise the evidence can tolerate. It also cannot create an advantage in a market that already contains a margin. No amount of record keeping changes the arithmetic of the prices themselves.</p>
+<p>The honest summary is uncomfortable. Most people who gamble over time end up with less money than they started, because the margin is built into every price and variance ensures that even sensible-looking runs come to an end. A careful process can make an analyst harder to fool, including by their own results. It cannot promise a different financial outcome, and this article does not. Readers who want to understand the balance side of the subject can read our guide to <a href="bankroll-basics.html">bankroll basics</a>.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is a 55 per cent hit rate good?</summary>
+      <div class="faq-answer"><p>It depends on the baseline, the calibration, and the sample. A 55 per cent rate on forecasts that should be 70 per cent is poor. On events with a 40 per cent base rate, the same number may be informative. There is no universal threshold.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How many forecasts are enough?</summary>
+      <div class="faq-answer"><p>There is no universal number. It depends on the size of the effect, the independence of the forecasts, and the question being asked. More evidence is generally better, but correlated forecasts add less than independent ones.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does risk management improve returns?</summary>
+      <div class="faq-answer"><p>It can improve the quality of decisions and reduce the chance of being misled by noise. It cannot create an edge or promise a particular financial result, because the margin and variance remain.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#risk-is-not-loss">Risk is not the same as loss</a></li><li><a href="#sample-size-story">Sample size changes the story</a></li><li><a href="#variance-illusion">Variance and the illusion of skill</a></li><li><a href="#selectivity-risk">Selectivity is a risk decision</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#record-keeping-control">Record keeping as a control</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits of risk management</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="bankroll-basics.html">
+        <span class="cat">Betting Education</span>
+        <strong>Bankroll Basics for Betting Education</strong>
+      </a>
+      <a class="related-card" href="winning-predictions-vs-profit.html">
+        <span class="cat">Betting Education</span>
+        <strong>Winning Predictions vs Sound Analysis</strong>
+      </a>
+      <a class="related-card" href="track-prediction-accuracy.html">
+        <span class="cat">Betting Education</span>
+        <strong>How to Track Prediction Accuracy in Football</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

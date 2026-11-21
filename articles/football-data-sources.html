@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Football Data Sources for Beginners</title>
+  <meta name="description" content="A practical guide to football data sources, provider differences, data hygiene, and the questions to ask before trusting a statistic.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/football-data-sources.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Football Data Sources for Beginners">
+  <meta property="og:description" content="A practical guide to football data sources, provider differences, data hygiene, and the questions to ask before trusting a statistic.">
+  <meta property="og:url" content="https://nation99.github.io/articles/football-data-sources.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-09-15">
+  <meta property="article:modified_time" content="2026-11-20">
+  <meta property="article:section" content="Beginner Guides">
+  <meta property="article:tag" content="data sources">
+  <meta property="article:tag" content="data quality">
+  <meta property="article:tag" content="research">
+  <meta property="article:tag" content="analytics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Football Data Sources for Beginners">
+  <meta name="twitter:description" content="A practical guide to football data sources, provider differences, data hygiene, and the questions to ask before trusting a statistic.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/football-data-sources.html#webpage","url":"https://nation99.github.io/articles/football-data-sources.html","name":"Football Data Sources for Beginners","description":"A practical guide to football data sources, provider differences, data hygiene, and the questions to ask before trusting a statistic.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/football-data-sources.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Beginner Guides","item":"https://nation99.github.io/articles/?category=Beginner%20Guides"},{"@type":"ListItem","position":4,"name":"Football Data Sources for Beginners"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/football-data-sources.html#article","headline":"Football Data Sources for Beginners","description":"A practical guide to football data sources, provider differences, data hygiene, and the questions to ask before trusting a statistic.","datePublished":"2026-09-15","dateModified":"2026-11-20","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/football-data-sources.html#webpage"},"articleSection":"Beginner Guides","keywords":"data sources, data quality, research, analytics","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best free football data source?","acceptedAnswer":{"@type":"Answer","text":"There is no single best source. It depends on the competition, the metrics, and the historical coverage. Start with official competition data for results, then choose one analytics provider for modelled metrics and stay consistent."}},{"@type":"Question","name":"Why do two websites show different xG for the same match?","acceptedAnswer":{"@type":"Answer","text":"They may use different shot models, different inputs, different pressure data, or different definitions of a shot. The difference is usually a modelling choice, not proof that one source is lying."}},{"@type":"Question","name":"Can I scrape football data for my own analysis?","acceptedAnswer":{"@type":"Answer","text":"That depends on the site's terms, the robots file, and local law. Scraping can breach terms of service and may produce incomplete or inconsistent data. Prefer official APIs or licensed datasets where possible, and always credit the source."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Beginner%20Guides">Beginner Guides</a></li><li><span aria-current="page">Football Data Sources for Beginners</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Beginner Guides</p>
+        <h1>Football Data Sources for Beginners</h1>
+        <p class="article-dek">The hardest part of football analysis is not the calculation. It is knowing where the numbers came from, what they count, and whether two sources are answering the same question.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-09-15">15 September 2026</time></span>
+          <span>Last updated <time datetime="2026-11-20">20 November 2026</time></span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Football analysis begins with a deceptively simple question: where did the number come from? A shot count feels objective until you ask which provider counted it, how they defined a shot, and whether the match data was collected live or corrected afterwards. The answer shapes every calculation that follows.</p>
+<p>This guide is a map of the data landscape for beginners. It covers the main types of football data, the differences between providers, the hygiene habits that prevent embarrassing errors, and the limits that no dataset can remove.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Primary data is collected close to the event; secondary data is compiled by someone else.</li><li>Two providers can give different xG values for the same shot because their models differ.</li><li>Definitions matter: a progressive pass in one dataset may not meet the threshold in another.</li><li>Good data hygiene includes versioning, source notes, and a distinction between observed and modelled values.</li><li>No public dataset is complete, and a larger file is not automatically a better one.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="primary-and-secondary">
+        <h2 id="primary-and-secondary">Primary data and secondary data</h2>
+        <p>Primary data is collected at the source. In football, that usually means event data recorded by a provider at the match, either through human coding, automated tracking, or a combination of both. The provider decides what counts as a pass, a tackle, a shot on target, and a clear chance. Those definitions become the foundation of every downstream metric.</p>
+<p>Secondary data is compiled from primary sources. A website that publishes league tables, xG totals, or player heat maps may be repackaging data from a specialist provider. That is not automatically a problem, but it matters for attribution and for understanding definitions. If a secondary source changes a provider's shot model or rounds a number, the output may not match the original.</p>
+<p>For a beginner, the practical rule is to name the source. "The league table says" is weaker than "the competition's official site says" or "the provider's event feed says", because the second version can be checked.</p>
+      </section>
+      <section aria-labelledby="types-of-data">
+        <h2 id="types-of-data">The main types of football data</h2>
+        <p><strong>Results and fixtures</strong> are the simplest layer. They include scorelines, dates, venues, and competition information. They are widely available and usually reliable, though lower-league coverage can be patchy.</p>
+<p><strong>Event data</strong> records actions in sequence: passes, carries, shots, tackles, interceptions, fouls, and substitutions, each with a location and often a qualifier such as body part or pressure. Event data supports possession metrics, passing networks, and shot maps. Its quality depends on the provider's coding rules and the density of its coverage.</p>
+<p><strong>Tracking data</strong> records the position of players and the ball many times per second, supporting physical metrics and positional structure. It is expensive and less accessible to independent analysts.</p>
+<p><strong>Modelled data</strong> includes xG, xGA, expected threats, and similar metrics. These are not observations. They are outputs from a model that uses observed events plus assumptions. A modelled value should always carry the model's name and, where possible, its version.</p>
+      </section>
+      <section aria-labelledby="provider-differences">
+        <h2 id="provider-differences">Why providers disagree</h2>
+        <p>Two providers can watch the same match and publish different xG totals. This is not necessarily a sign that one is wrong. They may use different shot locations, different pressure variables, different goalkeeper positioning data, or different calibration samples. One may include penalties in its match total; another may separate them. One may use a post-shot model for shots on target; another may not.</p>
+<p>The differences are often small, but they matter when you compare across sources. A team's xG per match from Provider A cannot be mixed with an xGA per match from Provider B and treated as a single coherent dataset. The definitions may not align. The sample may not align. The model may not align.</p>
+<p>The safest habit is to pick one provider for a given analysis and stay with it. If you need to compare providers, show both numbers and explain the difference rather than averaging them into a false consensus. The same principle applies to possession, progressive passes, and defensive actions. A number without a definition is a rumour with a decimal point.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="data-hygiene">
+        <h2 id="data-hygiene">Data hygiene for independent analysts</h2>
+        <p>Data hygiene is the unglamorous work that makes analysis reproducible. It starts with a source note: the provider, the competition, the season, the date accessed, and the definition used. If the provider updates its model, record the version. If you clean or transform the data, record the step.</p>
+<p>Next, separate observed values from modelled values. A scoreline is observed. An xG total is modelled. A player's market value is modelled. Mixing them without labels creates false confidence. A table that places a measured quantity beside an estimated one should say so in the caption.</p>
+<p>Check for missing matches before calculating averages. A team with 18 matches in a 20-match sample is not directly comparable to a team with 20. Check for duplicate rows, postponed fixtures, and neutral venues; these sound minor until they change a per-match average enough to alter a conclusion.</p>
+<p>Finally, keep a simple version of the raw data. If you only keep the cleaned spreadsheet, you cannot audit your own work later. A small archive of source files and a short note about each transformation is enough.</p>
+      </section>
+      <section aria-labelledby="free-and-paid">
+        <h2 id="free-and-paid">Free sources, paid sources, and the trade-offs</h2>
+        <p>Free sources are useful for learning, but they come with limits. Official competition sites usually provide results, fixtures, and basic tables. General sports sites add match reports and some event summaries. Public analytics sites may publish xG and shot maps for selected competitions, often with their own model and their own coverage gaps.</p>
+<p>Paid sources offer deeper event data, historical archives, and API access, but they are not automatically better. A paid dataset with excellent top-league coverage may be weak in the lower divisions or in women's football.</p>
+<p>Before paying for data, write down the question you want to answer. If it needs shot locations, check that the provider includes them. If it needs lineups and minutes, check the coverage. If it needs historical seasons, check the start date. Cost is only one part of the trade-off; coverage, definitions, and licence terms matter too.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. It shows how two providers might describe the same hypothetical match without either one being dishonest.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Metric</th><th>Provider A</th><th>Provider B</th><th>Likely reason for the difference</th></tr></thead>
+<tbody>
+<tr><td>Shots</td><td>14</td><td>13</td><td>One provider counts a blocked cross as a shot; the other does not.</td></tr>
+<tr><td>Shots on target</td><td>5</td><td>4</td><td>Different definitions of a save and a blocked effort.</td></tr>
+<tr><td>xG</td><td>1.62</td><td>1.48</td><td>Different shot model and pressure inputs.</td></tr>
+<tr><td>Possession</td><td>54%</td><td>52%</td><td>Different treatment of dead-ball time and contested possession.</td></tr>
+<tr><td>Passes</td><td>487</td><td>472</td><td>Different thresholds for a completed pass.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Suppose an analyst downloads Provider A's xG for the home team and Provider B's xGA for the away team, then averages them to estimate a match total. The calculation looks clean, but it combines two different models. The resulting number is not a neutral average. It is a hybrid with no defined meaning.</p>
+<p>A better approach is to use one provider for both sides, label the model, and note the sample. If the analyst wants to compare providers, the comparison should be presented as a sensitivity check: "Provider A gives 1.62, Provider B gives 1.48, and the difference is consistent with model variation." That is more useful than a single number that hides the disagreement.</p>
+      </section>
+      <section aria-labelledby="using-sources">
+        <h2 id="using-sources">Turning sources into a repeatable process</h2>
+        <p>Start with a small, well-defined dataset. Pick one competition, one season, and one provider. Build a table of matches with the fields you need: date, teams, goals, xG, xGA, and a source identifier. Add notes for postponements, neutral venues, and definitional quirks.</p>
+<p>Then calculate simple summaries before attempting anything complex. Goals per match, xG per match, and the difference between the two are enough to reveal whether the data is behaving as expected. If a team has 40 goals from 12 matches, check the source before building a model around it. Extreme values are often data errors, not insights.</p>
+<p>When you move to modelling, keep the source layer separate from the model layer. Record which xG provider and version you used. If the provider changes its model mid-season, use a consistent historical version or acknowledge the break. This is the same discipline described in our guide to <a href="track-prediction-accuracy.html">tracking prediction accuracy</a>, where the record matters as much as the result.</p>
+<p>Finally, do not confuse volume with quality. A dataset with a million rows can still be useless if the definitions are inconsistent or the coverage is skewed. A smaller, well-documented dataset is usually more valuable for independent analysis than a large, opaque one.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Mixing providers without saying so.</strong> A total built from two models is not a neutral total.</li>
+<li><strong>Treating modelled values as observations.</strong> xG is an estimate, not a measured quantity like a scoreline.</li>
+<li><strong>Ignoring definition changes.</strong> A provider's update can break a time series.</li>
+<li><strong>Assuming free data is always worse.</strong> Fit for purpose matters more than price.</li>
+</ul>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and responsible use</h2>
+        <p>No public dataset captures everything that happens on a football pitch. Off-ball movement, tactical instructions, and injury severity are often invisible or inconsistently recorded. Even tracking data does not capture intent.</p>
+<p>That is not a reason to abandon data. It is a reason to be precise about what the data can support. A shot model can describe chance quality. It cannot tell you whether a manager's team talk worked. A possession metric can describe territory. It cannot tell you whether a team controlled the match in the way that matters.</p>
+<p>The best habit is to pair every dataset with a question and a limit. What does this source measure? What does it miss? How was it collected? What would change my mind? If those questions cannot be answered, the analysis is not ready. Readers who want to apply this discipline to match previews can use our <a href="pre-match-analysis-guide.html">pre-match analysis guide</a>, and readers new to chance quality can start with <a href="what-is-xg-football.html">what xG means</a>.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is the best free football data source?</summary>
+      <div class="faq-answer"><p>There is no single best source. It depends on the competition, the metrics, and the historical coverage. Start with official competition data for results, then choose one analytics provider for modelled metrics and stay consistent.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why do two websites show different xG for the same match?</summary>
+      <div class="faq-answer"><p>They may use different shot models, different inputs, different pressure data, or different definitions of a shot. The difference is usually a modelling choice, not proof that one source is lying.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I scrape football data for my own analysis?</summary>
+      <div class="faq-answer"><p>That depends on the site&#39;s terms, the robots file, and local law. Scraping can breach terms of service and may produce incomplete or inconsistent data. Prefer official APIs or licensed datasets where possible, and always credit the source.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#primary-and-secondary">Primary data and secondary data</a></li><li><a href="#types-of-data">The main types of football data</a></li><li><a href="#provider-differences">Why providers disagree</a></li><li><a href="#data-hygiene">Data hygiene for independent analysts</a></li><li><a href="#free-and-paid">Free sources, paid sources, and the trade-offs</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#using-sources">Turning sources into a repeatable process</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and responsible use</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="pre-match-analysis-guide.html">
+        <span class="cat">Beginner Guides</span>
+        <strong>How to Analyse a Football Match</strong>
+      </a>
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="track-prediction-accuracy.html">
+        <span class="cat">Betting Education</span>
+        <strong>How to Track Prediction Accuracy in Football</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expected Threats (xT) Explained</title>
+  <meta name="description" content="Expected threats scores each pass by how much it improves a team&#39;s chance of scoring. Learn how xT works and how it differs from xG.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/expected-threats-xt.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Expected Threats (xT) Explained">
+  <meta property="og:description" content="Expected threats scores each pass by how much it improves a team&#39;s chance of scoring. Learn how xT works and how it differs from xG.">
+  <meta property="og:url" content="https://nation99.github.io/articles/expected-threats-xt.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-03-17">
+  <meta property="article:modified_time" content="2026-11-07">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="xT">
+  <meta property="article:tag" content="possession value">
+  <meta property="article:tag" content="progression">
+  <meta property="article:tag" content="analytics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Expected Threats (xT) Explained">
+  <meta name="twitter:description" content="Expected threats scores each pass by how much it improves a team&#39;s chance of scoring. Learn how xT works and how it differs from xG.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/expected-threats-xt.html#webpage","url":"https://nation99.github.io/articles/expected-threats-xt.html","name":"Expected Threats (xT) Explained","description":"Expected threats scores each pass by how much it improves a team's chance of scoring. Learn how xT works and how it differs from xG.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/expected-threats-xt.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"Expected Threats (xT) Explained"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/expected-threats-xt.html#article","headline":"Expected Threats (xT) Explained","description":"Expected threats scores each pass by how much it improves a team's chance of scoring. Learn how xT works and how it differs from xG.","datePublished":"2026-03-17","dateModified":"2026-11-07","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/expected-threats-xt.html#webpage"},"articleSection":"xG and Stats","keywords":"xT, possession value, progression, analytics","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is xT the same as expected goals?","acceptedAnswer":{"@type":"Answer","text":"No. xG values shots, while xT values the progression of a possession into more dangerous areas. They use different scales and should not be added together."}},{"@type":"Question","name":"Why do xT totals differ between providers?","acceptedAnswer":{"@type":"Answer","text":"Providers use different pitch grids, zone values, and rules for backward passes and carries. Some count only positive progressions and others use net change, so the totals are not directly comparable."}},{"@type":"Question","name":"Can xT measure a player's quality?","acceptedAnswer":{"@type":"Answer","text":"It can describe how much progression a player produces in a given role and system. It cannot separate that from team style, opponent strength, or the player's other contributions, so it is a starting point rather than a verdict."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">Expected Threats (xT) Explained</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>Expected Threats (xT) Explained</h1>
+        <p class="article-dek">Expected threats assigns value to the territory and control a pass creates, even when no shot follows. It is a model of progression, not a substitute for xG.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-03-17">17 March 2026</time></span>
+          <span>Last updated <time datetime="2026-11-07">7 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>A full-back receives the ball deep, scans forward and plays a pass into the half-space. No shot follows. A basic match report records a completed pass; it cannot say whether the pass made a goal more likely.</p>
+<p>Expected threats, usually written as xT, tries to fill that gap. It puts a value on the ball's movement into dangerous areas, so that the pass before the pass can be measured alongside the shot at the end of the move. The idea is powerful, but it is also easy to misread as a goal probability. It is not one.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>xT estimates how much a possession improves a team&#39;s chance of scoring, usually by comparing pitch zones.</li><li>A pass or carry adds value when it moves the ball into a more dangerous area.</li><li>xT captures build-up play that shot-based metrics cannot see.</li><li>Values differ by provider and are not directly comparable to xG.</li><li>xT rewards progression, so it can overrate possession that is already advanced but going nowhere.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-xt-measures">
+        <h2 id="what-xt-measures">What expected threats measures</h2>
+        <p>xT is a family of possession-value models rather than a single universal statistic. The common idea is that the ball's location, and sometimes the number of defenders between the ball and goal, changes the probability that the attacking team will score before the move breaks down. A pass that moves the ball from a low-value area to a high-value area receives a positive xT score.</p>
+<p>The score is usually expressed as a small decimal. A pass worth 0.04 xT is not a four per cent chance of a goal. It represents a four percentage point increase in the model's estimate of the possession's scoring probability, relative to where the ball started. Those increments accumulate across a move.</p>
+<p>Because the model is built on pitch zones or learned spatial values, it can assess actions that never become shots. That is the whole point: to give build-up and progression a place in the analysis without pretending that every good pass is worth the same as a clear chance.</p>
+      </section>
+      <section aria-labelledby="grid-values">
+        <h2 id="grid-values">A grid of possession values</h2>
+        <p>A simple xT model divides the pitch into a grid. Each cell holds a value representing the estimated chance that a possession in that cell ends in a goal within a limited number of actions. Values rise as the ball moves closer to goal and towards the centre. The table below is illustrative and deliberately coarse.</p>
+<table>
+<thead><tr><th>Zone</th><th>Description</th><th>Illustrative value</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>Deep central</td><td>0.01</td></tr>
+<tr><td>B</td><td>Deep wide</td><td>0.008</td></tr>
+<tr><td>C</td><td>Middle third central</td><td>0.03</td></tr>
+<tr><td>D</td><td>Middle third wide</td><td>0.02</td></tr>
+<tr><td>E</td><td>Final third central</td><td>0.08</td></tr>
+<tr><td>F</td><td>Final third wide</td><td>0.06</td></tr>
+<tr><td>G</td><td>Penalty area, side</td><td>0.18</td></tr>
+<tr><td>H</td><td>Penalty area, central</td><td>0.30</td></tr>
+<tr><td>I</td><td>Six-yard box</td><td>0.40</td></tr>
+</tbody>
+</table>
+<p>Real models use finer grids, defensive pressure, and sometimes the identity of the ball carrier. The principle survives the extra detail: value is attached to territory and control, and a completed action that improves both is rewarded.</p>
+      </section>
+      <section aria-labelledby="accumulating-xt">
+        <h2 id="accumulating-xt">How a move accumulates xT</h2>
+        <p>As the ball travels, each completed pass or carry can change the zone value. The difference between the destination value and the origin value is the xT added. A pass from a 0.01 zone to a 0.03 zone adds 0.02. A pass that goes backwards from 0.08 to 0.03 subtracts 0.05, although many public presentations count only positive progressions.</p>
+<p>This is where the models diverge. Some sum only the positive changes, treating backward passes as zero. Others take the net change from the start of the possession to its most advanced point, or to the shot. The same move can therefore produce different totals under different definitions. That is not a flaw unique to xT; it is a reminder to read the method before comparing numbers.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The sequence below is illustrative and uses the zone values from the previous table. Club A moves the ball from deep to a shot in six actions.</p>
+<table>
+<thead><tr><th>Action</th><th>From</th><th>To</th><th>xT added</th></tr></thead>
+<tbody>
+<tr><td>Centre-back pass</td><td>A (0.01)</td><td>C (0.03)</td><td>+0.02</td></tr>
+<tr><td>Midfield pass</td><td>C (0.03)</td><td>E (0.08)</td><td>+0.05</td></tr>
+<tr><td>Pass wide</td><td>E (0.08)</td><td>F (0.06)</td><td>-0.02</td></tr>
+<tr><td>Cross</td><td>F (0.06)</td><td>H (0.30)</td><td>+0.24</td></tr>
+<tr><td>Lay-off</td><td>H (0.30)</td><td>G (0.18)</td><td>-0.12</td></tr>
+<tr><td>Shot</td><td>G (0.18)</td><td>End</td><td>0.14 xG</td></tr>
+</tbody>
+</table>
+<p>Summing every change gives 0.02 + 0.05 - 0.02 + 0.24 - 0.12 = 0.17. Summing only the positive changes gives 0.02 + 0.05 + 0.24 = 0.31. The move ends with a shot worth 0.14 xG. Those three numbers describe the same passage of play in three different ways, and none of them is the scoreline.</p>
+<p>The net xT of 0.17 says the possession improved its scoring probability by about seventeen percentage points from its starting point. The positive-only total of 0.31 says the progressive actions were worth that much before the backward lay-off. The 0.14 xG says the resulting shot was a reasonable but not outstanding chance. A reader who adds 0.17 and 0.14 would be mixing scales and double counting the move.</p>
+      </section>
+      <section aria-labelledby="xt-versus-xg">
+        <h2 id="xt-versus-xg">xT and xG are different lenses</h2>
+        <p>xG values the shot. xT values the route to the shot. A team can accumulate a large xT total without producing much xG if it progresses neatly to the edge of the area and then stalls. It can also produce a respectable xG total from a low xT base if a single long ball or a set piece creates a clear chance.</p>
+<p>The two metrics answer different questions, which is why they are most useful together. High xT and low xG suggest a team reaches dangerous areas but does not turn that territory into shots. Low xT and high xG suggest a more direct approach, or a reliance on set pieces and individual moments. Neither pattern is automatically better; they are different attacking identities.</p>
+      </section>
+      <section aria-labelledby="what-xt-rewards">
+        <h2 id="what-xt-rewards">What xT rewards</h2>
+        <p>Progressive passes, line-breaking passes, and carries into space all score well. So do switches that move the ball from a crowded wide area into a central pocket. The metric gives credit to the midfielder who receives under pressure and turns a safe position into an attacking one, even if the move ends without a shot.</p>
+<p>That makes xT valuable for scouting and for describing a team's build-up. It can show which players are responsible for moving a side up the pitch, and which combinations consistently create better field position. It can also reveal that a team's possession is less threatening than its passing volume suggests.</p>
+      </section>
+      <section aria-labelledby="what-xt-misses">
+        <h2 id="what-xt-misses">What xT misses</h2>
+        <p>Most xT models value completed actions, so a brilliant pass that is narrowly intercepted scores nothing. The risk attached to a pass is not fully captured. A safe square ball and a defence-splitting attempt that fails may both end at zero, even though one is far more ambitious.</p>
+<p>The model also tends to reward territory. A team already camped in the final third can accumulate small positive increments with passes that do not actually unsettle the defence. Without pressure data, xT cannot tell the difference between a pass into space and a pass into a crowd. And because the zone values come from historical averages, they may not reflect the specific opponent or game state.</p>
+      </section>
+      <section aria-labelledby="using-xt">
+        <h2 id="using-xt">Using xT in analysis</h2>
+        <p>Treat xT as a description of progression, not as an expected score. Compare it with xG to see whether territory turns into chances. Look at per-90 totals and per-possession totals, because a team with more of the ball will accumulate more xT by volume alone. A side that creates 1.2 xT per possession is doing something different from a side that creates 1.2 across thirty possessions.</p>
+<p>Opponent context matters. Progressing the ball against a deep, compact defence is harder than progressing against a side that presses high and leaves space behind. A raw xT total will not distinguish those situations. Splitting the data by opponent style, or at least noting it, makes the number more honest.</p>
+<p>For the shot side of the picture, see <a href="what-is-xg-football.html">our explanation of xG</a>. The way possession is counted and interpreted is covered in <a href="possession-data-football.html">using possession data</a>. And if you want to compare team-level summaries, the piece on <a href="goal-difference-vs-xg-difference.html">goal difference and xG difference</a> shows how the arithmetic works.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li>Treating xT as a goal probability or adding it directly to xG.</li>
+<li>Comparing xT totals from different providers without checking the zone values and the treatment of backward passes.</li>
+<li>Ignoring possession volume, which inflates totals for teams that see more of the ball.</li>
+<li>Reading a single match's xT as a stable player trait.</li>
+<li>Assuming a high xT total means a team created good chances. It may only mean it reached good areas.</li>
+</ul>
+<p>Each of these errors comes from forgetting that xT is a model of progression. It is informative precisely because it is narrow, and it becomes misleading when asked to do the work of a shot metric.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">The limits of possession value</h2>
+        <p>xT depends on the quality of the event data and on the model's assumptions about what happens next. A zone value derived from average teams may not fit a side with an unusual style. The metric also stops at the edge of what it can see: it does not know why a pass was played, whether it was the right decision, or how the defence reacted.</p>
+<p>Use it as one lens among several. It pairs naturally with shot quality, pressing data, and video. The number can point you towards a passage of play worth watching; it cannot replace the watching.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Is xT the same as expected goals?</summary>
+      <div class="faq-answer"><p>No. xG values shots, while xT values the progression of a possession into more dangerous areas. They use different scales and should not be added together.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why do xT totals differ between providers?</summary>
+      <div class="faq-answer"><p>Providers use different pitch grids, zone values, and rules for backward passes and carries. Some count only positive progressions and others use net change, so the totals are not directly comparable.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can xT measure a player&#39;s quality?</summary>
+      <div class="faq-answer"><p>It can describe how much progression a player produces in a given role and system. It cannot separate that from team style, opponent strength, or the player&#39;s other contributions, so it is a starting point rather than a verdict.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-xt-measures">What expected threats measures</a></li><li><a href="#grid-values">A grid of possession values</a></li><li><a href="#accumulating-xt">How a move accumulates xT</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#xt-versus-xg">xT and xG are different lenses</a></li><li><a href="#what-xt-rewards">What xT rewards</a></li><li><a href="#what-xt-misses">What xT misses</a></li><li><a href="#using-xt">Using xT in analysis</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">The limits of possession value</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="possession-data-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Using Possession Data Correctly</strong>
+      </a>
+      <a class="related-card" href="goal-difference-vs-xg-difference.html">
+        <span class="cat">xG and Stats</span>
+        <strong>Goal Difference vs xG Difference</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

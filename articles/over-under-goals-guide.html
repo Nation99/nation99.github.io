@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Over/Under Goals Analysis for Beginners</title>
+  <meta name="description" content="A beginner&#39;s guide to over/under goals markets: totals lines, expected goal rates, Poisson arithmetic, and the limits of a simple model.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/over-under-goals-guide.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Over/Under Goals Analysis for Beginners">
+  <meta property="og:description" content="A beginner&#39;s guide to over/under goals markets: totals lines, expected goal rates, Poisson arithmetic, and the limits of a simple model.">
+  <meta property="og:url" content="https://nation99.github.io/articles/over-under-goals-guide.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-10-23">
+  <meta property="article:modified_time" content="2026-11-21">
+  <meta property="article:section" content="Beginner Guides">
+  <meta property="article:tag" content="over/under">
+  <meta property="article:tag" content="totals">
+  <meta property="article:tag" content="Poisson">
+  <meta property="article:tag" content="beginner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Over/Under Goals Analysis for Beginners">
+  <meta name="twitter:description" content="A beginner&#39;s guide to over/under goals markets: totals lines, expected goal rates, Poisson arithmetic, and the limits of a simple model.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"editor@elitefootballpredictor.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"editor@elitefootballpredictor.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/over-under-goals-guide.html#webpage","url":"https://nation99.github.io/articles/over-under-goals-guide.html","name":"Over/Under Goals Analysis for Beginners","description":"A beginner's guide to over/under goals markets: totals lines, expected goal rates, Poisson arithmetic, and the limits of a simple model.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/over-under-goals-guide.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Beginner Guides","item":"https://nation99.github.io/articles/?category=Beginner%20Guides"},{"@type":"ListItem","position":4,"name":"Over/Under Goals Analysis for Beginners"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/over-under-goals-guide.html#article","headline":"Over/Under Goals Analysis for Beginners","description":"A beginner's guide to over/under goals markets: totals lines, expected goal rates, Poisson arithmetic, and the limits of a simple model.","datePublished":"2026-10-23","dateModified":"2026-11-21","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/over-under-goals-guide.html#webpage"},"articleSection":"Beginner Guides","keywords":"over/under, totals, Poisson, beginner","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does over 2.5 goals mean?","acceptedAnswer":{"@type":"Answer","text":"It means the match must produce three or more goals for the over side to succeed. Two or fewer goals means the under side succeeds. The half line removes the possibility of a push."}},{"@type":"Question","name":"How is the expected total calculated?","acceptedAnswer":{"@type":"Answer","text":"A simple approach adds each team's expected goals for the match after adjusting for attack, defence, venue and opponent. The result is an estimate, not a promise of the actual total."}},{"@type":"Question","name":"Why does the same total rate produce different over/under probabilities in different models?","acceptedAnswer":{"@type":"Answer","text":"Models differ in their assumptions about how goals are distributed. A basic Poisson model uses one rate, while adjusted models may account for dependence, game state or overdispersion."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Beginner%20Guides">Beginner Guides</a></li><li><span aria-current="page">Over/Under Goals Analysis for Beginners</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Beginner Guides</p>
+        <h1>Over/Under Goals Analysis for Beginners</h1>
+        <p class="article-dek">An over/under market asks a simple question: will the match produce more or fewer goals than a stated line? The arithmetic is simple, but the estimate is not.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-10-23">23 October 2026</time></span>
+          <span>Last updated <time datetime="2026-11-21">21 November 2026</time></span>
+          <span>7 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Not every match question is about the winner. Sometimes the more interesting question is how many goals the match will produce. Over/under markets, also called totals markets, turn that question into a line and a pair of prices.</p>
+<p>For a beginner, the format is straightforward: a line such as 2.5 goals, and two outcomes, over or under. The hard part is estimating the probability, which requires an expected goal rate for the match rather than a hunch about whether it will be entertaining.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>An over/under market sets a goal line and offers two sides around it.</li><li>The total expected goal rate is the starting point for a Poisson estimate.</li><li>A 2.5 line avoids pushes, while whole lines can push.</li><li>Team style, game state and the opponent affect the total, not just the average.</li><li>A probability estimate is not a prediction that a particular match will go over or under.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-the-market-is">
+        <h2 id="what-the-market-is">What an over/under market is</h2>
+        <p>An over/under market sets a total goal line for the match. If the line is 2.5, the over side succeeds when three or more goals are scored, and the under side succeeds when two or fewer are scored. Because the line is not a whole number, there is no push.</p>
+<p>Whole lines, such as 3, introduce the possibility of a push when exactly three goals are scored. That changes the settlement and the price. A 3.0 line and a 3.25 line are not the same market, even though they look similar.</p>
+<p>The line is chosen by the market to balance the two sides. A high line implies that goals are expected; a low line implies the opposite. The line is information, just like the price.</p>
+      </section>
+      <section aria-labelledby="start-with-goal-rates">
+        <h2 id="start-with-goal-rates">Start with expected goal rates</h2>
+        <p>The first input is the expected number of goals for each team. A simple approach uses each team's attacking and defensive averages, adjusts for the opponent and the venue, and adds the two rates together. If Club A is expected to score 1.55 and Club B is expected to score 1.05, the match total is 2.60.</p>
+<p>Expected goals can be a better input than actual goals because it is less noisy over a short run. Our guide to <a href="what-is-xg-football.html">expected goals</a> explains the logic and the caveats. The total rate is still an estimate, and it carries the uncertainty of both team estimates.</p>
+<p>It is worth separating the sources of goals. A team that creates chances in open play may have a more stable total than a team that relies on set pieces or penalties. The same average can hide different distributions, and the distribution affects the probability of extreme totals.</p>
+      </section>
+      <section aria-labelledby="poisson-totals">
+        <h2 id="poisson-totals">Turning a rate into over/under probabilities</h2>
+        <p>If total goals are modelled as a Poisson count with rate lambda, the probability of exactly k goals is given by the Poisson formula. The probability of under 2.5 is the sum of the probabilities of 0, 1 and 2 goals. The probability of over 2.5 is one minus that sum.</p>
+<p>The Poisson model assumes a constant rate and independent events. Football violates both assumptions to some degree, especially when the score changes. A team that leads may slow the game down; a team that trails may push forward. Those effects can raise or lower the late goal rate.</p>
+<p>Even with those limits, the Poisson model is a useful baseline. It forces the analyst to state an expected rate and to show how the probability changes when that rate changes. Our guide to <a href="poisson-distribution-football.html">the Poisson model</a> sets out the full arithmetic.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The example below is illustrative. The match total is 2.60 goals. We calculate the probability of 0, 1 and 2 goals, then sum them to get the under 2.5 probability.</p>
+<table>
+<caption>Illustrative Poisson totals with lambda 2.60</caption>
+<thead><tr><th>Goals</th><th>Probability</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>7.43%</td></tr>
+<tr><td>1</td><td>19.31%</td></tr>
+<tr><td>2</td><td>25.10%</td></tr>
+<tr><td>3</td><td>21.75%</td></tr>
+<tr><td>4</td><td>14.14%</td></tr>
+<tr><td>5 or more</td><td>12.27%</td></tr>
+</tbody>
+</table>
+<p>The under 2.5 probability is 7.43 plus 19.31 plus 25.10, which equals 51.84 per cent. The over 2.5 probability is the remaining 48.16 per cent. With a total rate of 2.60, the under side is slightly more likely than the over side on this model.</p>
+<p>Now raise the total rate to 3.10. The probability of 0 goals is about 4.50 per cent, 1 goal is about 13.97 per cent, and 2 goals is about 21.65 per cent. The under 2.5 probability falls to about 40.12 per cent, and the over rises to about 59.88 per cent. A half-goal increase in the expected total moves the market by roughly 12 percentage points.</p>
+<p>That sensitivity is the main lesson. The estimate of the total rate matters more than the elegance of the formula. A model that is precise about the Poisson arithmetic but careless about the input rate is not giving a precise answer.</p>
+      </section>
+      <section aria-labelledby="reading-lines">
+        <h2 id="reading-lines">Reading the line and the price</h2>
+        <p>A 2.5 line is not inherently high or low. It depends on the match. A league with an average total of 2.7 goals makes 2.5 a slightly low line; a defensive league with an average of 2.3 makes it a high line. The line only becomes meaningful when compared with a baseline.</p>
+<p>The price adds another layer. Convert the decimal price to an implied probability, normalise for the margin, and compare the result with your own estimate. The difference is a question, not an answer. It may reflect information you do not have, or it may reflect a market inefficiency. The only way to know is to keep a record and evaluate the process over time.</p>
+<p>Our guide to <a href="draw-prediction-football.html">draw probabilities</a> shows how the same scoreline grid produces the draw estimate. The totals market and the match market are related views of the same underlying distribution.</p>
+      </section>
+      <section aria-labelledby="team-style">
+        <h2 id="team-style">Team style changes the total</h2>
+        <p>Two teams with the same average goals can produce different totals. A high-pressing team may create more turnovers and more shots, raising the ceiling of the distribution. A low-block team may reduce the number of chances for both sides, lowering the total and increasing the chance of a 0-0 or 1-0.</p>
+<p>The opponent matters too. A team that usually scores 1.6 may struggle against a defence that concedes 0.8. A simple average ignores that interaction. A better estimate adjusts each team's rate for the quality of the opposition, the venue and the players available.</p>
+<p>Game state adds another layer. A team that takes an early lead may manage the match rather than chase more goals. A team that falls behind may open up. The pre-match total is an average over many possible scripts, not a description of the one that will unfold.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Using league average goals without adjusting for the teams.</strong> The match total is not the league total.</li>
+<li><strong>Forgetting that whole lines can push.</strong> A 3.0 line behaves differently from a 2.5 line when exactly three goals are scored.</li>
+<li><strong>Treating a high line as an over signal.</strong> The line reflects the market's expectation, not a free opportunity.</li>
+<li><strong>Ignoring the distribution.</strong> Two teams with the same average can have very different probabilities of a 0-0 or a 4-3.</li>
+<li><strong>Reporting more precision than the inputs allow.</strong> A rate estimated from a handful of matches cannot support a probability quoted to two decimal places.</li>
+</ul>
+<p>The fix is usually to slow down and state the assumptions. A simple model with clear inputs is more useful than a complex model with hidden ones.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and responsible use</h2>
+        <p>The Poisson totals model is a teaching tool. It does not know about injuries, weather, referee tendencies or tactical changes. It assumes a constant rate, which is a simplification of a match that may have distinct phases.</p>
+<p>It also treats the two teams' goals as independent. In reality, the score affects behaviour. A red card, an early goal or a late equaliser can change the rate for the remaining minutes. More elaborate models adjust for these effects, but they add complexity and their own assumptions.</p>
+<p>The responsible conclusion is modest. Over/under analysis is a way to structure a question about goals, not a way to remove uncertainty. Estimate the total, state the range, compare with the line, and keep a record of the results. For a wider view of how probabilities and prices fit together, see the implied probability guide.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What does over 2.5 goals mean?</summary>
+      <div class="faq-answer"><p>It means the match must produce three or more goals for the over side to succeed. Two or fewer goals means the under side succeeds. The half line removes the possibility of a push.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>How is the expected total calculated?</summary>
+      <div class="faq-answer"><p>A simple approach adds each team&#39;s expected goals for the match after adjusting for attack, defence, venue and opponent. The result is an estimate, not a promise of the actual total.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why does the same total rate produce different over/under probabilities in different models?</summary>
+      <div class="faq-answer"><p>Models differ in their assumptions about how goals are distributed. A basic Poisson model uses one rate, while adjusted models may account for dependence, game state or overdispersion.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-the-market-is">What an over/under market is</a></li><li><a href="#start-with-goal-rates">Start with expected goal rates</a></li><li><a href="#poisson-totals">Turning a rate into over/under probabilities</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#reading-lines">Reading the line and the price</a></li><li><a href="#team-style">Team style changes the total</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and responsible use</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="poisson-distribution-football.html">
+        <span class="cat">Betting Education</span>
+        <strong>Poisson Distribution for Football</strong>
+      </a>
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="draw-prediction-football.html">
+        <span class="cat">Betting Education</span>
+        <strong>Why Draws Are Hard to Predict</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
