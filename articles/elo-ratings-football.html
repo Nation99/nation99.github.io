@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elo Ratings in Football Explained</title>
+  <meta name="description" content="Elo ratings turn results into a single strength score. Learn how football Elo works, how to read it, and why it is not a prediction.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/elo-ratings-football.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Elo Ratings in Football Explained">
+  <meta property="og:description" content="Elo ratings turn results into a single strength score. Learn how football Elo works, how to read it, and why it is not a prediction.">
+  <meta property="og:url" content="https://nation99.github.io/articles/elo-ratings-football.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-11-22">
+  <meta property="article:modified_time" content="2026-11-22">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="Elo">
+  <meta property="article:tag" content="team ratings">
+  <meta property="article:tag" content="team strength">
+  <meta property="article:tag" content="prediction">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elo Ratings in Football Explained">
+  <meta name="twitter:description" content="Elo ratings turn results into a single strength score. Learn how football Elo works, how to read it, and why it is not a prediction.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"usatonlinetools@gmail.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"usatonlinetools@gmail.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/elo-ratings-football.html#webpage","url":"https://nation99.github.io/articles/elo-ratings-football.html","name":"Elo Ratings in Football Explained","description":"Elo ratings turn results into a single strength score. Learn how football Elo works, how to read it, and why it is not a prediction.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/elo-ratings-football.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"Elo Ratings in Football Explained"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/elo-ratings-football.html#article","headline":"Elo Ratings in Football Explained","description":"Elo ratings turn results into a single strength score. Learn how football Elo works, how to read it, and why it is not a prediction.","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/elo-ratings-football.html#webpage"},"articleSection":"xG and Stats","keywords":"Elo, team ratings, team strength, prediction","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good Elo rating in football?","acceptedAnswer":{"@type":"Answer","text":"There is no universal good rating because the scale depends on the system. What matters is the gap between teams and the rank within the same rating pool. A rating of 1600 is only meaningful in relation to the opponents around it."}},{"@type":"Question","name":"Does Elo predict football matches?","acceptedAnswer":{"@type":"Answer","text":"Elo estimates relative strength, not a three-way result probability. You can convert a rating gap into an expected score, but you still need a draw model and a home advantage adjustment to produce match probabilities."}},{"@type":"Question","name":"Why do Elo ratings differ between websites?","acceptedAnswer":{"@type":"Answer","text":"Systems use different starting values, K factors, home adjustments, competition weights, and goal-difference rules. Those choices produce different numbers, so compare ratings within one system rather than across systems."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">Elo Ratings in Football Explained</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>Elo Ratings in Football Explained</h1>
+        <p class="article-dek">Elo is a simple, transparent way to rate teams from results. Its strength is also its limit: it knows who won, not how well they played.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-11-22">22 November 2026</time></span>
+          <span>Last updated <time datetime="2026-11-22">22 November 2026</time></span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Elo is one of the oldest and most durable ideas in sports rating. Football adapted it from chess because the same problem applies: how do you compare teams that play different schedules and beat different levels of opposition?</p>
+<p>The appeal is transparency. An Elo rating is not a black box. It moves after every match according to a formula you can inspect, and the size of the move depends on the result and the opponent. That makes it a useful teaching tool, and a useful check on more complex models.</p>
+<p>The limitation is equally clear. Elo knows who won, drew, or lost. It does not know how many chances were created, how well the goalkeeper played, or whether a red card changed the game. A rating built only from results is a summary of outcomes, not a complete description of performance.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Elo turns results into a relative strength rating that updates after every match.</li><li>The expected score comes from the rating gap, not from a fixed league table.</li><li>A win over a strong team moves a rating more than a win over a weak team.</li><li>Elo is results-based, so it can miss good performances that did not produce points.</li><li>Ratings from different systems are not directly comparable without a shared scale.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-elo-measures">
+        <h2 id="what-elo-measures">What Elo measures</h2>
+        <p>An Elo rating is a relative strength score. A team with a higher rating is expected to score more points against a team with a lower rating. The rating does not have an absolute meaning. A score of 1600 is not good or bad on its own; it only matters in relation to the teams around it.</p>
+<p>The system updates after every match. A team that wins gains rating points, and the opponent loses the same amount. A draw moves fewer points, and the exact movement depends on the gap between the teams. A heavy favourite that wins gains little; a heavy underdog that wins gains a lot.</p>
+<p>This is why Elo is often described as a zero-sum system. Every point gained by one team is lost by another. The total rating in a closed league stays roughly constant, apart from new teams or adjustments. The rating is a way of redistributing credibility based on results.</p>
+<p>Football Elo systems often add refinements. They may adjust for home advantage, weight competitions differently, or use goal difference to decide how much a result should move the rating. Those choices matter, and two systems with different rules will produce different numbers.</p>
+      </section>
+      <section aria-labelledby="how-football-elo-works">
+        <h2 id="how-football-elo-works">How football Elo works</h2>
+        <p>The core formula starts with the rating gap. If Team A is rated 1600 and Team B is rated 1500, the gap is 100 points. The expected score for Team A is:</p>
+<p><strong>Expected score = 1 / (1 + 10^((rating B - rating A) / 400))</strong></p>
+<p>With a 100-point gap, the expected score is about 0.64. In Elo, the expected score is not a win probability in the narrow sense. It is the average score, where a win counts as 1, a draw as 0.5, and a loss as 0. A 0.64 expected score could mean a 64 per cent chance of winning with no draws, or a mix of wins and draws. Football needs a separate draw model if you want a three-way probability.</p>
+<p>After the match, the rating changes by:</p>
+<p><strong>Change = K x (actual score - expected score)</strong></p>
+<p>K is a sensitivity constant. A larger K makes ratings react faster to recent results. A smaller K makes them more stable. Many football systems use a K around 20 for club matches, with adjustments for competition level and goal difference.</p>
+<p>Our guide to <a href="what-is-xg-football.html">expected goals</a> explains a different kind of rating, one based on chance quality rather than results. The two approaches answer different questions, which is why they are useful together.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. Team A starts at 1600, Team B at 1500, and K is 20. The expected score for Team A is 0.64, so the update depends on what actually happens.</p>
+<table>
+<caption>Elo update after one match, K = 20</caption>
+<thead><tr><th>Result</th><th>Actual score</th><th>Expected score</th><th>Change</th><th>New rating</th></tr></thead>
+<tbody>
+<tr><td>Team A wins</td><td>1.00</td><td>0.64</td><td>+7.2</td><td>1607.2</td></tr>
+<tr><td>Draw</td><td>0.50</td><td>0.64</td><td>-2.8</td><td>1597.2</td></tr>
+<tr><td>Team A loses</td><td>0.00</td><td>0.64</td><td>-12.8</td><td>1587.2</td></tr>
+</tbody>
+</table>
+<p>The asymmetry is the point. A win adds less than a loss subtracts because Team A was expected to do well. Team B's rating moves in the opposite direction by the same amount. If Team B wins, it gains 12.8 points and Team A loses 12.8.</p>
+<p>Now suppose Team A is the home side. A simple football adjustment is to add a fixed number of rating points to the home team before calculating the expected score, or to include a home-field term in the model. If the adjustment is 50 points, Team A's effective rating is 1650 and the expected score rises to about 0.70. The same result then produces a smaller gain. Our article on <a href="home-advantage-modern-football.html">home advantage</a> explains why that adjustment is not a constant across leagues and seasons.</p>
+<p>The worked example also shows why one match should not be overread. A single result moves the rating by a few points. A season of results is needed before the rating carries much information.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="reading-elo-ratings">
+        <h2 id="reading-elo-ratings">Reading Elo ratings</h2>
+        <p>Elo ratings are most useful when they are read as a ranking with uncertainty, not as a precise measurement. A 30-point gap between two teams is small enough that a single match can change the order. A 200-point gap is more meaningful, but it still does not guarantee a result.</p>
+<p>The rating scale is arbitrary. Different systems use different starting values, K factors, and home adjustments. A 1600 in one system may be a 1500 in another. Do not compare raw ratings across systems unless you know they share a scale. Compare ranks or standardised gaps instead.</p>
+<p>Elo is also sensitive to the order of results. A team that starts with a low rating and wins a few matches can climb quickly, while a team that starts high and loses can fall quickly. That is a feature, not a bug, but it means early-season ratings carry more uncertainty than late-season ratings.</p>
+<p>For a more complete view, pair Elo with a performance measure. A team can win while being outplayed, and Elo will reward the result. A team can lose while creating the better chances, and Elo will punish the result. The gap between the two views is often the most interesting part of the analysis. Our guide to <a href="track-prediction-accuracy.html">tracking prediction accuracy</a> explains how to judge whether a rating system is actually calibrated.</p>
+      </section>
+      <section aria-labelledby="elo-vs-xg">
+        <h2 id="elo-vs-xg">Elo versus xG</h2>
+        <p>Elo and expected goals are complementary. Elo is a results-based rating: it asks who won and adjusts credibility accordingly. xG is a process-based measure: it asks what kind of chances a team created and conceded. A team can be strong in one and weak in the other.</p>
+<p>An Elo model is simple to maintain. It needs a result and a rating, and it can be updated immediately. It is robust to missing data and easy to explain. Its weakness is that it treats a lucky win and a dominant win as the same result, unless the system adds a goal-difference multiplier.</p>
+<p>An xG model is richer but more demanding. It needs shot data, a defined model, and a consistent provider. It can describe performance that results hide, but it can also overfit to a small sample. The best use is not to choose one and reject the other. Use Elo to track results and xG to understand the process behind them.</p>
+<p>Neither measure is a prediction on its own. A rating tells you what the model believes about relative strength. A probability model turns that belief into match odds. The distinction matters when you evaluate a forecast, because a good rating can still produce a poorly calibrated probability.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating Elo as a prediction.</strong> A rating is a strength estimate, not a three-way match probability. You still need a draw model and a home adjustment.</li>
+<li><strong>Ignoring home advantage.</strong> A 100-point gap can shrink or reverse when the weaker team is at home. Use a consistent adjustment.</li>
+<li><strong>Comparing ratings from different systems.</strong> Different starting values and K factors produce different scales. Compare ranks or gaps within one system.</li>
+<li><strong>Overreacting to one result.</strong> A single match moves a rating by a few points. The signal is in the sequence, not the latest number.</li>
+<li><strong>Forgetting draws.</strong> Football has three outcomes. An Elo expected score is not the same as a win probability.</li>
+<li><strong>Using Elo to judge players.</strong> A team rating describes the team, not the individuals inside it.</li>
+</ul>
+<p>The common thread is a search for a single number that answers every question. Elo is useful precisely because it is narrow. It tracks results, and it does that job well.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and uncertainty</h2>
+        <p>Elo ratings are relative, results-based, and dependent on the rules of the system. They do not know about injuries, tactics, travel, weather, or motivation unless those factors are built into the model. They do not know whether a team created good chances or scored from a deflection. They only know the result.</p>
+<p>New teams are especially uncertain. A promoted club may start with a rating inherited from a lower division, or with a default value that does not reflect its new squad. It takes time for the rating to adjust. The same is true after a change of manager or a major transfer window.</p>
+<p>Use Elo as one layer of analysis. It can tell you which teams have the strongest results record, and it can provide a simple baseline for a prediction model. It cannot tell you why a team is strong, whether the strength will last, or what will happen in the next match. Those questions need data, context, and judgement.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is a good Elo rating in football?</summary>
+      <div class="faq-answer"><p>There is no universal good rating because the scale depends on the system. What matters is the gap between teams and the rank within the same rating pool. A rating of 1600 is only meaningful in relation to the opponents around it.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does Elo predict football matches?</summary>
+      <div class="faq-answer"><p>Elo estimates relative strength, not a three-way result probability. You can convert a rating gap into an expected score, but you still need a draw model and a home advantage adjustment to produce match probabilities.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Why do Elo ratings differ between websites?</summary>
+      <div class="faq-answer"><p>Systems use different starting values, K factors, home adjustments, competition weights, and goal-difference rules. Those choices produce different numbers, so compare ratings within one system rather than across systems.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-elo-measures">What Elo measures</a></li><li><a href="#how-football-elo-works">How football Elo works</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#reading-elo-ratings">Reading Elo ratings</a></li><li><a href="#elo-vs-xg">Elo versus xG</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and uncertainty</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="track-prediction-accuracy.html">
+        <span class="cat">Betting Education</span>
+        <strong>How to Track Prediction Accuracy in Football</strong>
+      </a>
+      <a class="related-card" href="home-advantage-modern-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Home Advantage in Modern Football</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

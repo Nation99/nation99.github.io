@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build-Up Play Analysis: Progressing the Ball</title>
+  <meta name="description" content="Build-up play explains how a team moves the ball from its own third into attacking areas. Learn the patterns, metrics, and limits of reading progressions.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/build-up-play-analysis.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Build-Up Play Analysis: Progressing the Ball">
+  <meta property="og:description" content="Build-up play explains how a team moves the ball from its own third into attacking areas. Learn the patterns, metrics, and limits of reading progressions.">
+  <meta property="og:url" content="https://nation99.github.io/articles/build-up-play-analysis.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-11-22">
+  <meta property="article:modified_time" content="2026-11-22">
+  <meta property="article:section" content="Tactics">
+  <meta property="article:tag" content="build-up play">
+  <meta property="article:tag" content="progression">
+  <meta property="article:tag" content="tactics">
+  <meta property="article:tag" content="possession">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Build-Up Play Analysis: Progressing the Ball">
+  <meta name="twitter:description" content="Build-up play explains how a team moves the ball from its own third into attacking areas. Learn the patterns, metrics, and limits of reading progressions.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"usatonlinetools@gmail.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"usatonlinetools@gmail.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/build-up-play-analysis.html#webpage","url":"https://nation99.github.io/articles/build-up-play-analysis.html","name":"Build-Up Play Analysis: Progressing the Ball","description":"Build-up play explains how a team moves the ball from its own third into attacking areas. Learn the patterns, metrics, and limits of reading progressions.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/build-up-play-analysis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Tactics","item":"https://nation99.github.io/articles/?category=Tactics"},{"@type":"ListItem","position":4,"name":"Build-Up Play Analysis: Progressing the Ball"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/build-up-play-analysis.html#article","headline":"Build-Up Play Analysis: Progressing the Ball","description":"Build-up play explains how a team moves the ball from its own third into attacking areas. Learn the patterns, metrics, and limits of reading progressions.","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/build-up-play-analysis.html#webpage"},"articleSection":"Tactics","keywords":"build-up play, progression, tactics, possession","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What counts as build-up play in football?","acceptedAnswer":{"@type":"Answer","text":"Build-up play is the phase in which a team moves the ball from its own defensive third into midfield or attack with controlled passes or carries. It usually involves the goalkeeper, defenders, and deep midfielders, and it ends when the team enters the middle or final third."}},{"@type":"Question","name":"Which metric best measures build-up play?","acceptedAnswer":{"@type":"Answer","text":"There is no single best metric. Progressive passes, progressive carries, passes into the final third, and build-up success rate each describe a different part of the phase. Use them together and add context about pressure and game state."}},{"@type":"Question","name":"Does good build-up play lead to more goals?","acceptedAnswer":{"@type":"Answer","text":"Not automatically. Progression gets the ball into dangerous areas, but chance creation and finishing are separate skills. A team can build up well and still create little, so build-up metrics should be read alongside shot quality and final-third output."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Tactics">Tactics</a></li><li><span aria-current="page">Build-Up Play Analysis: Progressing the Ball</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Tactics</p>
+        <h1>Build-Up Play Analysis: Progressing the Ball</h1>
+        <p class="article-dek">Build-up play is the part of the game that turns a goalkeeper&#39;s pass into an attack. It is easy to see when it works and hard to measure without watching the structure.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-11-22">22 November 2026</time></span>
+          <span>Last updated <time datetime="2026-11-22">22 November 2026</time></span>
+          <span>9 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>Every attack starts somewhere. Build-up play is the phase between winning or receiving the ball in a team's own third and moving it into a position from which an attack can be launched. It includes the goalkeeper, the centre-backs, the deepest midfielder, and the rotations that create passing lanes ahead of them.</p>
+<p>The phase is often judged by its failures. A misplaced pass near the penalty area becomes a highlight and a goal. The twenty passes that broke a press and created space are forgotten. That asymmetry makes build-up play one of the most misunderstood parts of football analysis.</p>
+<p>This guide explains the phase, the metrics that describe it, and why a clean progression is not the same as a good attack.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>Build-up play covers the passes and movements that move the ball from the defensive third into midfield and attack.</li><li>Progression metrics describe territory gained, but structure and decision quality need video or event data.</li><li>A team can progress the ball well and still create little, because the final third is a separate problem.</li><li>Pressing changes build-up behaviour, so compare teams against similar pressure rather than raw totals.</li><li>Small samples of build-up sequences are noisy, and a few mistakes can dominate the highlight reel.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-build-up-play-means">
+        <h2 id="what-build-up-play-means">What build-up play means</h2>
+        <p>Build-up play is usually defined by location and intent. Location means the defensive third, roughly the area from a team's goal line to the line of its own penalty area extended across the pitch. Intent means moving the ball forward with control rather than clearing it under pressure.</p>
+<p>The phase ends when the ball crosses into the middle third with a stable possession, or when the team chooses to go long. A long clearance can be a deliberate build-up choice, especially against a high press, but it is a different pattern from a short passing sequence. Both can be correct, and the same team may use both within one match.</p>
+<p>Build-up is not the same as possession. A team can have little possession and still build up well when it wins the ball. A team can have plenty of possession and build up poorly if its deepest players pass sideways without breaking the first line. The distinction matters because possession totals hide the direction and purpose of the passing.</p>
+<p>What counts as a successful build-up also depends on the opponent's shape. A short pass that escapes one press is a good decision. The same pass against a deep block may slow the attack down.</p>
+      </section>
+      <section aria-labelledby="progression-metrics">
+        <h2 id="progression-metrics">Metrics that describe progression</h2>
+        <p>Several metrics help describe build-up play. Each answers a slightly different question.</p>
+<p><strong>Progressive passes</strong> count passes that move the ball significantly closer to the opponent's goal. The exact threshold varies by provider, so compare like with like. A progressive pass is a useful sign that a team is breaking lines, but it does not say whether the pass was the best option.</p>
+<p><strong>Progressive carries</strong> count dribbles that advance the ball. A centre-back who steps into midfield with the ball changes the shape of the opposition press, even if the carry does not lead to a shot.</p>
+<p><strong>Passes into the final third</strong> measure the end point of a sequence. They are a reasonable proxy for entering the attacking phase, but they can reward hopeful long balls as much as controlled progressions.</p>
+<p><strong>Build-up success rate</strong> divides completed build-up sequences by attempted ones. The definition of a sequence matters, and providers differ. A high rate can mean calm decision making, or it can mean a team avoids difficult passes.</p>
+<p>Our guide to <a href="possession-data-football.html">using possession data</a> explains why raw totals need context. The same caution applies here. A progression metric describes what happened, not why it worked.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. It compares two teams over five matches using simple build-up counts. The numbers are invented for teaching, not taken from a live competition.</p>
+<table>
+<caption>Illustrative build-up profile over five matches</caption>
+<thead><tr><th>Metric</th><th>Team A</th><th>Team B</th></tr></thead>
+<tbody>
+<tr><td>Build-up sequences</td><td>120</td><td>95</td></tr>
+<tr><td>Completed sequences</td><td>96</td><td>80</td></tr>
+<tr><td>Success rate</td><td>80%</td><td>84%</td></tr>
+<tr><td>Progressive passes</td><td>58</td><td>41</td></tr>
+<tr><td>Passes into final third</td><td>34</td><td>29</td></tr>
+<tr><td>Losses in own third</td><td>24</td><td>15</td></tr>
+</tbody>
+</table>
+<p>Team B has the higher success rate, but Team A completes more sequences and progresses the ball more often. Which team built up better? The table alone cannot answer that. Team A may face a stronger press, or it may attempt more ambitious passes. Team B may be more conservative, or it may be better at escaping pressure.</p>
+<p>Now add the outcomes. Suppose Team B created more expected goals per match from less build-up volume. That could mean its progressions were more dangerous, or that its attacks started from transitions and set pieces.</p>
+<p>The lesson is to read build-up metrics as a profile, not a score. Volume, success, progression, and final-third output answer different questions. The same logic applies to <a href="expected-threats-xt.html">expected threat</a>, which values the danger of a possession rather than the number of passes.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="reading-the-structure">
+        <h2 id="reading-the-structure">Reading the structure</h2>
+        <p>Build-up play is a structural problem before it is a passing problem. The team needs to create a free player, and the opponent needs to close the options. Common structures include a back three with the full-backs pushed high, a double pivot in front of a back four, and a single deep midfielder who drops between the centre-backs.</p>
+<p>Each structure has trade-offs. A back three gives more passing angles but leaves fewer players ahead of the ball. A double pivot protects the centre but can be isolated if the full-backs are marked. A single pivot creates a central option but asks one player to receive under pressure with limited support.</p>
+<p>The goalkeeper is part of the structure. A keeper who passes accurately under pressure gives the team an extra outfield player. A keeper who cannot invites the press to commit more players forward.</p>
+<p>Player roles matter as much as the formation on the team sheet. A full-back may start deep and move into midfield, a winger may drop to receive, and a striker may pin a centre-back to create space behind. The pattern is the product of these movements, not just the shape at kick-off. Our guide to <a href="pressing-intensity-ppda.html">pressing intensity and PPDA</a> explains the other side of the same contest.</p>
+      </section>
+      <section aria-labelledby="build-up-under-pressure">
+        <h2 id="build-up-under-pressure">Build-up under pressure</h2>
+        <p>A build-up sequence is only as good as the pressure it survives. Comparing teams without adjusting for pressure is like comparing sprint times without noting the wind. Some teams face a high press every week; others are allowed to pass freely until the halfway line.</p>
+<p>Pressure can be described in several ways. The number of opponents in the defensive third is a simple count. The distance from the nearest opponent to the ball carrier is a more detailed measure. The number of passes before a loss, and the location of losses, add context.</p>
+<p>Context includes the score and the clock. A team chasing a goal may take more risks in build-up. A team protecting a lead may clear the ball more often. Comparing build-up across game states without noting the state can produce a misleading picture.</p>
+      </section>
+      <section aria-labelledby="build-up-versus-final-third">
+        <h2 id="build-up-versus-final-third">Build-up versus the final third</h2>
+        <p>A strong build-up phase does not guarantee chances. The final third is a separate problem with different constraints: less space, more defenders, and a higher cost for turnovers. A team can progress the ball beautifully and then run out of ideas near the penalty area.</p>
+<p>The reverse is also true. A team can build up modestly and still create danger from transitions, set pieces, or individual quality. That is why build-up metrics should be paired with chance creation and shot quality. Expected goals covers the chance-quality side of the ledger.</p>
+<p>When a team struggles to create, the diagnosis should not jump straight to the build-up. Ask where the attacks begin, how often the team enters the final third, and what happens after entry. The problem may be in the last pass, the movement in the box, or the quality of the crosses. Build-up is one link in a chain, not the whole chain.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Judging build-up by one mistake.</strong> A single misplaced pass is memorable, but it is one event in a sequence of decisions. Look at the pattern across matches.</li>
+<li><strong>Ignoring the press.</strong> A completion rate against no pressure is not comparable with one against a high press. Adjust for the opponent's behaviour.</li>
+<li><strong>Treating possession as progression.</strong> Sideways passes can inflate possession without moving the team up the pitch. Direction and line breaks matter.</li>
+<li><strong>Assuming a high success rate is good.</strong> Safe passing can produce a high rate and a slow attack. The metric needs an intent measure beside it.</li>
+<li><strong>Comparing providers without checking definitions.</strong> Progressive passes and build-up sequences are defined differently across data companies.</li>
+</ul>
+<p>The common thread is the search for a single number. Build-up play is a relationship between structure, pressure, and decision making, and a number can only point to a question.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits of build-up analysis</h2>
+        <p>Build-up data is limited by sample size and by the quality of the event record. A pass is recorded, but the pressure on the passer and the movement of the receiver are not always captured. Video adds the context that the event data misses.</p>
+<p>Definitions vary between providers, so a progressive pass in one dataset may not meet the threshold in another. Leagues also differ in pressing intensity and pitch conditions, which changes what a successful build-up looks like.</p>
+<p>The most honest use of build-up analysis is descriptive. It can show how a team prefers to progress the ball, where it takes risks, and how it responds to pressure. It cannot prove that one style is better, and it cannot predict the next match.</p>
+<p>Use the metrics to ask better questions, then watch the sequences. The value is in connecting structure, pressure, and outcome.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What counts as build-up play in football?</summary>
+      <div class="faq-answer"><p>Build-up play is the phase in which a team moves the ball from its own defensive third into midfield or attack with controlled passes or carries. It usually involves the goalkeeper, defenders, and deep midfielders, and it ends when the team enters the middle or final third.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Which metric best measures build-up play?</summary>
+      <div class="faq-answer"><p>There is no single best metric. Progressive passes, progressive carries, passes into the final third, and build-up success rate each describe a different part of the phase. Use them together and add context about pressure and game state.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does good build-up play lead to more goals?</summary>
+      <div class="faq-answer"><p>Not automatically. Progression gets the ball into dangerous areas, but chance creation and finishing are separate skills. A team can build up well and still create little, so build-up metrics should be read alongside shot quality and final-third output.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-build-up-play-means">What build-up play means</a></li><li><a href="#progression-metrics">Metrics that describe progression</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#reading-the-structure">Reading the structure</a></li><li><a href="#build-up-under-pressure">Build-up under pressure</a></li><li><a href="#build-up-versus-final-third">Build-up versus the final third</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits of build-up analysis</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="possession-data-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Using Possession Data Correctly</strong>
+      </a>
+      <a class="related-card" href="pressing-intensity-ppda.html">
+        <span class="cat">Tactics</span>
+        <strong>Pressing Intensity and PPDA Explained</strong>
+      </a>
+      <a class="related-card" href="expected-threats-xt.html">
+        <span class="cat">xG and Stats</span>
+        <strong>Expected Threats (xT) Explained</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
