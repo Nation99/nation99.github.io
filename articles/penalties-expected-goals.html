@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penalties and xG: Valuing Spot Kicks Fairly</title>
+  <meta name="description" content="Penalties are high-value chances with unusual rules. Learn how xG models treat spot kicks, why conversion rates differ, and how to compare teams.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/penalties-expected-goals.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Penalties and xG: Valuing Spot Kicks Fairly">
+  <meta property="og:description" content="Penalties are high-value chances with unusual rules. Learn how xG models treat spot kicks, why conversion rates differ, and how to compare teams.">
+  <meta property="og:url" content="https://nation99.github.io/articles/penalties-expected-goals.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-11-24">
+  <meta property="article:modified_time" content="2026-11-24">
+  <meta property="article:section" content="xG and Stats">
+  <meta property="article:tag" content="penalties">
+  <meta property="article:tag" content="xG">
+  <meta property="article:tag" content="chance quality">
+  <meta property="article:tag" content="set pieces">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Penalties and xG: Valuing Spot Kicks Fairly">
+  <meta name="twitter:description" content="Penalties are high-value chances with unusual rules. Learn how xG models treat spot kicks, why conversion rates differ, and how to compare teams.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"usatonlinetools@gmail.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"usatonlinetools@gmail.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/penalties-expected-goals.html#webpage","url":"https://nation99.github.io/articles/penalties-expected-goals.html","name":"Penalties and xG: Valuing Spot Kicks Fairly","description":"Penalties are high-value chances with unusual rules. Learn how xG models treat spot kicks, why conversion rates differ, and how to compare teams.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/penalties-expected-goals.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"xG and Stats","item":"https://nation99.github.io/articles/?category=xG%20and%20Stats"},{"@type":"ListItem","position":4,"name":"Penalties and xG: Valuing Spot Kicks Fairly"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/penalties-expected-goals.html#article","headline":"Penalties and xG: Valuing Spot Kicks Fairly","description":"Penalties are high-value chances with unusual rules. Learn how xG models treat spot kicks, why conversion rates differ, and how to compare teams.","datePublished":"2026-11-24","dateModified":"2026-11-24","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/penalties-expected-goals.html#webpage"},"articleSection":"xG and Stats","keywords":"penalties, xG, chance quality, set pieces","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the xG value of a penalty?","acceptedAnswer":{"@type":"Answer","text":"Most models value a penalty at around 0.75 to 0.80 expected goals. The exact figure depends on the model, the data sample, and whether it adjusts for the taker or the goalkeeper."}},{"@type":"Question","name":"Should penalties be included in xG?","acceptedAnswer":{"@type":"Answer","text":"Both approaches are valid if they are labelled. Including penalties gives a complete measure of chances. Excluding them gives a cleaner comparison of open-play creation. The mistake is mixing the two without saying so."}},{"@type":"Question","name":"Do penalties inflate a team's xG too much?","acceptedAnswer":{"@type":"Answer","text":"They can dominate a small sample because a single penalty is worth about 0.78 xG. Reporting open-play xG and penalty xG separately lets readers see how much of the total comes from spot kicks."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=xG%20and%20Stats">xG and Stats</a></li><li><span aria-current="page">Penalties and xG: Valuing Spot Kicks Fairly</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">xG and Stats</p>
+        <h1>Penalties and xG: Valuing Spot Kicks Fairly</h1>
+        <p class="article-dek">A penalty is one of the best chances in football, but it is not a goal. How a model values it changes the story of a match and a season.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-11-24">24 November 2026</time></span>
+          <span>Last updated <time datetime="2026-11-24">24 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>A penalty is the most rehearsed chance in football and still one of the most uncertain. The shooter has a clear sight of goal from twelve yards, with only the goalkeeper to beat. The expected goals value is high, usually around 0.75 to 0.80, but it is not one. A miss is always possible.</p>
+<p>That gap between high probability and certainty makes penalties a useful test of how we read chance quality. A team that wins a penalty has earned a strong opportunity. A team that scores it has converted a strong opportunity. Those are related facts, but they are not the same fact.</p>
+<p>This guide explains how xG models value penalties, why some models separate them, and how to compare teams without hiding the spot kick.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>A penalty is usually worth around 0.75 to 0.80 expected goals, depending on the model and the sample.</li><li>Some xG models exclude penalties so that open-play chance quality can be compared separately.</li><li>Penalty conversion is influenced by the taker, the goalkeeper, the pressure, and the shootout rules.</li><li>A rebound after a saved penalty is a separate event and should not be double-counted silently.</li><li>Comparing team xG with and without penalties is a useful habit, not a way to erase the penalty.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="why-penalties-are-different">
+        <h2 id="why-penalties-are-different">Why penalties are different</h2>
+        <p>Most shots are open play. The shooter is moving, defenders are close, and the angle and distance vary. A penalty is a set piece with fixed geometry: twelve yards from goal, central, and with a goalkeeper who must stay on the line until the kick is taken. The only variables are the taker's execution and the keeper's guess.</p>
+<p>That fixed geometry is why penalties are valued so highly. A central shot from twelve yards would already be a good chance in open play. The penalty adds the isolation from defenders, which raises the value further. The exact number depends on the model's training data and the era it covers.</p>
+<p>Penalties also have a different psychological profile. The shooter knows the stakes, the crowd knows, and the goalkeeper knows. Some players are excellent under that pressure; others are not. A single conversion rate over a career mixes skill, luck, and sample size.</p>
+<p>Finally, penalties can be retaken if the goalkeeper moves early or an outfield player encroaches. The rules add a layer of variance that open-play shots do not have. A model that treats every penalty as an independent 0.78 chance is simplifying, but the simplification is usually reasonable.</p>
+      </section>
+      <section aria-labelledby="how-models-value-penalties">
+        <h2 id="how-models-value-penalties">How models value penalties</h2>
+        <p>There are two common approaches. The first includes penalties in the xG total, using a fixed value or a value estimated from a large sample. The second excludes penalties from the main xG figure and reports them separately.</p>
+<p>Including penalties makes the total a complete measure of the chances a team produced, including set pieces. It is the right choice if the question is "how dangerous were this team's attempts?" Excluding them makes the total a measure of open-play chance creation, which is useful when comparing teams that take very different numbers of penalties.</p>
+<p>The important rule is transparency. A total that includes penalties should say so. A total that excludes them should say so. Mixing the two across a table creates a comparison that looks precise but is not.</p>
+<p>Some models also adjust the penalty value for the taker. A team with a historically strong penalty taker may have a slightly higher conversion probability than a team with a weak one. The adjustment is usually small because the sample of penalties for any one player is limited. Our guide to <a href="penalty-analysis.html">penalty analysis</a> covers conversion rates, placement, and the limits of shootout records.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. It shows two teams' chance creation with and without penalties over five matches. The numbers are invented for teaching.</p>
+<table>
+<caption>Illustrative xG with and without penalties</caption>
+<thead><tr><th>Measure</th><th>Team A</th><th>Team B</th></tr></thead>
+<tbody>
+<tr><td>Open-play xG</td><td>1.2</td><td>1.1</td></tr>
+<tr><td>Penalty xG</td><td>0.8</td><td>0.0</td></tr>
+<tr><td>Total xG</td><td>2.0</td><td>1.1</td></tr>
+<tr><td>Goals scored</td><td>3</td><td>1</td></tr>
+</tbody>
+</table>
+<p>Team A looks clearly more dangerous on total xG, but the gap is entirely a penalty. In open play, the two teams are close. If the question is "which team created more from open play?", the answer is Team A by a small margin. If the question is "which team had the better chances overall?", the penalty counts and Team A is ahead.</p>
+<p>Neither answer is wrong. The mistake is to use one number without saying which question it answers. A table that shows only total xG hides the penalty. A table that shows only open-play xG hides a real chance that happened.</p>
+<p>Now consider the goals. Team A scored three from 2.0 total xG, which is above expectation but not absurd. Team B scored one from 1.1, which is close to expectation. Over five matches, these differences are noise as much as signal. The penalty explains part of the gap, but not all of it.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="rebounds-and-saves">
+        <h2 id="rebounds-and-saves">Rebounds and saved penalties</h2>
+        <p>A saved penalty does not always end the sequence. The goalkeeper may push the ball back into play, and the attacking team may score from the rebound. How a model records that sequence matters.</p>
+<p>One approach treats the penalty as a single event with a value of about 0.78 and ignores the rebound. Another records the penalty and then the follow-up shot as separate attempts. The second approach can double-count the danger if the rebound is valued as a normal open-play shot without noting that it came from a penalty.</p>
+<p>The cleanest method is to record the penalty and the rebound as separate events but to label the sequence. A reader can then see that the total includes a penalty and a follow-up. The same principle applies to a penalty that is saved and then cleared: the penalty value remains, and the clearance is a defensive action, not a new chance.</p>
+<p>Shootouts are a separate case. Most league xG tables exclude shootout penalties because they are not part of the match result in the same way. A cup match decided on penalties may show a draw after extra time, with the shootout recorded separately. Our article on <a href="goalkeeper-performance-prediction.html">goalkeeper performance</a> explains why shootout saves are a narrow and noisy measure of skill.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating a penalty as a certain goal.</strong> A value of 0.78 is a probability, not a promise. The keeper can save, the shooter can miss, and the ball can hit the post.</li>
+<li><strong>Mixing totals with and without penalties.</strong> A table that compares one team's total xG with another team's open-play xG is not a fair comparison.</li>
+<li><strong>Ignoring the penalty in the narrative.</strong> A team can dominate open play and still lose because it conceded a penalty. The spot kick is part of the match.</li>
+<li><strong>Overreading a taker's record.</strong> Penalty samples are small, and conversion rates regress toward the mean. A perfect record is not proof of a repeatable superpower.</li>
+<li><strong>Double-counting rebounds.</strong> A saved penalty and the follow-up shot are two events. Counting both without labels can inflate the total.</li>
+<li><strong>Using penalties to explain everything.</strong> A gap in the table may come from penalties, finishing, goalkeeping, or sample noise. Check the sequence before choosing a story.</li>
+</ul>
+<p>The common thread is the difference between a complete total and a comparable total. Both are useful, but they answer different questions.</p>
+      </section>
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits and practical use</h2>
+        <p>Penalty xG is a model output, not a measurement. The value depends on the sample used to estimate it, the era of the data, and the model's assumptions about the taker and the keeper. A value of 0.75 and a value of 0.80 are both plausible, and the difference is small compared with the uncertainty of a single kick.</p>
+<p>The bigger limit is sample size. A team may take only a handful of penalties in a season. A single miss can swing the conversion rate by tens of percentage points. Comparing teams on penalty conversion alone is therefore weak. Comparing them on penalties awarded is more stable, because it reflects how often they get into the box and draw fouls.</p>
+<p>The most useful habit is to report both totals. Show open-play xG, penalty xG, and total xG. Then let the reader see the composition. This is more honest than choosing one number and presenting it as the whole truth.</p>
+<p>For a wider view of how chance quality becomes a match model, pair the penalty discussion with <a href="what-is-xg-football.html">expected goals</a> and a clear record of model accuracy. The spot kick is one input, not a verdict on the team.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>What is the xG value of a penalty?</summary>
+      <div class="faq-answer"><p>Most models value a penalty at around 0.75 to 0.80 expected goals. The exact figure depends on the model, the data sample, and whether it adjusts for the taker or the goalkeeper.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Should penalties be included in xG?</summary>
+      <div class="faq-answer"><p>Both approaches are valid if they are labelled. Including penalties gives a complete measure of chances. Excluding them gives a cleaner comparison of open-play creation. The mistake is mixing the two without saying so.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Do penalties inflate a team&#39;s xG too much?</summary>
+      <div class="faq-answer"><p>They can dominate a small sample because a single penalty is worth about 0.78 xG. Reporting open-play xG and penalty xG separately lets readers see how much of the total comes from spot kicks.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#why-penalties-are-different">Why penalties are different</a></li><li><a href="#how-models-value-penalties">How models value penalties</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#rebounds-and-saves">Rebounds and saved penalties</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#limits">Limits and practical use</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="penalty-analysis.html">
+        <span class="cat">Tactics</span>
+        <strong>Penalty Analysis in Football</strong>
+      </a>
+      <a class="related-card" href="what-is-xg-football.html">
+        <span class="cat">xG and Stats</span>
+        <strong>What Is xG in Football? Expected Goals Explained</strong>
+      </a>
+      <a class="related-card" href="goalkeeper-performance-prediction.html">
+        <span class="cat">Tactics</span>
+        <strong>Goalkeeper Performance and Prediction</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
