@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Derby Matches: Form, Emotion, and Variance</title>
+  <meta name="description" content="Derby results are volatile and form tables are weak guides. Learn how emotion, familiarity and variance shape local rivalries, and how to assess them.">
+  <meta name="author" content="Nyasha">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#0b1b33">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://nation99.github.io/articles/derby-matches-analysis.html">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <meta property="og:site_name" content="Elite Football Predictor">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Derby Matches: Form, Emotion, and Variance">
+  <meta property="og:description" content="Derby results are volatile and form tables are weak guides. Learn how emotion, familiarity and variance shape local rivalries, and how to assess them.">
+  <meta property="og:url" content="https://nation99.github.io/articles/derby-matches-analysis.html">
+  <meta property="og:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta property="og:locale" content="en_GB">
+  <meta property="article:published_time" content="2026-11-26">
+  <meta property="article:modified_time" content="2026-11-26">
+  <meta property="article:section" content="Leagues">
+  <meta property="article:tag" content="derbies">
+  <meta property="article:tag" content="rivalry">
+  <meta property="article:tag" content="variance">
+  <meta property="article:tag" content="form">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Derby Matches: Form, Emotion, and Variance">
+  <meta name="twitter:description" content="Derby results are volatile and form tables are weak guides. Learn how emotion, familiarity and variance shape local rivalries, and how to assess them.">
+  <meta name="twitter:image" content="https://nation99.github.io/assets/og-default.png">
+  <meta name="twitter:image:alt" content="Elite Football Predictor, football analytics and education">
+  <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <meta name="adsense-client" content="ca-pub-XXXXXXXXXXXXXXXX">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("efp-theme");
+        var theme = saved === "dark" || saved === "light"
+          ? saved
+          : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (error) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    }());
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('js', new Date());
+    gtag('config', 'G-DHC4SNTD6B', { anonymize_ip: true });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHC4SNTD6B"></script>
+  <!-- AdSense: replace site.adsenseClient with your approved publisher ID and rebuild. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nation99.github.io/#website","url":"https://nation99.github.io/","name":"Elite Football Predictor","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","publisher":{"@id":"https://nation99.github.io/#organization"},"inLanguage":"en-GB","potentialAction":{"@type":"SearchAction","target":"https://nation99.github.io/articles/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://nation99.github.io/#organization","name":"Elite Football Predictor","url":"https://nation99.github.io/","description":"Football analytics education and a transparent match outcome model. Learn xG, xGA, odds, Poisson probabilities, and structured pre-match analysis.","email":"usatonlinetools@gmail.com","logo":{"@type":"ImageObject","url":"https://nation99.github.io/assets/logo.png","width":512,"height":512},"founder":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publishingPrinciples":"https://nation99.github.io/editorial-policy.html","contactPoint":{"@type":"ContactPoint","email":"usatonlinetools@gmail.com","contactType":"editorial"}},{"@type":"WebPage","@id":"https://nation99.github.io/articles/derby-matches-analysis.html#webpage","url":"https://nation99.github.io/articles/derby-matches-analysis.html","name":"Derby Matches: Form, Emotion, and Variance","description":"Derby results are volatile and form tables are weak guides. Learn how emotion, familiarity and variance shape local rivalries, and how to assess them.","isPartOf":{"@id":"https://nation99.github.io/#website"},"inLanguage":"en-GB","about":{"@id":"https://nation99.github.io/#organization"}},{"@type":"BreadcrumbList","@id":"https://nation99.github.io/articles/derby-matches-analysis.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://nation99.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://nation99.github.io/articles/"},{"@type":"ListItem","position":3,"name":"Leagues","item":"https://nation99.github.io/articles/?category=Leagues"},{"@type":"ListItem","position":4,"name":"Derby Matches: Form, Emotion, and Variance"}]},{"@type":"Article","@id":"https://nation99.github.io/articles/derby-matches-analysis.html#article","headline":"Derby Matches: Form, Emotion, and Variance","description":"Derby results are volatile and form tables are weak guides. Learn how emotion, familiarity and variance shape local rivalries, and how to assess them.","datePublished":"2026-11-26","dateModified":"2026-11-26","author":{"@type":"Person","name":"Nyasha","url":"https://nation99.github.io/about.html"},"publisher":{"@id":"https://nation99.github.io/#organization"},"mainEntityOfPage":{"@id":"https://nation99.github.io/articles/derby-matches-analysis.html#webpage"},"articleSection":"Leagues","keywords":"derbies, rivalry, variance, form","image":{"@type":"ImageObject","url":"https://nation99.github.io/assets/og-default.png","width":1200,"height":630},"inLanguage":"en-GB","isAccessibleForFree":true},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why are derby results so unpredictable?","acceptedAnswer":{"@type":"Answer","text":"Derbies combine high emotional intensity with small samples and a short history between the specific squads. One red card, penalty or early goal can swing the result, so outcomes vary more than in a routine league match."}},{"@type":"Question","name":"Do form tables matter before a derby?","acceptedAnswer":{"@type":"Answer","text":"They are a weak guide on their own. Form tables ignore opponent strength, home and away splits and game state. Use longer-run underlying performance and the specific tactical matchup instead."}},{"@type":"Question","name":"Does home advantage increase in a derby?","acceptedAnswer":{"@type":"Answer","text":"It varies. A short trip can bring a large away following and reduce the usual travel effect, while a packed home crowd can intensify the atmosphere. Treat home advantage as context to assess, not a fixed number."}}]}]}</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
+  
+  <header class="site-header">
+    <div class="wrap inner">
+      <a class="brand" href="../" aria-label="Elite Football Predictor home">
+        <span class="brand-mark" aria-hidden="true">EFP</span>
+        <span class="brand-text">
+          <span>Elite Football Predictor</span>
+          <small>Analytics and education</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../">Home</a><a href="../predictor.html">Predictor</a><a href="./" aria-current="page">Articles</a><a href="../glossary.html">Glossary</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+        <details class="nav-more">
+          <summary>More</summary>
+          <div class="nav-menu">
+            <a href="../editorial-policy.html">Editorial policy</a><a href="../privacy.html">Privacy policy</a><a href="../terms.html">Terms of use</a><a href="../disclaimer.html">Disclaimer</a><a href="../responsible-gambling.html">Responsible gambling</a>
+          </div>
+        </details>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="menu-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+          <svg class="menu-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false">
+            <path d="M6 6l12 12M18 6L6 18"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <div class="wrap">
+        <p class="mobile-label">Explore</p>
+        <ul>
+          <li><a href="../">Home</a></li><li><a href="../predictor.html">Predictor</a></li><li><a href="./" aria-current="page">Articles</a></li><li><a href="../glossary.html">Glossary</a></li><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <p class="mobile-label">Policies and standards</p>
+        <ul>
+          <li><a href="../editorial-policy.html">Editorial policy</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../terms.html">Terms of use</a></li><li><a href="../disclaimer.html">Disclaimer</a></li><li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+        </ul>
+        <p class="mobile-note">Estimates are not advice. 18+. <a href="../responsible-gambling.html">Support and responsible gambling</a>.</p>
+      </div>
+    </div>
+  </header>
+  
+  <main id="main">
+    <div class="wrap">
+      
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="../">Home</a></li><li><a href="./">Articles</a></li><li><a href="./?category=Leagues">Leagues</a></li><li><span aria-current="page">Derby Matches: Form, Emotion, and Variance</span></li>
+    </ol>
+  </nav>
+      <header class="article-header">
+        <p class="eyebrow">Leagues</p>
+        <h1>Derby Matches: Form, Emotion, and Variance</h1>
+        <p class="article-dek">A derby is still a football match, but it is played with a different emotional background. That changes the range of outcomes more than it changes the average.</p>
+        <div class="byline">
+          <span>By <strong>Nyasha</strong></span>
+          <span>Published <time datetime="2026-11-26">26 November 2026</time></span>
+          <span>Last updated <time datetime="2026-11-26">26 November 2026</time></span>
+          <span>8 min read</span>
+        </div>
+      </header>
+    </div>
+    <div class="wrap">
+  <aside class="ad-slot ad-slot--hero" aria-label="Advertisement" data-ad-slot="0000000001">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside></div>
+    <div class="wrap article-layout">
+      <article class="article-body">
+        <p>A derby compresses a season's rivalry into 90 minutes. The crowd is louder, the stakes feel higher, and the result can matter more to supporters than league position suggests. Yet the analytical problem is the same: estimate what is likely to happen from incomplete information.</p>
+<p>Derbies are often described as unpredictable. That is too simple. They are matches with unusual emotional intensity, unusual familiarity between the teams, and a small number of relevant observations. Those features raise variance without making analysis pointless.</p>
+<p>This guide explains why derby results move around, how emotion and familiarity change the tactical problem, and why a short form table is a weak guide.</p>
+        
+  <aside class="takeaways" aria-labelledby="takeaways-title">
+    <h2 id="takeaways-title">Key takeaways</h2>
+    <ul><li>A derby adds emotional intensity and local pressure, which can change decisions but not in one predictable direction.</li><li>Familiarity between the teams can reduce tactical surprise and make set pieces and individual duels more important.</li><li>Derby results are noisy because the sample is small and single events, such as red cards, carry more weight.</li><li>Short form tables are weak guides because they ignore opponent strength, game state and the context of the rivalry.</li><li>Treat a derby as a normal match with a modest, evidence-based adjustment, not as a different sport.</li></ul>
+  </aside>
+        
+      <section aria-labelledby="what-makes-a-derby-different">
+        <h2 id="what-makes-a-derby-different">What makes a derby different</h2>
+        <p>A derby is usually defined by a local or historical rivalry, not a competition. The teams may share a city, a region or a long story of contested results. The label carries meaning for supporters, players and the media, and that meaning shapes the environment.</p>
+<p>The environment can be intense. Crowds are often larger or louder, the build-up lasts longer, and every mistake is magnified. Players may live in the same area as the fans. None of this changes the laws of the game, but it changes the pressure around the players.</p>
+<p>It is easy to overstate the difference. Not every derby is chaotic, and not every rivalry produces the same behaviour. Some derbies are cautious and tense; others are open and ill-disciplined. The label describes context, not a fixed script.</p>
+<p>The analytical mistake is to treat the derby as a separate sport. The match still has 11 players per side, the same pitch and the same structure. What changes is the emotional background and the familiarity, and both can be studied without turning the fixture into a mystery.</p>
+      </section>
+      <section aria-labelledby="emotion-and-decision-making">
+        <h2 id="emotion-and-decision-making">Emotion and decision-making</h2>
+        <p>Emotion affects attention and arousal. A player who is highly charged may press harder, react faster to a loose ball and commit to duels. The same player may also lunge into a tackle, rush a pass or shoot from a poor position because the moment feels bigger.</p>
+<p>The effect is not uniform. Some players raise their level in a derby; others tighten. Experience, temperament and role all matter. A young defender may be more affected by the crowd than a veteran midfielder.</p>
+<p>Emotion can also shape the start of the match. A team may begin with high intensity and fade, or begin cautiously because it fears an early mistake. Both patterns are plausible, which is why "the team that wants it more" is a weak explanation. Wanting it more can produce a fast start, a red card or a nervous performance.</p>
+<p>Officials face the same environment. Communication is harder in a loud stadium, and players may appeal more aggressively. That does not mean decisions are biased in a predictable direction. It means the conditions are less controlled, and the match may produce more stops, cards and disputes than a routine league game.</p>
+      </section>
+      <section aria-labelledby="familiarity-and-tactics">
+        <h2 id="familiarity-and-tactics">Familiarity changes the tactical problem</h2>
+        <p>Derby teams often know each other well. They may meet twice a season, plus cup ties, and the managers may have faced each other for years. Players may have been teammates at youth level. That familiarity reduces the chance of a tactical surprise.</p>
+<p>When both teams know the patterns, the match can become a contest of execution rather than discovery. Set pieces, second balls and individual duels often carry more weight, because the open-play structures are familiar. A well-rehearsed corner or pressing trigger can decide a game neither side wants to lose.</p>
+<p>Familiarity can also make teams cautious. A manager may accept a draw rather than risk a heavy defeat. The result can be a tight match with few clear chances. That is a tactical response to pressure, not proof that the players do not care.</p>
+<p>The matchup still matters. One team may have a winger who can exploit a slow full-back, or a midfield that cannot cope with a specific press. Our guide to <a href="tactical-matchups-vs-reputation.html">tactical matchups</a> explains why those details should outweigh the rivalry narrative when you assess how the game will be played.</p>
+      </section>
+  <aside class="ad-slot ad-slot--inline" aria-label="Advertisement" data-ad-slot="0000000002">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      <section aria-labelledby="why-form-tables-mislead">
+        <h2 id="why-form-tables-mislead">Why form tables mislead</h2>
+        <p>A form table shows the last five or six results as wins, draws and losses. It is easy to read and almost impossible to interpret without context. It does not say who the opponents were, whether the matches were home or away, or what the score was.</p>
+<p>Derby samples are even smaller. A team may play its local rival twice a season. A run of "two wins in five derbies" can cover two and a half years, several managers and a completely different squad. The label survives, but the team that produced the record may not.</p>
+<p>Home advantage is another complication. A derby may reduce the usual travel burden for the away side because the journey is short and the away support is large. That can make the home crowd less of an edge than usual, or it can intensify the atmosphere for both teams. Our article on <a href="home-advantage-modern-football.html">home advantage</a> explains why the effect is not a fixed bonus.</p>
+<p>Form tables also invite recency bias. A heavy derby defeat is memorable and can dominate the next preview. A calm review would ask whether the result was driven by a red card, an early goal, a penalty or a goalkeeper error. Our guide to <a href="cognitive-biases-football-prediction.html">cognitive biases</a> explains how those memorable results distort expectations.</p>
+      </section>
+      <section aria-labelledby="worked-example">
+        <h2 id="worked-example">A worked example</h2>
+        <p>The table below is illustrative. It compares one club's derby record with its other league matches over two seasons. The numbers are invented for teaching.</p>
+<table>
+<caption>Illustrative derby and non-derby profile over two seasons</caption>
+<thead><tr><th>Measure</th><th>Derbies</th><th>Other league matches</th></tr></thead>
+<tbody>
+<tr><td>Matches</td><td>8</td><td>60</td></tr>
+<tr><td>Wins</td><td>3</td><td>32</td></tr>
+<tr><td>Draws</td><td>2</td><td>16</td></tr>
+<tr><td>Losses</td><td>3</td><td>12</td></tr>
+<tr><td>Points per match</td><td>1.38</td><td>1.87</td></tr>
+<tr><td>Goals for per match</td><td>1.1</td><td>1.7</td></tr>
+<tr><td>Goals against per match</td><td>1.2</td><td>1.0</td></tr>
+<tr><td>xG for per match</td><td>1.35</td><td>1.62</td></tr>
+<tr><td>xG against per match</td><td>1.28</td><td>1.15</td></tr>
+</tbody>
+</table>
+<p>The results gap looks large. The club took 1.38 points per derby and 1.87 in other league matches. A form-based preview would call it a poor derby team. The underlying numbers tell a smaller story: 1.35 xG for and 1.28 against in derbies, compared with 1.62 and 1.15 elsewhere. The derby profile is worse, but the difference is modest and the matches were tighter.</p>
+<p>The goals column adds a wrinkle. The club scored 1.1 goals per derby from 1.35 xG, a shortfall of about 0.25 per match. Over eight matches that is roughly two goals. A couple of strong goalkeeping displays or a rushed finish can account for that. It is not evidence of a permanent psychological block.</p>
+<p>Eight matches is a tiny sample. One red card or deflected winner can move the points-per-match figure a lot. If the club lost one derby after a 10th-minute red card, that event carries 12.5 per cent of the sample. The table describes a pattern worth investigating, not a law of derby football.</p>
+      </section>
+      <section aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
+        <ul>
+<li><strong>Treating derby form as a permanent trait.</strong> Squads, managers and circumstances change. A record from three seasons ago may have little to do with the current team.</li>
+<li><strong>Overreacting to one result.</strong> A red card or an early goal can decide a derby without revealing a repeatable weakness.</li>
+<li><strong>Assuming motivation decides the outcome.</strong> Both teams are usually motivated. Execution, structure and luck still matter.</li>
+<li><strong>Ignoring set pieces and duels.</strong> Familiar opponents often produce tighter games where dead balls and individual battles carry more weight.</li>
+<li><strong>Using league position as a shortcut.</strong> A lower team may match up well against its rival, and a higher team may be tired or missing key players.</li>
+<li><strong>Ignoring the sample.</strong> Two derbies a season is not enough to support a strong claim about a club's character.</li>
+</ul>
+<p>The common thread is the difference between a story and a measurement. Derbies generate strong stories. Analysis has to decide which parts of those stories are supported by repeatable evidence.</p>
+      </section>
+      <section aria-labelledby="assessing-a-derby">
+        <h2 id="assessing-a-derby">A calmer way to assess a derby</h2>
+        <p>Start with the normal process. Look at recent underlying performance, not just results. Check availability, tactical style, set-piece strength and the referee's tendencies. Those factors apply to every match, and a derby does not suspend them.</p>
+<p>Then add a modest adjustment for context. The crowd may be more intense, the pressure higher and the away support larger than usual. Those factors can raise variance and shift the emotional challenge. They do not justify a large swing in the estimated outcome without evidence.</p>
+<p>Ask what is likely to change tactically. Will one team dominate the ball? Where will the chances come from? Who is vulnerable to a counter-attack or a set piece? A derby preview that answers those questions is more useful than one that repeats the word "passion" for 800 words.</p>
+<p>Finally, hold the uncertainty honestly. A derby is a good reminder that football results contain a large element of chance. The crowd can lift a team, a defender can slip, and a referee can make a decision. Analysis can describe the probabilities and the tactical logic. It cannot remove the randomness.</p>
+      </section>
+        
+  <section class="article-faq" aria-labelledby="article-faq-title">
+    <h2 id="article-faq-title">Frequently asked questions</h2>
+    
+    <details class="faq-item">
+      <summary>Why are derby results so unpredictable?</summary>
+      <div class="faq-answer"><p>Derbies combine high emotional intensity with small samples and a short history between the specific squads. One red card, penalty or early goal can swing the result, so outcomes vary more than in a routine league match.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Do form tables matter before a derby?</summary>
+      <div class="faq-answer"><p>They are a weak guide on their own. Form tables ignore opponent strength, home and away splits and game state. Use longer-run underlying performance and the specific tactical matchup instead.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Does home advantage increase in a derby?</summary>
+      <div class="faq-answer"><p>It varies. A short trip can bring a large away following and reduce the usual travel effect, while a packed home crowd can intensify the atmosphere. Treat home advantage as context to assess, not a fixed number.</p></div>
+    </details>
+  </section>
+        
+  <div class="author-box">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div>
+      <strong>Nyasha</strong>
+      <p>Founder and editor of Elite Football Predictor. Writes about football data, tactical structure, and the limits of prediction. No tips, no bookmaker links, no invented track record.</p>
+      <p><a href="../about.html">About the author</a> &middot; <a href="../editorial-policy.html">Editorial policy</a> &middot; <a href="../contact.html">Contact</a></p>
+    </div>
+  </div>
+        
+  <aside class="ad-slot ad-slot--end" aria-label="Advertisement" data-ad-slot="0000000004">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+      </article>
+      <aside class="article-side" aria-label="Article contents and advertising">
+        
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">On this page</h2>
+    <ol>
+      <li><a href="#what-makes-a-derby-different">What makes a derby different</a></li><li><a href="#emotion-and-decision-making">Emotion and decision-making</a></li><li><a href="#familiarity-and-tactics">Familiarity changes the tactical problem</a></li><li><a href="#why-form-tables-mislead">Why form tables mislead</a></li><li><a href="#worked-example">A worked example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#assessing-a-derby">A calmer way to assess a derby</a></li>
+    </ol>
+  </nav>
+        
+  <aside class="ad-slot ad-slot--sidebar" aria-label="Advertisement" data-ad-slot="0000000003">
+    <span class="ad-label">Advertisement</span>
+    <p class="ad-placeholder">Reserved advertising space. Add your AdSense publisher and slot IDs to activate.</p>
+  </aside>
+        <div class="side-note">
+          <strong>How to read this site</strong>
+          <p>Every number here is an estimate. We explain the method, show the uncertainty, and never present a model output as advice.</p>
+          <p><a href="../editorial-policy.html">Our editorial policy</a></p>
+        </div>
+      </aside>
+    </div>
+    <div class="wrap">
+  <aside class="related" aria-labelledby="related-title">
+    <h2 id="related-title">Related reading</h2>
+    <div class="related-grid">
+      
+      <a class="related-card" href="tactical-matchups-vs-reputation.html">
+        <span class="cat">Tactics</span>
+        <strong>Tactical Matchups Matter More Than Reputation</strong>
+      </a>
+      <a class="related-card" href="home-advantage-modern-football.html">
+        <span class="cat">Tactics</span>
+        <strong>Home Advantage in Modern Football</strong>
+      </a>
+      <a class="related-card" href="cognitive-biases-football-prediction.html">
+        <span class="cat">Betting Education</span>
+        <strong>Cognitive Biases in Football Prediction</strong>
+      </a>
+    </div>
+  </aside></div>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">EFP</span>
+            <strong>Elite Football Predictor</strong>
+          </div>
+          <p>Football analytics explained in plain language. We publish original guides, a transparent statistical model, and honest notes on uncertainty.</p>
+          <p class="footer-age"><span class="age-badge">18+</span> Estimates are not advice. If gambling is affecting your life, stop and seek support.</p>
+        </div>
+        <nav aria-labelledby="footer-explore">
+          <h2 id="footer-explore">Explore</h2>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="../predictor.html">Predictor tool</a></li>
+            <li><a href="./">Articles</a></li>
+            <li><a href="./?category=xG%20and%20Stats">xG and stats</a></li>
+            <li><a href="./?category=Tactics">Tactics</a></li>
+            <li><a href="../glossary.html">Glossary</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-company">
+          <h2 id="footer-company">Company</h2>
+          <ul>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../editorial-policy.html">Editorial policy</a></li>
+            <li><a href="./?category=Beginner%20Guides">Beginner guides</a></li>
+            <li><a href="./?category=Leagues">League guides</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal">Legal</h2>
+          <ul>
+            <li><a href="../privacy.html">Privacy policy</a></li>
+            <li><a href="../terms.html">Terms of use</a></li>
+            <li><a href="../disclaimer.html">Disclaimer</a></li>
+            <li><a href="../responsible-gambling.html">Responsible gambling</a></li>
+            <li><button class="link-button" type="button" data-open-consent>Manage cookie settings</button></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-help">
+        <p><strong>Need support?</strong> GambleAware, BeGambleAware and Gamblers Anonymous offer free, independent help.</p>
+        <div class="footer-help-links">
+          <a href="https://www.gambleaware.org/" target="_blank" rel="noopener noreferrer">GambleAware</a>
+          <a href="https://www.begambleaware.org/" target="_blank" rel="noopener noreferrer">BeGambleAware</a>
+          <a href="https://www.gamblersanonymous.org/" target="_blank" rel="noopener noreferrer">Gamblers Anonymous</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Elite Football Predictor. All rights reserved.</p>
+        <p>Estimates are not advice. No bookmaker links. No betting transactions. 18+.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <section class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieText" hidden>
+    <h2 id="cookieTitle">Cookies and your choice</h2>
+    <p id="cookieText">We use essential cookies to run the site. With your permission, we also use analytics and advertising cookies to understand traffic and fund the site. You can change your choice at any time. Read our <a href="../privacy.html">privacy policy</a>.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-ghost btn-sm" type="button" data-consent="reject">Reject non-essential</button>
+      <button class="btn btn-primary btn-sm" type="button" data-consent="accept">Accept all</button>
+    </div>
+    <p class="cookie-note">Essential storage is always on. Advertising and analytics stay off until you accept.</p>
+  </section>
+  
+  <script src="../assets/js/predictor.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
