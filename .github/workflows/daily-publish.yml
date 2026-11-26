@@ -2,7 +2,9 @@ name: Daily publish
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    # 08:00 Harare, Zimbabwe (Africa/Harare, UTC+2)
+    - cron: "0 8 * * *"
+      timezone: "Africa/Harare"
   workflow_dispatch:
     inputs:
       publish_date:
